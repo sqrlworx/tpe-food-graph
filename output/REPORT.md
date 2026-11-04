@@ -9,85 +9,85 @@ Links between affiliated accounts (sister shops, an owner tagging their own shop
 **Taste (creators)** = PageRank over the endorsement graph (1.0 = average).
 **Taste (bloggers)** = Σ over makers they tag of log₂(1 + other accounts that also tagged that maker).
 
-## Top 50 food creators by followers (151 total)
+## Top 50 food creators by followers (173 total)
 
 | # | Account | Name | Type | Followers | Tagged by bloggers | Tagged by makers | Taste |
 |---|---|---|---|---|---|---|---|
 | 1 | [@_eddy_wang_](https://www.instagram.com/_eddy_wang_/) | Eddy Wang | bakery | 155K | 0 | 2 | 1.30 |
-| 2 | [@quelques_p](https://www.instagram.com/quelques_p/) | 某某-Quelques Patisseries | dessert | 69.6K | 1 | 0 | 0.49 |
-| 3 | [@minimal_gelato](https://www.instagram.com/minimal_gelato/) | MINIMAL | dessert | 65.7K | 1 | 0 | 3.42 |
-| 4 | [@wuniquetaipei](https://www.instagram.com/wuniquetaipei/) | WUnique Pâtisserie | dessert | 64.2K | 0 | 0 | 2.88 |
-| 5 | [@but.we.love.butter](https://www.instagram.com/but.we.love.butter/) | but. we love butter | dessert | 63.7K | 0 | 0 | 0.43 |
-| 6 | [@petitchouxx18](https://www.instagram.com/petitchouxx18/) | PETIT CHOU  PÂTISSERIE | dessert | 48.9K | 0 | 1 | 0.83 |
-| 7 | [@lerubanpatisserie](https://www.instagram.com/lerubanpatisserie/) | 法朋烘焙甜點坊 | dessert | 46.2K | 1 | 0 | 3.68 |
-| 8 | [@weekendnodessert](https://www.instagram.com/weekendnodessert/) | WeekendnoDessert | dessert | 44.4K | 0 | 0 | 0.43 |
-| 9 | [@celebread.acs](https://www.instagram.com/celebread.acs/) | CELEBREAD 安和店 | bakery | 39.9K | 2 | 0 | 1.36 |
-| 10 | [@her_her_studio](https://www.instagram.com/her_her_studio/) | Her x Her 台中蛋糕·烘焙教學·海外烘焙遊學團 | dessert | 39.0K | 0 | 5 | 2.34 |
-| 11 | [@minuit1200](https://www.instagram.com/minuit1200/) | 深夜裡的法國手工甜點 | 台北忠孝復興・法式塔類甜點・節日送 | dessert | 38.6K | 0 | 1 | 0.82 |
-| 12 | [@_moon_baking](https://www.instagram.com/_moon_baking/) | Moon Baking Studio | bakery | 37.7K | 0 | 0 | 0.43 |
-| 13 | [@feedthewife](https://www.instagram.com/feedthewife/) | 胖死我太太烘焙坊 Feed The Wife Bakery  | bakery | 37.4K | 0 | 0 | 0.43 |
-| 14 | [@woowoo_hi](https://www.instagram.com/woowoo_hi/) | 窩巷 Hidden Lane ®｜台中甜點 水果蛋糕 | dessert | 36.8K | 0 | 1 | 0.63 |
-| 15 | [@chimori_seika](https://www.instagram.com/chimori_seika/) | 千森製菓ちもり-台南甜點咖啡 | dessert | 31.5K | 0 | 0 | 0.43 |
-| 16 | [@habibipatisserie](https://www.instagram.com/habibipatisserie/) | Habibi Pâtisserie | dessert | 29.3K | 0 | 0 | 0.43 |
-| 17 | [@crem_tw](https://www.instagram.com/crem_tw/) | CRÈM 奶油_甜點專門店 | dessert | 29.0K | 0 | 0 | 0.43 |
-| 18 | [@aufglet](https://www.instagram.com/aufglet/) | AUFGLET | bakery | 28.5K | 0 | 0 | 0.43 |
-| 19 | [@libreadry](https://www.instagram.com/libreadry/) | libreadry 巢屋  |  自家製酵母麵包 | bakery | 28.0K | 0 | 0 | 0.43 |
-| 20 | [@aichi7777](https://www.instagram.com/aichi7777/) | 愛柒Ai Chi | dessert | 28.0K | 3 | 0 | 1.12 |
-| 21 | [@theslice.shop](https://www.instagram.com/theslice.shop/) | The Slice Shop | other | 26.6K | 2 | 0 | 1.14 |
-| 22 | [@pangolin.pain](https://www.instagram.com/pangolin.pain/) | Boulangerie Pangolin・麵包林里 | bakery | 26.2K | 0 | 0 | 0.43 |
-| 23 | [@biyue_dessert](https://www.instagram.com/biyue_dessert/) | 碧月Dessert | dessert | 26.1K | 1 | 0 | 0.58 |
-| 24 | [@kure8kombucha](https://www.instagram.com/kure8kombucha/) | KURE8 | 8酵茶 | other | 26.0K | 0 | 1 | 1.30 |
-| 25 | [@cestcest_patisseries](https://www.instagram.com/cestcest_patisseries/) | C’EST C’EST PÂTISSERIES | dessert | 25.2K | 0 | 0 | 1.32 |
-| 26 | [@yu_chocolatier](https://www.instagram.com/yu_chocolatier/) | Yu Chocolatier 畬室 巧克力 | dessert | 25.1K | 2 | 0 | 1.04 |
-| 27 | [@manomano__77](https://www.instagram.com/manomano__77/) | MANO MANO DESSERT | dessert | 21.7K | 1 | 0 | 0.49 |
-| 28 | [@leavenworkshop](https://www.instagram.com/leavenworkshop/) | 璞家工作室 Leaven workshop | bakery | 20.6K | 1 | 0 | 0.84 |
-| 29 | [@lilinli_tw](https://www.instagram.com/lilinli_tw/) | 栗林裏 Li Lin Li | dessert | 20.4K | 1 | 0 | 2.26 |
-| 30 | [@shiyu.patisserie](https://www.instagram.com/shiyu.patisserie/) | 偲雪日法甜點｜シユ｜ shiyu | dessert | 20.0K | 0 | 1 | 0.63 |
-| 31 | [@albuca_dessert](https://www.instagram.com/albuca_dessert/) | 植物園烘焙甜點店 Albuca Dessert | dessert | 20.0K | 0 | 0 | 0.43 |
-| 32 | [@qundao_kitchen](https://www.instagram.com/qundao_kitchen/) | 群島李季｜廚房裡的日常 | bakery | 19.4K | 1 | 1 | 0.83 |
-| 33 | [@chuan_tung](https://www.instagram.com/chuan_tung/) | 全統西點麵包CHUAN TUNG | bakery | 18.5K | 0 | 2 | 0.64 |
-| 34 | [@studiodudoublev](https://www.instagram.com/studiodudoublev/) | Double V | dessert | 17.5K | 3 | 4 | 2.53 |
-| 35 | [@syrupless](https://www.instagram.com/syrupless/) | SyrupLess稍甜 | dessert | 17.5K | 0 | 0 | 0.43 |
-| 36 | [@fourninetine_bakery](https://www.instagram.com/fourninetine_bakery/) | Fourninetine Bakery | bakery | 17.3K | 0 | 0 | 0.43 |
-| 37 | [@okashi_kau](https://www.instagram.com/okashi_kau/) | 御菓子花雨 | dessert | 16.9K | 1 | 1 | 3.60 |
-| 38 | [@lemoncia_tw](https://www.instagram.com/lemoncia_tw/) | 花鳥川 | dessert | 16.4K | 1 | 0 | 0.46 |
-| 39 | [@heritagetaipei](https://www.instagram.com/heritagetaipei/) | Heritage Bakery & Cafe | bakery | 16.2K | 2 | 0 | 1.39 |
-| 40 | [@pain.goodbaking](https://www.instagram.com/pain.goodbaking/) | 邦穀烘焙製造所 | bakery | 15.9K | 0 | 0 | 0.43 |
-| 41 | [@wheat_allergy_bakingstudio](https://www.instagram.com/wheat_allergy_bakingstudio/) | 小  麥  過  敏 | bakery | 15.7K | 2 | 3 | 1.14 |
-| 42 | [@risebakery.taipei](https://www.instagram.com/risebakery.taipei/) | Rise Bakery | bakery | 15.3K | 0 | 0 | 0.43 |
-| 43 | [@chocolatmurmur](https://www.instagram.com/chocolatmurmur/) | 林庚辰｜巧克力碎碎唸 | dessert (chef) | 15.2K | 0 | 1 | 3.49 |
-| 44 | [@purebreadbakery](https://www.instagram.com/purebreadbakery/) | Purebread Bakery | bakery | 15.1K | 0 | 0 | 0.43 |
-| 45 | [@found_croissanter](https://www.instagram.com/found_croissanter/) | 找到了可頌小売所 | bakery | 15.1K | 0 | 1 | 3.22 |
-| 46 | [@tzubread](https://www.instagram.com/tzubread/) | 祖祖麵包工作室 | bakery | 14.4K | 1 | 0 | 0.53 |
-| 47 | [@missvbakery](https://www.instagram.com/missvbakery/) | Miss V Bakery | bakery | 14.2K | 0 | 1 | 0.47 |
-| 48 | [@anywaydessert](https://www.instagram.com/anywaydessert/) | 甜ㄧ甜, anyway. ｜可麗露專賣店｜ | dessert | 13.8K | 0 | 0 | 0.43 |
-| 49 | [@akerue_dessert](https://www.instagram.com/akerue_dessert/) | akeruE Dessert | dessert | 13.8K | 0 | 1 | 0.97 |
-| 50 | [@andyrin](https://www.instagram.com/andyrin/) | Andy Rin | bakery (chef) | 13.7K | 1 | 0 | 0.51 |
+| 2 | [@hsiao.yen_](https://www.instagram.com/hsiao.yen_/) | H.YEN 可頌專賣店 | bakery | 81.9K | 0 | 1 | 0.48 |
+| 3 | [@quelques_p](https://www.instagram.com/quelques_p/) | 某某-Quelques Patisseries | dessert | 69.6K | 1 | 0 | 0.49 |
+| 4 | [@minimal_gelato](https://www.instagram.com/minimal_gelato/) | MINIMAL | dessert | 65.7K | 1 | 0 | 3.41 |
+| 5 | [@wuniquetaipei](https://www.instagram.com/wuniquetaipei/) | WUnique Pâtisserie | dessert | 64.2K | 0 | 0 | 2.86 |
+| 6 | [@but.we.love.butter](https://www.instagram.com/but.we.love.butter/) | but. we love butter | dessert | 63.7K | 0 | 0 | 0.43 |
+| 7 | [@petitchouxx18](https://www.instagram.com/petitchouxx18/) | PETIT CHOU  PÂTISSERIE | dessert | 48.9K | 0 | 1 | 0.82 |
+| 8 | [@lerubanpatisserie](https://www.instagram.com/lerubanpatisserie/) | 法朋烘焙甜點坊 | dessert | 46.2K | 1 | 0 | 3.65 |
+| 9 | [@weekendnodessert](https://www.instagram.com/weekendnodessert/) | WeekendnoDessert | dessert | 44.4K | 0 | 0 | 0.43 |
+| 10 | [@celebread.acs](https://www.instagram.com/celebread.acs/) | CELEBREAD 安和店 | bakery | 39.9K | 2 | 0 | 1.35 |
+| 11 | [@her_her_studio](https://www.instagram.com/her_her_studio/) | Her x Her 台中蛋糕·烘焙教學·海外烘焙遊學團 | dessert | 39.0K | 0 | 5 | 2.32 |
+| 12 | [@minuit1200](https://www.instagram.com/minuit1200/) | 深夜裡的法國手工甜點 | 台北忠孝復興・法式塔類甜點・節日送 | dessert | 38.6K | 0 | 1 | 0.81 |
+| 13 | [@_moon_baking](https://www.instagram.com/_moon_baking/) | Moon Baking Studio | bakery | 37.7K | 0 | 0 | 0.43 |
+| 14 | [@feedthewife](https://www.instagram.com/feedthewife/) | 胖死我太太烘焙坊 Feed The Wife Bakery  | bakery | 37.4K | 0 | 0 | 0.43 |
+| 15 | [@woowoo_hi](https://www.instagram.com/woowoo_hi/) | 窩巷 Hidden Lane ®｜台中甜點 水果蛋糕 | dessert | 36.8K | 0 | 1 | 0.63 |
+| 16 | [@chimori_seika](https://www.instagram.com/chimori_seika/) | 千森製菓ちもり-台南甜點咖啡 | dessert | 31.5K | 0 | 0 | 0.43 |
+| 17 | [@habibipatisserie](https://www.instagram.com/habibipatisserie/) | Habibi Pâtisserie | dessert | 29.3K | 0 | 0 | 0.43 |
+| 18 | [@egghost_dessert](https://www.instagram.com/egghost_dessert/) | 疍宅 | dessert | 29.3K | 0 | 0 | 0.43 |
+| 19 | [@crem_tw](https://www.instagram.com/crem_tw/) | CRÈM 奶油_甜點專門店 | dessert | 29.0K | 0 | 0 | 0.43 |
+| 20 | [@aufglet](https://www.instagram.com/aufglet/) | AUFGLET | bakery | 28.5K | 0 | 0 | 0.43 |
+| 21 | [@libreadry](https://www.instagram.com/libreadry/) | libreadry 巢屋  |  自家製酵母麵包 | bakery | 28.0K | 0 | 0 | 0.43 |
+| 22 | [@aichi7777](https://www.instagram.com/aichi7777/) | 愛柒Ai Chi | dessert | 28.0K | 3 | 0 | 1.11 |
+| 23 | [@le_beret_bleu](https://www.instagram.com/le_beret_bleu/) | 藍色貝蕾 | bakery | 27.1K | 0 | 0 | 0.43 |
+| 24 | [@theslice.shop](https://www.instagram.com/theslice.shop/) | The Slice Shop | other | 26.6K | 2 | 0 | 1.14 |
+| 25 | [@pangolin.pain](https://www.instagram.com/pangolin.pain/) | Boulangerie Pangolin・麵包林里 | bakery | 26.2K | 0 | 0 | 0.43 |
+| 26 | [@biyue_dessert](https://www.instagram.com/biyue_dessert/) | 碧月Dessert | dessert | 26.1K | 1 | 0 | 0.58 |
+| 27 | [@kure8kombucha](https://www.instagram.com/kure8kombucha/) | KURE8 | 8酵茶 | other | 26.0K | 0 | 1 | 1.30 |
+| 28 | [@cestcest_patisseries](https://www.instagram.com/cestcest_patisseries/) | C’EST C’EST PÂTISSERIES | dessert | 25.2K | 0 | 0 | 1.10 |
+| 29 | [@yu_chocolatier](https://www.instagram.com/yu_chocolatier/) | Yu Chocolatier 畬室 巧克力 | dessert | 25.1K | 2 | 0 | 1.03 |
+| 30 | [@vnvpatisserie](https://www.instagram.com/vnvpatisserie/) | VNV Pâtisserie et Chocolaterie | dessert | 24.3K | 0 | 1 | 0.79 |
+| 31 | [@flowerdessert_taichung](https://www.instagram.com/flowerdessert_taichung/) | 花甜囍室 Flowerdessert Coffee Roas | dessert | 22.3K | 0 | 0 | 0.43 |
+| 32 | [@manomano__77](https://www.instagram.com/manomano__77/) | MANO MANO DESSERT | dessert | 21.7K | 1 | 0 | 0.49 |
+| 33 | [@leavenworkshop](https://www.instagram.com/leavenworkshop/) | 璞家工作室 Leaven workshop | bakery | 20.6K | 1 | 0 | 0.83 |
+| 34 | [@lilinli_tw](https://www.instagram.com/lilinli_tw/) | 栗林裏 Li Lin Li | dessert | 20.4K | 1 | 0 | 8.77 |
+| 35 | [@shiyu.patisserie](https://www.instagram.com/shiyu.patisserie/) | 偲雪日法甜點｜シユ｜ shiyu | dessert | 20.0K | 0 | 1 | 0.63 |
+| 36 | [@albuca_dessert](https://www.instagram.com/albuca_dessert/) | 植物園烘焙甜點店 Albuca Dessert | dessert | 20.0K | 0 | 0 | 0.43 |
+| 37 | [@iminding_story](https://www.instagram.com/iminding_story/) | 獻烘焙 iminding 可頌專門店 | bakery | 19.8K | 0 | 1 | 0.48 |
+| 38 | [@qundao_kitchen](https://www.instagram.com/qundao_kitchen/) | 群島李季｜廚房裡的日常 | bakery | 19.4K | 1 | 1 | 0.82 |
+| 39 | [@chuan_tung](https://www.instagram.com/chuan_tung/) | 全統西點麵包CHUAN TUNG | bakery | 18.5K | 0 | 2 | 0.63 |
+| 40 | [@studiodudoublev](https://www.instagram.com/studiodudoublev/) | Double V | dessert | 17.5K | 3 | 4 | 2.51 |
+| 41 | [@syrupless](https://www.instagram.com/syrupless/) | SyrupLess稍甜 | dessert | 17.5K | 0 | 0 | 0.43 |
+| 42 | [@fourninetine_bakery](https://www.instagram.com/fourninetine_bakery/) | Fourninetine Bakery | bakery | 17.3K | 0 | 0 | 0.43 |
+| 43 | [@okashi_kau](https://www.instagram.com/okashi_kau/) | 御菓子花雨 | dessert | 16.9K | 1 | 1 | 3.58 |
+| 44 | [@lemoncia_tw](https://www.instagram.com/lemoncia_tw/) | 花鳥川 | dessert | 16.4K | 1 | 0 | 0.45 |
+| 45 | [@heritagetaipei](https://www.instagram.com/heritagetaipei/) | Heritage Bakery & Cafe | bakery | 16.2K | 2 | 0 | 1.38 |
+| 46 | [@pain.goodbaking](https://www.instagram.com/pain.goodbaking/) | 邦穀烘焙製造所 | bakery | 15.9K | 0 | 0 | 0.43 |
+| 47 | [@wheat_allergy_bakingstudio](https://www.instagram.com/wheat_allergy_bakingstudio/) | 小  麥  過  敏 | bakery | 15.7K | 2 | 3 | 1.14 |
+| 48 | [@risebakery.taipei](https://www.instagram.com/risebakery.taipei/) | Rise Bakery | bakery | 15.3K | 0 | 0 | 0.43 |
+| 49 | [@chocolatmurmur](https://www.instagram.com/chocolatmurmur/) | 林庚辰｜巧克力碎碎唸 | dessert (chef) | 15.2K | 0 | 1 | 3.47 |
+| 50 | [@purebreadbakery](https://www.instagram.com/purebreadbakery/) | Purebread Bakery | bakery | 15.1K | 0 | 0 | 0.43 |
 
 ## Most-endorsed creators (distinct accounts tagging them)
 
 | Account | Name | Followers | # endorsers | Taste | Tagged by |
 |---|---|---|---|---|---|
-| [@studiodudoublev](https://www.instagram.com/studiodudoublev/) | Double V | 17.5K | 8 | 2.53 | chin_feng_bee_farm, chine_hsuan, deuxdouxcremerie, eatingintaipei, fa__burger, kure8kombucha, peray_blog, vanessafoodies |
-| [@chin_feng_bee_farm](https://www.instagram.com/chin_feng_bee_farm/) | 沁峯養蜂場 | 2.5K | 6 | 3.24 | 8818pizzahouse, _eddy_wang_, chine_hsuan, peray_blog, studiodudoublev, zhan_humor |
-| [@her_her_studio](https://www.instagram.com/her_her_studio/) | Her x Her 台中蛋糕·烘焙教學·海外烘焙遊學團 | 39.0K | 5 | 2.34 | 4boitubake, anywaydessert, blue_zuo, petitchouxx18, shiyu.patisserie |
+| [@studiodudoublev](https://www.instagram.com/studiodudoublev/) | Double V | 17.5K | 8 | 2.51 | chin_feng_bee_farm, chine_hsuan, deuxdouxcremerie, eatingintaipei, fa__burger, kure8kombucha, peray_blog, vanessafoodies |
+| [@chin_feng_bee_farm](https://www.instagram.com/chin_feng_bee_farm/) | 沁峯養蜂場 | 2.5K | 6 | 3.22 | 8818pizzahouse, _eddy_wang_, chine_hsuan, peray_blog, studiodudoublev, zhan_humor |
+| [@her_her_studio](https://www.instagram.com/her_her_studio/) | Her x Her 台中蛋糕·烘焙教學·海外烘焙遊學團 | 39.0K | 5 | 2.32 | 4boitubake, anywaydessert, blue_zuo, petitchouxx18, shiyu.patisserie |
 | [@wheat_allergy_bakingstudio](https://www.instagram.com/wheat_allergy_bakingstudio/) | 小  麥  過  敏 | 15.7K | 5 | 1.14 | 4boitubake, her_her_studio, peng_chieh_wang, ryan.keelung, wubread_nofat |
-| [@celebread.acs](https://www.instagram.com/celebread.acs/) | CELEBREAD 安和店 | 39.9K | 4 | 1.36 | fa__burger, ryan.keelung, tau_ga_mma, wubread_nofat |
+| [@celebread.acs](https://www.instagram.com/celebread.acs/) | CELEBREAD 安和店 | 39.9K | 4 | 1.35 | fa__burger, ryan.keelung, tau_ga_mma, wubread_nofat |
 | [@_eddy_wang_](https://www.instagram.com/_eddy_wang_/) | Eddy Wang | 155K | 4 | 1.30 | 8818pizzahouse, chin_feng_bee_farm, onlivefm8818, studiodudoublev |
-| [@lerubanpatisserie](https://www.instagram.com/lerubanpatisserie/) | 法朋烘焙甜點坊 | 46.2K | 3 | 3.68 | tatlerdiningtw, tien_feng, tsujiri_tw |
-| [@majo_majo_bakery](https://www.instagram.com/majo_majo_bakery/) | 花磚裏 （找到了可頌羅東店） | 2.5K | 3 | 3.28 | 4boitubake, found_croissanter, ryan.keelung |
-| [@wujinpatisserie](https://www.instagram.com/wujinpatisserie/) | 霧金甜點｜台北甜點·費南雪 | 0.3K | 3 | 2.12 | alex__pastrychef, bouffetw, ryan.keelung |
-| [@ms.fupo](https://www.instagram.com/ms.fupo/) | 富婆醬 FUPO! Sauce | 4.6K | 3 | 1.54 | taipeieater, tomuwine, urbantree.tw |
-| [@cestcest_patisseries](https://www.instagram.com/cestcest_patisseries/) | C’EST C’EST PÂTISSERIES | 25.2K | 3 | 1.32 | azulejo_2f, muguet.street, phase_coffee_roasters |
+| [@renxren2.0](https://www.instagram.com/renxren2.0/) | 人x人 2.0 | 4.3K | 4 | 0.83 | fudge_faqi, lasfera_boulangerie, nowchance_xd, peacepiece_bakery |
+| [@lerubanpatisserie](https://www.instagram.com/lerubanpatisserie/) | 法朋烘焙甜點坊 | 46.2K | 3 | 3.65 | tatlerdiningtw, tien_feng, tsujiri_tw |
+| [@majo_majo_bakery](https://www.instagram.com/majo_majo_bakery/) | 花磚裏 （找到了可頌羅東店） | 2.5K | 3 | 3.26 | 4boitubake, found_croissanter, ryan.keelung |
+| [@wujinpatisserie](https://www.instagram.com/wujinpatisserie/) | 霧金甜點｜台北甜點·費南雪 | 0.3K | 3 | 2.10 | alex__pastrychef, bouffetw, ryan.keelung |
+| [@ms.fupo](https://www.instagram.com/ms.fupo/) | 富婆醬 FUPO! Sauce | 4.6K | 3 | 1.71 | taipeieater, tomuwine, urbantree.tw |
 | [@theslice.shop](https://www.instagram.com/theslice.shop/) | The Slice Shop | 26.6K | 3 | 1.14 | eatingintaipei, ericedits_, wubread_nofat |
-| [@aichi7777](https://www.instagram.com/aichi7777/) | 愛柒Ai Chi | 28.0K | 3 | 1.12 | chensongeat_, eatha.foodie, hanyu_912 |
-| [@peng_chieh_wang](https://www.instagram.com/peng_chieh_wang/) | Jay Wang 王鵬傑 | 3.8K | 3 | 0.98 | katsumi_wu, shakespeare2010.co, wubread_nofat |
-| [@vb.bakery](https://www.instagram.com/vb.bakery/) | Vanessa's Bakery 凡內莎烘焙工作室 | 4.4K | 3 | 0.96 | 4boitubake, chiayin85, pipeline.pain |
+| [@aichi7777](https://www.instagram.com/aichi7777/) | 愛柒Ai Chi | 28.0K | 3 | 1.11 | chensongeat_, eatha.foodie, hanyu_912 |
+| [@cestcest_patisseries](https://www.instagram.com/cestcest_patisseries/) | C’EST C’EST PÂTISSERIES | 25.2K | 3 | 1.10 | azulejo_2f, muguet.street, phase_coffee_roasters |
+| [@peng_chieh_wang](https://www.instagram.com/peng_chieh_wang/) | Jay Wang 王鵬傑 | 3.8K | 3 | 0.97 | katsumi_wu, shakespeare2010.co, wubread_nofat |
+| [@vb.bakery](https://www.instagram.com/vb.bakery/) | Vanessa's Bakery 凡內莎烘焙工作室 | 4.4K | 3 | 0.95 | 4boitubake, chiayin85, pipeline.pain |
 | [@pipeline.pain](https://www.instagram.com/pipeline.pain/) | PIPELINE派不賴 | 3.8K | 3 | 0.86 | 4boitubake, chiayin85, vb.bakery |
-| [@okashi_kau](https://www.instagram.com/okashi_kau/) | 御菓子花雨 | 16.9K | 2 | 3.60 | chocolatmurmur, flavornews.tw |
-| [@minimal_gelato](https://www.instagram.com/minimal_gelato/) | MINIMAL | 65.7K | 2 | 3.42 | sur_cuisine, taipeieater |
-| [@heritagetaipei](https://www.instagram.com/heritagetaipei/) | Heritage Bakery & Cafe | 16.2K | 2 | 1.39 | hungryintaipei, lesliewangart |
-| [@yi.ke.song](https://www.instagram.com/yi.ke.song/) | 宜可頌 烘焙專門店 𝖈𝖗𝖔𝖎𝖘𝖘𝖆𝖓𝖙𝖊𝖗𝖎𝖊 | 7.6K | 2 | 1.36 | eat.do.nut, ryan.keelung |
+| [@missvbakery](https://www.instagram.com/missvbakery/) | Miss V Bakery | 14.2K | 3 | 0.62 | 4boitubake, lasfera_boulangerie, renxren2.0 |
+| [@lilinli_tw](https://www.instagram.com/lilinli_tw/) | 栗林裏 Li Lin Li | 20.4K | 2 | 8.77 | chen_yuan_hao, hi.sydney |
+| [@okashi_kau](https://www.instagram.com/okashi_kau/) | 御菓子花雨 | 16.9K | 2 | 3.58 | chocolatmurmur, flavornews.tw |
 
 ## Food bloggers & curators by followers (72 total)
 
@@ -112,7 +112,7 @@ Links between affiliated accounts (sister shops, an owner tagging their own shop
 | 17 | [@amos0716](https://www.instagram.com/amos0716/) | 艾瑪斯｜美食 × 旅遊 × 住宿 × 景點 × 影像創作者 | 153K | 1 | 0.00 |
 | 18 | [@demi.now](https://www.instagram.com/demi.now/) | 黛咪 。人生大事，吃喝二字 🇹🇼 | 149K | 0 | 0.00 |
 | 19 | [@adcafe_](https://www.instagram.com/adcafe_/) | AD Cafe｜咖啡知識☕️店家推薦📸 | 147K | 0 | 0.00 |
-| 20 | [@iamirenesu](https://www.instagram.com/iamirenesu/) | 愛吃SUSU!! 台中 台北 高雄 日韓 美食旅遊 | 139K | 0 | 0.00 |
+| 20 | [@iamirenesu](https://www.instagram.com/iamirenesu/) | 愛吃SUSU!! 台中 台北 高雄 日韓 美食旅遊 | 139K | 1 | 0.00 |
 | 21 | [@07vanessa18](https://www.instagram.com/07vanessa18/) | 台中美食✨Wu是巫婆ㄉ巫˙𐃷˙ | 119K | 0 | 0.00 |
 | 22 | [@bearyangfan](https://www.instagram.com/bearyangfan/) | ❤️Amber Young❤️ | 110K | 0 | 0.00 |
 | 23 | [@h_a_n.7](https://www.instagram.com/h_a_n.7/) | Sammy山米 | 103K | 0 | 0.00 |
@@ -135,7 +135,7 @@ Links between affiliated accounts (sister shops, an owner tagging their own shop
 | 40 | [@zero.dailynotes](https://www.instagram.com/zero.dailynotes/) | 凱倫吃貨日常｜台北、新北美食 | 36.6K | 0 | 0.00 |
 | 41 | [@taberu.food](https://www.instagram.com/taberu.food/) | 肉依 美食旅遊生活分享 ✿ | 36.4K | 0 | 0.00 |
 | 42 | [@1ggfood](https://www.instagram.com/1ggfood/) | 蛋談美食 | 36.0K | 0 | 0.00 |
-| 43 | [@hi.sydney](https://www.instagram.com/hi.sydney/) | 郭 雪梨 | 35.3K | 1 | 0.00 |
+| 43 | [@hi.sydney](https://www.instagram.com/hi.sydney/) | 郭 雪梨 | 35.3K | 1 | 1.00 |
 | 44 | [@applespoon](https://www.instagram.com/applespoon/) | Ying C. 陳穎 | 33.2K | 4 | 1.00 |
 | 45 | [@500dishes_tw](https://www.instagram.com/500dishes_tw/) | 500盤 *(media/curator)* | 28.0K | 0 | 0.00 |
 | 46 | [@haokoufu](https://www.instagram.com/haokoufu/) | HY Cathy Ho | Curator of HaoKouFu | 28.0K | 0 | 0.00 |
@@ -163,5 +163,5 @@ Links between affiliated accounts (sister shops, an owner tagging their own shop
 | 68 | [@eatingintaipei](https://www.instagram.com/eatingintaipei/) | Eating in Taipei | 3.1K | 2 | 4.58 |
 | 69 | [@lesliewangart](https://www.instagram.com/lesliewangart/) | Leslie Wang 王意馨 ｜ Food Culture Art | 1.4K | 1 | 1.00 |
 | 70 | [@we77123](https://www.instagram.com/we77123/) | 周北極 | 1.4K | 0 | 0.00 |
-| 71 | [@eatboom.foodie](https://www.instagram.com/eatboom.foodie/) | 飯局芃友｜高雄美食·屏東美食·平價餐廳·甜點午茶 | 0.7K | 0 | 0.00 |
+| 71 | [@eatboom.foodie](https://www.instagram.com/eatboom.foodie/) | 飯局芃友｜高雄美食·屏東美食·平價餐廳·甜點午茶 | 0.7K | 1 | 0.00 |
 | 72 | [@vcd189](https://www.instagram.com/vcd189/) | 施施 | 0.1K | 4 | 0.00 |
