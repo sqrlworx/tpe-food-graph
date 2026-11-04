@@ -212,6 +212,14 @@ def outlinks(p):
     return out
 
 
+_snapshot_path = os.path.join(ROOT, "data", "related_snapshot.json")
+# Longer related lists saved before the old API stopped answering logged-out requests.
+SNAPSHOT = json.load(open(_snapshot_path))["related"] if os.path.exists(_snapshot_path) else {}
+
+
 def related(p):
-    """Instagram's related-account suggestions (empty for profiles cached before they were kept)."""
-    return [h for h in p.get("related") or [] if h != p["username"]]
+    """Instagram's related-account suggestions: the profile's own list (empty for profiles
+    cached before they were kept) plus any saved in the snapshot."""
+    own = p.get("related") or []
+    extra = SNAPSHOT.get(p["username"].lower(), [])
+    return [h for h in dict.fromkeys(own + extra) if h != p["username"]]
