@@ -1,9 +1,13 @@
-"""Snowball crawl: expand from seed bloggers/makers along tag/mention links.
+"""Snowball crawl: expand from seed bloggers/makers along tag/mention links
+and Instagram's related-account suggestions.
 
 Unfetched handles are prioritised by how many distinct Taiwan food accounts
 point at them, so the request budget goes to the most-endorsed accounts first.
+A related suggestion counts for less than a tag, but handles suggested by many
+accounts still rise to the top.
 
 usage: python3 crawl.py BUDGET
+       python3 crawl.py --related BUDGET   # refetch cached accounts to get their related lists
 """
 
 import json
@@ -17,6 +21,7 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 SEEDS = json.load(open(os.path.join(ROOT, "seeds.json")))
 SKIP = set(SEEDS.get("skip", []))
 EXPAND_WEIGHT = {"blogger": 1.0, "maker": 2.0, "venue": 0.3}
+RELATED_WEIGHT = 0.5
 _ov_path = os.path.join(ROOT, "overrides.json")
 OVERRIDES = json.load(open(_ov_path)) if os.path.exists(_ov_path) else {}
 
@@ -34,11 +39,37 @@ def relevant(p):
 
 
 def leads(p):
-    """Outlinks from posts plus @handles in the bio (owner/affiliate accounts)."""
-    out = set(ig.outlinks(p))
-    out |= {m.lower().rstrip(".") for m in ig.MENTION_RE.findall(p.get("biography") or "")}
-    out.discard(p["username"])
+    """{handle: weight}: outlinks from posts and @handles in the bio (owner/affiliate
+    accounts) at full weight, Instagram's related suggestions at RELATED_WEIGHT."""
+    out = {h: RELATED_WEIGHT for h in ig.related(p)}
+    out.update({h: 1.0 for h in ig.outlinks(p)})
+    out.update({m.lower().rstrip("."): 1.0 for m in ig.MENTION_RE.findall(p.get("biography") or "")})
+    out.pop(p["username"], None)
     return out
+
+
+def refresh_related(budget):
+    """Refetch cached accounts saved without related lists: hand-reviewed accounts
+    first, then other relevant ones, largest first."""
+    todo = []
+    for fn in os.listdir(ig.CACHE):
+        p = json.load(open(os.path.join(ig.CACHE, fn)))
+        if not p or "related" in p:
+            continue
+        h = p["username"].lower()
+        reviewed = h in OVERRIDES and OVERRIDES[h].split(":")[0] != "other"
+        if reviewed or relevant(p):
+            todo.append((not reviewed, -p["followers"], h))
+    todo.sort()
+    print(f"{len(todo)} accounts lack related lists; refreshing {min(budget, len(todo))}")
+    for i, (_, _, h) in enumerate(todo[:budget], 1):
+        try:
+            p = ig.profile(h, need_related=True)
+        except RuntimeError as e:
+            print(e)
+            break
+        n = len(ig.related(p)) if p else "missing"
+        print(f"[{i}/{budget}] {h:28s} related={n}", flush=True)
 
 
 def main(budget):
@@ -78,9 +109,9 @@ def main(budget):
             done = [t for t in ls if t in fetched]
             # Down-weight sources whose links mostly lead outside the Taiwan food scene.
             w *= (sum(is_rel[t] for t in done) + 1) / (len(done) + 2)
-            for t in ls:
+            for t, f in ls.items():
                 if t not in fetched and t not in SKIP:
-                    score[t] = score.get(t, 0) + w
+                    score[t] = score.get(t, 0) + w * f
         if not score:
             break
         nxt = max(score, key=score.get)
@@ -106,4 +137,7 @@ def main(budget):
 
 
 if __name__ == "__main__":
-    main(int(sys.argv[1]))
+    if sys.argv[1] == "--related":
+        refresh_related(int(sys.argv[2]))
+    else:
+        main(int(sys.argv[1]))

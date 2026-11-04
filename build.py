@@ -2,6 +2,8 @@
 
 Edge A -> B means A tagged / @mentioned / co-posted with B in one of A's
 recent posts (Instagram only exposes the latest 12 posts without login).
+A "related" link A - B means Instagram suggests B on A's profile (or the
+reverse). Related links are drawn but do not count as endorsements.
 """
 
 import csv
@@ -126,6 +128,14 @@ def main():
         in_from[b][kinds[a][0]].add(a)
         out_to[a].add(b)
 
+    related_pairs = set()
+    related_by = {h: set() for h in keep}
+    for a in keep:
+        for b in ig.related(profiles[a]):
+            if b in keep and not affiliated(profiles[a], profiles[b]):
+                related_pairs.add(tuple(sorted((a, b))))
+                related_by[b].add(a)
+
     rows = []
     for h in keep:
         p = profiles[h]
@@ -147,6 +157,7 @@ def main():
                 "endorsers": sorted(set().union(*in_from[h].values())),
                 "links_out": len(out_to[h]),
                 "links_out_to_makers": sum(1 for b in out_to[h] if kinds[b][0] == "maker"),
+                "related_by": len(related_by[h]),
                 "pagerank": pr[h] * len(keep),
                 "hub": hub[h],
                 "seed": h in SEED_SET,
@@ -166,7 +177,8 @@ def main():
     )
     cols = [
         "rank", "username", "name", "subtype", "role", "followers", "endorsed_by_bloggers",
-        "endorsed_by_makers", "pagerank", "hub", "links_out_to_makers", "city", "address", "bio", "endorsers", "url",
+        "endorsed_by_makers", "related_by", "pagerank", "hub", "links_out_to_makers", "city", "address", "bio",
+        "endorsers", "url",
     ]
     for name, data in (("food_creators", makers), ("food_bloggers", bloggers)):
         with open(os.path.join(OUT, name + ".csv"), "w", newline="") as f:
@@ -182,12 +194,13 @@ def main():
         "nodes": [
             {k: r[k] for k in (
                 "username", "name", "kind", "subtype", "role", "followers", "bio", "url",
-                "endorsed_by_bloggers", "endorsed_by_makers", "pagerank", "hub", "seed",
+                "endorsed_by_bloggers", "endorsed_by_makers", "related_by", "pagerank", "hub", "seed",
                 "links_out_to_makers", "city",
             )}
             for r in rows
         ],
-        "links": [{"source": a, "target": b, "weight": w} for (a, b), w in edges.items()],
+        "links": [{"source": a, "target": b, "weight": w, "type": "tag"} for (a, b), w in edges.items()]
+        + [{"source": a, "target": b, "weight": 1, "type": "related"} for a, b in sorted(related_pairs)],
     }
     with open(os.path.join(OUT, "graph.json"), "w") as f:
         json.dump(graph, f, ensure_ascii=False)
@@ -200,9 +213,47 @@ def main():
     with open(os.path.join(OUT, "index.html"), "w") as f:
         f.write(html)
 
-    print(f"profiles={len(profiles)} nodes={len(keep)} edges={len(edges)} "
-          f"makers={len(makers)} bloggers={len(bloggers)}")
+    n_candidates = write_candidates(profiles, kinds)
+    print(f"profiles={len(profiles)} nodes={len(keep)} edges={len(edges)} related={len(related_pairs)} "
+          f"makers={len(makers)} bloggers={len(bloggers)} candidates={n_candidates}")
     return makers, bloggers
+
+
+def write_candidates(profiles, kinds, min_suggested=2):
+    """Accounts Instagram keeps suggesting next to hand-reviewed makers/bloggers but
+    that are not reviewed yet: the queue for adding to overrides.json (or fetching)."""
+    reviewed = {
+        h for h, v in OVERRIDES.items()
+        if isinstance(v, str) and v.split(":")[0] in ("maker", "blogger") and h in profiles
+    }
+    suggested_by = {}
+    for a in reviewed:
+        for b in ig.related(profiles[a]):
+            if b not in OVERRIDES:
+                suggested_by.setdefault(b, set()).add(a)
+    rows = []
+    for h, by in suggested_by.items():
+        if len(by) < min_suggested:
+            continue
+        p = profiles.get(h)
+        rows.append({
+            "username": h,
+            "suggested_by": len(by),
+            "fetched": "yes" if p else "no",
+            "followers": p["followers"] if p else "",
+            "taiwan_score": taiwan_score(p) if p else "",
+            "auto_kind": ":".join(x for x in classify(p) if x) if p else "",
+            "name": (p.get("full_name") or "") if p else "",
+            "bio": (p.get("biography") or "").replace("\n", " / ") if p else "",
+            "suggested_next_to": " ".join(sorted(by)),
+            "url": f"https://www.instagram.com/{h}/",
+        })
+    rows.sort(key=lambda r: (-r["suggested_by"], -(r["followers"] or 0)))
+    with open(os.path.join(OUT, "candidates.csv"), "w", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=list(rows[0]) if rows else ["username"])
+        w.writeheader()
+        w.writerows(rows)
+    return len(rows)
 
 
 if __name__ == "__main__":

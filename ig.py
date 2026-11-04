@@ -16,11 +16,13 @@ UA = (
 )
 MIN_INTERVAL = float(os.environ.get("IG_INTERVAL", "3"))
 _last = [0.0]
+# A known-good account, used to tell "no such user" from IG blocking the API.
+CANARY = "celebread.acs"
 
 MENTION_RE = re.compile(r"@([A-Za-z0-9._]{2,30})")
 
 
-def _get(username):
+def _fetch(username):
     url = (
         "https://www.instagram.com/api/v1/users/web_profile_info/?username="
         + username
@@ -31,15 +33,26 @@ def _get(username):
         "-A", UA, "-H", "x-ig-app-id: 936619743392459",
         "-w", "\n%{http_code}", url,
     ]
+    wait = MIN_INTERVAL - (time.time() - _last[0])
+    if wait > 0:
+        time.sleep(wait)
+    _last[0] = time.time()
+    out = subprocess.run(cmd, capture_output=True, text=True).stdout
+    body, _, code = out.rpartition("\n")
+    return code, body
+
+
+def _get(username):
     backoff = 60
     for _ in range(6):
-        wait = MIN_INTERVAL - (time.time() - _last[0])
-        if wait > 0:
-            time.sleep(wait)
-        _last[0] = time.time()
-        out = subprocess.run(cmd, capture_output=True, text=True).stdout
-        body, _, code = out.rpartition("\n")
+        code, body = _fetch(username)
         if code == "404":
+            # IG also answers 404 when it blocks the API, so only treat the
+            # account as missing if a known account still resolves.
+            if username != CANARY and _fetch(CANARY)[0] == "404":
+                raise RuntimeError(
+                    f"profile API answers 404 even for {CANARY}; not caching {username} as missing"
+                )
             return None
         if code == "200":
             try:
@@ -93,16 +106,26 @@ def _slim(u):
         "address": json.loads(addr) if addr else None,
         "profile_pic": u.get("profile_pic_url"),
         "posts": posts,
+        # Instagram's own "related accounts" suggestions for this profile.
+        "related": [
+            e["node"]["username"].lower()
+            for e in (u.get("edge_related_profiles") or {}).get("edges", [])
+        ],
     }
 
 
-def profile(username, refresh=False):
-    """Return slim profile dict, or None if the account doesn't exist."""
+def profile(username, refresh=False, need_related=False):
+    """Return slim profile dict, or None if the account doesn't exist.
+
+    need_related refetches cached profiles saved before related accounts were kept.
+    """
     username = username.lower().strip().strip("@").rstrip(".")
     path = os.path.join(CACHE, username + ".json")
     if os.path.exists(path) and not refresh:
         with open(path) as f:
-            return json.load(f)
+            cached = json.load(f)
+        if not (need_related and cached and "related" not in cached):
+            return cached
     u = _get(username)
     slim = _slim(u) if u else None
     with open(path, "w") as f:
@@ -120,3 +143,8 @@ def outlinks(p):
                 if h != p["username"]:
                     out[h] = out.get(h, 0) + 1
     return out
+
+
+def related(p):
+    """Instagram's related-account suggestions (empty for profiles cached before they were kept)."""
+    return [h for h in p.get("related") or [] if h != p["username"]]
