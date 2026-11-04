@@ -33,7 +33,8 @@ lines = [
     "|---|---|---|---|---|---|---|---|",
 ]
 for r in makers[:50]:
-    kind = r["subtype"] + (" (chef)" if r["role"] == "chef" else "")
+    # Same grouping as the graph legend: bakeries, and sweets for every other maker.
+    kind = ("bakery" if r["subtype"] == "bakery" else "sweets") + (" (chef)" if r["role"] == "chef" else "")
     lines.append(
         f"| {r['rank']} | [@{r['username']}]({r['url']}) | {r['name'][:30]} | {kind} | "
         f"{fmt(r['followers'])} | {r['endorsed_by_bloggers']} | {r['endorsed_by_makers']} | {r['pagerank']} |"
