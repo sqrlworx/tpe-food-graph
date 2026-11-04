@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Taiwan food creators × bloggers — Instagram endorsement graph</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.viz-root {
+  color-scheme: light;
+  --surface-1: #fcfcfb;
+  --surface-2: #f3f2ef;
+  --border: #dddcd7;
+  --text-primary: #0b0b0b;
+  --text-secondary: #52514e;
+  --text-muted: #85847f;
+  --edge: rgba(80, 80, 76, 0.18);
+  --edge-hi: rgba(20, 20, 20, 0.75);
+  --blogger: #2a78d6;
+  --bakery: #eb6834;
+  --dessert: #1baf7a;
+  --venue: #b4b3ad;
+}
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) .viz-root {
+    color-scheme: dark;
+    --surface-1: #1a1a19;
+    --surface-2: #242423;
+    --border: #3a3a38;
+    --text-primary: #f0efec;
+    --text-secondary: #c3c2b7;
+    --text-muted: #8f8e88;
+    --edge: rgba(220, 220, 214, 0.14);
+    --edge-hi: rgba(240, 240, 236, 0.8);
+    --blogger: #3987e5;
+    --bakery: #d95926;
+    --dessert: #199e70;
+    --venue: #5d5c58;
+  }
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+body.viz-root {
+  font: 13px/1.4 -apple-system, "Segoe UI", "PingFang TC", "Noto Sans TC", sans-serif;
+  background: var(--surface-1); color: var(--text-primary);
+  display: grid; grid-template-columns: minmax(0, 1fr) 460px; grid-template-rows: auto 1fr; height: 100vh;
+}
+header { grid-column: 1 / 3; padding: 10px 16px; border-bottom: 1px solid var(--border);
+  display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+header h1 { font-size: 15px; margin: 0; font-weight: 600; }
+header .sub { color: var(--text-secondary); }
+.controls { display: flex; gap: 12px; align-items: center; margin-left: auto; flex-wrap: wrap; }
+.legend-item { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; user-select: none;
+  color: var(--text-secondary); padding: 3px 8px; border: 1px solid var(--border); border-radius: 999px; }
+.legend-item.off { opacity: 0.35; }
+.legend-item i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+input[type=search] { background: var(--surface-2); color: var(--text-primary); border: 1px solid var(--border);
+  border-radius: 6px; padding: 5px 8px; width: 180px; }
+#graph { position: relative; overflow: hidden; }
+svg { width: 100%; height: 100%; display: block; }
+.link { stroke: var(--edge); fill: none; }
+.link.hi { stroke: var(--edge-hi); }
+.node circle { stroke: var(--surface-1); stroke-width: 2px; cursor: pointer; }
+.node.dim { opacity: 0.12; }
+.node text { font-size: 10px; fill: var(--text-secondary); pointer-events: none;
+  paint-order: stroke; stroke: var(--surface-1); stroke-width: 3px; }
+.node.seed circle { stroke: var(--text-primary); stroke-width: 1.5px; }
+#tip { position: absolute; pointer-events: none; background: var(--surface-1); border: 1px solid var(--border);
+  border-radius: 8px; padding: 8px 10px; max-width: 300px; box-shadow: 0 4px 16px rgba(0,0,0,.12);
+  display: none; z-index: 5; }
+#tip b { font-size: 13px; }
+#tip .muted, .muted { color: var(--text-muted); }
+aside { border-left: 1px solid var(--border); overflow: auto; padding: 0; }
+.tabs { display: flex; position: sticky; top: 0; background: var(--surface-1); border-bottom: 1px solid var(--border); }
+.tabs button { flex: 1; background: none; border: 0; padding: 10px; color: var(--text-secondary); cursor: pointer;
+  font: inherit; border-bottom: 2px solid transparent; }
+.tabs button.on { color: var(--text-primary); border-bottom-color: var(--text-primary); font-weight: 600; }
+table { width: 100%; border-collapse: collapse; font-size: 12px; }
+th, td { padding: 5px 8px; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
+th { color: var(--text-muted); font-weight: 500; position: sticky; top: 39px; background: var(--surface-1); cursor: pointer; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+tr:hover td { background: var(--surface-2); cursor: pointer; }
+.dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; margin-right: 5px; }
+a { color: var(--blogger); }
+#detail { padding: 12px 14px; border-bottom: 1px solid var(--border); display: none; }
+#detail h2 { margin: 0 0 4px; font-size: 14px; }
+#detail .bio { white-space: pre-wrap; color: var(--text-secondary); margin: 6px 0; }
+#detail .chips span { display: inline-block; margin: 2px 4px 2px 0; padding: 1px 6px; border-radius: 4px;
+  background: var(--surface-2); cursor: pointer; }
+.note { padding: 10px 14px; color: var(--text-muted); font-size: 11px; }
+</style>
+</head>
+<body class="viz-root">
+<header>
+  <div>
+    <h1>Taiwan food creators × food bloggers</h1>
+    <div class="sub">Instagram endorsement graph: an arrow A → B means A tagged or @mentioned B in a recent post. Circle size = followers.</div>
+  </div>
+  <div class="controls">
+    <span class="legend-item" data-kind="blogger"><i style="background:var(--blogger)"></i>Food blogger</span>
+    <span class="legend-item" data-kind="bakery"><i style="background:var(--bakery)"></i>Bakery</span>
+    <span class="legend-item" data-kind="dessert"><i style="background:var(--dessert)"></i>Dessert / pastry / other maker</span>
+    <span class="legend-item off" data-kind="venue"><i style="background:var(--venue)"></i>Café / restaurant</span>
+    <input type="search" id="q" placeholder="Find account…">
+  </div>
+</header>
+<div id="graph"><svg></svg><div id="tip"></div></div>
+<aside>
+  <div class="tabs">
+    <button data-tab="maker" class="on">Food creators</button>
+    <button data-tab="blogger">Food bloggers</button>
+  </div>
+  <div id="detail"></div>
+  <table><thead></thead><tbody></tbody></table>
+  <div class="note">Links between affiliated accounts (sister shops, owners tagging their own shop) are excluded.
+    Data: public Instagram profiles (logged-out view exposes each account's latest 12 posts).
+    "Bloggers" / "Makers" = distinct bloggers / makers who tagged the account.
+    Creator "Taste" = PageRank over the endorsement graph (a tag from a well-endorsed account counts more).
+    (normalized so 1.0 = average). Blogger "Taste" = for each maker they tag, log₂(1 + number of other
+    accounts that also tagged it), summed — high when they spot makers others independently vouch for.</div>
+</aside>
+<script>/*D3*/</script>
+<script>
+const DATA = /*GRAPH*/null;
+const fmt = n => n >= 1e6 ? (n/1e6).toFixed(1)+'M' : n >= 1e4 ? Math.round(n/1e3)+'K' : n >= 1e3 ? (n/1e3).toFixed(1)+'K' : String(n);
+const catOf = d => d.kind === 'maker' ? (d.subtype === 'bakery' ? 'bakery' : 'dessert') : d.kind;
+const colorVar = d => `var(--${catOf(d)})`;
+const visible = new Set(['blogger', 'bakery', 'dessert']);
+
+const byId = new Map(DATA.nodes.map(d => [d.username, d]));
+DATA.links.forEach(l => { l.s = l.source; l.t = l.target; });
+const nbrs = new Map(DATA.nodes.map(d => [d.username, {in: new Set(), out: new Set()}]));
+DATA.links.forEach(l => { nbrs.get(l.s).out.add(l.t); nbrs.get(l.t).in.add(l.s); });
+
+const svg = d3.select('svg');
+const g = svg.append('g');
+svg.append('defs').append('marker').attr('id', 'arrow').attr('viewBox', '0 -4 8 8').attr('refX', 8)
+  .attr('markerWidth', 5).attr('markerHeight', 5).attr('orient', 'auto')
+  .append('path').attr('d', 'M0,-4L8,0L0,4').attr('fill', 'var(--edge-hi)');
+svg.call(d3.zoom().scaleExtent([0.1, 6]).on('zoom', e => g.attr('transform', e.transform)));
+
+const rScale = d3.scaleSqrt().domain([0, d3.max(DATA.nodes, d => d.followers)]).range([3, 30]);
+const r = d => rScale(d.followers);
+let linkSel, nodeSel, sim;
+let selected = null;
+
+function render() {
+  const nodes = DATA.nodes.filter(d => visible.has(catOf(d)));
+  const ids = new Set(nodes.map(d => d.username));
+  const links = DATA.links.filter(l => ids.has(l.s) && ids.has(l.t)).map(l => ({...l, source: l.s, target: l.t}));
+  const deg = new Map();
+  links.forEach(l => { deg.set(l.s, (deg.get(l.s)||0)+1); deg.set(l.t, (deg.get(l.t)||0)+1); });
+  const shown = nodes.filter(d => deg.get(d.username) || d.seed);
+
+  g.selectAll('*').remove();
+  linkSel = g.append('g').selectAll('path').data(links).join('path').attr('class', 'link')
+    .attr('stroke-width', l => Math.min(3, 0.6 + l.weight * 0.4));
+  nodeSel = g.append('g').selectAll('g').data(shown, d => d.username).join('g')
+    .attr('class', d => 'node' + (d.seed ? ' seed' : ''))
+    .on('mouseenter', (e, d) => showTip(e, d)).on('mousemove', moveTip).on('mouseleave', hideTip)
+    .on('click', (e, d) => { e.stopPropagation(); select(d.username); })
+    .call(d3.drag().on('start', (e, d) => { if (!e.active) sim.alphaTarget(0.2).restart(); d.fx = d.x; d.fy = d.y; })
+      .on('drag', (e, d) => { d.fx = e.x; d.fy = e.y; })
+      .on('end', (e, d) => { if (!e.active) sim.alphaTarget(0); d.fx = null; d.fy = null; }));
+  nodeSel.append('circle').attr('r', r).attr('fill', colorVar);
+  nodeSel.append('text').attr('dy', d => r(d) + 11).attr('text-anchor', 'middle')
+    .text(d => (d.followers > 15000 || d.endorsed_by_bloggers >= 2 || d.seed) ? d.username : '');
+
+  const { width, height } = document.getElementById('graph').getBoundingClientRect();
+  shown.forEach(d => { if (d.x == null) { d.x = width / 2 + (Math.random() - 0.5) * width * 0.6; d.y = height / 2 + (Math.random() - 0.5) * height * 0.6; } });
+  sim = d3.forceSimulation(shown)
+    .force('link', d3.forceLink(links.filter(l => shown.includes(byId.get(l.s)) && shown.includes(byId.get(l.t))))
+      .id(d => d.username).distance(70).strength(0.25))
+    .force('charge', d3.forceManyBody().strength(d => -40 - r(d) * 6))
+    .force('collide', d3.forceCollide(d => r(d) + 3))
+    .force('center', d3.forceCenter(width / 2, height / 2))
+    .force('x', d3.forceX(d => width * (d.kind === 'blogger' ? 0.32 : d.kind === 'maker' ? 0.68 : 0.5)).strength(0.12))
+    .force('y', d3.forceY(height / 2).strength(0.08))
+    .on('tick', () => {
+      linkSel.attr('d', l => {
+        if (typeof l.source !== 'object') return null;
+        const dx = l.target.x - l.source.x, dy = l.target.y - l.source.y, dist = Math.hypot(dx, dy) || 1;
+        const tr = r(l.target) + 2;
+        return `M${l.source.x},${l.source.y}L${l.target.x - dx / dist * tr},${l.target.y - dy / dist * tr}`;
+      });
+      nodeSel.attr('transform', d => `translate(${d.x},${d.y})`);
+    });
+  if (selected) highlight(selected);
+}
+
+const tip = document.getElementById('tip');
+function showTip(e, d) {
+  tip.innerHTML = `<b>${d.name || d.username}</b><br><span class="muted">@${d.username} · ${fmt(d.followers)} followers</span>
+    <div style="margin-top:4px">${(d.bio || '').slice(0, 160)}</div>
+    <div class="muted" style="margin-top:4px">Tagged by ${nbrs.get(d.username).in.size} accounts
+    (${d.endorsed_by_bloggers} bloggers) · tags ${nbrs.get(d.username).out.size}</div>`;
+  tip.style.display = 'block'; moveTip(e);
+}
+function moveTip(e) {
+  const b = document.getElementById('graph').getBoundingClientRect();
+  let x = e.clientX - b.left + 14, y = e.clientY - b.top + 14;
+  if (x + 310 > b.width) x -= 330;
+  tip.style.left = x + 'px'; tip.style.top = y + 'px';
+}
+function hideTip() { tip.style.display = 'none'; }
+
+function highlight(id) {
+  const n = nbrs.get(id);
+  const keep = new Set([id, ...n.in, ...n.out]);
+  nodeSel.classed('dim', d => !keep.has(d.username));
+  linkSel.classed('hi', l => (l.source.username || l.source) === id || (l.target.username || l.target) === id)
+    .attr('marker-end', l => ((l.source.username || l.source) === id || (l.target.username || l.target) === id) ? 'url(#arrow)' : null);
+}
+function clearHighlight() { nodeSel.classed('dim', false); linkSel.classed('hi', false).attr('marker-end', null); }
+
+function chips(set) {
+  return [...set].map(u => byId.get(u)).sort((a, b) => b.followers - a.followers)
+    .map(d => `<span data-u="${d.username}"><i class="dot" style="background:${colorVar(d)}"></i>${d.username}</span>`).join('');
+}
+function select(id) {
+  selected = id;
+  const d = byId.get(id), n = nbrs.get(id);
+  const el = document.getElementById('detail');
+  el.style.display = 'block';
+  el.innerHTML = `<h2><i class="dot" style="background:${colorVar(d)}"></i>${d.name || d.username}</h2>
+    <a href="${d.url}" target="_blank">@${d.username}</a> · ${fmt(d.followers)} followers ${d.city ? '· ' + d.city : ''}
+    <div class="bio">${d.bio || ''}</div>
+    <div class="muted">Tagged by (${n.in.size})</div><div class="chips">${chips(n.in)}</div>
+    <div class="muted" style="margin-top:6px">Tags (${n.out.size})</div><div class="chips">${chips(n.out)}</div>`;
+  el.querySelectorAll('[data-u]').forEach(s => s.onclick = () => select(s.dataset.u));
+  highlight(id);
+}
+svg.on('click', () => { selected = null; clearHighlight(); document.getElementById('detail').style.display = 'none'; });
+
+// Ranked tables
+let tab = 'maker', sortKey = 'followers';
+const COLS = {
+  maker: [['#', null], ['Account', 'username'], ['Followers', 'followers', 1], ['Bloggers', 'endorsed_by_bloggers', 1], ['Makers', 'endorsed_by_makers', 1], ['Taste', 'pagerank', 1]],
+  blogger: [['#', null], ['Account', 'username'], ['Followers', 'followers', 1], ['Makers tagged', 'links_out_to_makers', 1], ['Taste', 'hub', 1]],
+};
+function table() {
+  const rows = DATA.nodes.filter(d => d.kind === tab).sort((a, b) => sortKey === 'username' ? a.username.localeCompare(b.username) : b[sortKey] - a[sortKey]);
+  document.querySelector('thead').innerHTML = '<tr>' + COLS[tab].map(([h, k, num]) =>
+    `<th class="${num ? 'num' : ''}" data-k="${k || ''}">${h}${k === sortKey ? ' ↓' : ''}</th>`).join('') + '</tr>';
+  document.querySelector('tbody').innerHTML = rows.map((d, i) => '<tr data-u="' + d.username + '">' + COLS[tab].map(([h, k, num]) => {
+    if (!k) return `<td class="num muted">${i + 1}</td>`;
+    if (k === 'username') return `<td><i class="dot" style="background:${colorVar(d)}"></i>${d.username}<br><span class="muted">${(d.name || '').slice(0, 28)}</span></td>`;
+    if (k === 'followers') return `<td class="num">${fmt(d.followers)}</td>`;
+    if (k === 'pagerank' || k === 'hub') return `<td class="num">${d[k].toFixed(2)}</td>`;
+    return `<td class="num">${d[k]}</td>`;
+  }).join('') + '</tr>').join('');
+  document.querySelectorAll('th[data-k]').forEach(th => th.onclick = () => { if (th.dataset.k) { sortKey = th.dataset.k; table(); } });
+  document.querySelectorAll('tbody tr').forEach(tr => tr.onclick = () => {
+    const d = byId.get(tr.dataset.u);
+    if (!visible.has(catOf(d))) { visible.add(catOf(d)); syncLegend(); render(); }
+    select(tr.dataset.u);
+  });
+}
+document.querySelectorAll('.tabs button').forEach(b => b.onclick = () => {
+  document.querySelectorAll('.tabs button').forEach(x => x.classList.toggle('on', x === b));
+  tab = b.dataset.tab; sortKey = 'followers'; table();
+});
+
+function syncLegend() { document.querySelectorAll('.legend-item').forEach(el => el.classList.toggle('off', !visible.has(el.dataset.kind))); }
+document.querySelectorAll('.legend-item').forEach(el => el.onclick = () => {
+  const k = el.dataset.kind; visible.has(k) ? visible.delete(k) : visible.add(k); syncLegend(); render();
+});
+document.getElementById('q').addEventListener('change', e => {
+  const q = e.target.value.trim().toLowerCase();
+  const d = DATA.nodes.find(d => d.username.includes(q) || (d.name || '').toLowerCase().includes(q));
+  if (d) { if (!visible.has(catOf(d))) { visible.add(catOf(d)); syncLegend(); render(); } select(d.username); }
+});
+syncLegend(); render(); table();
+</script>
+</body>
+</html>

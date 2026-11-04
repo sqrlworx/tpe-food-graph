@@ -1,0 +1,63 @@
+{
+ "https://www.desglaneuses.com/web_official/index.aspx": {
+  "des_glaneuses": "link",
+  "des_glaneuses_kitchen": "link"
+ },
+ "https://crem.tw/": {
+  "crem_tw": "link",
+  "font": "mention",
+  "media": "mention"
+ },
+ "https://goldenrooster.tw/": {
+  "goldenrooster_tw": "link"
+ },
+ "https://www.lugarbakery.com/": {
+  "resize.window": "mention"
+ },
+ "https://www.purebread.com.tw/": {
+  "purebreadbakery": "link",
+  "context": "mention",
+  "type": "mention",
+  "keyframes": "mention",
+  "media": "mention"
+ },
+ "https://www.18dix-huit.com.tw/": {
+  "18dixhuit_tw": "link",
+  "context": "mention",
+  "type": "mention",
+  "dixhuit18": "mention",
+  "media": "mention",
+  "font": "mention",
+  "keyframes": "mention",
+  "iterator": "mention"
+ },
+ "https://www.1789.com.tw/": {
+  "o1": "link",
+  "1789cafe_by_cyrille_courant": "link",
+  "formatjs": "mention",
+  "keyframes": "mention",
+  "media": "mention",
+  "supports": "mention",
+  "property": "mention",
+  "wix": "mention",
+  "context": "mention",
+  "type": "mention",
+  "font": "mention"
+ },
+ "https://www.shop1688.com.tw/aom20210331149/": {},
+ "https://www.semeur.com.tw/": {
+  "semeur_bakery": "link",
+  "context": "mention",
+  "type": "mention",
+  "media": "mention"
+ },
+ "https://www.cinnamonrollsstudio.com.tw/": {
+  "context": "mention",
+  "type": "mention",
+  "media": "mention",
+  "font": "mention",
+  "keyframes": "mention",
+  "cinnamonrolls.studio": "mention",
+  "iterator": "mention"
+ }
+}
