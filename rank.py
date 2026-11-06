@@ -5,8 +5,11 @@ Combines five signals, each scaled to 0..1 (see METHOD below / the dashboard):
               often, plus centrality in the tag + Instagram-related graph
   quality   - Google Maps rating, shrunk towards the average by review count
   volume    - number of Google reviews (log-scaled)
-  press     - distinct food blogs / media that covered the shop
+  press     - distinct food blogs / media that covered the shop; a dedicated post on
+              a trusted food blog counts its outlet TRUSTED_BLOG_WEIGHT times
   reach     - Instagram followers (log-scaled)
+
+Shops in NOT_SWEETS are left out by hand.
 
 Inputs: output/graph.json and output/food_creators.csv (from build.py), plus the
 optional data/google_places.json (google_maps.py), data/press.json and
@@ -33,6 +36,30 @@ ENDORSER_WEIGHT = {"blogger": 1.0, "maker": 0.8, "venue": 0.4}
 RELATED_EDGE = 0.35  # weight of an Instagram "related account" link vs a tag
 PRIOR_REVIEWS = 40   # Bayesian prior strength for Google ratings
 TOP_N = 100
+# A post on a trusted food blog (data/trusted_blogs.json) whose title names the shop is a
+# dedicated review, so that outlet counts this many times in the press signal.
+TRUSTED_BLOG_WEIGHT = 2.0
+
+# Labelled bakery / dessert shops in the graph, but not what this ranking is about.
+NOT_SWEETS = {
+    "aufglet", "aufglet_taipei",  # brunch café (Google: café); both accounts match one place
+    "skiff.tw",                   # matcha drinks shop (Google: non-alcoholic drinks)
+    "heureuxvegan",               # light-meal restaurant that also sells desserts
+    "icegyaru",                   # soft-serve shop
+}
+
+DISTRICTS = {
+    "中正區": "Zhongzheng", "大同區": "Datong", "中山區": "Zhongshan", "松山區": "Songshan",
+    "大安區": "Da'an", "萬華區": "Wanhua", "信義區": "Xinyi", "士林區": "Shilin", "北投區": "Beitou",
+    "內湖區": "Neihu", "南港區": "Nangang", "文山區": "Wenshan",
+    "板橋區": "Banqiao", "三重區": "Sanchong", "中和區": "Zhonghe", "永和區": "Yonghe",
+    "新莊區": "Xinzhuang", "新店區": "Xindian", "土城區": "Tucheng", "蘆洲區": "Luzhou",
+    "汐止區": "Xizhi", "樹林區": "Shulin", "鶯歌區": "Yingge", "三峽區": "Sanxia", "淡水區": "Tamsui",
+    "瑞芳區": "Ruifang", "五股區": "Wugu", "泰山區": "Taishan", "林口區": "Linkou", "深坑區": "Shenkeng",
+    "石碇區": "Shiding", "坪林區": "Pinglin", "三芝區": "Sanzhi", "石門區": "Shimen", "八里區": "Bali",
+    "平溪區": "Pingxi", "雙溪區": "Shuangxi", "貢寮區": "Gongliao", "金山區": "Jinshan",
+    "萬里區": "Wanli", "烏來區": "Wulai",
+}
 
 TPE = re.compile(r"台北|臺北|taipei|大安|信義|中山區|松山|士林|內湖|北投|萬華|文山|南港|中正|大同區|天母|民生社區", re.I)
 NTPE = re.compile(r"新北|板橋|永和|中和|三重|新店|新莊|土城|汐止|淡水|林口|蘆洲|樹林|鶯歌|三峽|五股|泰山|深坑", re.I)
@@ -65,6 +92,14 @@ def area(shop, gp):
     if TPE.search(text):
         return "台北市"
     return ""
+
+
+def district_of(gp):
+    """Google's district, else the first known district named in the address."""
+    if gp.get("district"):
+        return gp["district"]
+    addr = gp.get("address") or ""
+    return next((d for d in DISTRICTS if d in addr), "")
 
 
 def display_name(*names):
@@ -152,7 +187,7 @@ def main():
 
     cands = []
     for h, s in shops.items():
-        if s["role"] != "shop" or s["subtype"] not in ("bakery", "dessert", "pastry"):
+        if s["role"] != "shop" or s["subtype"] not in ("bakery", "dessert", "pastry") or h in NOT_SWEETS:
             continue
         gp = google.get(h) or {}
         if gp.get("closed"):
@@ -183,12 +218,15 @@ def main():
         # 4.0 -> 0, 4.9 -> 1 after shrinkage; unlisted shops sit at the pool average.
         quality = min(1.0, max(0.0, ((bayes or mean_rating) - 4.0) / 0.9))
         pr_items = press.get(h, [])
-        outlets = {p["outlet"] for p in pr_items}
+        outlets = {}  # outlet -> weight
+        for p in pr_items:
+            w = TRUSTED_BLOG_WEIGHT if p.get("trusted") else 1.0
+            outlets[p["outlet"]] = max(outlets.get(p["outlet"], 0.0), w)
         comp = {
             "network": 0.65 * scaled(endorse[h], hi_endorse) + 0.35 * scaled(central[h] - 0.15, hi_central),
             "quality": quality,
             "volume": scaled(v, hi_reviews),
-            "press": scaled(len(outlets), 5),
+            "press": scaled(sum(outlets.values()), 5),
             "reach": min(1.0, max(0.0, (math.log10(max(n["followers"], 1)) - 3) / 2.3)),  # 1K..200K
         }
         score = 100 * sum(WEIGHTS[k] * comp[k] for k in WEIGHTS)
@@ -199,7 +237,7 @@ def main():
             "display": display_name(gp.get("name"), s["name"]) or h,
             "type": "bakery" if s["subtype"] == "bakery" else "sweets",
             "area": a,
-            "district": gp.get("district") or "",
+            "district": district_of(gp),
             "address": gp.get("address") or "",
             "followers": n["followers"],
             "bio": s["bio"][:300],
@@ -217,6 +255,8 @@ def main():
             "centrality": round(central[h], 2),
             "related": len(related_by[h]),
             "press": pr_items,
+            "outlets": len(outlets),
+            "trusted": sum(1 for w in outlets.values() if w > 1),
             "notes": notes.get(h) or {},
             "comp": {k: round(x, 4) for k, x in comp.items()},
             "contrib": {k: round(100 * WEIGHTS[k] * x, 2) for k, x in comp.items()},
@@ -234,6 +274,9 @@ def main():
         "endorser_weight": ENDORSER_WEIGHT,
         "related_edge": RELATED_EDGE,
         "prior_reviews": PRIOR_REVIEWS,
+        "trusted_blog_weight": TRUSTED_BLOG_WEIGHT,
+        "not_sweets": sorted(NOT_SWEETS),
+        "districts": DISTRICTS,
         "mean_rating": round(mean_rating, 3),
         "hi_endorse": round(hi_endorse, 2),
         "hi_central": round(hi_central, 2),
@@ -253,12 +296,12 @@ def main():
         json.dump(data, f, ensure_ascii=False, indent=1)
     cols = ["rank", "handle", "name", "gname", "type", "area", "district", "score", "network", "quality",
             "volume", "press", "reach", "rating", "reviews", "bayes", "followers", "endorse", "centrality",
-            "related", "n_press", "address", "ig", "maps"]
+            "related", "n_press", "n_trusted", "address", "ig", "maps"]
     with open(os.path.join(OUT, "ranking.csv"), "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=cols, extrasaction="ignore")
         w.writeheader()
         for x in rows:
-            w.writerow({**x, **x["contrib"], "n_press": len(x["press"])})
+            w.writerow({**x, **x["contrib"], "n_press": len(x["press"]), "n_trusted": x["trusted"]})
 
     tmpl = open(os.path.join(ROOT, "ranking_template.html")).read()
     html = tmpl.replace("/*DATA*/null", json.dumps(data, ensure_ascii=False).replace("</", "<\\/"))

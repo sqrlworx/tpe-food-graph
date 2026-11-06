@@ -27,7 +27,8 @@
    "outlet": "marukoblog.tw",
    "label": "Maruko Blog",
    "url": "https://marukoblog.tw/kang-bakery.html",
-   "title": "KANG Artisan Bakery｜台北捷運南京復興站隱藏麵包店｜五星級烘焙主廚"
+   "title": "KANG Artisan Bakery｜台北捷運南京復興站隱藏麵包店｜五星級烘焙主廚",
+   "trusted": true
   },
   {
    "outlet": "icecreamcat.tw",
@@ -46,6 +47,22 @@
    "label": "奶油不飛 (guessworld)",
    "url": "https://guessworld.com.tw/kang-artisan-bakery-2025/",
    "title": "食記｜台北【KANG Artisan Bakery】- 文華東方主廚出來開的麵包店"
+  },
+  {
+   "outlet": "niniyeh.com",
+   "label": "Nico＆妮喃小語",
+   "url": "https://niniyeh.com/kang-artisan-bakery/",
+   "title": "KANG Artisan Bakery｜黃仁勳最愛杏仁可頌！台北熱搜爆紅麵包店",
+   "date": "2025-07-28",
+   "trusted": true
+  },
+  {
+   "outlet": "bonie.tw",
+   "label": "朱寶妮美食隨筆",
+   "url": "https://bonie.tw/taipei-kang-artisan-bakery/",
+   "title": "【松山美食】KANG Artisan Bakery．頂級職人烘焙．必吃質感丹麥捲",
+   "date": "2025-02-19",
+   "trusted": true
   }
  ],
  "peacepiece_bakery": [
@@ -58,7 +75,8 @@
    "outlet": "marukoblog.tw",
    "label": "Maruko Blog",
    "url": "https://marukoblog.tw/2019-09-21.html",
-   "title": "【台北】Peace piece bakery 隱藏在住宅區公園旁的迷你麵包店"
+   "title": "【台北】Peace piece bakery 隱藏在住宅區公園旁的迷你麵包店",
+   "trusted": true
   },
   {
    "outlet": "life-taste.com",
@@ -138,7 +156,8 @@
    "outlet": "globalfoodelicious.com",
    "label": "娜姐 FOODELICIOUS",
    "url": "https://globalfoodelicious.com/li-lin-li/",
-   "title": "栗林裏 Li Lin Li 》會想再訪的理由"
+   "title": "栗林裏 Li Lin Li 》會想再訪的理由",
+   "trusted": true
   }
  ],
  "suivre_lab": [
@@ -188,13 +207,22 @@
    "outlet": "eatingintaipei.com",
    "label": "Eating in Taipei",
    "url": "https://eatingintaipei.com/taipei-restaurant-double-v/",
-   "title": "Taipei Restaurant – Double V Gelateria Serves the Best Gelato in Taipei"
+   "title": "Taipei Restaurant – Double V Gelateria Serves the Best Gelato in Taipei",
+   "trusted": true
   },
   {
    "outlet": "goodeat.tw",
    "label": "goodeat.tw",
    "url": "https://goodeat.tw/food/doublev/",
    "title": "Double V，捷運信義安和站，吃個台北最棒的Gelato (義式冰淇淋)吧"
+  },
+  {
+   "outlet": "jeremyfoodie.tw",
+   "label": "Jeremy以食為天",
+   "url": "https://jeremyfoodie.tw/double-v/",
+   "title": "[食記][台北市] Double V — 捷運信義安和站附近義式冰淇淋店，老闆曾勇奪世界義式冰淇淋大賽亞軍。",
+   "date": "2024-12-20",
+   "trusted": true
   }
  ],
  "feedthewife": [
@@ -218,7 +246,8 @@
    "outlet": "marukoblog.tw",
    "label": "Maruko Blog",
    "url": "https://marukoblog.tw/feed-wife.html",
-   "title": "台北肉桂捲推薦｜胖死我太太 Feed The Wife 實體店攻略"
+   "title": "台北肉桂捲推薦｜胖死我太太 Feed The Wife 實體店攻略",
+   "trusted": true
   },
   {
    "outlet": "pekoblog.tw",
@@ -231,6 +260,14 @@
    "label": "Auntie",
    "url": "https://auntie.tw/feedthewife-bakery-desserts/",
    "title": "【台北】小南門站｜胖死我太太，知名肉桂捲開店面，台北酸種麵包推薦"
+  },
+  {
+   "outlet": "eatingintaipei.com",
+   "label": "Eating in Taipei",
+   "url": "https://eatingintaipei.com/feed-the-wife/",
+   "title": "Taipei Bakery – Feed The Wife 胖死我太太: Perfect Pastries and Scintillating Cinnamon Rolls",
+   "date": "2024-06-20",
+   "trusted": true
   }
  ],
  "risebakery.taipei": [
@@ -255,7 +292,8 @@
    "outlet": "niniyeh.com",
    "label": "Niniyeh",
    "url": "https://niniyeh.com/rise-bakery/",
-   "title": "【大安區麵包】Rise Bakery。超心機司康！台北神秘麵包店"
+   "title": "【大安區麵包】Rise Bakery。超心機司康！台北神秘麵包店",
+   "trusted": true
   },
   {
    "outlet": "walkerland.com.tw",
@@ -275,6 +313,14 @@
    "outlet": "popdaily.com.tw",
    "url": "https://www.popdaily.com.tw/forum/food/1681493",
    "title": ""
+  },
+  {
+   "outlet": "marukoblog.tw",
+   "label": "Maruko(丸子)與美食有個約會",
+   "url": "https://marukoblog.tw/2015-10-blog-post_23.html",
+   "title": "【台北美食】山崴烘焙彷｜隱身木柵的日式麵包彷彿走入日本巷弄的麵包小店",
+   "date": "2024-10-23",
+   "trusted": true
   }
  ],
  "du_pain_sourdough": [
@@ -311,7 +357,8 @@
   {
    "outlet": "hungryintaipei.blogspot.com",
    "url": "https://hungryintaipei.blogspot.com/2026/03/bakery-i-strongly-recommend-french-twist.html",
-   "title": ""
+   "title": "",
+   "trusted": true
   },
   {
    "outlet": "harpersbazaar.com",
@@ -622,6 +669,14 @@
    "label": "微笑食記 (blogspot)",
    "url": "https://terisherit.blogspot.com/2020/09/hoganbakery.html",
    "title": "天然健康手感烘培，哈肯舖Hoganbakery"
+  },
+  {
+   "outlet": "stancylife.com",
+   "label": "Stancy Teacher 美味異想世界",
+   "url": "https://stancylife.com/hoganbakery/",
+   "title": "哈肯舖與聯華製粉的夢幻生吐司｜淨生吐司｜極軟 桑椹優格吐司 （價錢、吃法）",
+   "date": "2026-09-11",
+   "trusted": true
   }
  ],
  "hsiao.yen_": [
@@ -678,6 +733,14 @@
    "outlet": "Bon Pain 2026 line-up",
    "url": "https://www.herenow.city/taipei/style/2026_bon-pain/",
    "title": "Bon Pain 2026 bread fair curated vendor (花磚裏（找到了可頌羅東店）)"
+  },
+  {
+   "outlet": "stancylife.com",
+   "label": "Stancy Teacher 美味異想世界",
+   "url": "https://stancylife.com/majo-egg-yolk-pastry/",
+   "title": "【蛋黃酥推薦】花磚裏找到了蛋黃酥，中秋限定開賣！終於又吃到這一味",
+   "date": "2026-10-24",
+   "trusted": true
   }
  ],
  "missvbakery": [
@@ -702,7 +765,8 @@
    "outlet": "niniyeh.com",
    "label": "妮妮 niniyeh (blog)",
    "url": "https://niniyeh.com/miss-v-bakery-cafe/",
-   "title": "【赤峰街早午餐】Miss V Bakery Cafe 赤峰店。冠軍肉桂捲必吃炸雞鬆餅"
+   "title": "【赤峰街早午餐】Miss V Bakery Cafe 赤峰店。冠軍肉桂捲必吃炸雞鬆餅",
+   "trusted": true
   },
   {
    "outlet": "whos-talking.com",
@@ -715,6 +779,22 @@
    "label": "Suni (blog)",
    "url": "https://suni.tw/miss-v-bakery/",
    "title": "台北肉桂捲推薦｜Miss V Bakery Cafe 赤峰店。蘋果日報票選第一的冠軍肉桂捲"
+  },
+  {
+   "outlet": "bonie.tw",
+   "label": "朱寶妮美食隨筆",
+   "url": "https://bonie.tw/taipei-missv-bakery-cafe-brunch-dunhua-north/",
+   "title": "松山美食｜Miss V Bakery Café敦北店回歸！純白空間＋人氣早午餐更療癒",
+   "date": "2025-09-21",
+   "trusted": true
+  },
+  {
+   "outlet": "mibaoma.tw",
+   "label": "米寶麻幸福滿載",
+   "url": "https://mibaoma.tw/missv-bakery-cafe/",
+   "title": "Miss V Bakery Cafe 敦北店｜松山區下午茶，台北人氣肉桂捲、焦糖黏黏包推薦，藏身巷弄的質感 Bakery Café",
+   "date": "2026-07-30",
+   "trusted": true
   }
  ],
  "nogami_boulangerie": [
@@ -849,6 +929,38 @@
    "outlet": "Bon Pain 2026 line-up",
    "url": "https://www.herenow.city/taipei/style/2026_bon-pain/",
    "title": "Bon Pain 2026 bread fair curated vendor (Semeur聖娜)"
+  },
+  {
+   "outlet": "niniyeh.com",
+   "label": "Nico＆妮喃小語",
+   "url": "https://niniyeh.com/semeur-nk-citylink/",
+   "title": "【台北麵包推薦】Semeur聖娜南港門市。南港CityLink人氣麵包店改裝登場",
+   "date": "2023-11-15",
+   "trusted": true
+  },
+  {
+   "outlet": "niniyeh.com",
+   "label": "Nico＆妮喃小語",
+   "url": "https://niniyeh.com/semeur-2/",
+   "title": "【信義區美食】Semeur 聖娜。信義區市府轉運站人氣現烤台北麵包",
+   "date": "2022-12-13",
+   "trusted": true
+  },
+  {
+   "outlet": "tenjo.tw",
+   "label": "周花花，甲飽沒",
+   "url": "https://tenjo.tw/semeur-nangang/",
+   "title": "【南港車站美食】Semeur 聖娜 門市全新改裝再升級！推薦必吃聖娜鹽之花捲、極選厚菠蘿",
+   "date": "2023-11-15",
+   "trusted": true
+  },
+  {
+   "outlet": "tenjo.tw",
+   "label": "周花花，甲飽沒",
+   "url": "https://tenjo.tw/semeur/",
+   "title": "【Semeur 聖娜】台北母親節蛋糕推薦！統一集團經典麵包烘焙品牌，聖娜VIP享85折優惠",
+   "date": "2023-05-02",
+   "trusted": true
   }
  ],
  "shakespeare2010.co": [
@@ -863,6 +975,22 @@
    "outlet": "Bon Pain 2026 line-up",
    "url": "https://www.herenow.city/taipei/style/2026_bon-pain/",
    "title": "Bon Pain 2026 bread fair curated vendor (The Slice Shop)"
+  },
+  {
+   "outlet": "eatingintaipei.com",
+   "label": "Eating in Taipei",
+   "url": "https://eatingintaipei.com/the-slice-shop-taipei/",
+   "title": "Taipei Take Out – The Slice Shop Has the Best Pizza by the Slice in Taipei!",
+   "date": "2025-05-08",
+   "trusted": true
+  },
+  {
+   "outlet": "globalfoodelicious.com",
+   "label": "娜姐 FOODELICIOUS",
+   "url": "https://globalfoodelicious.com/the-slice-shop/",
+   "title": "The Slice Shop 》N 訪後的單片 Pizza 排行榜 (內有菜單)",
+   "date": "2026-02-20",
+   "trusted": true
   }
  ],
  "tiaoshi.sourdough": [
@@ -956,6 +1084,14 @@
    "label": "tutufoodaholic.tw",
    "url": "https://tutufoodaholic.tw/taipei-okashikau/",
    "title": "台北甜點｜御菓子花雨-台北必吃日式草莓帕妃 一杯16種甜點元素"
+  },
+  {
+   "outlet": "jeremyfoodie.tw",
+   "label": "Jeremy以食為天",
+   "url": "https://jeremyfoodie.tw/okashi-kau/",
+   "title": "[食記][台北市] 御菓子花雨 — 松菸附近日系甜點店",
+   "date": "2026-02-21",
+   "trusted": true
   }
  ],
  "yi.ke.song": [
@@ -1021,7 +1157,8 @@
    "outlet": "niniyeh.com",
    "label": "niniyeh.com",
    "url": "https://niniyeh.com/purebread-bakery/",
-   "title": "Purebread Bakery｜國父紀念館麵包推薦！台北米其林餐廳御用麵包"
+   "title": "Purebread Bakery｜國父紀念館麵包推薦！台北米其林餐廳御用麵包",
+   "trusted": true
   },
   {
    "outlet": "blake.com.tw",
@@ -1039,7 +1176,16 @@
    "outlet": "marukoblog.tw",
    "label": "marukoblog.tw",
    "url": "https://marukoblog.tw/purebread.html",
-   "title": "【台北東區可頌麵包】Purebread Bakery｜歐式可頌、丹麥、酸種麵包專賣"
+   "title": "【台北東區可頌麵包】Purebread Bakery｜歐式可頌、丹麥、酸種麵包專賣",
+   "trusted": true
+  },
+  {
+   "outlet": "eatingintaipei.com",
+   "label": "Eating in Taipei",
+   "url": "https://eatingintaipei.com/purebread/",
+   "title": "Taipei Bakery – Purebread Bakery Is an Amazingly Special Taipei Bakery",
+   "date": "2024-04-11",
+   "trusted": true
   }
  ],
  "habitat311": [
@@ -1202,6 +1348,38 @@
    "label": "gliserland.com",
    "url": "https://www.gliserland.com/%E5%8F%B0%E5%8C%97%E4%BA%BA%E6%B0%A3%E7%83%98%E7%84%99%E5%92%96%E5%95%A1%E5%93%81%E7%89%8C-moon-baking-studio-%E7%B4%85%E8%B1%86%E5%9C%93%E6%B3%95%E3%80%81%E5%8F%AF%E9%A0%8C%E3%80%81%E5%8F%AF%E9%BA%97/",
    "title": "台北人氣烘焙咖啡品牌 Moon Baking Studio 紅豆圓法、可頌、可麗露必吃"
+  },
+  {
+   "outlet": "eatingintaipei.com",
+   "label": "Eating in Taipei",
+   "url": "https://eatingintaipei.com/moon-baking-studio/",
+   "title": "Taipei Restaurant – Moon Baking Studio, 1 of Taipei’s Best Kept Secret Brunch Spots",
+   "date": "2024-12-12",
+   "trusted": true
+  },
+  {
+   "outlet": "niniyeh.com",
+   "label": "Nico＆妮喃小語",
+   "url": "https://niniyeh.com/moon-baking-studio/",
+   "title": "【內湖美食】Moon Baking studio。米其林麵包主廚開的個性麵包舖",
+   "date": "2024-04-08",
+   "trusted": true
+  },
+  {
+   "outlet": "niniyeh.com",
+   "label": "Nico＆妮喃小語",
+   "url": "https://niniyeh.com/moon/",
+   "title": "【松山區早午餐】Moon baking café。人氣炸裂的台北早午餐！米其林餐廳御用麵包店",
+   "date": "2024-03-27",
+   "trusted": true
+  },
+  {
+   "outlet": "tenjo.tw",
+   "label": "周花花，甲飽沒",
+   "url": "https://tenjo.tw/moonbakingstudio/",
+   "title": "【中山國中咖啡】Moon Baking studio松山店 好吃自家烘焙麵包店！菜單推薦必點紅豆圓法",
+   "date": "2026-07-17",
+   "trusted": true
   }
  ],
  "du_s_dessert": [
@@ -1236,6 +1414,14 @@
    "label": "muzi.com.tw",
    "url": "https://muzi.com.tw/old-bridge-gelateria-ice-cream/",
    "title": "台北美食｜義大利必吃老橋義式冰淇淋 Old Bridge，全台首間在 NOKE 忠泰樂生活"
+  },
+  {
+   "outlet": "jeremyfoodie.tw",
+   "label": "Jeremy以食為天",
+   "url": "https://jeremyfoodie.tw/%e9%a3%9f%e8%a8%98%e5%8f%b0%e5%8c%97%e5%b8%82-old-bridge-%e7%be%a9%e5%bc%8f%e5%86%b0%e6%b7%87%e6%b7%8b-%e4%be%86%e8%87%aa%e7%be%a9%e5%a4%a7%e5%88%a9%e7%be%85%e9%a6%ac%e7%9a%84%e4%ba%ba%e6%b0%a3/",
+   "title": "[食記][台北市] Old Bridge 義式冰淇淋 — 來自義大利羅馬的人氣義式冰淇淋進駐台北大直",
+   "date": "2023-06-27",
+   "trusted": true
   }
  ],
  "guyubird": [
@@ -1257,7 +1443,8 @@
    "outlet": "mibaoma.tw",
    "label": "mibaoma.tw",
    "url": "https://mibaoma.tw/kawacake/",
-   "title": "清新水果鮮奶油，酸甜滋味讓慶生更完美"
+   "title": "清新水果鮮奶油，酸甜滋味讓慶生更完美",
+   "trusted": true
   }
  ],
  "petitpot8": [
@@ -1393,7 +1580,8 @@
    "outlet": "tenjo.tw",
    "label": "tenjo.tw",
    "url": "https://tenjo.tw/rubysbaking/",
-   "title": "【松山咖啡廳】Ruby’s 南京三民店 台北超人氣美式軟餅乾司康專賣"
+   "title": "【松山咖啡廳】Ruby’s 南京三民店 台北超人氣美式軟餅乾司康專賣",
+   "trusted": true
   }
  ],
  "crem_tw": [
@@ -1473,7 +1661,32 @@
    "outlet": "tenjo.tw",
    "label": "tenjo.tw",
    "url": "https://tenjo.tw/cocobrownies/",
-   "title": "【台大公館美食下午茶】cocoBrownies可可布朗尼甜點專賣店 只要60元起"
+   "title": "【台大公館美食下午茶】cocoBrownies可可布朗尼甜點專賣店 只要60元起",
+   "trusted": true
+  },
+  {
+   "outlet": "niniyeh.com",
+   "label": "Nico＆妮喃小語",
+   "url": "https://niniyeh.com/cocobrownies/",
+   "title": "台北下午茶推薦｜cocoBrownies 可可布朗光復店。男孩也瘋狂的甜點店",
+   "date": "2023-01-07",
+   "trusted": true
+  },
+  {
+   "outlet": "globalfoodelicious.com",
+   "label": "娜姐 FOODELICIOUS",
+   "url": "https://globalfoodelicious.com/coco-brownies-2023/",
+   "title": "coco.Brownies 可可布朗光復店 》甜點搭葡萄酒的新開幕台北甜點店",
+   "date": "2022-12-07",
+   "trusted": true
+  },
+  {
+   "outlet": "tenjo.tw",
+   "label": "周花花，甲飽沒",
+   "url": "https://tenjo.tw/cocobrownies-guangfu/",
+   "title": "【台北東區下午茶】coco.Brownies可可布朗光復店 分店質感再升級 週末限定雙人餐酒套餐",
+   "date": "2022-12-07",
+   "trusted": true
   }
  ],
  "savoeur_glacerie": [
@@ -1488,6 +1701,14 @@
    "label": "iFoodie 愛食記",
    "url": "https://ifoodie.tw/post/65a731007be9c332dd199d8a",
    "title": "Savœur - 八德住宅區內手工法式冰淇淋專賣店（桃園舊址時期）"
+  },
+  {
+   "outlet": "jeremyfoodie.tw",
+   "label": "Jeremy以食為天",
+   "url": "https://jeremyfoodie.tw/savoeur-ep2/",
+   "title": "[食記][台北市] Savœur 2部曲 — 原本在桃園八德的法式冰淇淋專賣店搬到台北啦！主打丸久小山園抹茶和法國瑪黑茶口味的冰淇淋。",
+   "date": "2026-09-14",
+   "trusted": true
   }
  ],
  "mosaicpastryshop": [
@@ -1501,7 +1722,8 @@
    "outlet": "tenjo.tw",
    "label": "tenjo.tw",
    "url": "https://tenjo.tw/mosaicpastry/",
-   "title": "【士林天母美食】花磚甜點 饕客封為台北可麗露天花板！菜單口味多禮盒"
+   "title": "【士林天母美食】花磚甜點 饕客封為台北可麗露天花板！菜單口味多禮盒",
+   "trusted": true
   },
   {
    "outlet": "whatime.space",
@@ -1570,6 +1792,14 @@
    "label": "matcha.tw",
    "url": "https://matcha.tw/skiff-by-the-park/",
    "title": "台北抹茶｜史奇福 SKIFF。多種丸久小山園茶道等級的抹茶飲品就在這裡"
+  },
+  {
+   "outlet": "jeremyfoodie.tw",
+   "label": "Jeremy以食為天",
+   "url": "https://jeremyfoodie.tw/skiff/",
+   "title": "[食記][台北市] 史奇福 Skiff by the Park — 手搖飲品店起家同時賣起抹茶甜點，抹茶甜點和飲品的抹茶味都很濃厚，重度抹茶控必訪。",
+   "date": "2024-08-17",
+   "trusted": true
   }
  ],
  "maison.stella": [
@@ -1765,7 +1995,8 @@
    "outlet": "stancylife.com",
    "label": "stancylife",
    "url": "https://stancylife.com/bolo-pan/",
-   "title": "BOLO PAN 公館店，菠蘿麵包、奶油捲與葡式蛋塔心得"
+   "title": "BOLO PAN 公館店，菠蘿麵包、奶油捲與葡式蛋塔心得",
+   "trusted": true
   }
  ],
  "lerubanpatisserie": [
@@ -1839,7 +2070,8 @@
    "outlet": "bonie.tw",
    "label": "朱寶 (bonie.tw)",
    "url": "https://bonie.tw/libreadry-bakery-taipei/",
-   "title": "Libreadry巢屋｜神級明太子麵包太好吃．台北東區年收破億烘焙坊"
+   "title": "Libreadry巢屋｜神級明太子麵包太好吃．台北東區年收破億烘焙坊",
+   "trusted": true
   },
   {
    "outlet": "wanteatfood.com",
@@ -1857,7 +2089,8 @@
    "outlet": "niniyeh.com",
    "label": "妮妮 (niniyeh)",
    "url": "https://niniyeh.com/libreadry/",
-   "title": "【大安區麵包】Libreadry 巢屋。台北東區歐風麵包圖書館"
+   "title": "【大安區麵包】Libreadry 巢屋。台北東區歐風麵包圖書館",
+   "trusted": true
   }
  ],
  "eat.do.nut": [
@@ -1883,7 +2116,8 @@
    "outlet": "tenjo.tw",
    "label": "Tenjo",
    "url": "https://tenjo.tw/eatdonut/",
-   "title": "【EATDONUT】新開幕生甜甜圈品牌！「六倍乳」工法+雙餡料設計"
+   "title": "【EATDONUT】新開幕生甜甜圈品牌！「六倍乳」工法+雙餡料設計",
+   "trusted": true
   },
   {
    "outlet": "angelababy0822.com",
@@ -1919,13 +2153,38 @@
    "outlet": "stancylife.com",
    "label": "Stancy Life",
    "url": "https://stancylife.com/ppmillecrepes888/",
-   "title": "皮皮手作千層蛋糕｜後山埤捷運站人氣甜點｜皮皮手作千層搬家"
+   "title": "皮皮手作千層蛋糕｜後山埤捷運站人氣甜點｜皮皮手作千層搬家",
+   "trusted": true
   },
   {
    "outlet": "nash.tw",
    "label": "Nash",
    "url": "https://nash.tw/yobropp/",
    "title": "【南港美食】皮皮手作千層蛋糕，台北最好的平價千層必點芝麻跟伯爵"
+  },
+  {
+   "outlet": "stancylife.com",
+   "label": "Stancy Teacher 美味異想世界",
+   "url": "https://stancylife.com/ppcakegolden/",
+   "title": "皮皮手作千層蛋糕 南港下午茶推薦 黑金焦糖牛奶草莓千層蛋糕 冬季限定口味開箱",
+   "date": "2026-08-13",
+   "trusted": true
+  },
+  {
+   "outlet": "stancylife.com",
+   "label": "Stancy Teacher 美味異想世界",
+   "url": "https://stancylife.com/ppsakura/",
+   "title": "皮皮手作千層蛋糕-台北千層蛋糕推薦，櫻花千層蛋糕櫻花季限定必吃口味",
+   "date": "2024-04-10",
+   "trusted": true
+  },
+  {
+   "outlet": "stancylife.com",
+   "label": "Stancy Teacher 美味異想世界",
+   "url": "https://stancylife.com/pp-tea-time/",
+   "title": "皮皮手作千層蛋糕   全天候午茶套餐 千層蛋糕、可麗露、瑪德蓮 精品咖啡 一次享受大滿足",
+   "date": "2022-08-25",
+   "trusted": true
   }
  ],
  "taipeileechi": [
@@ -2060,6 +2319,14 @@
    "label": "熱血台中 (taiwan17go)",
    "url": "https://taiwan17go.com/daanchocolate12/",
    "title": "台北大安區巧克力蛋糕哪裡買？8間台北市大安區巧克力甜點懶人包 (roundup)"
+  },
+  {
+   "outlet": "niniyeh.com",
+   "label": "Nico＆妮喃小語",
+   "url": "https://niniyeh.com/chochoco/",
+   "title": "【彌月禮盒試吃】chochoco巧克力專賣。頂級法式彌月禮盒送禮有面子",
+   "date": "2024-04-02",
+   "trusted": true
   }
  ],
  "miiniistudio": [
@@ -2230,6 +2497,14 @@
    "label": "Nash.tw",
    "url": "https://nash.tw/heritage/",
    "title": "【台北車站美食】HERITAGE BAKERY & CAFE，台北肉桂捲推薦"
+  },
+  {
+   "outlet": "globalfoodelicious.com",
+   "label": "娜姐 FOODELICIOUS",
+   "url": "https://globalfoodelicious.com/heritage-bakery-cafe/",
+   "title": "Heritage Bakery & Cafe 》Bellavita 咖啡店有賣肉桂捲與甜點",
+   "date": "2022-10-07",
+   "trusted": true
   }
  ],
  "minuit1200": [
@@ -2243,7 +2518,8 @@
    "outlet": "tenjo.tw",
    "label": "Tenjo.tw",
    "url": "https://tenjo.tw/minuit1200/",
-   "title": "【古亭美食】深夜裡的法國手工甜點 開到凌晨12點的台北深夜甜點！"
+   "title": "【古亭美食】深夜裡的法國手工甜點 開到凌晨12點的台北深夜甜點！",
+   "trusted": true
   },
   {
    "outlet": "marieclaire.com.tw",
@@ -2256,6 +2532,14 @@
    "label": "Beauty321",
    "url": "https://www.beauty321.com/post/43181",
    "title": "「深夜裡的法國手工甜點」必點推薦！招牌生巧克力塔、週五限定「紅酒」"
+  },
+  {
+   "outlet": "jeremyfoodie.tw",
+   "label": "Jeremy以食為天",
+   "url": "https://jeremyfoodie.tw/minuit/",
+   "title": "[食記][台北市] 深夜裡的法國手工甜點 (已搬遷) — 巷弄內高人氣深夜甜點店",
+   "date": "2024-10-03",
+   "trusted": true
   }
  ],
  "goldenrod_patisserie": [
@@ -2304,6 +2588,14 @@
    "label": "梅格 Angelababy",
    "url": "https://angelababy0822.com/post-468955991/",
    "title": "台北第一手作司康『悄悄好食』永康街必吃、東門站外帶美食推薦"
+  },
+  {
+   "outlet": "niniyeh.com",
+   "label": "Nico＆妮喃小語",
+   "url": "https://niniyeh.com/ciao-ciao-goodfood/",
+   "title": "【中正區美食】悄悄好食杭州南店。意想不到的創意司康",
+   "date": "2023-01-04",
+   "trusted": true
   }
  ],
  "envie0520": [
@@ -2311,13 +2603,15 @@
    "outlet": "marukoblog.tw",
    "label": "Maruko Blog",
    "url": "https://marukoblog.tw/french-dessert.html",
-   "title": "【台北】在室甜點 經典聖多諾黑法式甜點、生日蛋糕，捷運中山國小站"
+   "title": "【台北】在室甜點 經典聖多諾黑法式甜點、生日蛋糕，捷運中山國小站",
+   "trusted": true
   },
   {
    "outlet": "pekoblog.tw",
    "label": "Peko Blog",
    "url": "https://pekoblog.tw/envie/",
-   "title": "【台北法式甜點】在室甜點推薦必點聖多諾黑｜中山國小站咖啡廳"
+   "title": "【台北法式甜點】在室甜點推薦必點聖多諾黑｜中山國小站咖啡廳",
+   "trusted": true
   }
  ],
  "mupatisserie.tw": [
@@ -2349,7 +2643,8 @@
    "outlet": "tenjo.tw",
    "label": "Tenjo.tw",
    "url": "https://tenjo.tw/mupatisserie/",
-   "title": "【北投甜點】MU Pâtisserie 沐林甜點烘焙坊明德店 歐風鄉村咖啡廳推薦"
+   "title": "【北投甜點】MU Pâtisserie 沐林甜點烘焙坊明德店 歐風鄉村咖啡廳推薦",
+   "trusted": true
   }
  ],
  "lune_dessert": [
@@ -2409,7 +2704,8 @@
    "outlet": "tenjo.tw",
    "label": "Tenjo.tw",
    "url": "https://tenjo.tw/supranormal/",
-   "title": "【士林天母早午餐推薦】Supranormal Bakery Cafe 好吃澳式大早餐"
+   "title": "【士林天母早午餐推薦】Supranormal Bakery Cafe 好吃澳式大早餐",
+   "trusted": true
   },
   {
    "outlet": "eggie.tw",
@@ -2422,6 +2718,38 @@
    "label": "Mimima14",
    "url": "https://mimima14.com/supranormal-neihu/",
    "title": "【內湖早午餐】Supranormal Bakery Cafe 瑞光店"
+  },
+  {
+   "outlet": "eatingintaipei.com",
+   "label": "Eating in Taipei",
+   "url": "https://eatingintaipei.com/supranormal-bakery-cafe/",
+   "title": "Taipei Restaurant – Supranormal Bakery Café – 1 of the Best Breakfast/Brunch Spots in Taipei.",
+   "date": "2023-07-31",
+   "trusted": true
+  },
+  {
+   "outlet": "niniyeh.com",
+   "label": "Nico＆妮喃小語",
+   "url": "https://niniyeh.com/supranormal-bakery-cafe/",
+   "title": "Supranormal Bakery Cafe 赤峰店｜買不到的排隊蛋塔教你怎麼訂！黛安可頌必吃推薦",
+   "date": "2025-04-09",
+   "trusted": true
+  },
+  {
+   "outlet": "bonie.tw",
+   "label": "朱寶妮美食隨筆",
+   "url": "https://bonie.tw/taipei-supranormal-bakery-cafe-chifeng2025/",
+   "title": "Supranormal Bakery Cafe赤峰店｜中山站早午餐推薦",
+   "date": "2025-01-01",
+   "trusted": true
+  },
+  {
+   "outlet": "marukoblog.tw",
+   "label": "Maruko(丸子)與美食有個約會",
+   "url": "https://marukoblog.tw/supranormal.html",
+   "title": "【台北早午餐】赤峰街超人氣 Supranormal Bakery Cafe：中山站必吃杏仁可頌與質感下午茶",
+   "date": "2026-02-15",
+   "trusted": true
   }
  ],
  "mr.moan__pudding": [
@@ -2462,6 +2790,30 @@
    "label": "Aniko Foodie",
    "url": "https://anikofoodie.com/xuanyuancake/",
    "title": "【台北美食】士林宣原蛋糕專賣店。台北最搶手人氣限量草莓蛋糕"
+  },
+  {
+   "outlet": "mibaoma.tw",
+   "label": "米寶麻幸福滿載",
+   "url": "https://mibaoma.tw/xuanyuancake-mangopie/",
+   "title": "宣原蛋糕專賣店｜台北芒果季限定！入口即化卡士達芒果派 讓你愛上夏天的滋味",
+   "date": "2026-05-11",
+   "trusted": true
+  },
+  {
+   "outlet": "mibaoma.tw",
+   "label": "米寶麻幸福滿載",
+   "url": "https://mibaoma.tw/xuanyuancake/",
+   "title": "宣原蛋糕專賣店｜士林草莓蛋糕排隊傳說：不是都市傳說！限量雙層草莓、抹茶季限定，這樣吃才對味！",
+   "date": "2025-11-03",
+   "trusted": true
+  },
+  {
+   "outlet": "stancylife.com",
+   "label": "Stancy Teacher 美味異想世界",
+   "url": "https://stancylife.com/xuanyuan-cake/",
+   "title": "宣原蛋糕專賣店，台北草莓蛋糕推薦，雙層草莓蛋糕季節限定只賣五個月",
+   "date": "2026-10-27",
+   "trusted": true
   }
  ],
  "kokowalker_cake": [
@@ -2593,7 +2945,8 @@
    "outlet": "tenjo.tw",
    "label": "Tenjo.tw",
    "url": "https://tenjo.tw/fourninetine/",
-   "title": "【台北松山咖啡廳】Fourninetine Bakery 南京三民店 超人氣韓系可頌麵包"
+   "title": "【台北松山咖啡廳】Fourninetine Bakery 南京三民店 超人氣韓系可頌麵包",
+   "trusted": true
   }
  ],
  "gem.season": [
@@ -2614,6 +2967,14 @@
    "label": "Kaikk.tw",
    "url": "https://kaikk.tw/gemseason/",
    "title": "板橋瑰季霜淇淋。IG爆紅日本最新「生榨蒙布朗瀑布」就在這！"
+  },
+  {
+   "outlet": "jeremyfoodie.tw",
+   "label": "Jeremy以食為天",
+   "url": "https://jeremyfoodie.tw/gem-season-ep2/",
+   "title": "[食記][新北市][板橋區] 瑰季 手作甜品 2部曲 — 捷運新埔站附近霜淇淋和蒙布朗冰淇淋專賣店",
+   "date": "2024-08-24",
+   "trusted": true
   }
  ],
  "milesqcafe": [
@@ -2666,6 +3027,30 @@
    "label": "Banbi (blog)",
    "url": "https://banbi.tw/terra-beantobar/",
    "title": "台北TERRA土然巧克力專門店-闖入熱帶森林，以極好的巧克力甜點創作感"
+  },
+  {
+   "outlet": "eatingintaipei.com",
+   "label": "Eating in Taipei",
+   "url": "https://eatingintaipei.com/terra-bean-to-bar-chocolate/",
+   "title": "Taipei Dessert – Terra Bean to Bar Chocolate 土然巧克力專門店, Some of the Most Exclusive Chocolate That Taipei Has to Offer.",
+   "date": "2024-10-31",
+   "trusted": true
+  },
+  {
+   "outlet": "jeremyfoodie.tw",
+   "label": "Jeremy以食為天",
+   "url": "https://jeremyfoodie.tw/%e9%a3%9f%e8%a8%98%e5%8f%b0%e5%8c%97%e5%b8%82-terra-%e5%9c%9f%e7%84%b6%e5%b7%a7%e5%85%8b%e5%8a%9b%e5%b0%88%e9%96%80%e5%ba%97-%e4%be%9b%e6%87%89%e4%b8%96%e7%95%8c%e5%90%84%e7%94%a2%e5%8d%80/",
+   "title": "[食記][台北市] TERRA 土然巧克力專門店 — 供應世界各產區巧克力，口感絲滑細綿風味濃郁的氮氣冰巧克力，精緻高質感的巧克力甜點。",
+   "date": "2022-08-21",
+   "trusted": true
+  },
+  {
+   "outlet": "tenjo.tw",
+   "label": "周花花，甲飽沒",
+   "url": "https://tenjo.tw/terra-bythesea/",
+   "title": "【三芝海景咖啡廳】TERRA土然巧克力淺水灣店 大片玻璃窗看海無敵！新打造海邊可可天堂",
+   "date": "2023-06-06",
+   "trusted": true
   }
  ],
  "rollbakery": [
@@ -2682,6 +3067,14 @@
    "label": "Jeremy以食為天 (blog)",
    "url": "https://www.jeremyfoodie.tw/deerday/",
    "title": "[食記] [台北市] 鹿日 Deer Day — 象山附近小巧精緻而溫馨的甜點店"
+  },
+  {
+   "outlet": "jeremyfoodie.tw",
+   "label": "Jeremy以食為天",
+   "url": "https://jeremyfoodie.tw/deerday/",
+   "title": "[食記][台北市] 鹿日 Deer Day — 象山附近小巧精緻而溫馨的甜點店",
+   "date": "2026-03-22",
+   "trusted": true
   }
  ],
  "la.grotta.cafe": [
@@ -2702,6 +3095,14 @@
    "label": "swirling eddy (blog)",
    "url": "https://swirlingeddy.com/lagrottataipei/",
    "title": "【 La Grotta 】迷人有層次的半凍冰糕"
+  },
+  {
+   "outlet": "jeremyfoodie.tw",
+   "label": "Jeremy以食為天",
+   "url": "https://jeremyfoodie.tw/la-grotta/",
+   "title": "[食記][台北市] La Grotta — 西門町附近高質感甜點店推薦",
+   "date": "2025-03-20",
+   "trusted": true
   }
  ],
  "byron__huang": [
@@ -2919,7 +3320,8 @@
    "outlet": "pekoblog.tw",
    "label": "PEKO (blog)",
    "url": "https://pekoblog.tw/pfpastrydesign/",
-   "title": "P.f.甜點設計｜板橋甜點推薦！必吃法式可頌、最美的浮洲美食餐廳"
+   "title": "P.f.甜點設計｜板橋甜點推薦！必吃法式可頌、最美的浮洲美食餐廳",
+   "trusted": true
   }
  ],
  "flourishbakery2018": [
@@ -3062,6 +3464,14 @@
    "label": "Annie Ko (blog)",
    "url": "https://annieko.tw/drifterdreamland/",
    "title": "新莊美食「漂夢島 甜點工作室」抹茶甜點專賣店，恐龍與抹茶結合超療癒"
+  },
+  {
+   "outlet": "jeremyfoodie.tw",
+   "label": "Jeremy以食為天",
+   "url": "https://jeremyfoodie.tw/drifter-dreamland/",
+   "title": "[食記][新北市][新莊區] 漂夢島甜點 — 甜點工作室起家在新北產業園區站附近擁有新店面，綠色系自然主題甜點咖啡廳，抹茶控必訪新點。",
+   "date": "2024-10-10",
+   "trusted": true
   }
  ],
  "engawa_cake": [
@@ -3161,7 +3571,8 @@
    "outlet": "niniyeh.com",
    "label": "妮妮 niniyeh (blog)",
    "url": "https://niniyeh.com/nice-cream/",
-   "title": "Nice Cream 義式手工冰淇淋店：全球10大最好吃全植冰淇淋，東區居然吃得到"
+   "title": "Nice Cream 義式手工冰淇淋店：全球10大最好吃全植冰淇淋，東區居然吃得到",
+   "trusted": true
   },
   {
    "outlet": "barrelleaf.com",
@@ -3174,6 +3585,14 @@
    "label": "上報 Up Media",
    "url": "https://www.upmedia.mg/tw/lifestyle/food/258621",
    "title": "純素冰淇淋「Nice Cream」台中爆紅！(Taichung branch)"
+  },
+  {
+   "outlet": "jeremyfoodie.tw",
+   "label": "Jeremy以食為天",
+   "url": "https://jeremyfoodie.tw/nice-cream/",
+   "title": "[食記][台北市] Nice Cream — 義大利老闆開的純素義式手工草本冰淇淋專賣店",
+   "date": "2023-12-25",
+   "trusted": true
   }
  ],
  "voilab.lab": [
@@ -3255,7 +3674,8 @@
    "outlet": "niniyeh.com",
    "label": "妮妮 niniyeh (blog)",
    "url": "https://niniyeh.com/but/",
-   "title": "【彌月禮盒推薦】but. 奶油甜點 (but.we love butter)。台北最潮彌月禮盒"
+   "title": "【彌月禮盒推薦】but. 奶油甜點 (but.we love butter)。台北最潮彌月禮盒",
+   "trusted": true
   },
   {
    "outlet": "jatravel.tw",
@@ -3336,6 +3756,138 @@
    "label": "vocus 方格子",
    "url": "https://vocus.cc/article/68eb6a10fd897800018265f8",
    "title": "[台北食記] 疍宅 Egghost 三元店 (捷運中正紀念堂站)"
+  },
+  {
+   "outlet": "jeremyfoodie.tw",
+   "label": "Jeremy以食為天",
+   "url": "https://jeremyfoodie.tw/egghost-ep2/",
+   "title": "[食記][台北市] 疍宅 Egghost 2部曲 — 台北手作甜點名店搬到三元街，新址更寬敞又有兩層樓，呈現日式昭和風文青風格咖啡廳。",
+   "date": "2024-07-23",
+   "trusted": true
+  }
+ ],
+ "bearbakery2007": [
+  {
+   "outlet": "mibaoma.tw",
+   "label": "米寶麻幸福滿載",
+   "url": "https://mibaoma.tw/post-567134756/",
+   "title": "小熊菓子 芙菲小圓餅┃台式馬卡龍板橋環球快閃!快閃店每天都排到爆，網路訂要等112年1月才開放訂購!",
+   "date": "2022-11-01",
+   "trusted": true
+  }
+ ],
+ "shiyu.patisserie": [
+  {
+   "outlet": "eatingintaipei.com",
+   "label": "Eating in Taipei",
+   "url": "https://eatingintaipei.com/shi-yu-beef-noodle-soup/",
+   "title": "Taipei Restaurant – Why the Exciting Shi Yu Beef Noodle Soup 時寓牛肉麵 is a Hungry Taipei Foodie’s Dream",
+   "date": "2024-09-05",
+   "trusted": true
+  }
+ ],
+ "lins.wagashi": [
+  {
+   "outlet": "niniyeh.com",
+   "label": "Nico＆妮喃小語",
+   "url": "https://niniyeh.com/lins-wagashi-confectionery-datong-taipei/",
+   "title": "【大稻埕伴手禮】滋養和菓子(滋養豆餡舖)。滋養草莓大福和菓子必買伴手禮",
+   "date": "2022-01-02",
+   "trusted": true
+  },
+  {
+   "outlet": "mibaoma.tw",
+   "label": "米寶麻幸福滿載",
+   "url": "https://mibaoma.tw/wagashi/",
+   "title": "滋養和菓子｜大稻埕70年日式匠心傳承，草莓大福、銅鑼燒，入口即圈粉！",
+   "date": "2025-12-26",
+   "trusted": true
+  }
+ ],
+ "baron.scones": [
+  {
+   "outlet": "niniyeh.com",
+   "label": "Nico＆妮喃小語",
+   "url": "https://niniyeh.com/baron-scone/",
+   "title": "巴倫司康 Baron Scones｜老宅咖啡廳裡的英式司康專賣店！近30種創意口味與肉桂捲",
+   "date": "2024-08-03",
+   "trusted": true
+  }
+ ],
+ "come_up_patisserie.tw": [
+  {
+   "outlet": "globalfoodelicious.com",
+   "label": "娜姐 FOODELICIOUS",
+   "url": "https://globalfoodelicious.com/come-up-patisserie/",
+   "title": "Come Up Patisserie 》兩層樓士林下午茶推薦 (內有菜單)",
+   "date": "2022-01-27",
+   "trusted": true
+  },
+  {
+   "outlet": "tenjo.tw",
+   "label": "周花花，甲飽沒",
+   "url": "https://tenjo.tw/comeup-patisserie/",
+   "title": "【台北士林美食】COME UP PATISSERIE 上二樓陽台品嚐咖啡甜點下午茶 (菜單訂位預約)",
+   "date": "2022-02-12",
+   "trusted": true
+  }
+ ],
+ "sun.shia": [
+  {
+   "outlet": "jeremyfoodie.tw",
+   "label": "Jeremy以食為天",
+   "url": "https://jeremyfoodie.tw/sunshia/",
+   "title": "[食記][網購美食] 桑夏甜點 — 夾心、包餡司康專賣店",
+   "date": "2024-12-03",
+   "trusted": true
+  }
+ ],
+ "one.only.bakery": [
+  {
+   "outlet": "bonie.tw",
+   "label": "朱寶妮美食隨筆",
+   "url": "https://bonie.tw/taiwan-5type-egg-yolk-cake/",
+   "title": "蛋黃酥名店評比｜陳耀訓．不二糕餅．北中南名店評比",
+   "date": "2026-08-23",
+   "trusted": true
+  },
+  {
+   "outlet": "marukoblog.tw",
+   "label": "Maruko(丸子)與美食有個約會",
+   "url": "https://marukoblog.tw/chinese-cake.html",
+   "title": "【2026不二糕餅】蛋黃酥價格、口味推薦、台北快閃｜檸月酥、茶鳳凰、芙令卡一次比較",
+   "date": "2026-09-04",
+   "trusted": true
+  }
+ ],
+ "celebrate_baking": [
+  {
+   "outlet": "tenjo.tw",
+   "label": "周花花，甲飽沒",
+   "url": "https://tenjo.tw/celebrate-baking/",
+   "title": "【慶祝celebrate baking】慶祝烘焙 野上智寬大徒弟！世界冠軍陳耀訓啟蒙恩師開的麵包店",
+   "date": "2026-01-21",
+   "trusted": true
+  }
+ ],
+ "lora_cake2025": [
+  {
+   "outlet": "globalfoodelicious.com",
+   "label": "娜姐 FOODELICIOUS",
+   "url": "https://globalfoodelicious.com/lora-cake-basque-cheesecake/",
+   "title": "Lora Cake Basque Cheesecake  》會再訪這一家台北巴斯克蛋糕推薦",
+   "date": "2026-05-22",
+   "trusted": true
+  }
+ ],
+ "buttered_flour": [
+  {
+   "outlet": "niniyeh.com",
+   "label": "Nico＆妮喃小語",
+   "url": "https://niniyeh.com/buttered-flour/",
+   "title": "【信義區美食】Buttered Flour。包料濃餡精品可頌！美人紅心芭樂IG爆紅",
+   "date": "2024-05-29",
+   "trusted": true
   }
  ]
 }
