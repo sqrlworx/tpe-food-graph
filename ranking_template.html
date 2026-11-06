@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Top 100 bakeries & sweets in Greater Taipei</title>
+<style>
+.viz-root {
+  color-scheme: light;
+  --page: #f9f9f7; --surface-1: #fcfcfb; --surface-2: #f3f2ee;
+  --text-primary: #0b0b0b; --text-secondary: #52514e; --text-muted: #898781;
+  --grid: #e1e0d9; --axis: #c3c2b7; --border: rgba(11,11,11,0.10);
+  --s1: #2a78d6; --s2: #eb6834; --s3: #1baf7a; --s4: #eda100; --s5: #e87ba4;
+  --good: #006300; --critical: #d03b3b; --wash: rgba(42,120,214,0.08);
+}
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) .viz-root {
+    color-scheme: dark;
+    --page: #0d0d0d; --surface-1: #1a1a19; --surface-2: #232321;
+    --text-primary: #f0efec; --text-secondary: #c3c2b7; --text-muted: #898781;
+    --grid: #2c2c2a; --axis: #383835; --border: rgba(255,255,255,0.10);
+    --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500; --s5: #d55181;
+    --good: #0ca30c; --critical: #e66767; --wash: rgba(57,135,229,0.12);
+  }
+}
+:root[data-theme="dark"] .viz-root {
+  color-scheme: dark;
+  --page: #0d0d0d; --surface-1: #1a1a19; --surface-2: #232321;
+  --text-primary: #f0efec; --text-secondary: #c3c2b7; --text-muted: #898781;
+  --grid: #2c2c2a; --axis: #383835; --border: rgba(255,255,255,0.10);
+  --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500; --s5: #d55181;
+  --good: #0ca30c; --critical: #e66767; --wash: rgba(57,135,229,0.12);
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+.viz-root {
+  font-family: system-ui, -apple-system, "Segoe UI", "PingFang TC", "Noto Sans TC", sans-serif;
+  background: var(--page); color: var(--text-primary); min-height: 100vh;
+  font-size: 14px; line-height: 1.45;
+}
+.wrap { max-width: 1240px; margin: 0 auto; padding: 28px 24px 64px; }
+header { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+h1 { font-size: 26px; margin: 0 0 4px; font-weight: 650; }
+h2 { font-size: 18px; margin: 0 0 12px; font-weight: 600; }
+h3 { font-size: 14px; margin: 0 0 8px; font-weight: 600; }
+.sub { color: var(--text-secondary); margin: 0; }
+.muted { color: var(--text-muted); }
+a { color: inherit; text-decoration-color: var(--axis); text-underline-offset: 2px; }
+a:hover { text-decoration-color: currentColor; }
+button, select, input {
+  font: inherit; color: var(--text-primary); background: var(--surface-1);
+  border: 1px solid var(--border); border-radius: 8px; padding: 6px 10px;
+}
+button { cursor: pointer; }
+button[aria-pressed="true"] { background: var(--text-primary); color: var(--surface-1); }
+.card { background: var(--surface-1); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; }
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin: 22px 0; }
+.tile .label { color: var(--text-secondary); font-size: 13px; }
+.tile .value { font-size: 28px; font-weight: 600; margin-top: 2px; }
+.tile .note { color: var(--text-muted); font-size: 12px; }
+nav.tabs { display: flex; gap: 6px; margin: 8px 0 16px; }
+.filters { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 12px; }
+.filters .seg { display: inline-flex; gap: 4px; }
+.legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: 12px; color: var(--text-secondary); margin: 6px 0 10px; }
+.legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 5px; vertical-align: -1px; }
+table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+th { text-align: left; font-weight: 500; color: var(--text-secondary); font-size: 12px; padding: 6px 8px;
+     border-bottom: 1px solid var(--axis); white-space: nowrap; cursor: pointer; user-select: none; }
+th.num, td.num { text-align: right; }
+td { padding: 9px 8px; border-bottom: 1px solid var(--grid); vertical-align: middle; }
+tr.row { cursor: pointer; }
+tr.row:hover td { background: var(--wash); }
+tr.row.open td { background: var(--wash); border-bottom-color: transparent; }
+.rank { font-weight: 600; font-size: 15px; width: 36px; }
+.shop .nm { font-weight: 600; }
+.shop .hd { color: var(--text-muted); font-size: 12px; }
+.chip { display: inline-block; font-size: 11px; padding: 1px 7px; border-radius: 999px; border: 1px solid var(--border);
+        color: var(--text-secondary); margin-left: 6px; vertical-align: 1px; white-space: nowrap; }
+.bar { display: flex; gap: 2px; height: 12px; width: 220px; }
+.bar span { height: 100%; }
+.bar span:first-child { border-radius: 0; }
+.bar span:last-child { border-radius: 0 4px 4px 0; }
+.scorecell { display: flex; align-items: center; gap: 10px; }
+.scorecell b { width: 34px; text-align: right; font-weight: 600; }
+.star { white-space: nowrap; }
+td.num { white-space: nowrap; }
+.delta-up { color: var(--good); }
+.delta-down { color: var(--critical); }
+tr.detail td { padding: 0 8px 18px; background: var(--wash); }
+.dgrid { display: grid; grid-template-columns: 1.1fr 1fr 1fr; gap: 16px; padding: 14px; background: var(--surface-1);
+         border: 1px solid var(--border); border-radius: 10px; }
+@media (max-width: 900px) { .dgrid { grid-template-columns: 1fr; } .bar { width: 120px; } }
+.brk { width: 100%; font-size: 12.5px; }
+.brk td { padding: 5px 4px; border-bottom: 1px solid var(--grid); }
+.mini { height: 8px; background: var(--surface-2); border-radius: 0 4px 4px 0; position: relative; width: 90px; }
+.mini span { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 0 4px 4px 0; }
+.topics span { display: inline-block; margin: 0 6px 6px 0; padding: 2px 8px; border-radius: 999px; background: var(--surface-2);
+               font-size: 12px; }
+.topics span em { font-style: normal; color: var(--text-muted); margin-left: 3px; }
+ul.notes { margin: 0 0 10px; padding-left: 18px; }
+ul.notes li { margin-bottom: 4px; }
+.lbl-good::before { content: "▲ "; color: var(--good); }
+.lbl-bad::before { content: "▼ "; color: var(--critical); }
+.stars-dist { display: grid; grid-template-columns: 24px 1fr 40px; gap: 3px 6px; align-items: center; font-size: 12px; }
+.stars-dist .track { height: 8px; background: var(--surface-2); border-radius: 0 4px 4px 0; }
+.stars-dist .track span { display: block; height: 100%; background: var(--text-muted); border-radius: 0 4px 4px 0; }
+.section { margin-top: 28px; }
+.method p, .method li { color: var(--text-secondary); max-width: 900px; }
+.method code { background: var(--surface-2); padding: 1px 5px; border-radius: 4px; font-size: 12.5px; }
+.wtable td, .wtable th { font-size: 13px; cursor: default; }
+#tip { position: fixed; pointer-events: none; background: var(--surface-1); border: 1px solid var(--border);
+       border-radius: 8px; padding: 8px 10px; font-size: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+       display: none; z-index: 10; max-width: 280px; }
+#tip .t { font-weight: 600; margin-bottom: 3px; }
+#tip .r { display: flex; justify-content: space-between; gap: 14px; color: var(--text-secondary); }
+#tip .r i { display: inline-block; width: 8px; height: 8px; border-radius: 2px; margin-right: 5px; }
+svg text { fill: var(--text-muted); font-size: 11px; }
+.hidden { display: none; }
+</style>
+</head>
+<body>
+<div class="viz-root">
+<div class="wrap">
+  <header>
+    <div>
+      <h1>Top 100 bakeries &amp; sweets in Greater Taipei</h1>
+      <p class="sub">Ranked by peer endorsement in the Instagram food graph, Google Maps ratings, press coverage and reach — not by followers alone.</p>
+    </div>
+    <button id="theme" title="Toggle light / dark">◐ Theme</button>
+  </header>
+
+  <div class="tiles" id="tiles"></div>
+
+  <nav class="tabs">
+    <button data-tab="ranking" aria-pressed="true">Ranking</button>
+    <button data-tab="chart" aria-pressed="false">Signals map</button>
+    <button data-tab="method" aria-pressed="false">Methodology</button>
+  </nav>
+
+  <section id="tab-ranking">
+    <div class="filters">
+      <span class="seg" id="f-type">
+        <button data-v="" aria-pressed="true">All</button>
+        <button data-v="bakery" aria-pressed="false">Bakeries</button>
+        <button data-v="sweets" aria-pressed="false">Sweets</button>
+      </span>
+      <span class="seg" id="f-area">
+        <button data-v="" aria-pressed="true">Greater Taipei</button>
+        <button data-v="台北市" aria-pressed="false">台北市</button>
+        <button data-v="新北市" aria-pressed="false">新北市</button>
+      </span>
+      <input id="f-q" type="search" placeholder="Search shop, item, district…" style="min-width:220px">
+      <span class="muted" id="f-count"></span>
+    </div>
+    <div class="legend" id="legend"></div>
+    <div class="card" style="padding:6px 10px 10px">
+      <table id="tbl">
+        <thead><tr>
+          <th data-k="rank" class="num">#</th>
+          <th data-k="name">Shop</th>
+          <th data-k="score">Score &amp; breakdown</th>
+          <th data-k="rating" class="num">Google</th>
+          <th data-k="endorse" class="num" title="Distinct accounts in the graph that tagged this shop">Endorsed by</th>
+          <th data-k="press" class="num">Press</th>
+          <th data-k="followers" class="num">Followers</th>
+          <th data-k="follower_rank" class="num" title="Places gained vs. a ranking by followers alone">vs. followers</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <p class="muted" style="font-size:12px">Click a row for the full breakdown, review highlights and lowlights, and who endorsed the shop. Click a column header to sort.</p>
+  </section>
+
+  <section id="tab-chart" class="hidden">
+    <div class="card">
+      <h2>Network endorsement vs. Google quality</h2>
+      <p class="sub" style="margin-bottom:8px">Each dot is a top-100 shop. Right = more and stronger endorsements in the graph; up = higher review-adjusted Google rating. Dot size = Google review count.</p>
+      <div class="legend" id="legend2"></div>
+      <div id="scatter"></div>
+    </div>
+    <div class="card section">
+      <h2>Where the score comes from</h2>
+      <p class="sub" style="margin-bottom:8px">Average contribution of each signal (points out of 100) across the top 100, by rank band.</p>
+      <div id="bands"></div>
+    </div>
+  </section>
+
+  <section id="tab-method" class="hidden method">
+    <div class="card" id="method"></div>
+  </section>
+</div>
+<div id="tip"></div>
+</div>
+
+<script>
+const DATA = /*DATA*/null;
+const M = DATA.meta;
+const COMP = [
+  {k: "network", label: "Network endorsement", c: "var(--s1)"},
+  {k: "quality", label: "Google rating", c: "var(--s2)"},
+  {k: "press", label: "Press & bloggers", c: "var(--s3)"},
+  {k: "volume", label: "Google review volume", c: "var(--s4)"},
+  {k: "reach", label: "Instagram reach", c: "var(--s5)"},
+];
+const ALL = DATA.rows;
+const TOP = ALL.slice(0, M.top_n);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const fmt = n => n >= 1e5 ? Math.round(n / 1e3) + "K" : n >= 1e3 ? (n / 1e3).toFixed(1).replace(/\.0$/, "") + "K" : String(n);
+const displayName = r => r.display || r.handle;
+
+// Theme toggle: explicit stamp wins over OS setting.
+document.getElementById("theme").onclick = () => {
+  const root = document.documentElement;
+  const dark = root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+  root.dataset.theme = dark ? "light" : "dark";
+};
+
+// Tiles
+const nTagged = TOP.filter(r => r.endorsers.length).length;
+const withG = TOP.filter(r => r.rating);
+const avgR = withG.length ? (withG.reduce((s, r) => s + r.rating, 0) / withG.length).toFixed(2) : "–";
+const tiles = [
+  ["Shops evaluated", M.n_candidates, `Greater Taipei shops of ${M.n_shops} makers in the graph`],
+  ["Graph links used", fmt(M.n_tags + M.n_related), `${M.n_tags} tags · ${M.n_related} related-account links`],
+  ["Top 100 on Google Maps", withG.length, `average rating ${avgR}`],
+  ["Top 100 tagged by peers", nTagged, "endorsed by ≥1 blogger, maker or café"],
+  ["Top 100 with press", TOP.filter(r => r.press.length).length, "covered by food blogs / media"],
+];
+document.getElementById("tiles").innerHTML = tiles.map(([l, v, n]) =>
+  `<div class="card tile"><div class="label">${l}</div><div class="value">${v}</div><div class="note">${n}</div></div>`).join("");
+
+const legendHTML = COMP.map(c => `<span><i style="background:${c.c}"></i>${c.label} (${Math.round(M.weights[c.k] * 100)}%)</span>`).join("");
+document.getElementById("legend").innerHTML = legendHTML;
+
+// Tabs
+document.querySelectorAll("nav.tabs button").forEach(b => b.onclick = () => {
+  document.querySelectorAll("nav.tabs button").forEach(x => x.setAttribute("aria-pressed", x === b));
+  ["ranking", "chart", "method"].forEach(t => document.getElementById("tab-" + t).classList.toggle("hidden", t !== b.dataset.tab));
+  if (b.dataset.tab === "chart") drawCharts();
+});
+
+// Tooltip
+const tip = document.getElementById("tip");
+function showTip(e, html) {
+  tip.innerHTML = html; tip.style.display = "block";
+  const x = Math.min(e.clientX + 14, innerWidth - tip.offsetWidth - 8);
+  const y = Math.min(e.clientY + 14, innerHeight - tip.offsetHeight - 8);
+  tip.style.left = x + "px"; tip.style.top = y + "px";
+}
+const hideTip = () => tip.style.display = "none";
+function breakdownTip(r) {
+  return `<div class="t">#${r.rank} ${esc(displayName(r))} · ${r.score.toFixed(1)}</div>` +
+    COMP.map(c => `<div class="r"><span><i style="background:${c.c}"></i>${c.label}</span><b>${r.contrib[c.k].toFixed(1)}</b></div>`).join("");
+}
+
+// Table
+const state = {type: "", area: "", q: "", sort: "rank", dir: 1, open: null};
+function seg(id, key) {
+  document.querySelectorAll(`#${id} button`).forEach(b => b.onclick = () => {
+    document.querySelectorAll(`#${id} button`).forEach(x => x.setAttribute("aria-pressed", x === b));
+    state[key] = b.dataset.v; render();
+  });
+}
+seg("f-type", "type"); seg("f-area", "area");
+document.getElementById("f-q").oninput = e => { state.q = e.target.value.trim().toLowerCase(); render(); };
+document.querySelectorAll("#tbl th").forEach(th => th.onclick = () => {
+  const k = th.dataset.k;
+  state.dir = state.sort === k ? -state.dir : (["rank", "name", "follower_rank"].includes(k) ? 1 : -1);
+  state.sort = k; render();
+});
+const sortVal = {
+  name: r => displayName(r).toLowerCase(), endorse: r => r.endorsers.length * 1000 + r.endorse,
+  press: r => r.press.length, rating: r => r.bayes || 0, follower_rank: r => r.rank - r.follower_rank,
+};
+function searchText(r) {
+  return [r.handle, r.name, r.gname, r.district, r.address, r.bio, ...r.topics.map(t => t[0]),
+    ...(r.notes.signature || []), ...(r.notes.highlights || [])].join(" ").toLowerCase();
+}
+
+function render() {
+  let rows = TOP.filter(r => (!state.type || r.type === state.type) && (!state.area || r.area === state.area) &&
+    (!state.q || searchText(r).includes(state.q)));
+  const f = sortVal[state.sort] || (r => r[state.sort] ?? -1);
+  rows = rows.slice().sort((a, b) => (f(a) > f(b) ? 1 : f(a) < f(b) ? -1 : a.rank - b.rank) * state.dir);
+  document.getElementById("f-count").textContent = `${rows.length} shown`;
+  const maxScore = TOP[0].score;
+  const tb = document.querySelector("#tbl tbody");
+  tb.innerHTML = rows.map(r => {
+    const gained = r.follower_rank - r.rank;
+    const g = r.rating ? `<span class="star">★ ${r.rating.toFixed(1)}</span> <span class="muted">${fmt(r.reviews)}</span>` : `<span class="muted">not listed</span>`;
+    const bar = COMP.map(c => `<span style="width:${(r.contrib[c.k] / maxScore * 100).toFixed(2)}%;background:${c.c}"></span>`).join("");
+    const row = `<tr class="row${state.open === r.handle ? " open" : ""}" data-h="${r.handle}">
+      <td class="num rank">${r.rank}</td>
+      <td class="shop"><div class="nm">${esc(displayName(r))}<span class="chip">${r.type}</span></div>
+        <div class="hd">@${esc(r.handle)} · ${esc(r.district || r.area)}</div></td>
+      <td><div class="scorecell"><b>${r.score.toFixed(1)}</b><div class="bar" data-tip="${r.handle}">${bar}</div></div></td>
+      <td class="num">${g}</td>
+      <td class="num">${r.endorsers.length || '<span class="muted">–</span>'}</td>
+      <td class="num">${r.press.length || '<span class="muted">–</span>'}</td>
+      <td class="num">${fmt(r.followers)}</td>
+      <td class="num ${gained > 0 ? "delta-up" : gained < 0 ? "delta-down" : "muted"}">${gained > 0 ? "▲ " + gained : gained < 0 ? "▼ " + -gained : "="}</td>
+    </tr>`;
+    return row + (state.open === r.handle ? `<tr class="detail"><td colspan="8">${detail(r)}</td></tr>` : "");
+  }).join("");
+  tb.querySelectorAll("tr.row").forEach(tr => tr.onclick = () => { state.open = state.open === tr.dataset.h ? null : tr.dataset.h; render(); });
+  tb.querySelectorAll(".bar").forEach(el => {
+    const r = TOP.find(x => x.handle === el.dataset.tip);
+    el.onmousemove = e => showTip(e, breakdownTip(r)); el.onmouseleave = hideTip;
+  });
+}
+
+function detail(r) {
+  const raw = {
+    network: `${r.endorsers.length} endorsers (strength ${r.endorse}); centrality ${r.centrality}× avg; ${r.related} related-account links`,
+    quality: r.rating ? `${r.rating.toFixed(1)}★ → ${r.bayes.toFixed(2)} after shrinking toward ${M.mean_rating.toFixed(2)}` : `no Google listing → pool average ${M.mean_rating.toFixed(2)}`,
+    press: r.press.length ? `${new Set(r.press.map(p => p.outlet)).size} outlets` : "none found",
+    volume: r.reviews ? `${r.reviews.toLocaleString()} reviews` : "0 reviews",
+    reach: `${r.followers.toLocaleString()} followers (#${r.follower_rank} by followers)`,
+  };
+  const brk = `<table class="brk"><tr><th>Signal</th><th>Raw</th><th class="num">Scaled</th><th class="num">Pts</th></tr>` +
+    COMP.map(c => `<tr><td><span class="mini" style="display:inline-block;width:10px;height:10px;border-radius:3px;background:${c.c};vertical-align:-1px"></span> ${c.label}</td>
+      <td class="muted">${esc(raw[c.k])}</td>
+      <td class="num">${(r.comp[c.k] * 100).toFixed(0)}</td><td class="num"><b>${r.contrib[c.k].toFixed(1)}</b></td></tr>`).join("") +
+    `<tr><td colspan="3"><b>Total</b></td><td class="num"><b>${r.score.toFixed(1)}</b></td></tr></table>`;
+
+  const n = r.notes;
+  const list = (arr, cls) => arr && arr.length ? `<ul class="notes">${arr.map(x => `<li class="${cls}">${esc(x)}</li>`).join("")}</ul>` : "";
+  const reviewsBlock = (n.summary ? `<p style="margin:0 0 8px">${esc(n.summary)}</p>` : "") +
+    (n.signature && n.signature.length ? `<h3>Must-try items</h3><div class="topics">${n.signature.map(s => `<span>${esc(s)}</span>`).join("")}</div>` : "") +
+    (n.highlights && n.highlights.length ? `<h3 style="margin-top:8px">Highlights</h3>${list(n.highlights, "lbl-good")}` : "") +
+    (n.lowlights && n.lowlights.length ? `<h3>Lowlights</h3>${list(n.lowlights, "lbl-bad")}` : "");
+  const topics = r.topics.length ? `<h3 style="margin-top:8px">What Google reviewers mention most</h3><div class="topics">${r.topics.slice(0, 12).map(t => `<span>${esc(t[0])}<em>${t[1]}</em></span>`).join("")}</div>` : "";
+  let stars = "";
+  if (r.stars) {
+    const tot = r.stars.reduce((a, b) => a + b, 0) || 1;
+    stars = `<h3 style="margin-top:10px">Star distribution</h3><div class="stars-dist">` +
+      [5, 4, 3, 2, 1].map(s => `<span>${s}★</span><div class="track"><span style="width:${(r.stars[s - 1] / tot * 100).toFixed(1)}%"></span></div><span class="muted">${Math.round(r.stars[s - 1] / tot * 100)}%</span>`).join("") + `</div>`;
+  }
+  const endorsers = r.endorsers.length ? `<h3 style="margin-top:12px">Endorsed by</h3><ul class="notes">${r.endorsers.slice(0, 12).map(e =>
+      `<li><a href="https://www.instagram.com/${esc(e.handle)}/" target="_blank" rel="noopener">@${esc(e.handle)}</a> <span class="muted">${e.kind} · ${fmt(e.followers)} followers · ${e.posts} post${e.posts > 1 ? "s" : ""}</span></li>`).join("")}</ul>` : "";
+  const press = r.press.length ? `<h3 style="margin-top:12px">Press &amp; blogger coverage</h3><ul class="notes">${r.press.map(p =>
+      `<li><a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.title || p.url)}</a> <span class="muted">— ${esc(p.label || p.outlet)}</span></li>`).join("")}</ul>` : "";
+  const links = `<p style="margin:10px 0 0;font-size:12.5px"><a href="${esc(r.ig)}" target="_blank" rel="noopener">Instagram</a>` +
+    (r.maps ? ` · <a href="${esc(r.maps)}" target="_blank" rel="noopener">Google Maps</a>` : "") +
+    (r.address ? ` · <span class="muted">${esc(r.address)}</span>` : "") + `</p>`;
+  return `<div class="dgrid">
+    <div><h3>Score breakdown</h3>${brk}${links}</div>
+    <div>${reviewsBlock || '<p class="muted">No review summary.</p>'}${topics}${stars}</div>
+    <div>${endorsers || '<p class="muted">No direct tags in the graph; network score comes from related-account centrality.</p>'}${press}
+      ${r.bio ? `<h3 style="margin-top:12px">Instagram bio</h3><p class="muted" style="margin:0;font-size:12.5px">${esc(r.bio)}</p>` : ""}</div>
+  </div>`;
+}
+render();
+
+// Charts
+let drawn = false;
+function drawCharts() {
+  if (drawn) return; drawn = true;
+  const el = document.getElementById("scatter");
+  const W = Math.min(el.clientWidth || 1100, 1180), H = 440, m = {l: 70, r: 20, t: 12, b: 40};
+  const types = [{k: "bakery", label: "Bakery", c: "var(--s1)"}, {k: "sweets", label: "Sweets", c: "var(--s2)"}];
+  document.getElementById("legend2").innerHTML = types.map(t => `<span><i style="background:${t.c};border-radius:50%"></i>${t.label}</span>`).join("");
+  const xs = r => r.comp.network, ys = r => r.comp.quality;
+  const X = v => m.l + v * (W - m.l - m.r), Y = v => H - m.b - v * (H - m.t - m.b);
+  const maxRev = Math.max(...TOP.map(r => r.reviews), 1);
+  const rad = r => 4 + 8 * Math.sqrt(r.reviews / maxRev);
+  let s = `<svg width="${W}" height="${H}" role="img" aria-label="Scatter of network score vs Google quality">`;
+  for (let i = 0; i <= 4; i++) {
+    const v = i / 4;
+    s += `<line x1="${m.l}" x2="${W - m.r}" y1="${Y(v)}" y2="${Y(v)}" stroke="var(--grid)"/>`;
+    s += `<text x="${m.l - 8}" y="${Y(v) + 4}" text-anchor="end">${(4 + v * 0.9).toFixed(2)}★</text>`;
+    s += `<text x="${X(v)}" y="${H - m.b + 18}" text-anchor="middle">${Math.round(v * 100)}</text>`;
+  }
+  s += `<line x1="${m.l}" x2="${W - m.r}" y1="${Y(0)}" y2="${Y(0)}" stroke="var(--axis)"/>`;
+  s += `<text x="${(W + m.l) / 2}" y="${H - 6}" text-anchor="middle">Network endorsement (scaled 0–100)</text>`;
+  s += `<text transform="translate(14 ${(H - m.b) / 2}) rotate(-90)" text-anchor="middle">Review-adjusted Google rating</text>`;
+  const ordered = TOP.slice().sort((a, b) => b.reviews - a.reviews);
+  ordered.forEach(r => {
+    const t = types.find(t => t.k === r.type);
+    s += `<circle cx="${X(xs(r))}" cy="${Y(ys(r))}" r="${rad(r)}" fill="${t.c}" fill-opacity="0.85" stroke="var(--surface-1)" stroke-width="2" data-h="${r.handle}"/>`;
+  });
+  // Label the top 10, skipping any label that would collide with one already placed
+  // (hover still identifies every dot).
+  const placed = [];
+  TOP.slice(0, 10).forEach(r => {
+    const name = displayName(r).slice(0, 18);
+    const w = [...name].reduce((a, c) => a + (c.charCodeAt(0) > 0x2e80 ? 11 : 6.5), 0);
+    const cx = X(xs(r)), cy = Y(ys(r)), d = rad(r) + 4;
+    // Right of the dot, then left, above, below; never past the plot's right edge.
+    const spots = [[cx + d, cy + 4], [cx - d - w, cy + 4], [cx - w / 2, cy - d - 2], [cx - w / 2, cy + d + 10]]
+      .filter(([x], i) => i > 0 || x + w <= W - m.r)
+      .map(([x, y]) => [Math.min(x, W - m.r - w), y]);
+    const spot = spots.find(([x0, y]) => !placed.some(b => x0 < b.x1 && x0 + w > b.x0 && Math.abs(y - b.y) < 13));
+    if (!spot) return;
+    placed.push({x0: spot[0], x1: spot[0] + w, y: spot[1]});
+    s += `<text x="${spot[0]}" y="${spot[1]}" style="fill:var(--text-secondary)">${esc(name)}</text>`;
+  });
+  s += `</svg>`;
+  el.innerHTML = s;
+  el.querySelectorAll("circle").forEach(c => {
+    const r = TOP.find(x => x.handle === c.dataset.h);
+    c.onmousemove = e => showTip(e, breakdownTip(r) + `<div class="r"><span>Google</span><b>${r.rating ? r.rating.toFixed(1) + "★ · " + r.reviews : "–"}</b></div>`);
+    c.onmouseleave = hideTip;
+    c.style.cursor = "pointer";
+    c.onclick = () => { document.querySelector('nav.tabs button[data-tab="ranking"]').click(); state.open = r.handle; render();
+      document.querySelector(`tr[data-h="${CSS.escape(r.handle)}"]`)?.scrollIntoView({block: "center"}); };
+  });
+
+  // Rank bands: stacked horizontal bars of mean contribution
+  const bands = [[1, 10], [11, 25], [26, 50], [51, 75], [76, 100]];
+  const BW = Math.min(document.getElementById("bands").clientWidth || 1100, 1180);
+  const lab = 90, maxT = Math.max(...bands.map(([a, b]) => mean(TOP.slice(a - 1, b), r => r.score)));
+  let b = `<div class="legend">${legendHTML}</div><svg width="${BW}" height="${bands.length * 34 + 10}">`;
+  bands.forEach(([lo, hi], i) => {
+    const grp = TOP.slice(lo - 1, hi);
+    let x = lab; const y = 6 + i * 34;
+    b += `<text x="0" y="${y + 15}" style="fill:var(--text-secondary)">Ranks ${lo}–${hi}</text>`;
+    COMP.forEach(c => {
+      const v = mean(grp, r => r.contrib[c.k]);
+      const w = v / maxT * (BW - lab - 60);
+      b += `<rect x="${x}" y="${y}" width="${Math.max(w - 2, 0)}" height="20" fill="${c.c}"><title>${c.label}: ${v.toFixed(1)} pts</title></rect>`;
+      x += w;
+    });
+    b += `<text x="${x + 6}" y="${y + 15}" style="fill:var(--text-primary)">${mean(grp, r => r.score).toFixed(1)}</text>`;
+  });
+  document.getElementById("bands").innerHTML = b + `</svg>`;
+}
+function mean(a, f) { return a.reduce((s, x) => s + f(x), 0) / (a.length || 1); }
+
+// Methodology
+const W_ = M.weights, pct = k => Math.round(W_[k] * 100) + "%";
+document.getElementById("method").innerHTML = `
+<h2>Methodology</h2>
+<p>The candidate pool is every hand-reviewed bakery / sweets <em>shop</em> in our Instagram food graph (${M.n_nodes} accounts:
+bloggers, makers and cafés; chefs' personal accounts and non-dessert makers excluded) whose Google Maps address — or, failing that,
+Instagram bio — places it in <b>Taipei City or New Taipei City</b>. That leaves <b>${M.n_candidates}</b> shops; the top ${M.top_n} are shown.
+Every shop gets five signals, each scaled to 0–1, and the score is their weighted sum × 100.</p>
+<table class="wtable" style="max-width:900px;margin:12px 0 18px">
+<tr><th>Signal</th><th class="num">Weight</th><th>How it's measured</th></tr>
+<tr><td>Network endorsement</td><td class="num">${pct("network")}</td><td>
+  65% <b>endorsement strength</b>: for every distinct account that tagged / @mentioned / co-posted with the shop in its recent posts,
+  add <code>type weight × (1 + log₂ posts) × √(endorser PageRank)</code>. Type weights: blogger ${M.endorser_weight.blogger}, maker ${M.endorser_weight.maker} (peer respect), café ${M.endorser_weight.venue} (often a wholesale client).
+  Sister accounts and owners tagging their own shop are excluded upstream.<br>
+  35% <b>centrality</b>: PageRank over tags plus Instagram's "related accounts" links (each related link worth ${M.related_edge} of a tag) — shops Instagram keeps
+  suggesting next to well-connected accounts sit at the core of the scene.<br>Both log-scaled, saturating at the 95th / 97th percentile of the pool.</td></tr>
+<tr><td>Google rating</td><td class="num">${pct("quality")}</td><td>Bayesian average <code>(rating × n + ${M.mean_rating.toFixed(2)} × ${M.prior_reviews}) / (n + ${M.prior_reviews})</code>,
+  so a 5.0 from 12 reviews doesn't beat a 4.7 from 2,000. Scaled linearly 4.0★ → 0, 4.9★ → 1. Shops with no Google listing (studios, online-only) get the pool average.</td></tr>
+<tr><td>Press &amp; bloggers</td><td class="num">${pct("press")}</td><td>Distinct outlets (by website) that wrote about the shop: food blogs and media found by a web search for every top-150 candidate,
+  articles harvested while building the graph, and the curated <b>Bon Pain 2026</b> bread-fair line-up (counted as one outlet). Social media, forums, listing/delivery sites and SEO content farms are excluded.
+  Log-scaled, saturating at 5 outlets.</td></tr>
+<tr><td>Google review volume</td><td class="num">${pct("volume")}</td><td>log(review count), saturating at ${fmt(M.hi_reviews)} reviews (95th percentile). A proxy for foot traffic and staying power.</td></tr>
+<tr><td>Instagram reach</td><td class="num">${pct("reach")}</td><td>log₁₀(followers), 1K → 0 and 200K → 1. Deliberately small: followers alone mostly measure marketing.</td></tr>
+</table>
+<h3>Review highlights &amp; lowlights</h3>
+<p>For each shop we read the Google Maps review sample (Google's own most-relevant reviews, review snippets, and the topic chips Google extracts with mention counts)
+and summarised recurring praise, signature items, and recurring complaints. "What Google reviewers mention most" shows Google's topic chips verbatim with how many reviews mention each.</p>
+<h3>Caveats</h3>
+<ul>
+<li>Instagram only exposes each account's 12 most recent posts to logged-out visitors, so tag endorsements are a recent snapshot and favour active posters.</li>
+<li>The pool is limited to shops already in the graph; a well-loved shop with no Instagram presence in this network cannot appear.</li>
+<li>Google ratings drift and can be gamed; the shrinkage and the separate volume signal limit the effect of small, glowing samples.</li>
+<li>Matching IG accounts to Google places used the place's linked Instagram when available, otherwise an exact name match on a food-category place; for brands with several branches the branch with the most reviews is used. Unmatched shops are treated as unlisted.</li>
+<li>Shops without a Google listing (online-only studios, pick-up-only kitchens) get the average rating but no review volume, so they rank below comparable walk-in shops.</li>
+<li>Press search covered the top 150 candidates by one or two searches each; small shops may have coverage we missed, and the press score does not weigh outlet prestige.</li>
+</ul>`;
+// Deep links: #tab=chart|method, #open=<handle>
+const hash = new URLSearchParams(location.hash.slice(1));
+if (hash.get("open")) state.open = hash.get("open");
+render();
+if (hash.get("tab")) document.querySelector(`nav.tabs button[data-tab="${hash.get("tab")}"]`)?.click();
+if (state.open) document.querySelector(`tr[data-h="${CSS.escape(state.open)}"]`)?.scrollIntoView({block: "start"});
+</script>
+</body>
+</html>
