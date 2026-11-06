@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Slide</title>
+<style>
+/* One 1080x1350 (4:5) Instagram slide, picked by the URL hash: #<post>/<slide>. */
+:root {
+  --cream: #f5eee3; --paper: #fbf7f0; --espresso: #2a1b12; --cocoa: #5a4334;
+  --muted: #8a7767; --crust: #c4552f; --butter: #f0c46c; --chip: #ebdfcd;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1080px; height: 1350px; overflow: hidden; background: var(--cream); }
+body { font-family: "Noto Sans CJK TC", "Noto Sans TC", "PingFang TC", sans-serif; color: var(--espresso);
+       -webkit-font-smoothing: antialiased; }
+.slide { width: 1080px; height: 1350px; position: relative; overflow: hidden; }
+.mark { font-size: 24px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; }
+
+/* Title card: identical layout on every post, only the rank range and progress change. */
+.title { background: var(--espresso); color: var(--cream); padding: 72px 80px; display: flex; flex-direction: column; }
+.title .top { display: flex; justify-content: space-between; align-items: baseline; }
+.title .top .part { color: var(--butter); }
+.title .mid { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+.title .series { font-size: 46px; font-weight: 500; line-height: 1.2; color: var(--cream); }
+.title .series b { color: var(--butter); font-weight: 900; }
+.title .range { font-size: 256px; font-weight: 900; line-height: 0.9; letter-spacing: -0.04em; margin: 44px 0 30px -10px;
+                font-variant-numeric: tabular-nums; white-space: nowrap; }
+.title .range .dash { color: var(--crust); padding: 0 0.04em; }
+.title .zh { font-size: 52px; font-weight: 700; letter-spacing: 0.08em; }
+.title .progress { display: flex; gap: 10px; margin: 0 0 22px; }
+.title .progress i { flex: 1; height: 12px; border-radius: 6px; background: rgba(245,238,227,0.16); }
+.title .progress i.done { background: rgba(245,238,227,0.55); }
+.title .progress i.now { background: var(--crust); }
+.title .foot { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; }
+.title .method { font-size: 27px; line-height: 1.45; color: rgba(245,238,227,0.72); max-width: 700px; }
+.title .swipe { font-size: 30px; font-weight: 700; color: var(--butter); white-space: nowrap; }
+
+/* Shop slide */
+.shop { background: var(--paper); display: flex; flex-direction: column; }
+.shop .photo { height: 800px; position: relative; background: var(--chip); flex: none; }
+.shop .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.shop .photo::after { content: ""; position: absolute; inset: auto 0 0 0; height: 340px;
+                      background: linear-gradient(to top, rgba(26,16,10,0.78), rgba(26,16,10,0)); }
+.shop .noimg { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+               font-size: 220px; font-weight: 900; color: rgba(42,27,18,0.12); }
+.shop .rank { position: absolute; left: 64px; bottom: 34px; z-index: 1; color: #fff; display: flex; align-items: flex-end; }
+.shop .rank .no { font-size: 44px; font-weight: 700; margin: 0 8px 26px 0; color: var(--butter); }
+.shop .rank .n { font-size: 190px; font-weight: 900; line-height: 0.82; letter-spacing: -0.04em; }
+/* Top 3: a medal rosette on the photo, the rank in the medal's metal, a metal rule under the photo. */
+.medal-gold { --m1: #fff1b8; --m2: #e3b23c; --m3: #9a6a12; }
+.medal-silver { --m1: #ffffff; --m2: #c7ccd2; --m3: #6f767e; }
+.medal-bronze { --m1: #ffd7b0; --m2: #cc8549; --m3: #7d4519; }
+.shop.medal .photo { border-bottom: 12px solid; border-image: linear-gradient(90deg, var(--m3), var(--m1), var(--m2), var(--m3)) 1; }
+.shop.medal .rank .n { background: linear-gradient(180deg, var(--m1), var(--m2) 55%, var(--m3));
+                       -webkit-background-clip: text; background-clip: text; color: transparent; padding-right: 0.04em; }
+.shop.medal .rank .no { color: var(--m1); }
+.shop .rosette { position: absolute; right: 52px; top: 40px; z-index: 1; width: 240px; height: 320px;
+                 filter: drop-shadow(0 10px 18px rgba(0,0,0,0.35)); }
+.shop .rosette text { font-family: "Noto Sans CJK TC", sans-serif; text-anchor: middle; }
+.shop .credit { position: absolute; right: 40px; bottom: 40px; z-index: 1; color: rgba(255,255,255,0.82); font-size: 22px; }
+.shop .tag { position: absolute; left: 64px; top: 56px; z-index: 1; background: var(--espresso); color: var(--cream);
+             padding: 12px 20px; border-radius: 999px; font-size: 22px; }
+.shop .body { flex: 1; padding: 44px 64px 26px; display: flex; flex-direction: column; min-height: 0; }
+.shop .kicker { font-size: 25px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--crust); }
+.shop h1 { font-size: 76px; font-weight: 900; line-height: 1.08; margin: 10px 0 0; white-space: nowrap; letter-spacing: -0.01em; }
+.shop .meta { font-size: 28px; color: var(--cocoa); margin-top: 12px; }
+.shop .meta .star { color: var(--crust); }
+.shop .meta .muted { color: var(--muted); }
+.shop .summary { font-size: 29px; line-height: 1.45; color: var(--espresso); margin-top: 20px; }
+.shop .known { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+.shop .known span { background: var(--chip); border-radius: 999px; padding: 9px 20px; font-size: 25px; color: var(--espresso);
+                  white-space: nowrap; max-width: 100%; overflow: hidden; text-overflow: ellipsis; }
+.shop .known span small { color: var(--muted); font-size: 22px; margin-left: 8px; }
+.shop footer { flex: none; height: 92px; margin: 0 64px; border-top: 2px solid var(--chip);
+               display: flex; justify-content: space-between; align-items: center; }
+.shop footer .handle { font-size: 28px; font-weight: 700; }
+.shop footer .mark { font-size: 20px; color: var(--muted); }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+const DATA = /*DATA*/null;
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+function titleCard(post) {
+  const bars = Array.from({ length: post.of }, (_, i) =>
+    `<i class="${i + 1 < post.n ? "done" : i + 1 === post.n ? "now" : ""}"></i>`).join("");
+  return `<div class="slide title">
+    <div class="top"><span class="mark">${esc(DATA.series.short)}</span>
+      <span class="mark part">Part ${String(post.n).padStart(2, "0")} / ${post.of}</span></div>
+    <div class="mid">
+      <div class="series">The <b>Top 100</b> bakeries &amp;<br>sweets shops in Greater Taipei</div>
+      <div class="range">${post.hi}<span class="dash">–</span>${post.lo}</div>
+      <div class="zh">${esc(DATA.series.zh)}</div>
+    </div>
+    <div class="progress">${bars}</div>
+    <div class="foot"><div class="method">${esc(DATA.series.method)}</div><div class="swipe">Swipe →</div></div>
+  </div>`;
+}
+
+const MEDAL_LABEL = { gold: "GOLD", silver: "SILVER", bronze: "BRONZE" };
+
+function rosette(s) {
+  return `<svg class="rosette" viewBox="0 0 240 320" aria-hidden="true">
+    <defs><linearGradient id="metal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" style="stop-color:var(--m1)"/><stop offset="0.5" style="stop-color:var(--m2)"/>
+      <stop offset="1" style="stop-color:var(--m3)"/></linearGradient></defs>
+    <polygon points="92,170 50,306 84,288 108,314 136,186" fill="#c4552f"/>
+    <polygon points="148,170 190,306 156,288 132,314 104,186" fill="#9c3f20"/>
+    <circle cx="120" cy="120" r="106" fill="url(#metal)"/>
+    <circle cx="120" cy="120" r="90" fill="none" style="stroke:var(--m3)" stroke-width="3" stroke-opacity="0.55"/>
+    <circle cx="120" cy="120" r="100" fill="none" stroke="#fff" stroke-width="2" stroke-opacity="0.6"/>
+    <text x="120" y="76" font-size="24" font-weight="700" letter-spacing="2" fill="#2a1b12" fill-opacity="0.75">No.</text>
+    <text x="120" y="166" font-size="104" font-weight="900" fill="#2a1b12">${s.rank}</text>
+    <text x="120" y="196" font-size="21" font-weight="700" letter-spacing="5" fill="#2a1b12" fill-opacity="0.8">${MEDAL_LABEL[s.medal]}</text>
+  </svg>`;
+}
+
+function shopSlide(s) {
+  const photo = s.photo
+    ? `<img src="${esc(s.photo)}" alt="">`
+    : `<div class="noimg">${esc([...s.name][0])}</div>`;
+  const known = s.signature.map(([en, zh]) => `<span>${esc(en)}${zh ? `<small>${esc(zh)}</small>` : ""}</span>`).join("");
+  const reviews = s.reviews ? ` <span class="muted">· ${s.reviews.toLocaleString("en-US")} Google reviews</span>` : "";
+  return `<div class="slide shop${s.medal ? ` medal medal-${s.medal}` : ""}">
+    <div class="photo">${photo}
+      <div class="tag">${esc(s.type)}</div>
+      ${s.medal ? rosette(s) : ""}
+      <div class="rank"><span class="no">No.</span><span class="n">${s.rank}</span></div>
+      ${s.credit ? `<div class="credit">Photo: @${esc(s.credit)}</div>` : ""}
+    </div>
+    <div class="body">
+      <div class="kicker">${esc(s.place)}</div>
+      <h1>${esc(s.name)}</h1>
+      ${s.rating ? `<div class="meta"><span class="star">★</span> ${s.rating.toFixed(1)}${reviews}</div>` : ""}
+      <p class="summary">${esc(s.summary)}</p>
+      <div class="known">${known}</div>
+    </div>
+    <footer><span class="handle">@${esc(s.handle)}</span><span class="mark">${esc(DATA.series.short)}</span></footer>
+  </div>`;
+}
+
+// Shrink whatever overflows: the name to one line, then chips and summary to fit the body.
+function fit(el) {
+  const h1 = el.querySelector("h1");
+  if (!h1) return;
+  let size = 76;
+  while (h1.scrollWidth > h1.clientWidth && size > 40) h1.style.fontSize = (size -= 2) + "px";
+  const body = el.querySelector(".body");
+  const limit = body.getBoundingClientRect().bottom - parseFloat(getComputedStyle(body).paddingBottom);
+  const over = () => body.lastElementChild.getBoundingClientRect().bottom > limit + 1;
+  const chips = [...el.querySelectorAll(".known span")];
+  while (over() && chips.length > 2) chips.pop().remove();
+  const sum = el.querySelector(".summary");
+  let fs = 29;
+  while (over() && fs > 22) sum.style.fontSize = (fs -= 1) + "px";
+  while (over() && chips.length) chips.pop().remove();
+}
+
+function render() {
+  const [p, s] = (location.hash.slice(1) || "1/0").split("/").map(Number);
+  const post = DATA.posts[p - 1], slide = post.slides[s];
+  const root = document.getElementById("root");
+  root.innerHTML = slide.kind === "title" ? titleCard(post) : shopSlide(slide);
+  const img = root.querySelector("img");
+  const done = () => { fit(root); document.title = "ready"; };
+  if (img && !img.complete) { img.onload = img.onerror = done; } else done();
+}
+document.fonts.ready.then(render);
+window.addEventListener("hashchange", render);
+</script>
+</body>
+</html>

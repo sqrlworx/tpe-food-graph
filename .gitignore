@@ -3,3 +3,4 @@ __pycache__/
 data/profiles/
 data/google_raw/
 data/blogs/
+output/posts/

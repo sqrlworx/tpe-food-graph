@@ -110,6 +110,9 @@ def _parse_page(html, username):
                     {m.lower().rstrip(".") for m in MENTION_RE.findall(cap)}
                 ),
                 "location": None,
+                "kind": n.get("product_type"),
+                "owner": ((n.get("user") or {}).get("username") or "").lower(),
+                "alt": n.get("accessibility_caption") or "",
             }
         )
     links = [l.get("url") for l in u.get("bio_links") or [] if l.get("link_type") == "external" and l.get("url")]
@@ -198,6 +201,25 @@ def profile(username, refresh=False, need_related=False):
     with open(path, "w") as f:
         json.dump(p, f, ensure_ascii=False)
     return p
+
+
+def photo(shortcode, path):
+    """Download a post's large image (1080px wide) to path; False if IG has none."""
+    wait = MIN_INTERVAL - (time.time() - _last[0])
+    if wait > 0:
+        time.sleep(wait)
+    _last[0] = time.time()
+    out = subprocess.run(
+        ["curl", "-sL", "-x", "fwdproxy:8080", "--max-time", "60", "-A", UA,
+         "-o", path, "-w", "%{http_code} %{content_type}",
+         f"https://www.instagram.com/p/{shortcode}/media/?size=l"],
+        capture_output=True, text=True,
+    ).stdout
+    if out.startswith("200 image/"):
+        return True
+    if os.path.exists(path):
+        os.remove(path)
+    return False
 
 
 def outlinks(p):

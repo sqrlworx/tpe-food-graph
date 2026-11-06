@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Instagram series: Taipei Top 100 bakeries & sweets</title>
+<style>
+:root {
+  color-scheme: light;
+  --page: #f9f9f7; --surface: #ffffff; --surface-2: #f3f2ee;
+  --text: #0b0b0b; --text-2: #52514e; --muted: #898781;
+  --grid: #e1e0d9; --border: rgba(11,11,11,0.10); --accent: #c4552f;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --page: #0d0d0d; --surface: #1a1a19; --surface-2: #232321;
+    --text: #f0efec; --text-2: #c3c2b7; --muted: #898781;
+    --grid: #2c2c2a; --border: rgba(255,255,255,0.10); --accent: #e0774f;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--text); font-size: 14px; line-height: 1.45;
+       font-family: system-ui, -apple-system, "Segoe UI", "PingFang TC", "Noto Sans TC", sans-serif; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 28px 24px 80px; }
+h1 { font-size: 26px; margin: 0 0 4px; font-weight: 650; }
+h2 { font-size: 18px; margin: 36px 0 4px; font-weight: 600; }
+.sub { color: var(--text-2); margin: 0; }
+.muted { color: var(--muted); }
+a { color: inherit; text-underline-offset: 2px; }
+button { font: inherit; color: var(--text); background: var(--surface); border: 1px solid var(--border);
+         border-radius: 8px; padding: 6px 12px; cursor: pointer; }
+button:hover { background: var(--surface-2); }
+
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; max-width: 520px; margin-top: 14px; }
+.grid a { display: block; aspect-ratio: 3 / 4; overflow: hidden; background: var(--surface-2); position: relative; }
+.grid img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.post { display: grid; grid-template-columns: minmax(0, 470px) minmax(0, 1fr); gap: 28px; margin-top: 36px;
+        padding-top: 28px; border-top: 1px solid var(--grid); scroll-margin-top: 16px; }
+@media (max-width: 860px) { .post { grid-template-columns: 1fr; } }
+.ig { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+.ig .bar { display: flex; align-items: center; gap: 10px; padding: 10px 12px; }
+.ig .av { width: 32px; height: 32px; border-radius: 50%; background: #2a1b12; color: #f0c46c; font-weight: 800;
+          display: grid; place-items: center; font-size: 11px; letter-spacing: -0.02em; }
+.ig .who b { display: block; font-size: 13px; }
+.ig .who span { font-size: 12px; color: var(--muted); }
+.car { position: relative; aspect-ratio: 4 / 5; background: var(--surface-2); outline: none; overflow: hidden; }
+.car .track { display: flex; height: 100%; transition: transform 0.25s ease; }
+.car .cell { flex: 0 0 100%; height: 100%; position: relative; overflow: hidden; }
+.car img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.car iframe { width: 1080px; height: 1350px; border: 0; transform-origin: 0 0; position: absolute; left: 0; top: 0; pointer-events: none; }
+.car .nav { position: absolute; top: 50%; transform: translateY(-50%); width: 30px; height: 30px; border-radius: 50%;
+            border: 0; padding: 0; background: rgba(255,255,255,0.85); color: #111; font-size: 16px; line-height: 30px; }
+.car .prev { left: 10px; } .car .next { right: 10px; }
+.car .count { position: absolute; right: 12px; top: 12px; background: rgba(0,0,0,0.6); color: #fff; font-size: 12px;
+              border-radius: 999px; padding: 2px 9px; }
+.dots { display: flex; justify-content: center; gap: 4px; padding: 10px 0 4px; }
+.dots i { width: 6px; height: 6px; border-radius: 50%; background: var(--grid); }
+.dots i.on { background: var(--accent); }
+.ig .tagline { padding: 4px 12px 12px; font-size: 12px; color: var(--text-2); min-height: 36px; }
+
+.side h3 { margin: 0 0 2px; font-size: 18px; font-weight: 600; }
+.side .row { display: flex; gap: 8px; align-items: center; margin: 10px 0; flex-wrap: wrap; }
+.caption { white-space: pre-wrap; background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+           padding: 14px 16px; font-size: 13px; max-height: 560px; overflow: auto; margin: 0; font-family: inherit; }
+.caption .m { color: #3b6fc4; } .caption .h { color: #3b6fc4; }
+.chip { display: inline-block; font-size: 12px; padding: 1px 8px; border-radius: 999px; border: 1px solid var(--border);
+        color: var(--text-2); }
+.over { color: #d03b3b; font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1 id="title"></h1>
+    <p class="sub" id="sub"></p>
+  </header>
+  <h2>Profile grid</h2>
+  <p class="sub">What the grid looks like once every post is up (newest first, cropped to 3:4). Click a tile to jump to its post.</p>
+  <div class="grid" id="grid"></div>
+  <div id="posts"></div>
+</div>
+<script>
+const DATA = /*DATA*/null;
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const { series, posts } = DATA;
+const label = p => p.lo === 1 ? "Top 3" : `No. ${p.hi} → ${p.lo}`;
+
+document.getElementById("title").textContent = series.title;
+document.getElementById("sub").textContent =
+  `${posts.length} carousel posts · ${posts.reduce((n, p) => n + p.slides.length - 1, 0)} shops · post them in order, starting with Part 1`;
+
+document.getElementById("grid").innerHTML = [...posts].reverse().map(p =>
+  `<a href="#post-${p.n}" title="Part ${p.n}: ${label(p)}"><img src="${p.slug}/${p.slides[0].file}" alt=""
+     onerror="this.replaceWith(Object.assign(document.createElement('div'),{textContent:'Part ${p.n}',style:'padding:8px'}))"></a>`
+).join("");
+
+// Slide images are the rendered JPGs; if a post hasn't been rendered, fall back to the live slide page.
+function cell(p, i) {
+  const s = p.slides[i];
+  return `<div class="cell"><img src="${p.slug}/${s.file}" alt="${esc(s.alt)}" loading="lazy"
+    onerror="this.outerHTML='<iframe src=&quot;slides.html#${p.n}/${i}&quot; tabindex=-1></iframe>'; fitFrames()"></div>`;
+}
+
+function captionHtml(text) {
+  return esc(text).replace(/(^|\s)(@[A-Za-z0-9._]+)/g, '$1<span class="m">$2</span>')
+                  .replace(/(^|\s)(#[^\s#]+)/g, '$1<span class="h">$2</span>');
+}
+
+document.getElementById("posts").innerHTML = posts.map(p => {
+  const len = [...p.caption].length;
+  return `<section class="post" id="post-${p.n}" data-n="${p.n}">
+    <div>
+      <div class="ig">
+        <div class="bar"><div class="av">TPE</div><div class="who"><b>your_account</b><span>${esc(p.location)}</span></div></div>
+        <div class="car" tabindex="0">
+          <div class="track">${p.slides.map((_, i) => cell(p, i)).join("")}</div>
+          <button class="nav prev" aria-label="Previous">‹</button><button class="nav next" aria-label="Next">›</button>
+          <span class="count"></span>
+        </div>
+        <div class="dots">${p.slides.map(() => "<i></i>").join("")}</div>
+        <div class="tagline"></div>
+      </div>
+    </div>
+    <div class="side">
+      <h3>Part ${p.n} of ${p.of} · ${label(p)}</h3>
+      <div class="muted">Folder <code>${p.slug}/</code> · ${p.slides.length} slides · location: ${esc(p.location)}</div>
+      <div class="row">
+        <button data-copy>Copy caption</button>
+        <span class="${len > 2200 ? "over" : "muted"}">${len.toLocaleString()} / 2,200 characters</span>
+        <span class="muted">· ${p.mentions.length} @mentions · ${p.hashtags.length} hashtags</span>
+      </div>
+      <pre class="caption">${captionHtml(p.caption)}</pre>
+    </div>
+  </section>`;
+}).join("");
+
+function fitFrames() {
+  document.querySelectorAll(".car iframe").forEach(f => {
+    f.style.transform = `scale(${f.parentElement.clientWidth / 1080})`;
+  });
+}
+window.addEventListener("resize", fitFrames);
+
+document.querySelectorAll(".post").forEach(sec => {
+  const p = posts[sec.dataset.n - 1];
+  const car = sec.querySelector(".car"), track = sec.querySelector(".track");
+  const dots = [...sec.querySelectorAll(".dots i")];
+  let i = 0;
+  const show = k => {
+    i = Math.max(0, Math.min(p.slides.length - 1, k));
+    track.style.transform = `translateX(${-100 * i}%)`;
+    dots.forEach((d, j) => d.classList.toggle("on", j === i));
+    sec.querySelector(".count").textContent = `${i + 1}/${p.slides.length}`;
+    const s = p.slides[i];
+    sec.querySelector(".tagline").innerHTML = s.kind === "title"
+      ? `<span class="muted">Title card · alt text:</span> ${esc(s.alt)}`
+      : `Tag on this slide: ${s.tag.map(h => `<a class="chip" href="https://www.instagram.com/${esc(h)}/" target="_blank">@${esc(h)}</a>`).join(" ")}
+         ${s.photo_source ? ` · <a href="${esc(s.photo_source)}" target="_blank">photo source</a>` : ""}
+         <br><span class="muted">Alt text:</span> ${esc(s.alt)}`;
+  };
+  sec.querySelector(".prev").onclick = () => show(i - 1);
+  sec.querySelector(".next").onclick = () => show(i + 1);
+  car.addEventListener("keydown", e => {
+    if (e.key === "ArrowLeft") show(i - 1);
+    if (e.key === "ArrowRight") show(i + 1);
+  });
+  let x0 = null;
+  car.addEventListener("pointerdown", e => { x0 = e.clientX; });
+  car.addEventListener("pointerup", e => {
+    if (x0 !== null && Math.abs(e.clientX - x0) > 40) show(i + (e.clientX < x0 ? 1 : -1));
+    x0 = null;
+  });
+  sec.querySelector("[data-copy]").onclick = async e => {
+    await navigator.clipboard.writeText(p.caption);
+    e.target.textContent = "Copied ✓";
+    setTimeout(() => { e.target.textContent = "Copy caption"; }, 1500);
+  };
+  show(0);
+});
+fitFrames();
+</script>
+</body>
+</html>
