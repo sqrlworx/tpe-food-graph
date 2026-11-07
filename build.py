@@ -4,6 +4,16 @@ Edge A -> B means A tagged / @mentioned / co-posted with B in one of A's
 recent posts (Instagram only exposes the latest 12 posts without login).
 A "related" link A - B means Instagram suggests B on A's profile (or the
 reverse). Related links are drawn but do not count as endorsements.
+
+Not every tag is an endorsement:
+  - sister accounts, and staff or founders tagging their own shop, are left out (sisters());
+  - a post tagging many accounts (an event line-up, a roundup) is split: up to LIST_FULL
+    tags count in full, beyond that every tag gets LIST_FULL / n;
+  - a tag between two businesses that shows a business tie (supply, collaboration, a shared
+    event, or a standing tag in STANDING_POSTS+ recent posts; see business_tie()) is marked
+    "business"; rank.py counts it once, at a low weight.
+
+usage: python3 -I build.py -p PROJECT
 """
 
 import csv
@@ -11,18 +21,65 @@ import json
 import math
 import os
 import re
+import unicodedata
 
-import ig
-from classify import classify, taiwan_score
+import sys
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-OUT = os.path.join(ROOT, "output")
-os.makedirs(OUT, exist_ok=True)
+sys.path.insert(0, ROOT)
+import ig  # noqa: E402
+import project  # noqa: E402
+from classify import _brand_stem, affiliated, brands, classify, same_brand, taiwan_score  # noqa: E402
 
-overrides_path = os.path.join(ROOT, "overrides.json")
-OVERRIDES = json.load(open(overrides_path)) if os.path.exists(overrides_path) else {}
-SEEDS = json.load(open(os.path.join(ROOT, "seeds.json")))
+CFG = project.current()
+OUT = CFG.OUT
+OVERRIDES = project.json_file(os.path.join(CFG.DIR, "overrides.json"), {})
+SEEDS = json.load(open(os.path.join(CFG.DIR, "seeds.json")))
 SEED_SET = {h.lower() for h in SEEDS["bloggers"] + SEEDS["makers"]}
+
+LIST_FULL = 3
+STANDING_POSTS = 3
+BUSINESS_EDGE = 0.4  # a business tie's weight in the PageRank, as rank.BUSINESS_WEIGHT
+# Words next to a mention that show a business tie rather than a recommendation: collaborations,
+# guest spots, events and stalls, supply; plus the project's own supply words (beans, flour...).
+BUSINESS_WORDS = re.compile(
+    r"合作|聯名|快閃|客座|進駐|駐店|出攤|攤位|市集|展覽|咖啡展|麵包祭|供應|批發|經銷|代理|贊助|寄賣|販售點|"
+    r"takeover|take over|pop.?up|collab|guest|sponsor|partner|wholesale|" + CFG.SUPPLY_WORDS,
+    re.I,
+)
+MENTION = re.compile(r"@[A-Za-z0-9._]+")
+
+
+def post_tags(p):
+    """[(post, accounts it tags)] for a profile's recent posts (tags, @mentions, co-authors)."""
+    me = p["username"].lower()
+    out = []
+    for post in p["posts"]:
+        hs = {h.lower() for k in ("tagged", "mentions", "coauthors") for h in post[k]} - {me}
+        if hs:
+            out.append((post, hs))
+    return out
+
+
+def business_tie(post, b):
+    """Business wording on the line that mentions @b or the lines next to it (handles removed)."""
+    lines = (post["caption"] or "").split("\n")
+    for i, line in enumerate(lines):
+        if "@" + b in line.lower():
+            near = MENTION.sub(" ", " ".join(lines[max(0, i - 1):i + 2]))
+            if BUSINESS_WORDS.search(near):
+                return True
+    return False
+
+
+def letters(s):
+    return re.sub(r"[^a-z0-9]", "", unicodedata.normalize("NFKC", s or "").lower())
+
+
+def staff_of(pa, b):
+    """pa's bio names shop b in plain text (a barista's "COFFEEUNDERWATER"): staff or founder."""
+    stem = _brand_stem(b)
+    return len(re.sub(r"[^a-z]", "", stem)) >= 5 and stem in letters(pa.get("biography"))
 
 
 def load():
@@ -54,30 +111,17 @@ def node_kind(p):
     return kind, sub, None
 
 
-def _stem(h):
-    return re.sub(r"[^a-z0-9]", "", h)
-
-
-def affiliated(pa, pb):
-    """Same brand / owner: one names the other in its bio, or handles share a brand stem."""
-    a, b = pa["username"].lower(), pb["username"].lower()
-    if "@" + b in (pa.get("biography") or "").lower() or "@" + a in (pb.get("biography") or "").lower():
-        return True
-    sa, sb = _stem(a), _stem(b)
-    n = 0
-    while n < min(len(sa), len(sb)) and sa[n] == sb[n]:
-        n += 1
-    return n >= 6
-
-
 def pagerank(nodes, edges, damping=0.85, iters=60):
     out_w = {n: 0.0 for n in nodes}
     for (a, _b), w in edges.items():
         out_w[a] += w
+    # A node whose tags add up to less than one full tag passes on only that share (see rank.py).
+    leak = {n: 1 - min(w, 1.0) for n, w in out_w.items()}
+    out_w = {n: max(w, 1.0) for n, w in out_w.items()}
     pr = {n: 1 / len(nodes) for n in nodes}
     for _ in range(iters):
         nxt = {n: (1 - damping) / len(nodes) for n in nodes}
-        dangling = sum(pr[n] for n in nodes if out_w[n] == 0)
+        dangling = sum(pr[n] * leak[n] for n in nodes)
         for n in nodes:
             nxt[n] += damping * dangling / len(nodes)
         for (a, b), w in edges.items():
@@ -91,12 +135,41 @@ def main():
     kinds = {h: node_kind(p) for h, p in profiles.items()}
     keep = {h for h, (k, _, _) in kinds.items() if k in ("blogger", "maker", "venue")}
 
-    edges = {}
+    bio = {h: profiles[h].get("biography") for h in keep}
+    # Brands among the shops, so that a founder named in one branch's bio counts for all of them.
+    brand = brands({h: bio[h] for h in keep if kinds[h][0] == "maker" and (kinds[h][2] or "shop") == "shop"})
+    members = {}
+    for h, lead in brand.items():
+        members.setdefault(lead, set()).add(h)
+
+    def tied(a, b):
+        return (affiliated(a, bio[a], b, bio[b]) or staff_of(profiles[a], b) or staff_of(profiles[b], a))
+
+    def sisters(a, b):
+        """Same brand, or staff / founder accounts of one of the brand's branches."""
+        if same_brand(a, bio[a], b, bio[b]):
+            return True
+        return any(tied(x, y) for x in members.get(brand.get(a), {a}) for y in members.get(brand.get(b), {b}))
+
+    edges = {}  # (a, b) -> {"posts", "weight", "business"}
     for a in keep:
-        for b, w in ig.outlinks(profiles[a]).items():
-            # Sister accounts / owners tagging their own shops are not endorsements.
-            if b in keep and b != a and not affiliated(profiles[a], profiles[b]):
-                edges[(a, b)] = edges.get((a, b), 0) + w
+        for post, hs in post_tags(profiles[a]):
+            share = 1.0 if len(hs) <= LIST_FULL else LIST_FULL / len(hs)
+            for b in hs:
+                # Sister accounts / owners tagging their own shops are not endorsements.
+                if b in keep and not sisters(a, b):
+                    e = edges.setdefault((a, b), {"posts": 0, "weight": 0.0, "business": False})
+                    e["posts"] += 1
+                    e["weight"] += share
+                    e["business"] |= business_tie(post, b)
+    # Business ties between two businesses: wording next to the tag, a standing tag, or the
+    # reverse direction of a tie.
+    business = lambda h: kinds[h][0] in ("maker", "venue")  # noqa: E731
+    for (a, b), e in edges.items():
+        e["business"] = business(a) and business(b) and (e["business"] or e["posts"] >= STANDING_POSTS)
+    for (a, b), e in edges.items():
+        if business(a) and business(b) and edges.get((b, a), {}).get("business"):
+            e["business"] = True
 
     # Drop venues that nobody in the network points to and that point to no maker.
     def touches_core(h):
@@ -108,7 +181,9 @@ def main():
     keep = {h for h in keep if kinds[h][0] != "venue" or touches_core(h)}
     edges = {e: w for e, w in edges.items() if e[0] in keep and e[1] in keep}
 
-    pr = pagerank(sorted(keep), edges)
+    # A business tie counts once, at a low weight.
+    pr = pagerank(sorted(keep), {k: BUSINESS_EDGE * min(e["weight"], 1) if e["business"] else e["weight"]
+                                 for k, e in edges.items()})
     endorsers_of = {}
     for a, b in edges:
         endorsers_of.setdefault(b, set()).add(a)
@@ -132,7 +207,7 @@ def main():
     related_by = {h: set() for h in keep}
     for a in keep:
         for b in ig.related(profiles[a]):
-            if b in keep and not affiliated(profiles[a], profiles[b]):
+            if b in keep and not sisters(a, b):
                 related_pairs.add(tuple(sorted((a, b))))
                 related_by[b].add(a)
 
@@ -199,9 +274,11 @@ def main():
             )}
             for r in rows
         ],
-        "links": [{"source": a, "target": b, "weight": w, "type": "tag"} for (a, b), w in edges.items()]
+        "links": [{"source": a, "target": b, "weight": round(e["weight"], 3), "posts": e["posts"], "type": "tag",
+                   **({"business": True} if e["business"] else {})} for (a, b), e in edges.items()]
         + [{"source": a, "target": b, "weight": 1, "type": "related"} for a, b in sorted(related_pairs)],
     }
+    labels = {"title": CFG.GRAPH_TITLE, "groups": CFG.GROUPS, "venue": CFG.VENUE_LABEL, "makers": CFG.MAKERS_LABEL}
     with open(os.path.join(OUT, "graph.json"), "w") as f:
         json.dump(graph, f, ensure_ascii=False)
 
@@ -209,7 +286,7 @@ def main():
     d3 = open(os.path.join(ROOT, "vendor", "d3.v7.min.js")).read()
     html = tmpl.replace("/*D3*/", d3).replace(
         "/*GRAPH*/null", json.dumps(graph, ensure_ascii=False)
-    )
+    ).replace("/*LABELS*/null", json.dumps(labels, ensure_ascii=False))
     with open(os.path.join(OUT, "index.html"), "w") as f:
         f.write(html)
 

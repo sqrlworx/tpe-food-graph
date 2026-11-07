@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Instagram series: Taipei Top 100 bakeries & sweets</title>
+<title>Instagram series</title>
 <style>
 :root {
   color-scheme: light;
@@ -87,6 +87,7 @@ const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "
 const { series, posts } = DATA;
 const label = p => p.lo === 1 ? "Top 3" : `No. ${p.hi} → ${p.lo}`;
 
+document.title = series.page_title;
 document.getElementById("title").textContent = series.title;
 document.getElementById("sub").textContent =
   `${posts.length} carousel posts · ${posts.reduce((n, p) => n + p.slides.length - 1, 0)} shops · post them in order, starting with Part 1`;

@@ -1,4 +1,4 @@
-"""Rank Greater Taipei bakeries / sweets shops and write output/ranking.html.
+"""Rank a project's Greater Taipei shops and write output/ranking.html.
 
 Combines five signals, each scaled to 0..1 (see METHOD below / the dashboard):
   network   - endorsements (tags) from the graph, weighted by who tagged and how
@@ -9,13 +9,16 @@ Combines five signals, each scaled to 0..1 (see METHOD below / the dashboard):
               a trusted food blog counts its outlet TRUSTED_BLOG_WEIGHT times
   reach     - Instagram followers (log-scaled)
 
-Shops in NOT_SWEETS are left out by hand.
+Weights, the shop types ranked and the shops left out by hand (EXCLUDE) come from the
+project config. Branches of one brand (classify.brands) are one entry: the best-scoring
+branch is ranked and lists the others.
 
-Inputs: output/graph.json and output/food_creators.csv (from build.py), plus the
-optional data/google_places.json (google_maps.py), data/press.json and
-data/review_notes.json. Missing optional inputs just score as unknown.
+Inputs, in the project's folder: output/graph.json and output/food_creators.csv (from
+build.py), plus the optional data/google_places.json (google_maps.py), data/press.json
+(press.py) and data/review_notes.json (review_notes.py). Missing optional inputs just
+score as unknown.
 
-Pipeline: python3 build.py; python3 -I google_maps.py; python3 -I press.py; python3 rank.py
+usage: python3 -I rank.py -p PROJECT
 """
 
 import csv
@@ -23,30 +26,29 @@ import json
 import math
 import os
 import re
+import sys
 import unicodedata
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-OUT = os.path.join(ROOT, "output")
-DATA = os.path.join(ROOT, "data")
+sys.path.insert(0, ROOT)
+import project  # noqa: E402
+from classify import brands  # noqa: E402
 
-WEIGHTS = {"network": 0.35, "quality": 0.30, "volume": 0.10, "press": 0.15, "reach": 0.10}
-# Who is tagging: bloggers curate for an audience, makers tagging peers is chef
-# respect, cafés tagging a supplier is mostly business.
-ENDORSER_WEIGHT = {"blogger": 1.0, "maker": 0.8, "venue": 0.4}
+CFG = project.current()
+OUT = CFG.OUT
+DATA = CFG.DATA
+
+WEIGHTS = CFG.WEIGHTS
+ENDORSER_WEIGHT = CFG.ENDORSER_WEIGHT
 RELATED_EDGE = 0.35  # weight of an Instagram "related account" link vs a tag
+# A tag build.py marks "business" (supply, collaboration, shared event, standing tag between
+# two businesses) counts once, at this type weight, however many posts repeat it.
+BUSINESS_WEIGHT = 0.4
 PRIOR_REVIEWS = 40   # Bayesian prior strength for Google ratings
-TOP_N = 100
+TOP_N = CFG.TOP_N
 # A post on a trusted food blog (data/trusted_blogs.json) whose title names the shop is a
 # dedicated review, so that outlet counts this many times in the press signal.
 TRUSTED_BLOG_WEIGHT = 2.0
-
-# Labelled bakery / dessert shops in the graph, but not what this ranking is about.
-NOT_SWEETS = {
-    "aufglet", "aufglet_taipei",  # brunch café (Google: café); both accounts match one place
-    "skiff.tw",                   # matcha drinks shop (Google: non-alcoholic drinks)
-    "heureuxvegan",               # light-meal restaurant that also sells desserts
-    "icegyaru",                   # soft-serve shop
-}
 
 DISTRICTS = {
     "中正區": "Zhongzheng", "大同區": "Datong", "中山區": "Zhongshan", "松山區": "Songshan",
@@ -120,10 +122,14 @@ def pagerank(nodes, edges, damping=0.85, iters=80):
     out_w = {n: 0.0 for n in nodes}
     for (a, _), w in edges.items():
         out_w[a] += w
+    # A node whose links add up to less than one full tag passes on only that share; the rest is
+    # spread like a dangling node's, so two shops tagging only each other can't keep all their rank.
+    leak = {v: 1 - min(w, 1.0) for v, w in out_w.items()}
+    out_w = {v: max(w, 1.0) for v, w in out_w.items()}
     n = len(nodes)
     pr = {v: 1 / n for v in nodes}
     for _ in range(iters):
-        dangling = sum(pr[v] for v in nodes if out_w[v] == 0)
+        dangling = sum(pr[v] * leak[v] for v in nodes)
         nxt = {v: (1 - damping) / n + damping * dangling / n for v in nodes}
         for (a, b), w in edges.items():
             nxt[b] += damping * pr[a] * w / out_w[a]
@@ -141,17 +147,24 @@ def percentile(values, q):
     return v[min(len(v) - 1, int(q * len(v)))] if v else 0
 
 
+def tag_strength(l):
+    """1 + log2(posts) for a tag repeated in several posts; a fraction of 1 for a tag split across
+    a long line-up post; at most 1 for a business tie."""
+    w = min(l["weight"], 1.0) if l.get("business") else l["weight"]
+    return w if w < 1 else 1 + math.log2(w)
+
+
 def network_metrics(graph):
     nodes = {n["username"]: n for n in graph["nodes"]}
     tags = [l for l in graph["links"] if l["type"] == "tag"]
     related = [l for l in graph["links"] if l["type"] == "related"]
 
-    # Centrality over tags (directed, stronger when tagged in more posts) and
+    # Centrality over tags (directed, stronger when tagged in more posts; business ties weak) and
     # Instagram's related suggestions (undirected, weaker).
     edges = {}
     for l in tags:
         e = (l["source"], l["target"])
-        edges[e] = edges.get(e, 0) + 1 + math.log2(l["weight"])
+        edges[e] = edges.get(e, 0) + tag_strength(l) * (BUSINESS_WEIGHT if l.get("business") else 1)
     for l in related:
         for e in ((l["source"], l["target"]), (l["target"], l["source"])):
             edges[e] = edges.get(e, 0) + RELATED_EDGE
@@ -163,10 +176,12 @@ def network_metrics(graph):
         a, b = l["source"], l["target"]
         # Authority of the endorser: their own tag-graph PageRank (1.0 = average), damped.
         auth = min(3.0, math.sqrt(max(nodes[a]["pagerank"], 0.25)))
-        s = ENDORSER_WEIGHT.get(nodes[a]["kind"], 0.4) * (1 + math.log2(l["weight"])) * auth
+        kind_w = BUSINESS_WEIGHT if l.get("business") else ENDORSER_WEIGHT.get(nodes[a]["kind"], 0.4)
+        s = kind_w * tag_strength(l) * auth
         endorse[b] += s
         endorsers[b].append({
-            "handle": a, "kind": nodes[a]["kind"], "posts": l["weight"],
+            "handle": a, "kind": nodes[a]["kind"], "posts": l.get("posts", l["weight"]),
+            "business": bool(l.get("business")),
             "followers": nodes[a]["followers"], "score": round(s, 2),
         })
     related_by = {h: set() for h in nodes}
@@ -187,10 +202,10 @@ def main():
 
     cands = []
     for h, s in shops.items():
-        if s["role"] != "shop" or s["subtype"] not in ("bakery", "dessert", "pastry") or h in NOT_SWEETS:
+        if s["role"] != "shop" or s["subtype"] not in CFG.RANKED_SUBTYPES or h in CFG.EXCLUDE:
             continue
         gp = google.get(h) or {}
-        if gp.get("closed"):
+        if gp.get("closed") or (CFG.REQUIRE_GOOGLE and not gp.get("match")):
             continue
         a = area(s, gp if gp.get("match") else None)
         if a not in ("台北市", "新北市"):
@@ -235,7 +250,7 @@ def main():
             "name": s["name"],
             "gname": gp.get("name") or "",
             "display": display_name(gp.get("name"), s["name"]) or h,
-            "type": "bakery" if s["subtype"] == "bakery" else "sweets",
+            "type": CFG.type_of(s["subtype"]),
             "area": a,
             "district": district_of(gp),
             "address": gp.get("address") or "",
@@ -263,6 +278,19 @@ def main():
             "score": round(score, 2),
         })
     rows.sort(key=lambda x: -x["score"])
+    # One entry per brand: a brand's best-scoring branch stands for it; the other branches are
+    # listed under it ("branches") and left out of the ranking.
+    brand = brands({x["handle"]: shops[x["handle"]]["bio"] for x in rows})
+    lead_row = {x["handle"]: x for x in rows if brand[x["handle"]] == x["handle"]}
+    merged = {}
+    for x in rows:
+        lead = lead_row[brand[x["handle"]]]
+        x["branches"] = []
+        if lead is not x:
+            lead["branches"].append({k: x[k] for k in (
+                "handle", "display", "area", "district", "address", "rating", "reviews", "score", "ig", "maps")})
+            merged.setdefault(lead["handle"], []).append(x["handle"])
+    rows = [x for x in rows if brand[x["handle"]] == x["handle"]]
     for i, x in enumerate(rows, 1):
         x["rank"] = i
         x["follower_rank"] = None
@@ -273,9 +301,11 @@ def main():
         "weights": WEIGHTS,
         "endorser_weight": ENDORSER_WEIGHT,
         "related_edge": RELATED_EDGE,
+        "business_weight": BUSINESS_WEIGHT,
         "prior_reviews": PRIOR_REVIEWS,
         "trusted_blog_weight": TRUSTED_BLOG_WEIGHT,
-        "not_sweets": sorted(NOT_SWEETS),
+        "excluded": CFG.EXCLUDE,
+        "merged": merged,
         "districts": DISTRICTS,
         "mean_rating": round(mean_rating, 3),
         "hi_endorse": round(hi_endorse, 2),
@@ -289,6 +319,10 @@ def main():
         "n_tags": sum(1 for l in graph["links"] if l["type"] == "tag"),
         "n_related": sum(1 for l in graph["links"] if l["type"] == "related"),
         "top_n": TOP_N,
+        "require_google": CFG.REQUIRE_GOOGLE,
+        "press_top": CFG.PRESS_SEARCH_TOP,
+        "types": [{"k": k, "label": v, "plural": CFG.TYPES_PLURAL[k]} for k, v in CFG.TYPES.items()],
+        "labels": CFG.DASHBOARD,
     }
     data = {"meta": meta, "rows": rows}
 

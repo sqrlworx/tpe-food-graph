@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Top 100 bakeries & sweets in Greater Taipei</title>
+<title>Ranking</title>
 <style>
 .viz-root {
   color-scheme: light;
@@ -125,8 +125,8 @@ svg text { fill: var(--text-muted); font-size: 11px; }
 <div class="wrap">
   <header>
     <div>
-      <h1>Top 100 bakeries &amp; sweets in Greater Taipei</h1>
-      <p class="sub">Ranked by peer endorsement in the Instagram food graph, Google Maps ratings, press coverage and reach — not by followers alone.</p>
+      <h1 id="title"></h1>
+      <p class="sub" id="subtitle"></p>
     </div>
     <button id="theme" title="Toggle light / dark">◐ Theme</button>
   </header>
@@ -143,8 +143,6 @@ svg text { fill: var(--text-muted); font-size: 11px; }
     <div class="filters">
       <span class="seg" id="f-type">
         <button data-v="" aria-pressed="true">All</button>
-        <button data-v="bakery" aria-pressed="false">Bakeries</button>
-        <button data-v="sweets" aria-pressed="false">Sweets</button>
       </span>
       <span class="seg" id="f-area">
         <button data-v="" aria-pressed="true">Greater Taipei</button>
@@ -177,25 +175,25 @@ svg text { fill: var(--text-muted); font-size: 11px; }
   <section id="tab-chart" class="hidden">
     <div class="card">
       <h2>Network endorsement vs. Google quality</h2>
-      <p class="sub" style="margin-bottom:8px">Each dot is a top-100 shop. Right = more and stronger endorsements in the graph; up = higher review-adjusted Google rating. Dot size = Google review count.</p>
+      <p class="sub" style="margin-bottom:8px">Each dot is a <span class="topn"></span> shop. Right = more and stronger endorsements in the graph; up = higher review-adjusted Google rating. Dot size = Google review count.</p>
       <div class="legend" id="legend2"></div>
       <div id="scatter"></div>
     </div>
     <div class="card section">
       <h2>Where the score comes from</h2>
-      <p class="sub" style="margin-bottom:8px">Average contribution of each signal (points out of 100) across the top 100, by rank band.</p>
+      <p class="sub" style="margin-bottom:8px">Average contribution of each signal (points out of 100) across the <span class="topn"></span>, by rank band.</p>
       <div id="bands"></div>
     </div>
     <div class="grid2 section">
       <div class="card">
         <h2>What reviewers single out</h2>
-        <p class="sub" style="margin-bottom:8px">How many top-100 shops have each item among the must-try picks from their Google reviews.</p>
+        <p class="sub" style="margin-bottom:8px">How many <span class="topn"></span> shops have each item among the must-try picks from their Google reviews.</p>
         <div class="legend" id="legend-items"></div>
         <div id="items"></div>
       </div>
       <div class="card">
         <h2>Where they are</h2>
-        <p class="sub" style="margin-bottom:8px">Top-100 shops by district. Click a district to filter the ranking.</p>
+        <p class="sub" style="margin-bottom:8px">Shops in the <span class="topn"></span> by district. Click a district to filter the ranking.</p>
         <div class="legend" id="legend-dist"></div>
         <div id="districts"></div>
       </div>
@@ -218,6 +216,14 @@ svg text { fill: var(--text-muted); font-size: 11px; }
 <script>
 const DATA = /*DATA*/null;
 const M = DATA.meta;
+// Project wording: title, shop types, chart items, methodology (rank.py meta.labels).
+const L = M.labels;
+document.title = L.title;
+document.getElementById("title").textContent = L.title;
+document.getElementById("subtitle").textContent = L.subtitle;
+document.querySelectorAll(".topn").forEach(el => el.textContent = `top ${M.top_n}`);
+document.getElementById("f-type").insertAdjacentHTML("beforeend", M.types.map(t =>
+  `<button data-v="${t.k}" aria-pressed="false">${t.plural}</button>`).join(""));
 const COMP = [
   {k: "network", label: "Network endorsement", c: "var(--s1)"},
   {k: "quality", label: "Google rating", c: "var(--s2)"},
@@ -230,30 +236,11 @@ const TOP = ALL.slice(0, M.top_n);
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const fmt = n => n >= 1e5 ? Math.round(n / 1e3) + "K" : n >= 1e3 ? (n / 1e3).toFixed(1).replace(/\.0$/, "") + "K" : String(n);
 const displayName = r => r.display || r.handle;
-const TYPES = [{k: "bakery", label: "Bakery", c: "var(--s1)"}, {k: "sweets", label: "Sweets", c: "var(--s2)"}];
+const TYPES = M.types.map((t, i) => ({k: t.k, label: t.label, c: `var(--s${i + 1})`}));
 const DIST_EN = M.districts || {};
 const distLabel = d => d ? `${d} ${DIST_EN[d] || ""}`.trim() : "District unknown";
 // Must-try items to count across shops: label, pattern over the review notes' signature items.
-const ITEMS = [
-  ["Croissant 可頌", /可頌|croissant/i],
-  ["Cinnamon roll 肉桂捲", /肉桂捲|cinnamon/i],
-  ["Sourdough 酸種", /酸種|sourdough/i],
-  ["Canelé 可麗露", /可麗露|canel/i],
-  ["Saint-Honoré 聖多諾黑", /聖多諾黑|honor/i],
-  ["Mille-crêpe / feuille 千層", /千層|mille/i],
-  ["Chiffon 戚風", /戚風|chiffon/i],
-  ["Cheesecake / Basque 乳酪", /巴斯克|起司蛋糕|乳酪|cheesecake/i],
-  ["Tart 塔", /塔|tart/i],
-  ["Dacquoise 達克瓦茲", /達克瓦茲|dacquoise/i],
-  ["Scone 司康", /司康|scone/i],
-  ["Gelato / ice cream", /冰淇淋|霜淇淋|gelato|ice cream/i],
-  ["Cookie 餅乾", /餅乾|cookie/i],
-  ["Macaron 馬卡龍", /馬卡龍|卡龍|macaron/i],
-  ["Pudding 布丁", /布丁|pudding/i],
-  ["Toast / milk bread 吐司", /吐司|toast/i],
-  ["Egg-yolk pastry 蛋黃酥", /蛋黃酥/],
-  ["Brownie 布朗尼", /布朗尼|brownie/i],
-];
+const ITEMS = L.items.map(([label, src, flags]) => [label, new RegExp(src, flags)]);
 
 // Theme toggle: explicit stamp wins over OS setting.
 document.getElementById("theme").onclick = () => {
@@ -267,11 +254,11 @@ const nTagged = TOP.filter(r => r.endorsers.length).length;
 const withG = TOP.filter(r => r.rating);
 const avgR = withG.length ? (withG.reduce((s, r) => s + r.rating, 0) / withG.length).toFixed(2) : "–";
 const tiles = [
-  ["Shops evaluated", M.n_candidates, `Greater Taipei shops of ${M.n_shops} makers in the graph`],
+  ["Shops evaluated", M.n_candidates, `Greater Taipei shops of ${M.n_shops} ${L.kinds.maker}s in the graph`],
   ["Graph links used", fmt(M.n_tags + M.n_related), `${M.n_tags} tags · ${M.n_related} related-account links`],
-  ["Top 100 on Google Maps", withG.length, `average rating ${avgR}`],
-  ["Top 100 tagged by peers", nTagged, "endorsed by ≥1 blogger, maker or café"],
-  ["Top 100 with press", TOP.filter(r => r.press.length).length, "covered by food blogs / media"],
+  [`Top ${M.top_n} on Google Maps`, withG.length, `average rating ${avgR}`],
+  [`Top ${M.top_n} tagged by peers`, nTagged, L.tagged_note],
+  [`Top ${M.top_n} with press`, TOP.filter(r => r.press.length).length, "covered by food blogs / media"],
 ];
 document.getElementById("tiles").innerHTML = tiles.map(([l, v, n]) =>
   `<div class="card tile"><div class="label">${l}</div><div class="value">${v}</div><div class="note">${n}</div></div>`).join("");
@@ -407,12 +394,15 @@ function detail(r) {
       [5, 4, 3, 2, 1].map(s => `<span>${s}★</span><div class="track"><span style="width:${(r.stars[s - 1] / tot * 100).toFixed(1)}%"></span></div><span class="muted">${Math.round(r.stars[s - 1] / tot * 100)}%</span>`).join("") + `</div>`;
   }
   const endorsers = r.endorsers.length ? `<h3 style="margin-top:12px">Endorsed by</h3><ul class="notes">${r.endorsers.slice(0, 12).map(e =>
-      `<li><a href="https://www.instagram.com/${esc(e.handle)}/" target="_blank" rel="noopener">@${esc(e.handle)}</a> <span class="muted">${e.kind} · ${fmt(e.followers)} followers · ${e.posts} post${e.posts > 1 ? "s" : ""}</span></li>`).join("")}</ul>` : "";
+      `<li><a href="https://www.instagram.com/${esc(e.handle)}/" target="_blank" rel="noopener">@${esc(e.handle)}</a> <span class="muted">${e.kind} · ${fmt(e.followers)} followers · ${e.posts} post${e.posts > 1 ? "s" : ""}${e.business ? " · business tie" : ""}</span></li>`).join("")}</ul>` : "";
   const press = r.press.length ? `<h3 style="margin-top:12px">Press &amp; blogger coverage</h3><ul class="notes">${r.press.map(p =>
       `<li><a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.title || p.url)}</a> <span class="muted">— ${esc(p.label || p.outlet)}</span>${p.trusted ? '<span class="chip">trusted blog</span>' : ""}</li>`).join("")}</ul>` : "";
   const links = `<p style="margin:10px 0 0;font-size:12.5px"><a href="${esc(r.ig)}" target="_blank" rel="noopener">Instagram</a>` +
     (r.maps ? ` · <a href="${esc(r.maps)}" target="_blank" rel="noopener">Google Maps</a>` : "") +
-    (r.address ? ` · <span class="muted">${esc(r.address)}</span>` : "") + `</p>`;
+    (r.address ? ` · <span class="muted">${esc(r.address)}</span>` : "") + `</p>` +
+    (r.branches.length ? `<h3 style="margin-top:10px">Other branches</h3><ul class="notes">${r.branches.map(b =>
+      `<li><a href="${esc(b.ig)}" target="_blank" rel="noopener">@${esc(b.handle)}</a> <span class="muted">${esc(b.district ? distLabel(b.district) : b.area)}` +
+      `${b.rating ? ` · ★ ${b.rating.toFixed(1)} (${fmt(b.reviews)})` : ""} · score ${b.score.toFixed(1)}</span></li>`).join("")}</ul>` : "");
   return `<div class="dgrid">
     <div><h3>Score breakdown</h3>${brk}${links}</div>
     <div>${reviewsBlock || '<p class="muted">No review summary.</p>'}${topics}${stars}</div>
@@ -429,7 +419,7 @@ function drawCharts() {
   if (drawn) return; drawn = true;
   const el = document.getElementById("scatter");
   const W = Math.min(el.clientWidth || 1100, 1180), H = 440, m = {l: 70, r: 20, t: 12, b: 40};
-  const types = [{k: "bakery", label: "Bakery", c: "var(--s1)"}, {k: "sweets", label: "Sweets", c: "var(--s2)"}];
+  const types = TYPES;
   document.getElementById("legend2").innerHTML = types.map(t => `<span><i style="background:${t.c};border-radius:50%"></i>${t.label}</span>`).join("");
   const xs = r => r.comp.network, ys = r => r.comp.quality;
   const X = v => m.l + v * (W - m.l - m.r), Y = v => H - m.b - v * (H - m.t - m.b);
@@ -478,7 +468,7 @@ function drawCharts() {
   });
 
   // Rank bands: stacked horizontal bars of mean contribution
-  const bands = [[1, 10], [11, 25], [26, 50], [51, 75], [76, 100]];
+  const bands = L.bands;
   const BW = Math.min(document.getElementById("bands").clientWidth || 1100, 1180);
   const lab = 90, maxT = Math.max(...bands.map(([a, b]) => mean(TOP.slice(a - 1, b), r => r.score)));
   let b = `<div class="legend">${legendHTML}</div><svg width="${BW}" height="${bands.length * 34 + 10}">`;
@@ -555,26 +545,32 @@ function mean(a, f) { return a.reduce((s, x) => s + f(x), 0) / (a.length || 1); 
 
 // Methodology
 const W_ = M.weights, pct = k => Math.round(W_[k] * 100) + "%";
+const fill = s => s.replace(/\{(\w+)\}/g, (_, k) => k in M.endorser_weight ? M.endorser_weight[k] : M[k]);
+const excluded = Object.keys(M.excluded);
 document.getElementById("method").innerHTML = `
 <h2>Methodology</h2>
-<p>The candidate pool is every hand-reviewed bakery / sweets <em>shop</em> in our Instagram food graph (${M.n_nodes} accounts:
-bloggers, makers and cafés; chefs' personal accounts and non-dessert makers excluded) whose Google Maps address — or, failing that,
-Instagram bio — places it in <b>Taipei City or New Taipei City</b>. A few accounts labelled bakery / dessert are left out by hand because they are
-mainly something else (a brunch café, a drinks shop, a light-meal restaurant, a soft-serve shop): ${M.not_sweets.map(h => "@" + h).join(", ")}.
+<p>The candidate pool is ${fill(L.pool)} whose Google Maps address — or, failing that,
+Instagram bio — places it in <b>Taipei City or New Taipei City</b>.${M.require_google ? " Only shops with a Google Maps listing are ranked." : ""}
+${excluded.length ? `${L.excluded}: ${excluded.map(h => "@" + h).join(", ")}.` : ""}
+${Object.keys(M.merged).length ? `Branches of one brand (accounts that name each other in their bios or share a brand name in their handles) are one entry,
+represented by the branch with the best score; the others are listed under it: ${Object.entries(M.merged).map(([h, o]) =>
+  "@" + h + " (also " + o.map(x => "@" + x).join(", ") + ")").join("; ")}.` : ""}
 That leaves <b>${M.n_candidates}</b> shops; the top ${M.top_n} are shown.
 Every shop gets five signals, each scaled to 0–1, and the score is their weighted sum × 100.</p>
 <table class="wtable" style="max-width:900px;margin:12px 0 18px">
 <tr><th>Signal</th><th class="num">Weight</th><th>How it's measured</th></tr>
 <tr><td>Network endorsement</td><td class="num">${pct("network")}</td><td>
   65% <b>endorsement strength</b>: for every distinct account that tagged / @mentioned / co-posted with the shop in its recent posts,
-  add <code>type weight × (1 + log₂ posts) × √(endorser PageRank)</code>. Type weights: blogger ${M.endorser_weight.blogger}, maker ${M.endorser_weight.maker} (peer respect), café ${M.endorser_weight.venue} (often a wholesale client).
-  Sister accounts and owners tagging their own shop are excluded upstream.<br>
+  add <code>type weight × (1 + log₂ posts) × √(endorser PageRank)</code>. Type weights: blogger ${M.endorser_weight.blogger}, ${fill(L.endorser_note)}.
+  Sister accounts, and staff or founders tagging their own shop, are excluded. A post tagging many accounts (an event line-up,
+  a roundup) is split: up to 3 tags count in full; with more, each of its n tags gets 3 / n. A tag between two businesses that shows a
+  business tie (supply, collaboration, a shared event or stall — from the words next to the tag — a standing tag in 3+ recent
+  posts, or the reverse of such a tie) counts once, at weight ${M.business_weight ?? 0.4}.<br>
   35% <b>centrality</b>: PageRank over tags plus Instagram's "related accounts" links (each related link worth ${M.related_edge} of a tag) — shops Instagram keeps
   suggesting next to well-connected accounts sit at the core of the scene.<br>Both log-scaled, saturating at the 95th / 97th percentile of the pool.</td></tr>
 <tr><td>Google rating</td><td class="num">${pct("quality")}</td><td>Bayesian average <code>(rating × n + ${M.mean_rating.toFixed(2)} × ${M.prior_reviews}) / (n + ${M.prior_reviews})</code>,
-  so a 5.0 from 12 reviews doesn't beat a 4.7 from 2,000. Scaled linearly 4.0★ → 0, 4.9★ → 1. Shops with no Google listing (studios, online-only) get the pool average.</td></tr>
-<tr><td>Press &amp; bloggers</td><td class="num">${pct("press")}</td><td>Distinct outlets (by website) that wrote about the shop: food blogs and media found by a web search for every top-150 candidate,
-  articles harvested while building the graph, and the curated <b>Bon Pain 2026</b> bread-fair line-up (counted as one outlet). Social media, forums, listing/delivery sites and SEO content farms are excluded.
+  so a 5.0 from 12 reviews doesn't beat a 4.7 from 2,000. Scaled linearly 4.0★ → 0, 4.9★ → 1. ${M.require_google ? "Shops with no Google listing are not ranked." : "Shops with no Google listing (studios, online-only) get the pool average."}</td></tr>
+<tr><td>Press &amp; bloggers</td><td class="num">${pct("press")}</td><td>Distinct outlets (by website) that wrote about the shop: ${fill(L.press_sources)}. Social media, forums, listing/delivery sites and SEO content farms are excluded.
   Every post title since 2022 on a list of established Taipei food blogs is also checked; an outlet with a post whose title names the shop (a dedicated review, not a listicle) counts ×${M.trusted_blog_weight}.
   Log-scaled, saturating at 5 outlets.</td></tr>
 <tr><td>Google review volume</td><td class="num">${pct("volume")}</td><td>log(review count), saturating at ${fmt(M.hi_reviews)} reviews (95th percentile). A proxy for foot traffic and staying power.</td></tr>
@@ -589,8 +585,8 @@ and summarised recurring praise, signature items, and recurring complaints. "Wha
 <li>The pool is limited to shops already in the graph; a well-loved shop with no Instagram presence in this network cannot appear.</li>
 <li>Google ratings drift and can be gamed; the shrinkage and the separate volume signal limit the effect of small, glowing samples.</li>
 <li>Matching IG accounts to Google places used the place's linked Instagram when available, otherwise an exact name match on a food-category place; for brands with several branches the branch with the most reviews is used. Unmatched shops are treated as unlisted.</li>
-<li>Shops without a Google listing (online-only studios, pick-up-only kitchens) get the average rating but no review volume, so they rank below comparable walk-in shops.</li>
-<li>Press search covered the top 150 candidates by one or two searches each; small shops may have coverage we missed. Apart from the trusted food blogs, the press score does not weigh outlet prestige.</li>
+<li>${L.unlisted}</li>
+<li>${fill(L.press_caveat)} Apart from the trusted food blogs, the press score does not weigh outlet prestige.</li>
 </ul>`;
 // Deep links: #tab=chart|method, #open=<handle>, #district=<name>
 const hash = new URLSearchParams(location.hash.slice(1));

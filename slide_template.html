@@ -83,6 +83,12 @@ body { font-family: "Noto Sans CJK TC", "Noto Sans TC", "PingFang TC", sans-seri
 const DATA = /*DATA*/null;
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
+// "The <b>Top 100</b> bakeries &<br>sweets shops in Greater Taipei" from series.headline [lead, bold, rest].
+function headline() {
+  const [lead, bold, rest] = DATA.series.headline;
+  return `${esc(lead)} <b>${esc(bold)}</b> ${esc(rest).replace(/\n/g, "<br>")}`;
+}
+
 function titleCard(post) {
   const bars = Array.from({ length: post.of }, (_, i) =>
     `<i class="${i + 1 < post.n ? "done" : i + 1 === post.n ? "now" : ""}"></i>`).join("");
@@ -90,7 +96,7 @@ function titleCard(post) {
     <div class="top"><span class="mark">${esc(DATA.series.short)}</span>
       <span class="mark part">Part ${String(post.n).padStart(2, "0")} / ${post.of}</span></div>
     <div class="mid">
-      <div class="series">The <b>Top 100</b> bakeries &amp;<br>sweets shops in Greater Taipei</div>
+      <div class="series">${headline()}</div>
       <div class="range">${post.hi}<span class="dash">–</span>${post.lo}</div>
       <div class="zh">${esc(DATA.series.zh)}</div>
     </div>
@@ -131,7 +137,8 @@ function shopSlide(s) {
       ${s.credit ? `<div class="credit">Photo: @${esc(s.credit)}</div>` : ""}
     </div>
     <div class="body">
-      <div class="kicker">${esc(s.place)}</div>
+      <div class="kicker">${esc(s.place)}${s.branches && s.branches.length
+        ? ` · +${s.branches.length} more location${s.branches.length > 1 ? "s" : ""}` : ""}</div>
       <h1>${esc(s.name)}</h1>
       ${s.rating ? `<div class="meta"><span class="star">★</span> ${s.rating.toFixed(1)}${reviews}</div>` : ""}
       <p class="summary">${esc(s.summary)}</p>
@@ -159,6 +166,7 @@ function fit(el) {
 }
 
 function render() {
+  Object.entries(DATA.series.theme || {}).forEach(([k, v]) => document.documentElement.style.setProperty(k, v));
   const [p, s] = (location.hash.slice(1) || "1/0").split("/").map(Number);
   const post = DATA.posts[p - 1], slide = post.slides[s];
   const root = document.getElementById("root");

@@ -6,24 +6,25 @@ point at them, so the request budget goes to the most-endorsed accounts first.
 A related suggestion counts for less than a tag, but handles suggested by many
 accounts still rise to the top.
 
-usage: python3 crawl.py BUDGET
-       python3 crawl.py --related BUDGET   # refetch cached accounts to get their related lists
+usage: python3 -I crawl.py -p PROJECT BUDGET
+       python3 -I crawl.py -p PROJECT --related BUDGET   # refetch cached accounts to get their related lists
 """
 
 import json
 import os
 import sys
 
-import ig
-from classify import classify, taiwan_score
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import ig  # noqa: E402
+import project  # noqa: E402
+from classify import classify, taiwan_score  # noqa: E402
 
-ROOT = os.path.dirname(os.path.abspath(__file__))
-SEEDS = json.load(open(os.path.join(ROOT, "seeds.json")))
+CFG = project.current()
+SEEDS = json.load(open(os.path.join(CFG.DIR, "seeds.json")))
 SKIP = set(SEEDS.get("skip", []))
 EXPAND_WEIGHT = {"blogger": 1.0, "maker": 2.0, "venue": 0.3}
 RELATED_WEIGHT = 0.5
-_ov_path = os.path.join(ROOT, "overrides.json")
-OVERRIDES = json.load(open(_ov_path)) if os.path.exists(_ov_path) else {}
+OVERRIDES = project.json_file(os.path.join(CFG.DIR, "overrides.json"), {})
 
 
 def kind_of(h, p):

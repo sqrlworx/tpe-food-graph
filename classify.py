@@ -1,6 +1,14 @@
-"""Heuristic classification of IG profiles into Taiwan food bloggers / food makers."""
+"""Heuristic classification of IG profiles into Taiwan food bloggers / food makers.
+
+What counts as a maker (the kind of shop being ranked) and a venue comes from the
+project config (project.py).
+"""
 
 import re
+
+import project
+
+CFG = project.current()
 
 CJK = re.compile(r"[一-鿿]")
 JP_KANA = re.compile(r"[぀-ヿ]")
@@ -17,27 +25,6 @@ TW_WORDS = re.compile(
     re.I,
 )
 
-MAKER_WORDS = re.compile(
-    r"bakery|bakehouse|boulangerie|bread|baker\b|baking|sourdough|levain|patisserie|"
-    r"p[aâ]tisserie|pastry|pastries|viennoiserie|croissant|cro\b|canel[eé]|dessert|"
-    r"cake|cookie|biscuit|bagel|donut|doughnut|scone|tart|gelato|ice ?cream|chocolat|"
-    r"confection|brioche|focaccia|cinnamon roll|"
-    r"麵包|面包|烘焙|烘培|酸種|天然酵母|甜點|甜品|蛋糕|可頌|可麗露|塔專賣|餅乾|吐司|貝果|"
-    r"甜甜圈|司康|冰淇淋|義式冰|巧克力|糕|菓子|肉桂捲|布丁|生乳|千層|馬卡龍|鹼水|乳酪|"
-    r"餅|酥|月餅|鳳梨酥|蛋黃酥|牛軋糖|果醬|醬料|辣油|jam\b|sauce|granola|chili oil",
-    re.I,
-)
-BAKERY_WORDS = re.compile(
-    r"bakery|bakehouse|boulangerie|bread|baker\b|sourdough|levain|viennoiserie|croissant|"
-    r"bagel|brioche|focaccia|麵包|面包|烘焙|烘培|酸種|天然酵母|可頌|吐司|貝果",
-    re.I,
-)
-VENUE_WORDS = re.compile(
-    r"caf[eé]|coffee|roaster|espresso|咖啡|restaurant|bistro|kitchen|bar\b|wine|"
-    r"餐廳|餐酒|小館|食堂|料理|居酒屋|拉麵|ramen|burger|pizza|taco|brunch|早午餐|"
-    r"bbq|燒肉|火鍋|omakase|sushi|鮨|tea\b|茶",
-    re.I,
-)
 BLOGGER_WORDS = re.compile(
     r"foodie|food ?blog|blogger|food ?lover|eats?\b|eating|eater|hungry|吃貨|吃吃|愛吃|"
     r"美食|部落客|食記|探店|吃什麼|吃喝|合作|邀約|collab|📩|✉|email|mail|podcast|"
@@ -92,15 +79,66 @@ def classify(p):
     n_out = len({h for post in p["posts"] for h in post["tagged"] + post["mentions"]})
     if NOT_FOOD.search(t):
         return "other", None
-    maker = bool(MAKER_WORDS.search(t))
+    maker = bool(CFG.MAKER_WORDS.search(t))
     blogger = bool(BLOGGER_WORDS.search(bio + " " + (p.get("full_name") or "")))
     blogger_name = re.search(r"foodie|eat|hungry|美食|吃", p["username"] + (p.get("full_name") or ""), re.I)
     if blogger_name and not p.get("address") and n_out >= 3:
         return "blogger", None
     if maker and not (blogger and not p.get("address") and n_out >= 8):
-        return "maker", "bakery" if BAKERY_WORDS.search(t) else "dessert"
+        return "maker", next((k for k, rx in CFG.SUBTYPES if rx.search(t)), CFG.DEFAULT_SUBTYPE)
     if blogger and n_out >= 5:
         return "blogger", None
-    if VENUE_WORDS.search(t):
+    if CFG.VENUE_WORDS.search(t):
         return "venue", None
     return "other", None
+
+
+def _brand_stem(h):
+    """The handle's letters without generic words or branch numbers: rufous_coffee_2 -> rufous,
+    oasis_coffee_roasting_lab -> oasis, celebread.acs_tm -> celeacstm (bakeries: "bread" is generic)."""
+    s = CFG.GOOGLE_GENERIC.sub("", re.sub(r"[^a-z0-9]", "", h.lower()))
+    return re.sub(r"\d+(st|nd|rd|th)?$", "", s)
+
+
+def affiliated(a, bio_a, b, bio_b):
+    """Sister accounts / same brand: one names the other in its bio, or the handles are the
+    same brand name apart from generic words and branch numbers (rufous_coffee_1 /
+    rufous_coffee_2, aufglet / aufglet_taipei). Brands this misses go in the config's BRANDS."""
+    a, b = a.lower(), b.lower()
+    if "@" + b in (bio_a or "").lower() or "@" + a in (bio_b or "").lower():
+        return True
+    sa = _brand_stem(a)
+    return len(re.sub(r"[^a-z]", "", sa)) >= 4 and sa == _brand_stem(b)
+
+
+def same_brand(a, bio_a, b, bio_b):
+    """affiliated(), corrected by the project's BRANDS (groups to join) and NOT_BRANDS (pairs to keep apart)."""
+    pair = {a.lower(), b.lower()}
+    if any(pair == set(p) for p in CFG.NOT_BRANDS):
+        return False
+    return any(pair <= set(g) for g in CFG.BRANDS) or affiliated(a, bio_a, b, bio_b)
+
+
+def brands(shops):
+    """{handle: brand lead handle} for shops ({handle: bio}) grouped by same_brand(). The lead is
+    the first handle of the group in the order given."""
+    order = list(shops)
+    parent = {h: h for h in order}
+
+    def find(h):
+        while parent[h] != h:
+            parent[h] = parent[parent[h]]
+            h = parent[h]
+        return h
+
+    pairs = [(a, b) for i, a in enumerate(order) for b in order[i + 1:] if same_brand(a, shops[a], b, shops[b])]
+    for a, b in pairs:
+        ra, rb = find(a), find(b)
+        if ra != rb:
+            # keep the earlier handle as the root, so the lead is the first in order
+            if order.index(ra) < order.index(rb):
+                parent[rb] = ra
+            else:
+                parent[ra] = rb
+    return {h: find(h) for h in order}
+

@@ -1,16 +1,18 @@
-"""Merge press / food-blogger coverage into data/press.json ({handle: [{outlet, url, title}]}).
+"""Merge press / food-blogger coverage into the project's data/press.json ({handle: [{outlet, url, title}]}).
 
-Sources:
-  data/harvest.json             articles harvested while building the graph (harvest.py)
-  data/bonpain_2026_handles.json  the curated Bon Pain 2026 bread fair line-up (vendor -> handle)
-  data/press_search.json        coverage found by web search ({handle: [{outlet, url, title}]})
-  data/trusted_blogs.json       established Taipei food blogs: every post title since
-                                BLOG_SINCE is fetched (via fwdproxy, cached in the gitignored
-                                data/blogs/) from the blog's Blogger feed or WordPress REST API,
-                                and a post whose title names the shop is a dedicated review,
-                                marked "trusted" (rank.py weighs those outlets higher)
+Sources, in the project's data/:
+  harvest.json             articles harvested while building the graph (harvest.py)
+  CURATED files            curated line-ups named in the project config, {vendor: handle}
+                           (bakeries: the Bon Pain 2026 bread fair)
+  press_search.json        coverage found by web search ({handle: [{outlet, url, title}]};
+                           press_search.py)
+  trusted_blogs.json       established Taipei food blogs: every post title since
+                           BLOG_SINCE is fetched (via fwdproxy, cached in the gitignored
+                           data/blogs/ shared by all projects) from the blog's Blogger feed or
+                           WordPress REST API, and a post whose title names the shop is a
+                           dedicated review, marked "trusted" (rank.py weighs those outlets higher)
 
-usage: python3 -I press.py
+usage: python3 -I press.py -p PROJECT
 """
 
 import csv
@@ -19,17 +21,25 @@ import json
 import os
 import re
 import subprocess
+import sys
 import unicodedata
 import urllib.parse
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-DATA = os.path.join(ROOT, "data")
-BLOG_CACHE = os.path.join(DATA, "blogs")
-BONPAIN_URL = "https://www.herenow.city/taipei/style/2026_bon-pain/"
-# Not editorial coverage: social networks, maps, delivery and listing sites.
+sys.path.insert(0, ROOT)
+import project  # noqa: E402
+from classify import brands  # noqa: E402
+
+CFG = project.current()
+DATA = CFG.DATA
+BLOG_CACHE = os.path.join(project.SHARED, "blogs")
+CURATED_URLS = {c["url"] for c in CFG.CURATED}
+# Not editorial coverage: social networks, forums, maps, delivery, listing and job sites.
 NOT_PRESS = re.compile(
     r"instagram|facebook|threads|google\.|goo\.gl|youtube|uber|foodpanda|tripadvisor|linktr|"
-    r"inline\.app|line\.me|shopee|pinkoi|104\.com|"
+    r"inline\.app|line\.me|shopee|pinkoi|104\.com|1111\.com|yes123|"
+    r"yelp|tabelog|cafenomad|openrice|trip\.com|klook|kkday|agoda|booking\.com|"
+    r"ptt\.cc|dcard|reddit|tiktok|wikipedia|"
     # SEO content farms rather than food writing.
     r"uptogo|upssmile|tyaward|icoco\.tw|lordcat|cafe-belt|findglocal|wheree|cybo\.com",
     re.I,
@@ -48,25 +58,12 @@ FILLER = re.compile(
     r"\d+月|since \d+|全預訂制|專賣店?$|台北|臺北",
     re.I,
 )
-GENERIC = re.compile(
-    r"甜點|甜品|工作室|蛋糕|cake|麵包|烘焙|烘培|坊|專賣店?|咖啡|分店|門市|[一-鿿]{1,3}店|"
-    r"bakery|bakehouse|boulangerie|patisseries?|dessert|cafe|coffee|studio|official|taipei|tw$"
-)
+GENERIC = CFG.PRESS_GENERIC
 # Product words: a name made mostly of them ("手作甜點") names no shop in particular.
-PRODUCT = re.compile(
-    r"可麗露|生乳捲|泡芙|肉桂捲|可頌|貝果|吐司|馬卡龍|千層|布丁|戚風|巴斯克|乳酪|起司|塔|酸種|法式|"
-    r"手工|手作|客製化?|喜餅|彌月|禮盒|冰淇淋|義式|巧克力|水果|季節|專門|專賣|生日|婚禮|韓式|錶花|"
-    r"croissant|canele|bagel|gelato|chocolate|cake|pastry|bread|sweets?"
-)
+PRODUCT = CFG.PRESS_PRODUCT
 # Shop names that are also everyday English words, too ambiguous to match alone in a
 # post title ("1881 Heritage"); those shops still match on their fuller names.
-AMBIGUOUS = {"heritage", "smile", "specialty", "specialtycoffee", "peckish", "comeup", "ontheroad",
-             "rise", "season", "terra", "double", "butter", "bread",
-             # common food words that a shop name can reduce to ("Cookie_Tea" -> "cookie")
-             "cookie", "cookies", "scone", "scones", "brownie", "brownies", "cheesecake", "pudding",
-             "waffle", "waffles", "donut", "donuts", "macaron", "macarons", "chiffon", "crepe", "crepes",
-             "toast", "cream", "sugar", "honey", "cocoa", "matcha", "lemon", "berry", "happy", "sunny",
-             "little", "petit", "maison"}
+AMBIGUOUS = CFG.PRESS_AMBIGUOUS
 # A post titled with another city or country is about a shop there (a branch, a namesake),
 # unless the title also names Taipei.
 ELSEWHERE = re.compile(
@@ -137,6 +134,21 @@ def aliases(handle, ig_name, google_name):
     return out - AMBIGUOUS
 
 
+def name_tokens(*names):
+    """Latin words, numbers and CJK runs in names / handles, lowercased."""
+    out = set()
+    for n in names:
+        n = unicodedata.normalize("NFKC", n or "").lower()
+        out |= set(re.findall(r"[a-z]{2,}|\d+|[一-鿿]{2,}", n))
+    return {t for t in out if not GENERIC.fullmatch(t) and not CFG.GOOGLE_GENERIC.fullmatch(t)}
+
+
+def names_token(title, t):
+    if re.match(r"[一-鿿]", t):
+        return t in title
+    return t in re.findall(r"[a-z]+|\d+", unicodedata.normalize("NFKC", title).lower())
+
+
 def get_json(url):
     out = subprocess.run(
         ["curl", "-s", "--http2", "-x", "fwdproxy:8080", "--max-time", "60", "-A", UA, url],
@@ -189,12 +201,12 @@ def blog_posts(blog):
 
 
 def main():
-    shops = {s["username"]: s for s in csv.DictReader(open(os.path.join(ROOT, "output", "food_creators.csv")))}
+    shops = {s["username"]: s for s in csv.DictReader(open(os.path.join(CFG.OUT, "food_creators.csv")))}
     google = load("google_places.json", {})
     press = {}
 
     def add(h, item):
-        if NOT_PRESS.search(item["url"]) and not item["url"] == BONPAIN_URL:
+        if NOT_PRESS.search(item["url"]) and item["url"] not in CURATED_URLS:
             return
         lst = press.setdefault(h, [])
         for x in lst:
@@ -210,9 +222,9 @@ def main():
                 add(h, {"outlet": outlet_of(url), "url": url, "title": ""})
 
     # Vendor names -> handles, reviewed by hand (fuzzy name matching mislabels too many).
-    for vendor, h in load("bonpain_2026_handles.json", {}).items():
-        add(h, {"outlet": "Bon Pain 2026 line-up", "url": BONPAIN_URL,
-                "title": f"Bon Pain 2026 bread fair curated vendor ({vendor})"})
+    for c in CFG.CURATED:
+        for vendor, h in load(c["file"], {}).items():
+            add(h, {"outlet": c["outlet"], "url": c["url"], "title": c["title"].format(vendor=vendor)})
 
     for h, items in load("press_search.json", {}).items():
         if h in shops:
@@ -224,11 +236,12 @@ def main():
 
     blogs = [(b, [(norm(p["title"]), p) for p in blog_posts(b)]) for b in load("trusted_blogs.json", [])]
     n_trusted = 0
+    shop_aliases = {}
     for h, s in shops.items():
         if s["role"] != "shop":
             continue
         gp = google.get(h) or {}
-        al = aliases(h, s["name"], gp.get("name") if gp.get("match") else "")
+        al = shop_aliases[h] = aliases(h, s["name"], gp.get("name") if gp.get("match") else "")
         cjk = [a for a in al if re.search(r"[一-鿿぀-ヿ]", a)]
         latin = [a for a in al if a not in cjk]
         for b, posts in blogs:
@@ -240,11 +253,40 @@ def main():
                             "title": p["title"], "date": p["date"], "trusted": True})
                     n_trusted += 1
 
+    # A post about one branch also reads as the brand ("RUFOUS COFFEE ROASTERS 2" names "Rufous
+    # Coffee Roasters"). Among branches of one brand, a post whose title names a word only one
+    # branch has (the 2 of Rufous Coffee Roasters 2, the TM of Celebread-TM, Anhe) goes to that
+    # branch alone; otherwise it stays with the branches it was found for.
+    brand = brands({h: shops[h]["bio"] for h in shop_aliases})
+    members = {}
+    for h, lead in brand.items():
+        members.setdefault(lead, []).append(h)
+    n_moved = 0
+    for group in (g for g in members.values() if len(g) > 1):
+        gname = {h: (google.get(h) or {}).get("name", "") if (google.get(h) or {}).get("match") else "" for h in group}
+        tokens = {h: name_tokens(h, shops[h]["name"], gname[h]) for h in group}
+        own = {h: tokens[h] - set().union(*(tokens[o] for o in group if o != h)) for h in group}
+        posts = {it["url"]: it for h in group for it in press.get(h, [])
+                 if it["title"] and it["url"] not in CURATED_URLS}
+        for url, it in posts.items():
+            hits = {h: sum(names_token(it["title"], t) for t in own[h]) for h in group}
+            best = max(hits.values())
+            if not best:
+                continue
+            for h in group:
+                have = next((x for x in press.get(h, []) if x["url"] == url), None)
+                if hits[h] == best and not have:
+                    press.setdefault(h, []).append(dict(it))
+                    n_moved += 1
+                elif have and hits[h] != best:
+                    press[h].remove(have)
+    press = {h: items for h, items in press.items() if items}
+
     json.dump(press, open(os.path.join(DATA, "press.json"), "w"), ensure_ascii=False, indent=1)
     for b, posts in blogs:
         print(f"{len(posts):>6} posts  {b['site']}")
     print(f"shops with coverage: {len(press)}; items: {sum(len(v) for v in press.values())}; "
-          f"trusted blog posts naming a shop: {n_trusted}")
+          f"trusted blog posts naming a shop: {n_trusted}; posts moved to the sister branch they are about: {n_moved}")
 
 
 if __name__ == "__main__":

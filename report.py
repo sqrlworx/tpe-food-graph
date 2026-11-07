@@ -1,10 +1,19 @@
-"""Write output/REPORT.md from the CSVs produced by build.py."""
+"""Write output/REPORT.md from the CSVs produced by build.py.
+
+usage: python3 -I report.py -p PROJECT
+"""
 
 import csv
 import os
+import sys
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-OUT = os.path.join(ROOT, "output")
+sys.path.insert(0, ROOT)
+import project  # noqa: E402
+
+CFG = project.current()
+OUT = CFG.OUT
+GROUP_LABELS = list(CFG.GROUPS.values())
 
 
 def fmt(n):
@@ -16,7 +25,7 @@ makers = list(csv.DictReader(open(os.path.join(OUT, "food_creators.csv"))))
 bloggers = list(csv.DictReader(open(os.path.join(OUT, "food_bloggers.csv"))))
 
 lines = [
-    "# Taiwan food creators × food bloggers (Instagram)",
+    f"# {CFG.GRAPH_TITLE} (Instagram)",
     "",
     "Interactive graph: `index.html` (open in a browser; click a node to see who tagged it).",
     "Full data: `food_creators.csv`, `food_bloggers.csv`, `graph.json`.",
@@ -27,14 +36,14 @@ lines = [
     "**Taste (creators)** = PageRank over the endorsement graph (1.0 = average).",
     "**Taste (bloggers)** = Σ over makers they tag of log₂(1 + other accounts that also tagged that maker).",
     "",
-    f"## Top 50 food creators by followers ({len(makers)} total)",
+    f"## Top 50 {CFG.MAKERS_LABEL.lower()} by followers ({len(makers)} total)",
     "",
     "| # | Account | Name | Type | Followers | Tagged by bloggers | Tagged by makers | Taste |",
     "|---|---|---|---|---|---|---|---|",
 ]
 for r in makers[:50]:
-    # Same grouping as the graph legend: bakeries, and sweets for every other maker.
-    kind = ("bakery" if r["subtype"] == "bakery" else "sweets") + (" (chef)" if r["role"] == "chef" else "")
+    # Same grouping as the graph legend: other subtypes join the last group.
+    kind = CFG.GROUPS.get(r["subtype"], GROUP_LABELS[-1]).lower() + (f" ({r['role']})" if r["role"] not in ("", "shop") else "")
     lines.append(
         f"| {r['rank']} | [@{r['username']}]({r['url']}) | {r['name'][:30]} | {kind} | "
         f"{fmt(r['followers'])} | {r['endorsed_by_bloggers']} | {r['endorsed_by_makers']} | {r['pagerank']} |"

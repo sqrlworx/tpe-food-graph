@@ -1,4 +1,4 @@
-"""Look up graph makers on Google Maps (via fwdproxy) and write data/google_places.json.
+"""Look up graph makers on Google Maps (via fwdproxy) and write the project's data/google_places.json.
 
 Uses the same search request the Maps web app makes (tbm=map), biased to a
 Taipei viewport. One search returns the place card: rating, review count, star
@@ -9,7 +9,7 @@ data/google_raw/ (gitignored).
 A Google place is matched to an Instagram account when its website links to
 that account ("ig"), or when the names agree ("name").
 
-usage: python3 -I google_maps.py [handle ...]
+usage: python3 -I google_maps.py -p PROJECT [handle ...]
 """
 
 import csv
@@ -24,8 +24,12 @@ import unicodedata
 import urllib.parse
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-RAW = os.path.join(ROOT, "data", "google_raw")
-OUT_PATH = os.path.join(ROOT, "data", "google_places.json")
+sys.path.insert(0, ROOT)
+import project  # noqa: E402
+
+CFG = project.current()
+RAW = os.path.join(project.SHARED, "google_raw")
+OUT_PATH = os.path.join(CFG.DATA, "google_places.json")
 os.makedirs(RAW, exist_ok=True)
 
 UA = (
@@ -74,8 +78,8 @@ def _template():
     return url
 
 
-# Google categories of places that can be a bakery / dessert shop (zh-HK / ja labels included).
-FOOD_CATEGORY = re.compile(r"餅|甜|糕|麵包|面包|包圈|雪糕|冰|朱古力|巧克力|咖啡|コーヒー|カフェ|ケーキ|喫茶|餐廳|禮盒|糖果|到會|食品|芝士")
+# Google categories of places that can be the kind of shop being ranked.
+FOOD_CATEGORY = CFG.GOOGLE_CATEGORY
 
 
 def _pb_escape(s):
@@ -146,13 +150,8 @@ def parse_place(info):
     }
 
 
-# Words every bakery / dessert shop name shares; they say nothing about which shop it is.
-GENERIC = re.compile(
-    r"bakery|bakehouse|boulangerie|patisserie|pâtisserie|pastry|dessert|desserts|sweets|cafe|café|coffee|"
-    r"studio|bread|cake|kitchen|taipei|taiwan|official|shop|store|lab|the|and|"
-    r"甜點|甜品|麵包|面包|烘焙|烘培|蛋糕|製菓|菓子|工作室|工坊|專賣店|專門店|專賣|咖啡|手作|台北|臺北|新北|門市|總店|本店|店",
-    re.I,
-)
+# Words every shop name of the kind shares; they say nothing about which shop it is.
+GENERIC = CFG.GOOGLE_GENERIC
 
 
 def _norm(s):
@@ -214,9 +213,10 @@ def queries(shop):
     return list(dict.fromkeys(qs))
 
 
-_ov = os.path.join(ROOT, "data", "google_overrides.json")
-# Hand-checked fixes: {handle: null} = no Google listing, {handle: "query"} = search this instead.
-OVERRIDES = json.load(open(_ov)) if os.path.exists(_ov) else {}
+# Hand-checked fixes: {handle: null} = no Google listing, {handle: "query"} = search this instead,
+# {handle: {"query": "...", "place": "<exact Google place name>"}} = that place, for a listing whose
+# name and website don't identify the account (a Chinese-only name, a flagship among pop-ups).
+OVERRIDES = project.data(CFG, "google_overrides.json", {})
 
 
 def match(shop):
@@ -226,10 +226,16 @@ def match(shop):
     # Every place that links to the account or shares its name; brands with several
     # branches are represented by the branch with the most reviews (the flagship).
     found = {}
-    for q in ([OVERRIDES[h]] if h in OVERRIDES else queries(shop)):
+    ov = OVERRIDES.get(h)
+    pinned = ov.get("place") if isinstance(ov, dict) else None
+    for q in ([ov["query"] if isinstance(ov, dict) else ov] if ov else queries(shop)):
         for p in search(q):
             web = p["website"].lower()
-            if re.search(r"instagram\.com/" + re.escape(h) + r"(?:[/?]|$)", web):
+            if pinned:
+                if p["name"] != pinned:
+                    continue
+                how, sim = "override", 1.0
+            elif re.search(r"instagram\.com/" + re.escape(h) + r"(?:[/?]|$)", web):
                 how, sim = "ig", 1.0
             elif (re.search(r"台灣|臺灣|[台臺新]北市|縣|市", p["address"]) and FOOD_CATEGORY.search(" ".join(p["categories"]))
                   and name_sim(p, shop) >= 0.99):
@@ -239,15 +245,17 @@ def match(shop):
             key = p["fid"] or p["name"] + p["address"]
             if key not in found or (how == "ig" and found[key]["match"] != "ig"):
                 found[key] = {**p, "match": how, "query": q, "sim": round(sim, 2)}
-        if any(f["match"] == "ig" or f["sim"] >= 0.99 for f in found.values()):
+        if any(f["match"] in ("ig", "override") or f["sim"] >= 0.99 for f in found.values()):
             break
     if not found:
         return {"match": "", "query": " | ".join(queries(shop))}
-    best = max(found.values(), key=lambda f: (f["match"] == "ig" or f["sim"] >= 0.99, f["reviews"]))
+    best = max(found.values(), key=lambda f: (f["match"] in ("ig", "override") or f["sim"] >= 0.99, f["reviews"]))
     best["branches"] = len(found)
     if best["stars"] is None and best["reviews"]:
         # List results are slim; searching the exact place returns its full card.
-        for q in (f"{best['name']} {best['address']}", best["name"], f"{best['address']} {best['name']}"):
+        street = re.sub(r"^\d+|[台臺新]北市|\S{1,3}?區|\S{1,3}?里", "", best["address"])
+        for q in (f"{best['name']} {best['address']}", best["name"], f"{best['address']} {best['name']}",
+                  f"{best['name']} {street}"):
             full = [p for p in search(q) if p["fid"] == best["fid"] and p["stars"] is not None]
             if full:
                 best.update({k: full[0][k] for k in ("stars", "topics", "snippets", "review_texts", "closed")})
@@ -256,8 +264,8 @@ def match(shop):
 
 
 def main(only):
-    shops = list(csv.DictReader(open(os.path.join(ROOT, "output", "food_creators.csv"))))
-    shops = [s for s in shops if s["role"] == "shop" and s["subtype"] in ("bakery", "dessert", "pastry")]
+    shops = list(csv.DictReader(open(os.path.join(CFG.OUT, "food_creators.csv"))))
+    shops = [s for s in shops if s["role"] == "shop" and s["subtype"] in CFG.RANKED_SUBTYPES]
     if only:
         shops = [s for s in shops if s["username"] in only]
     else:

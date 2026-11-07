@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Taiwan food creators × bloggers — Instagram endorsement graph</title>
+<title>Instagram endorsement graph</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 .viz-root {
@@ -16,8 +16,8 @@
   --edge: rgba(80, 80, 76, 0.18);
   --edge-hi: rgba(20, 20, 20, 0.75);
   --blogger: #2a78d6;
-  --bakery: #eb6834;
-  --dessert: #1baf7a;
+  --g0: #eb6834;
+  --g1: #1baf7a;
   --venue: #b4b3ad;
 }
 @media (prefers-color-scheme: dark) {
@@ -32,8 +32,8 @@
     --edge: rgba(220, 220, 214, 0.14);
     --edge-hi: rgba(240, 240, 236, 0.8);
     --blogger: #3987e5;
-    --bakery: #d95926;
-    --dessert: #199e70;
+    --g0: #d95926;
+    --g1: #199e70;
     --venue: #5d5c58;
   }
 }
@@ -94,14 +94,12 @@ a { color: var(--blogger); }
 <body class="viz-root">
 <header>
   <div>
-    <h1>Taiwan food creators × food bloggers</h1>
+    <h1 id="title"></h1>
     <div class="sub">Instagram endorsement graph: an arrow A → B means A tagged or @mentioned B in a recent post; a dashed line means Instagram suggests one as related to the other. Circle size = followers.</div>
   </div>
   <div class="controls">
     <span class="legend-item" data-kind="blogger"><i style="background:var(--blogger)"></i>Food blogger</span>
-    <span class="legend-item" data-kind="bakery"><i style="background:var(--bakery)"></i>Bakery</span>
-    <span class="legend-item" data-kind="dessert"><i style="background:var(--dessert)"></i>Sweets</span>
-    <span class="legend-item off" data-kind="venue"><i style="background:var(--venue)"></i>Café / restaurant</span>
+    <span class="legend-item off" data-kind="venue" id="venueLegend"><i style="background:var(--venue)"></i></span>
     <span class="legend-item" id="relToggle"><span class="dash"></span>IG related</span>
     <input type="search" id="q" placeholder="Find account…">
   </div>
@@ -109,7 +107,7 @@ a { color: var(--blogger); }
 <div id="graph"><svg></svg><div id="tip"></div></div>
 <aside>
   <div class="tabs">
-    <button data-tab="maker" class="on">Food creators</button>
+    <button data-tab="maker" class="on" id="makersTab"></button>
     <button data-tab="blogger">Food bloggers</button>
   </div>
   <div id="detail"></div>
@@ -125,10 +123,19 @@ a { color: var(--blogger); }
 <script>/*D3*/</script>
 <script>
 const DATA = /*GRAPH*/null;
+// Project labels: title, maker groups (subtype -> legend label; other subtypes join the last group).
+const LABELS = /*LABELS*/null;
+const GROUPS = Object.keys(LABELS.groups);
+document.title = `${LABELS.title} — Instagram endorsement graph`;
+document.getElementById('title').textContent = LABELS.title;
+document.getElementById('makersTab').textContent = LABELS.makers;
+document.getElementById('venueLegend').append(LABELS.venue);
+document.getElementById('venueLegend').insertAdjacentHTML('beforebegin', GROUPS.map((g, i) =>
+  `<span class="legend-item" data-kind="${g}"><i style="background:var(--g${i})"></i>${LABELS.groups[g]}</span>`).join(''));
 const fmt = n => n >= 1e6 ? (n/1e6).toFixed(1)+'M' : n >= 1e4 ? Math.round(n/1e3)+'K' : n >= 1e3 ? (n/1e3).toFixed(1)+'K' : String(n);
-const catOf = d => d.kind === 'maker' ? (d.subtype === 'bakery' ? 'bakery' : 'dessert') : d.kind;
-const colorVar = d => `var(--${catOf(d)})`;
-const visible = new Set(['blogger', 'bakery', 'dessert']);
+const catOf = d => d.kind === 'maker' ? (LABELS.groups[d.subtype] ? d.subtype : GROUPS[GROUPS.length - 1]) : d.kind;
+const colorVar = d => GROUPS.includes(catOf(d)) ? `var(--g${GROUPS.indexOf(catOf(d))})` : `var(--${catOf(d)})`;
+const visible = new Set(['blogger', ...GROUPS]);
 let showRelated = true;
 const isRel = l => l.type === 'related';
 

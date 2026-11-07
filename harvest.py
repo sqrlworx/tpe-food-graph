@@ -3,7 +3,7 @@
 Picks up profile links (instagram.com/<handle>), embedded posts (resolved to
 their author via oEmbed) and @handles in the article text.
 
-usage: python3 harvest.py urls.txt > data/harvest.json
+usage: python3 -I harvest.py projects/NAME/data/article_urls.txt > projects/NAME/data/harvest.json
 """
 
 import json

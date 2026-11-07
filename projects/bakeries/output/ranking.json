@@ -13,15 +13,21 @@
    "venue": 0.4
   },
   "related_edge": 0.35,
+  "business_weight": 0.4,
   "prior_reviews": 40,
   "trusted_blog_weight": 2.0,
-  "not_sweets": [
-   "aufglet",
-   "aufglet_taipei",
-   "heureuxvegan",
-   "icegyaru",
-   "skiff.tw"
-  ],
+  "excluded": {
+   "aufglet": "brunch café (Google: café); both accounts match one place",
+   "aufglet_taipei": "brunch café (Google: café); both accounts match one place",
+   "skiff.tw": "matcha drinks shop (Google: non-alcoholic drinks)",
+   "heureuxvegan": "light-meal restaurant that also sells desserts",
+   "icegyaru": "soft-serve shop"
+  },
+  "merged": {
+   "celebread.acs": [
+    "celebread.acs_tm"
+   ]
+  },
   "districts": {
    "中正區": "Zhongzheng",
    "大同區": "Datong",
@@ -69,14 +75,158 @@
   "hi_endorse": 8.22,
   "hi_central": 4.45,
   "hi_reviews": 2222,
-  "n_candidates": 206,
+  "n_candidates": 205,
   "n_shops": 448,
   "n_google": 183,
-  "n_press": 157,
+  "n_press": 156,
   "n_nodes": 811,
   "n_tags": 877,
   "n_related": 2589,
-  "top_n": 100
+  "top_n": 100,
+  "require_google": false,
+  "press_top": 150,
+  "types": [
+   {
+    "k": "bakery",
+    "label": "Bakery",
+    "plural": "Bakeries"
+   },
+   {
+    "k": "sweets",
+    "label": "Sweets",
+    "plural": "Sweets"
+   }
+  ],
+  "labels": {
+   "title": "Top 100 bakeries & sweets in Greater Taipei",
+   "subtitle": "Ranked by peer endorsement in the Instagram food graph, Google Maps ratings, press coverage and reach — not by followers alone.",
+   "kinds": {
+    "blogger": "blogger",
+    "maker": "maker",
+    "venue": "café"
+   },
+   "tagged_note": "endorsed by ≥1 blogger, maker or café",
+   "bands": [
+    [
+     1,
+     10
+    ],
+    [
+     11,
+     25
+    ],
+    [
+     26,
+     50
+    ],
+    [
+     51,
+     75
+    ],
+    [
+     76,
+     100
+    ]
+   ],
+   "pool": "every hand-reviewed bakery / sweets <em>shop</em> in our Instagram food graph ({n_nodes} accounts: bloggers, makers and cafés; chefs' personal accounts and non-dessert makers excluded)",
+   "excluded": "A few accounts labelled bakery / dessert are left out by hand because they are mainly something else (a brunch café, a drinks shop, a light-meal restaurant, a soft-serve shop)",
+   "endorser_note": "maker {maker} (peer respect), café {venue} (often a wholesale client)",
+   "press_sources": "food blogs and media found by a web search for every top-150 candidate, articles harvested while building the graph, and the curated <b>Bon Pain 2026</b> bread-fair line-up (counted as one outlet)",
+   "press_caveat": "Press search covered the top 150 candidates by one or two searches each; small shops may have coverage we missed.",
+   "unlisted": "Shops without a Google listing (online-only studios, pick-up-only kitchens) get the average rating but no review volume, so they rank below comparable walk-in shops.",
+   "items": [
+    [
+     "Croissant 可頌",
+     "可頌|croissant",
+     "i"
+    ],
+    [
+     "Cinnamon roll 肉桂捲",
+     "肉桂捲|cinnamon",
+     "i"
+    ],
+    [
+     "Sourdough 酸種",
+     "酸種|sourdough",
+     "i"
+    ],
+    [
+     "Canelé 可麗露",
+     "可麗露|canel",
+     "i"
+    ],
+    [
+     "Saint-Honoré 聖多諾黑",
+     "聖多諾黑|honor",
+     "i"
+    ],
+    [
+     "Mille-crêpe / feuille 千層",
+     "千層|mille",
+     "i"
+    ],
+    [
+     "Chiffon 戚風",
+     "戚風|chiffon",
+     "i"
+    ],
+    [
+     "Cheesecake / Basque 乳酪",
+     "巴斯克|起司蛋糕|乳酪|cheesecake",
+     "i"
+    ],
+    [
+     "Tart 塔",
+     "塔|tart",
+     "i"
+    ],
+    [
+     "Dacquoise 達克瓦茲",
+     "達克瓦茲|dacquoise",
+     "i"
+    ],
+    [
+     "Scone 司康",
+     "司康|scone",
+     "i"
+    ],
+    [
+     "Gelato / ice cream",
+     "冰淇淋|霜淇淋|gelato|ice cream",
+     "i"
+    ],
+    [
+     "Cookie 餅乾",
+     "餅乾|cookie",
+     "i"
+    ],
+    [
+     "Macaron 馬卡龍",
+     "馬卡龍|卡龍|macaron",
+     "i"
+    ],
+    [
+     "Pudding 布丁",
+     "布丁|pudding",
+     "i"
+    ],
+    [
+     "Toast / milk bread 吐司",
+     "吐司|toast",
+     "i"
+    ],
+    [
+     "Egg-yolk pastry 蛋黃酥",
+     "蛋黃酥",
+     ""
+    ],
+    [
+     "Brownie 布朗尼",
+     "布朗尼|brownie",
+     "i"
+    ]
+   ]
+  }
  },
  "rows": [
   {
@@ -156,6 +306,7 @@
      "handle": "chin_feng_bee_farm",
      "kind": "maker",
      "posts": 8,
+     "business": false,
      "followers": 2450,
      "score": 6.35
     },
@@ -163,6 +314,7 @@
      "handle": "kure8kombucha",
      "kind": "maker",
      "posts": 9,
+     "business": false,
      "followers": 25989,
      "score": 4.2
     },
@@ -170,6 +322,7 @@
      "handle": "chine_hsuan",
      "kind": "maker",
      "posts": 8,
+     "business": false,
      "followers": 3726,
      "score": 3.48
     },
@@ -177,6 +330,7 @@
      "handle": "peray_blog",
      "kind": "blogger",
      "posts": 1,
+     "business": false,
      "followers": 8671,
      "score": 0.89
     },
@@ -184,6 +338,7 @@
      "handle": "fa__burger",
      "kind": "venue",
      "posts": 2,
+     "business": false,
      "followers": 14899,
      "score": 0.83
     },
@@ -191,6 +346,7 @@
      "handle": "vanessafoodies",
      "kind": "blogger",
      "posts": 1,
+     "business": false,
      "followers": 24297,
      "score": 0.74
     },
@@ -198,6 +354,7 @@
      "handle": "eatingintaipei",
      "kind": "blogger",
      "posts": 1,
+     "business": false,
      "followers": 3086,
      "score": 0.72
     },
@@ -205,6 +362,7 @@
      "handle": "deuxdouxcremerie",
      "kind": "maker",
      "posts": 1,
+     "business": false,
      "followers": 9684,
      "score": 0.6
     }
@@ -295,6 +453,7 @@
     "reach": 5.41
    },
    "score": 83.59,
+   "branches": [],
    "rank": 1,
    "follower_rank": 48
   },
@@ -373,6 +532,7 @@
      "handle": "ryan.keelung",
      "kind": "blogger",
      "posts": 2,
+     "business": false,
      "followers": 7080,
      "score": 4.15
     },
@@ -380,6 +540,7 @@
      "handle": "wubread_nofat",
      "kind": "blogger",
      "posts": 2,
+     "business": false,
      "followers": 3321,
      "score": 1.86
     },
@@ -387,6 +548,7 @@
      "handle": "tau_ga_mma",
      "kind": "venue",
      "posts": 4,
+     "business": false,
      "followers": 19159,
      "score": 1.14
     },
@@ -394,6 +556,7 @@
      "handle": "fa__burger",
      "kind": "venue",
      "posts": 3,
+     "business": false,
      "followers": 14899,
      "score": 1.07
     }
@@ -456,6 +619,20 @@
     "reach": 6.96
    },
    "score": 81.67,
+   "branches": [
+    {
+     "handle": "celebread.acs_tm",
+     "display": "CelebreadRed door",
+     "area": "台北市",
+     "district": "",
+     "address": "",
+     "rating": null,
+     "reviews": 0,
+     "score": 27.12,
+     "ig": "https://www.instagram.com/celebread.acs_tm/",
+     "maps": ""
+    }
+   ],
    "rank": 2,
    "follower_rank": 11
   },
@@ -534,6 +711,7 @@
      "handle": "chocolatmurmur",
      "kind": "maker",
      "posts": 11,
+     "business": false,
      "followers": 15234,
      "score": 7.35
     },
@@ -541,6 +719,7 @@
      "handle": "flavornews.tw",
      "kind": "blogger",
      "posts": 1,
+     "business": false,
      "followers": 39817,
      "score": 1.42
     }
@@ -612,6 +791,7 @@
     "reach": 5.33
    },
    "score": 79.5,
+   "branches": [],
    "rank": 3,
    "follower_rank": 53
   },
@@ -694,6 +874,7 @@
      "handle": "tatlerdiningtw",
      "kind": "blogger",
      "posts": 1,
+     "business": false,
      "followers": 67333,
      "score": 3.0
     },
@@ -701,6 +882,7 @@
      "handle": "selftaughtgourmet",
      "kind": "blogger",
      "posts": 1,
+     "business": false,
      "followers": 88586,
      "score": 1.35
     }
@@ -776,6 +958,7 @@
     "reach": 6.09
    },
    "score": 78.45,
+   "branches": [],
    "rank": 4,
    "follower_rank": 25
   },
@@ -854,6 +1037,7 @@
      "handle": "hi.sydney",
      "kind": "blogger",
      "posts": 1,
+     "business": false,
      "followers": 35270,
      "score": 1.62
     },
@@ -861,6 +1045,7 @@
      "handle": "chen_yuan_hao",
      "kind": "venue",
      "posts": 1,
+     "business": false,
      "followers": 520,
      "score": 1.2
     },
@@ -868,6 +1053,7 @@
      "handle": "terra_beantobar",
      "kind": "maker",
      "posts": 1,
+     "business": false,
      "followers": 15595,
      "score": 0.61
     },
@@ -875,6 +1061,7 @@
      "handle": "beamcoast.coffee",
      "kind": "venue",
      "posts": 1,
+     "business": false,
      "followers": 7794,
      "score": 0.29
     }
@@ -955,6 +1142,7 @@
     "reach": 5.7
    },
    "score": 76.79,
+   "branches": [],
    "rank": 5,
    "follower_rank": 35
   },
@@ -1039,6 +1227,7 @@
      "handle": "lesliewangart",
      "kind": "blogger",
      "posts": 4,
+     "business": false,
      "followers": 1405,
      "score": 4.19
     },
@@ -1046,6 +1235,7 @@
      "handle": "hungryintaipei",
      "kind": "blogger",
      "posts": 2,
+     "business": false,
      "followers": 66419,
      "score": 1.69
     }
@@ -1129,6 +1319,7 @@
     "reach": 5.26
    },
    "score": 74.51,
+   "branches": [],
    "rank": 6,
    "follower_rank": 56
   },
@@ -1213,6 +1404,7 @@
      "handle": "senye_breadcoffee",
      "kind": "maker",
      "posts": 8,
+     "business": false,
      "followers": 2983,
      "score": 2.37
     }
@@ -1291,6 +1483,7 @@
     "reach": 6.9
    },
    "score": 73.0,
+   "branches": [],
    "rank": 7,
    "follower_rank": 12
   },
@@ -1369,6 +1562,7 @@
      "handle": "peacepiece_bakery",
      "kind": "maker",
      "posts": 3,
+     "business": false,
      "followers": 9550,
      "score": 1.5
     },
@@ -1376,6 +1570,7 @@
      "handle": "lasfera_boulangerie",
      "kind": "maker",
      "posts": 1,
+     "business": false,
      "followers": 1726,
      "score": 0.64
     },
@@ -1383,6 +1578,7 @@
      "handle": "nowchance_xd",
      "kind": "venue",
      "posts": 2,
+     "business": false,
      "followers": 597,
      "score": 0.58
     },
@@ -1390,6 +1586,7 @@
      "handle": "now__chance",
      "kind": "venue",
      "posts": 2,
+     "business": false,
      "followers": 6376,
      "score": 0.58
     },
@@ -1397,6 +1594,7 @@
      "handle": "fudge_faqi",
      "kind": "maker",
      "posts": 1,
+     "business": false,
      "followers": 6900,
      "score": 0.58
     }
@@ -1478,8 +1676,9 @@
     "reach": 2.77
    },
    "score": 68.6,
+   "branches": [],
    "rank": 8,
-   "follower_rank": 154
+   "follower_rank": 153
   },
   {
    "handle": "patisseriecatherine2023",
@@ -1556,6 +1755,7 @@
      "handle": "unpro_fessionalfood",
      "kind": "maker",
      "posts": 2,
+     "business": false,
      "followers": 2880,
      "score": 1.9
     },
@@ -1563,6 +1763,7 @@
      "handle": "vainabakery",
      "kind": "maker",
      "posts": 1,
+     "business": false,
      "followers": 345,
      "score": 0.74
     }
@@ -1630,8 +1831,9 @@
     "reach": 2.77
    },
    "score": 67.13,
+   "branches": [],
    "rank": 9,
-   "follower_rank": 153
+   "follower_rank": 152
   },
   {
    "handle": "goody_patisserie",
@@ -1769,6 +1971,7 @@
     "reach": 5.67
    },
    "score": 66.21,
+   "branches": [],
    "rank": 10,
    "follower_rank": 36
   },
@@ -1847,6 +2050,7 @@
      "handle": "coffee.mania.x",
      "kind": "venue",
      "posts": 2,
+     "business": false,
      "followers": 4477,
      "score": 0.66
     }
@@ -1923,8 +2127,9 @@
     "reach": 2.9
    },
    "score": 64.8,
+   "branches": [],
    "rank": 11,
-   "follower_rank": 150
+   "follower_rank": 149
   },
   {
    "handle": "leavenworkshop",
@@ -2001,6 +2206,7 @@
      "handle": "instilcoffee",
      "kind": "venue",
      "posts": 5,
+     "business": false,
      "followers": 9974,
      "score": 1.24
     },
@@ -2008,6 +2214,7 @@
      "handle": "wubread_nofat",
      "kind": "blogger",
      "posts": 1,
+     "business": false,
      "followers": 3321,
      "score": 0.93
     }
@@ -2076,6 +2283,7 @@
     "reach": 5.72
    },
    "score": 63.84,
+   "branches": [],
    "rank": 12,
    "follower_rank": 34
   },
@@ -2154,6 +2362,7 @@
      "handle": "st1cafe",
      "kind": "venue",
      "posts": 2,
+     "business": false,
      "followers": 9643,
      "score": 0.75
     }
@@ -2231,6 +2440,7 @@
     "reach": 6.67
    },
    "score": 63.02,
+   "branches": [],
    "rank": 13,
    "follower_rank": 15
   },
@@ -2310,6 +2520,7 @@
      "handle": "flavornews.tw",
      "kind": "blogger",
      "posts": 1,
+     "business": false,
      "followers": 39817,
      "score": 1.42
     }
@@ -2367,6 +2578,7 @@
     "reach": 4.22
    },
    "score": 62.86,
+   "branches": [],
    "rank": 14,
    "follower_rank": 96
   },
@@ -2445,6 +2657,7 @@
      "handle": "applespoon",
      "kind": "blogger",
      "posts": 1,
+     "business": false,
      "followers": 33188,
      "score": 0.72
     }
@@ -2545,6 +2758,7 @@
     "reach": 5.19
    },
    "score": 62.58,
+   "branches": [],
    "rank": 15,
    "follower_rank": 58
   },
@@ -2691,6 +2905,7 @@
     "reach": 4.12
    },
    "score": 62.37,
+   "branches": [],
    "rank": 16,
    "follower_rank": 103
   },
@@ -2839,6 +3054,7 @@
     "reach": 4.57
    },
    "score": 61.6,
+   "branches": [],
    "rank": 17,
    "follower_rank": 80
   },
@@ -2984,6 +3200,7 @@
     "reach": 4.81
    },
    "score": 61.58,
+   "branches": [],
    "rank": 18,
    "follower_rank": 69
   },
@@ -3062,6 +3279,7 @@
      "handle": "peacepiece_bakery",
      "kind": "maker",
      "posts": 3,
+     "business": false,
      "followers": 9550,
      "score": 1.5
     },
@@ -3069,6 +3287,7 @@
      "handle": "beamcoast.coffee",
      "kind": "venue",
      "posts": 1,
+     "business": false,
      "followers": 7794,
      "score": 0.29
     }
@@ -3131,6 +3350,7 @@
     "reach": 3.48
    },
    "score": 61.51,
+   "branches": [],
    "rank": 19,
    "follower_rank": 122
   },
@@ -3214,6 +3434,7 @@
      "handle": "tatlerdiningtw",
      "kind": "blogger",
      "posts": 1,
+     "business": false,
      "followers": 67333,
      "score": 3.0
     },
@@ -3221,6 +3442,7 @@
      "handle": "tien_feng",
      "kind": "venue",
      "posts": 4,
+     "business": false,
      "followers": 1220,
      "score": 1.65
     },
@@ -3228,6 +3450,7 @@
      "handle": "tsujiri_tw",
      "kind": "venue",
      "posts": 1,
+     "business": false,
      "followers": 21620,
      "score": 0.72
     }
@@ -3298,6 +3521,7 @@
     "reach": 7.24
    },
    "score": 60.18,
+   "branches": [],
    "rank": 20,
    "follower_rank": 8
   },
@@ -3427,6 +3651,7 @@
     "reach": 6.36
    },
    "score": 59.84,
+   "branches": [],
    "rank": 21,
    "follower_rank": 21
   },
@@ -3508,6 +3733,7 @@
      "handle": "chine_hsuan",
      "kind": "maker",
      "posts": 2,
+     "business": false,
      "followers": 3726,
      "score": 1.74
     }
@@ -3571,6 +3797,7 @@
     "reach": 3.16
    },
    "score": 59.62,
+   "branches": [],
    "rank": 22,
    "follower_rank": 137
   },
@@ -3731,6 +3958,7 @@
     "reach": 6.84
    },
    "score": 59.09,
+   "branches": [],
    "rank": 23,
    "follower_rank": 14
   },
@@ -3862,6 +4090,7 @@
     "reach": 4.75
    },
    "score": 58.85,
+   "branches": [],
    "rank": 24,
    "follower_rank": 73
   },
@@ -3940,6 +4169,7 @@
      "handle": "her_her_studio",
      "kind": "maker",
      "posts": 2,
+     "business": false,
      "followers": 39044,
      "score": 2.97
     },
@@ -3947,6 +4177,7 @@
      "handle": "kitchen_terry.tw",
      "kind": "venue",
      "posts": 1,
+     "business": false,
      "followers": 5340,
      "score": 0.83
     },
@@ -3954,6 +4185,7 @@
      "handle": "whatslife.studio",
      "kind": "venue",
      "posts": 1,
+     "business": false,
      "followers": 9005,
      "score": 0.59
     }
@@ -4003,6 +4235,7 @@
     "reach": 7.35
    },
    "score": 58.43,
+   "branches": [],
    "rank": 25,
    "follower_rank": 6
   },
@@ -4165,6 +4398,7 @@
     "reach": 5.58
    },
    "score": 58.38,
+   "branches": [],
    "rank": 26,
    "follower_rank": 42
   },
@@ -4301,6 +4535,7 @@
     "reach": 4.31
    },
    "score": 58.33,
+   "branches": [],
    "rank": 27,
    "follower_rank": 92
   },
@@ -4441,6 +4676,7 @@
     "reach": 4.94
    },
    "score": 58.3,
+   "branches": [],
    "rank": 28,
    "follower_rank": 65
   },
@@ -4586,6 +4822,7 @@
     "reach": 5.58
    },
    "score": 58.17,
+   "branches": [],
    "rank": 29,
    "follower_rank": 41
   },
@@ -4664,6 +4901,7 @@
      "handle": "ryan.keelung",
      "kind": "blogger",
      "posts": 2,
+     "business": false,
      "followers": 7080,
      "score": 4.15
     },
@@ -4671,6 +4909,7 @@
      "handle": "eat.do.nut",
      "kind": "maker",
      "posts": 2,
+     "business": false,
      "followers": 1541,
      "score": 1.79
     }
@@ -4734,6 +4973,7 @@
     "reach": 3.84
    },
    "score": 57.8,
+   "branches": [],
    "rank": 30,
    "follower_rank": 113
   },
@@ -4880,6 +5120,7 @@
     "reach": 5.54
    },
    "score": 57.65,
+   "branches": [],
    "rank": 31,
    "follower_rank": 44
   },
@@ -4958,6 +5199,7 @@
      "handle": "applespoon",
      "kind": "blogger",
      "posts": 1,
+     "business": false,
      "followers": 33188,
      "score": 0.72
     }
@@ -5039,6 +5281,7 @@
     "reach": 8.01
    },
    "score": 57.59,
+   "branches": [],
    "rank": 32,
    "follower_rank": 2
   },
@@ -5176,6 +5419,7 @@
     "reach": 5.21
    },
    "score": 57.41,
+   "branches": [],
    "rank": 33,
    "follower_rank": 57
   },
@@ -5320,6 +5564,7 @@
     "reach": 6.29
    },
    "score": 56.63,
+   "branches": [],
    "rank": 34,
    "follower_rank": 22
   },
@@ -5453,8 +5698,9 @@
     "reach": 2.6
    },
    "score": 56.45,
+   "branches": [],
    "rank": 35,
-   "follower_rank": 158
+   "follower_rank": 157
   },
   {
    "handle": "peacepiece_bakery",
@@ -5593,6 +5839,7 @@
     "reach": 4.26
    },
    "score": 56.33,
+   "branches": [],
    "rank": 36,
    "follower_rank": 95
   },
@@ -5722,6 +5969,7 @@
     "reach": 5.65
    },
    "score": 56.22,
+   "branches": [],
    "rank": 37,
    "follower_rank": 37
   },
@@ -5802,6 +6050,7 @@
      "handle": "tatlerdiningtw",
      "kind": "blogger",
      "posts": 1,
+     "business": false,
      "followers": 67333,
      "score": 3.0
     }
@@ -5876,6 +6125,7 @@
     "reach": 3.05
    },
    "score": 56.21,
+   "branches": [],
    "rank": 38,
    "follower_rank": 145
   },
@@ -6030,6 +6280,7 @@
     "reach": 4.38
    },
    "score": 55.97,
+   "branches": [],
    "rank": 39,
    "follower_rank": 89
   },
@@ -6179,6 +6430,7 @@
     "reach": 5.42
    },
    "score": 55.84,
+   "branches": [],
    "rank": 40,
    "follower_rank": 47
   },
@@ -6321,6 +6573,7 @@
     "reach": 5.77
    },
    "score": 55.83,
+   "branches": [],
    "rank": 41,
    "follower_rank": 30
   },
@@ -6459,6 +6712,7 @@
     "reach": 3.24
    },
    "score": 55.36,
+   "branches": [],
    "rank": 42,
    "follower_rank": 133
   },
@@ -6537,6 +6791,7 @@
      "handle": "theantipodean",
      "kind": "venue",
      "posts": 7,
+     "business": false,
      "followers": 52182,
      "score": 2.85
     }
@@ -6612,6 +6867,7 @@
     "reach": 4.17
    },
    "score": 55.2,
+   "branches": [],
    "rank": 43,
    "follower_rank": 100
   },
@@ -6741,6 +6997,7 @@
     "reach": 4.19
    },
    "score": 54.94,
+   "branches": [],
    "rank": 44,
    "follower_rank": 99
   },
@@ -6870,6 +7127,7 @@
     "reach": 4.66
    },
    "score": 54.84,
+   "branches": [],
    "rank": 45,
    "follower_rank": 76
   },
@@ -7010,6 +7268,7 @@
     "reach": 4.28
    },
    "score": 54.79,
+   "branches": [],
    "rank": 46,
    "follower_rank": 94
   },
@@ -7148,6 +7407,7 @@
     "reach": 3.77
    },
    "score": 54.52,
+   "branches": [],
    "rank": 47,
    "follower_rank": 115
   },
@@ -7303,6 +7563,7 @@
     "reach": 5.59
    },
    "score": 54.48,
+   "branches": [],
    "rank": 48,
    "follower_rank": 40
   },
@@ -7449,6 +7710,7 @@
     "reach": 7.97
    },
    "score": 53.96,
+   "branches": [],
    "rank": 49,
    "follower_rank": 3
   },
@@ -7576,6 +7838,7 @@
     "reach": 6.2
    },
    "score": 53.77,
+   "branches": [],
    "rank": 50,
    "follower_rank": 24
   },
@@ -7655,6 +7918,7 @@
      "handle": "t.b_foodie",
      "kind": "blogger",
      "posts": 1,
+     "business": false,
      "followers": 84688,
      "score": 0.74
     }
@@ -7713,8 +7977,9 @@
     "reach": 2.06
    },
    "score": 53.76,
+   "branches": [],
    "rank": 51,
-   "follower_rank": 169
+   "follower_rank": 168
   },
   {
    "handle": "habitat311",
@@ -7791,6 +8056,7 @@
      "handle": "abvless",
      "kind": "venue",
      "posts": 1,
+     "business": false,
      "followers": 10361,
      "score": 0.47
     }
@@ -7852,6 +8118,7 @@
     "reach": 4.55
    },
    "score": 53.58,
+   "branches": [],
    "rank": 52,
    "follower_rank": 82
   },
@@ -8004,6 +8271,7 @@
     "reach": 5.15
    },
    "score": 53.33,
+   "branches": [],
    "rank": 53,
    "follower_rank": 60
   },
@@ -8131,6 +8399,7 @@
     "reach": 5.41
    },
    "score": 53.31,
+   "branches": [],
    "rank": 54,
    "follower_rank": 49
   },
@@ -8210,6 +8479,7 @@
      "handle": "tatlerdiningtw",
      "kind": "blogger",
      "posts": 1,
+     "business": false,
      "followers": 67333,
      "score": 3.0
     }
@@ -8284,8 +8554,9 @@
     "reach": 0.82
    },
    "score": 53.09,
+   "branches": [],
    "rank": 55,
-   "follower_rank": 192
+   "follower_rank": 191
   },
   {
    "handle": "kang.artisanbakery",
@@ -8362,6 +8633,7 @@
      "handle": "4boitubake",
      "kind": "maker",
      "posts": 1,
+     "business": false,
      "followers": 8342,
      "score": 0.72
     },
@@ -8369,6 +8641,7 @@
      "handle": "whynotbbqtw",
      "kind": "venue",
      "posts": 2,
+     "business": false,
      "followers": 8208,
      "score": 0.58
     }
@@ -8472,6 +8745,7 @@
     "reach": 4.22
    },
    "score": 53.05,
+   "branches": [],
    "rank": 56,
    "follower_rank": 97
   },
@@ -8615,6 +8889,7 @@
     "reach": 8.01
    },
    "score": 52.9,
+   "branches": [],
    "rank": 57,
    "follower_rank": 1
   },
@@ -8693,6 +8968,7 @@
      "handle": "mr.xx_yumyum",
      "kind": "blogger",
      "posts": 1,
+     "business": false,
      "followers": 91967,
      "score": 1.13
     }
@@ -8743,6 +9019,7 @@
     "reach": 4.67
    },
    "score": 52.86,
+   "branches": [],
    "rank": 58,
    "follower_rank": 75
   },
@@ -8821,6 +9098,7 @@
      "handle": "brillante_patisserie",
      "kind": "maker",
      "posts": 2,
+     "business": false,
      "followers": 5323,
      "score": 1.24
     },
@@ -8828,6 +9106,7 @@
      "handle": "4boitubake",
      "kind": "maker",
      "posts": 1,
+     "business": false,
      "followers": 8342,
      "score": 0.72
     }
@@ -8909,6 +9188,7 @@
     "reach": 5.51
    },
    "score": 52.84,
+   "branches": [],
    "rank": 59,
    "follower_rank": 45
   },
@@ -9037,6 +9317,7 @@
     "reach": 3.14
    },
    "score": 52.84,
+   "branches": [],
    "rank": 60,
    "follower_rank": 139
   },
@@ -9165,8 +9446,9 @@
     "reach": 2.3
    },
    "score": 52.81,
+   "branches": [],
    "rank": 61,
-   "follower_rank": 163
+   "follower_rank": 162
   },
   {
    "handle": "ciaociaogoodfood",
@@ -9312,6 +9594,7 @@
     "reach": 5.62
    },
    "score": 52.45,
+   "branches": [],
    "rank": 62,
    "follower_rank": 38
   },
@@ -9452,8 +9735,9 @@
     "reach": 2.85
    },
    "score": 52.37,
+   "branches": [],
    "rank": 63,
-   "follower_rank": 152
+   "follower_rank": 151
   },
   {
    "handle": "fluegelstudio",
@@ -9593,6 +9877,7 @@
     "reach": 5.57
    },
    "score": 52.29,
+   "branches": [],
    "rank": 64,
    "follower_rank": 43
   },
@@ -9676,6 +9961,7 @@
      "handle": "vcd189",
      "kind": "blogger",
      "posts": 1,
+     "business": false,
      "followers": 126,
      "score": 1.03
     }
@@ -9734,8 +10020,9 @@
     "reach": 1.46
    },
    "score": 52.04,
+   "branches": [],
    "rank": 65,
-   "follower_rank": 182
+   "follower_rank": 181
   },
   {
    "handle": "missvbakery",
@@ -9816,6 +10103,7 @@
      "handle": "renxren2.0",
      "kind": "maker",
      "posts": 1,
+     "business": false,
      "followers": 4326,
      "score": 0.85
     },
@@ -9823,6 +10111,7 @@
      "handle": "4boitubake",
      "kind": "maker",
      "posts": 1,
+     "business": false,
      "followers": 8342,
      "score": 0.72
     },
@@ -9830,6 +10119,7 @@
      "handle": "lasfera_boulangerie",
      "kind": "maker",
      "posts": 1,
+     "business": false,
      "followers": 1726,
      "score": 0.64
     }
@@ -9928,6 +10218,7 @@
     "reach": 5.01
    },
    "score": 51.66,
+   "branches": [],
    "rank": 66,
    "follower_rank": 63
   },
@@ -10008,6 +10299,7 @@
      "handle": "flavornews.tw",
      "kind": "blogger",
      "posts": 1,
+     "business": false,
      "followers": 39817,
      "score": 1.42
     }
@@ -10060,6 +10352,7 @@
     "reach": 3.8
    },
    "score": 51.66,
+   "branches": [],
    "rank": 67,
    "follower_rank": 114
   },
@@ -10186,6 +10479,7 @@
     "reach": 3.14
    },
    "score": 51.0,
+   "branches": [],
    "rank": 68,
    "follower_rank": 138
   },
@@ -10327,6 +10621,7 @@
     "reach": 7.84
    },
    "score": 50.9,
+   "branches": [],
    "rank": 69,
    "follower_rank": 5
   },
@@ -10506,6 +10801,7 @@
     "reach": 4.94
    },
    "score": 50.42,
+   "branches": [],
    "rank": 70,
    "follower_rank": 66
   },
@@ -10584,6 +10880,7 @@
      "handle": "rongmau_studio",
      "kind": "venue",
      "posts": 1,
+     "business": false,
      "followers": 4678,
      "score": 0.29
     }
@@ -10650,6 +10947,7 @@
     "reach": 4.05
    },
    "score": 49.94,
+   "branches": [],
    "rank": 71,
    "follower_rank": 105
   },
@@ -10764,6 +11062,7 @@
     "reach": 5.94
    },
    "score": 49.63,
+   "branches": [],
    "rank": 72,
    "follower_rank": 28
   },
@@ -10906,6 +11205,7 @@
     "reach": 2.91
    },
    "score": 49.6,
+   "branches": [],
    "rank": 73,
    "follower_rank": 148
   },
@@ -11055,6 +11355,7 @@
     "reach": 4.88
    },
    "score": 49.48,
+   "branches": [],
    "rank": 74,
    "follower_rank": 68
   },
@@ -11202,8 +11503,9 @@
     "reach": 0.99
    },
    "score": 49.47,
+   "branches": [],
    "rank": 75,
-   "follower_rank": 189
+   "follower_rank": 188
   },
   {
    "handle": "rollingeyes_9",
@@ -11336,6 +11638,7 @@
     "reach": 4.78
    },
    "score": 49.35,
+   "branches": [],
    "rank": 76,
    "follower_rank": 71
   },
@@ -11466,6 +11769,7 @@
     "reach": 4.71
    },
    "score": 49.29,
+   "branches": [],
    "rank": 77,
    "follower_rank": 74
   },
@@ -11606,6 +11910,7 @@
     "reach": 4.59
    },
    "score": 48.61,
+   "branches": [],
    "rank": 78,
    "follower_rank": 77
   },
@@ -11762,6 +12067,7 @@
     "reach": 6.38
    },
    "score": 48.58,
+   "branches": [],
    "rank": 79,
    "follower_rank": 19
   },
@@ -11840,6 +12146,7 @@
      "handle": "tw.balancing",
      "kind": "venue",
      "posts": 1,
+     "business": false,
      "followers": 444,
      "score": 0.75
     }
@@ -11914,6 +12221,7 @@
     "reach": 7.86
    },
    "score": 48.45,
+   "branches": [],
    "rank": 80,
    "follower_rank": 4
   },
@@ -11994,6 +12302,7 @@
      "handle": "chine_hsuan",
      "kind": "maker",
      "posts": 1,
+     "business": false,
      "followers": 3726,
      "score": 0.87
     }
@@ -12052,6 +12361,7 @@
     "reach": 4.29
    },
    "score": 48.2,
+   "branches": [],
    "rank": 81,
    "follower_rank": 93
   },
@@ -12186,8 +12496,9 @@
     "reach": 1.93
    },
    "score": 48.09,
+   "branches": [],
    "rank": 82,
-   "follower_rank": 173
+   "follower_rank": 172
   },
   {
    "handle": "purebreadbakery",
@@ -12264,6 +12575,7 @@
      "handle": "pastaionoodlecafe",
      "kind": "venue",
      "posts": 2,
+     "business": false,
      "followers": 6884,
      "score": 0.58
     }
@@ -12350,6 +12662,7 @@
     "reach": 5.13
    },
    "score": 48.05,
+   "branches": [],
    "rank": 83,
    "follower_rank": 61
   },
@@ -12428,6 +12741,7 @@
      "handle": "vcd189",
      "kind": "blogger",
      "posts": 1,
+     "business": false,
      "followers": 126,
      "score": 1.03
     }
@@ -12473,8 +12787,9 @@
     "reach": 1.88
    },
    "score": 47.5,
+   "branches": [],
    "rank": 84,
-   "follower_rank": 174
+   "follower_rank": 173
   },
   {
    "handle": "flourishbakery2018",
@@ -12614,6 +12929,7 @@
     "reach": 3.36
    },
    "score": 46.86,
+   "branches": [],
    "rank": 85,
    "follower_rank": 128
   },
@@ -12753,6 +13069,7 @@
     "reach": 7.19
    },
    "score": 46.7,
+   "branches": [],
    "rank": 86,
    "follower_rank": 9
   },
@@ -12887,6 +13204,7 @@
     "reach": 2.94
    },
    "score": 46.66,
+   "branches": [],
    "rank": 87,
    "follower_rank": 147
   },
@@ -13020,8 +13338,9 @@
     "reach": 1.8
    },
    "score": 46.01,
+   "branches": [],
    "rank": 88,
-   "follower_rank": 175
+   "follower_rank": 174
   },
   {
    "handle": "tartspace",
@@ -13148,6 +13467,7 @@
     "reach": 3.29
    },
    "score": 45.99,
+   "branches": [],
    "rank": 89,
    "follower_rank": 131
   },
@@ -13210,6 +13530,7 @@
      "handle": "ryan.keelung",
      "kind": "blogger",
      "posts": 1,
+     "business": false,
      "followers": 7080,
      "score": 2.08
     },
@@ -13217,6 +13538,7 @@
      "handle": "alex__pastrychef",
      "kind": "maker",
      "posts": 1,
+     "business": false,
      "followers": 471,
      "score": 0.73
     },
@@ -13224,6 +13546,7 @@
      "handle": "bouffetw",
      "kind": "venue",
      "posts": 1,
+     "business": false,
      "followers": 10067,
      "score": 0.48
     }
@@ -13273,8 +13596,9 @@
     "reach": 0.0
    },
    "score": 45.98,
+   "branches": [],
    "rank": 90,
-   "follower_rank": 202
+   "follower_rank": 201
   },
   {
    "handle": "gujibakes",
@@ -13387,6 +13711,7 @@
     "reach": 3.36
    },
    "score": 45.77,
+   "branches": [],
    "rank": 91,
    "follower_rank": 127
   },
@@ -13533,6 +13858,7 @@
     "reach": 4.11
    },
    "score": 45.68,
+   "branches": [],
    "rank": 92,
    "follower_rank": 104
   },
@@ -13656,6 +13982,7 @@
     "reach": 4.0
    },
    "score": 45.63,
+   "branches": [],
    "rank": 93,
    "follower_rank": 108
   },
@@ -13785,6 +14112,7 @@
     "reach": 4.34
    },
    "score": 45.51,
+   "branches": [],
    "rank": 94,
    "follower_rank": 91
   },
@@ -13863,6 +14191,7 @@
      "handle": "4boitubake",
      "kind": "maker",
      "posts": 1,
+     "business": false,
      "followers": 8342,
      "score": 0.72
     }
@@ -13937,8 +14266,9 @@
     "reach": 2.75
    },
    "score": 45.17,
+   "branches": [],
    "rank": 95,
-   "follower_rank": 155
+   "follower_rank": 154
   },
   {
    "handle": "hamsterdessert",
@@ -14068,6 +14398,7 @@
     "reach": 4.52
    },
    "score": 45.13,
+   "branches": [],
    "rank": 96,
    "follower_rank": 83
   },
@@ -14201,6 +14532,7 @@
     "reach": 3.91
    },
    "score": 44.78,
+   "branches": [],
    "rank": 97,
    "follower_rank": 111
   },
@@ -14324,6 +14656,7 @@
     "reach": 5.45
    },
    "score": 44.15,
+   "branches": [],
    "rank": 98,
    "follower_rank": 46
   },
@@ -14417,6 +14750,7 @@
     "reach": 4.49
    },
    "score": 44.15,
+   "branches": [],
    "rank": 99,
    "follower_rank": 85
   },
@@ -14545,6 +14879,7 @@
     "reach": 4.41
    },
    "score": 44.04,
+   "branches": [],
    "rank": 100,
    "follower_rank": 88
   },
@@ -14576,6 +14911,7 @@
      "handle": "bread.and.others",
      "kind": "maker",
      "posts": 2,
+     "business": false,
      "followers": 13057,
      "score": 1.16
     }
@@ -14618,6 +14954,7 @@
     "reach": 4.58
    },
    "score": 44.02,
+   "branches": [],
    "rank": 101,
    "follower_rank": 79
   },
@@ -14739,6 +15076,7 @@
     "reach": 3.62
    },
    "score": 43.92,
+   "branches": [],
    "rank": 102,
    "follower_rank": 119
   },
@@ -14861,6 +15199,7 @@
     "reach": 5.29
    },
    "score": 43.69,
+   "branches": [],
    "rank": 103,
    "follower_rank": 55
   },
@@ -14988,6 +15327,7 @@
     "reach": 4.79
    },
    "score": 43.29,
+   "branches": [],
    "rank": 104,
    "follower_rank": 70
   },
@@ -15110,8 +15450,9 @@
     "reach": 1.58
    },
    "score": 43.2,
+   "branches": [],
    "rank": 105,
-   "follower_rank": 179
+   "follower_rank": 178
   },
   {
    "handle": "vainabakery",
@@ -15188,6 +15529,7 @@
      "handle": "unpro_fessionalfood",
      "kind": "maker",
      "posts": 3,
+     "business": false,
      "followers": 2880,
      "score": 2.45
     }
@@ -15239,8 +15581,9 @@
     "reach": 0.0
    },
    "score": 43.1,
+   "branches": [],
    "rank": 106,
-   "follower_rank": 200
+   "follower_rank": 199
   },
   {
    "handle": "wuyooo",
@@ -15361,8 +15704,9 @@
     "reach": 2.42
    },
    "score": 43.06,
+   "branches": [],
    "rank": 107,
-   "follower_rank": 162
+   "follower_rank": 161
   },
   {
    "handle": "daily.needdessert",
@@ -15475,8 +15819,9 @@
     "reach": 1.95
    },
    "score": 43.04,
+   "branches": [],
    "rank": 108,
-   "follower_rank": 172
+   "follower_rank": 171
   },
   {
    "handle": "23_alley_",
@@ -15598,6 +15943,7 @@
     "reach": 3.47
    },
    "score": 43.03,
+   "branches": [],
    "rank": 109,
    "follower_rank": 123
   },
@@ -15720,8 +16066,9 @@
     "reach": 0.0
    },
    "score": 42.54,
+   "branches": [],
    "rank": 110,
-   "follower_rank": 198
+   "follower_rank": 197
   },
   {
    "handle": "smile_eating_2.0",
@@ -15762,6 +16109,7 @@
      "handle": "floatshanshan",
      "kind": "maker",
      "posts": 1,
+     "business": false,
      "followers": 14361,
      "score": 1.01
     },
@@ -15769,6 +16117,7 @@
      "handle": "sheepbakery_",
      "kind": "maker",
      "posts": 1,
+     "business": false,
      "followers": 3161,
      "score": 1.01
     }
@@ -15822,6 +16171,7 @@
     "reach": 4.47
    },
    "score": 42.43,
+   "branches": [],
    "rank": 111,
    "follower_rank": 87
   },
@@ -15936,6 +16286,7 @@
     "reach": 6.22
    },
    "score": 42.42,
+   "branches": [],
    "rank": 112,
    "follower_rank": 23
   },
@@ -16050,8 +16401,9 @@
     "reach": 1.51
    },
    "score": 42.41,
+   "branches": [],
    "rank": 113,
-   "follower_rank": 180
+   "follower_rank": 179
   },
   {
    "handle": "mi_zhai1004",
@@ -16172,6 +16524,7 @@
     "reach": 3.96
    },
    "score": 41.91,
+   "branches": [],
    "rank": 114,
    "follower_rank": 109
   },
@@ -16242,6 +16595,7 @@
      "handle": "4boitubake",
      "kind": "maker",
      "posts": 1,
+     "business": false,
      "followers": 8342,
      "score": 0.72
     },
@@ -16249,6 +16603,7 @@
      "handle": "kishuan_literature",
      "kind": "venue",
      "posts": 2,
+     "business": false,
      "followers": 6786,
      "score": 0.61
     }
@@ -16298,8 +16653,9 @@
     "reach": 1.38
    },
    "score": 41.51,
+   "branches": [],
    "rank": 115,
-   "follower_rank": 185
+   "follower_rank": 184
   },
   {
    "handle": "mrmark1998",
@@ -16420,6 +16776,7 @@
     "reach": 4.14
    },
    "score": 41.48,
+   "branches": [],
    "rank": 116,
    "follower_rank": 101
   },
@@ -16500,6 +16857,7 @@
      "handle": "vanessafoodies",
      "kind": "blogger",
      "posts": 2,
+     "business": false,
      "followers": 24297,
      "score": 1.48
     },
@@ -16507,6 +16865,7 @@
      "handle": "fudge_faqi",
      "kind": "maker",
      "posts": 1,
+     "business": false,
      "followers": 6900,
      "score": 0.58
     }
@@ -16570,6 +16929,7 @@
     "reach": 3.87
    },
    "score": 41.46,
+   "branches": [],
    "rank": 117,
    "follower_rank": 112
   },
@@ -16686,6 +17046,7 @@
     "reach": 5.61
    },
    "score": 41.38,
+   "branches": [],
    "rank": 118,
    "follower_rank": 39
   },
@@ -16764,6 +17125,7 @@
      "handle": "vcd189",
      "kind": "blogger",
      "posts": 1,
+     "business": false,
      "followers": 126,
      "score": 1.03
     }
@@ -16808,8 +17170,9 @@
     "reach": 1.47
    },
    "score": 41.09,
+   "branches": [],
    "rank": 119,
-   "follower_rank": 181
+   "follower_rank": 180
   },
   {
    "handle": "chizupcheesecake",
@@ -16930,6 +17293,7 @@
     "reach": 5.76
    },
    "score": 41.02,
+   "branches": [],
    "rank": 120,
    "follower_rank": 33
   },
@@ -17051,6 +17415,7 @@
     "reach": 6.39
    },
    "score": 40.57,
+   "branches": [],
    "rank": 121,
    "follower_rank": 17
   },
@@ -17131,6 +17496,7 @@
      "handle": "kaidan_dessert",
      "kind": "maker",
      "posts": 1,
+     "business": false,
      "followers": 14748,
      "score": 0.68
     }
@@ -17182,6 +17548,7 @@
     "reach": 6.44
    },
    "score": 40.38,
+   "branches": [],
    "rank": 122,
    "follower_rank": 16
   },
@@ -17260,6 +17627,7 @@
      "handle": "fluegelstudio",
      "kind": "maker",
      "posts": 1,
+     "business": false,
      "followers": 19142,
      "score": 0.58
     }
@@ -17312,8 +17680,9 @@
     "reach": 2.21
    },
    "score": 40.34,
+   "branches": [],
    "rank": 123,
-   "follower_rank": 166
+   "follower_rank": 165
   },
   {
    "handle": "orita.japancakes",
@@ -17454,6 +17823,7 @@
     "reach": 4.49
    },
    "score": 39.64,
+   "branches": [],
    "rank": 124,
    "follower_rank": 86
   },
@@ -17533,6 +17903,7 @@
      "handle": "al.dente.life",
      "kind": "blogger",
      "posts": 2,
+     "business": false,
      "followers": 436932,
      "score": 2.1
     }
@@ -17585,8 +17956,9 @@
     "reach": 1.42
    },
    "score": 39.59,
+   "branches": [],
    "rank": 125,
-   "follower_rank": 184
+   "follower_rank": 183
   },
   {
    "handle": "weekendnodessert",
@@ -17645,6 +18017,7 @@
     "reach": 7.16
    },
    "score": 39.57,
+   "branches": [],
    "rank": 126,
    "follower_rank": 10
   },
@@ -17760,8 +18133,9 @@
     "reach": 1.18
    },
    "score": 39.31,
+   "branches": [],
    "rank": 127,
-   "follower_rank": 188
+   "follower_rank": 187
   },
   {
    "handle": "kakazan.ice.club",
@@ -17839,6 +18213,7 @@
      "handle": "vanessafoodies",
      "kind": "blogger",
      "posts": 1,
+     "business": false,
      "followers": 24297,
      "score": 0.74
     }
@@ -17903,6 +18278,7 @@
     "reach": 3.24
    },
    "score": 39.22,
+   "branches": [],
    "rank": 128,
    "follower_rank": 134
   },
@@ -18036,6 +18412,7 @@
     "reach": 4.0
    },
    "score": 38.83,
+   "branches": [],
    "rank": 129,
    "follower_rank": 107
   },
@@ -18142,6 +18519,7 @@
     "reach": 3.67
    },
    "score": 38.76,
+   "branches": [],
    "rank": 130,
    "follower_rank": 118
   },
@@ -18246,8 +18624,9 @@
     "reach": 2.48
    },
    "score": 38.67,
+   "branches": [],
    "rank": 131,
-   "follower_rank": 160
+   "follower_rank": 159
   },
   {
    "handle": "moridessertw",
@@ -18342,6 +18721,7 @@
     "reach": 5.76
    },
    "score": 38.6,
+   "branches": [],
    "rank": 132,
    "follower_rank": 31
   },
@@ -18421,6 +18801,7 @@
      "handle": "ohchu_dessert",
      "kind": "maker",
      "posts": 1,
+     "business": false,
      "followers": 3773,
      "score": 0.58
     }
@@ -18477,6 +18858,7 @@
     "reach": 5.31
    },
    "score": 38.47,
+   "branches": [],
    "rank": 133,
    "follower_rank": 54
   },
@@ -18581,6 +18963,7 @@
     "reach": 5.41
    },
    "score": 38.44,
+   "branches": [],
    "rank": 134,
    "follower_rank": 50
   },
@@ -18685,6 +19068,7 @@
     "reach": 5.84
    },
    "score": 37.85,
+   "branches": [],
    "rank": 135,
    "follower_rank": 29
   },
@@ -18780,8 +19164,9 @@
     "reach": 0.0
    },
    "score": 37.8,
+   "branches": [],
    "rank": 136,
-   "follower_rank": 204
+   "follower_rank": 203
   },
   {
    "handle": "fourninetine_bakery",
@@ -18895,6 +19280,7 @@
     "reach": 5.38
    },
    "score": 37.56,
+   "branches": [],
    "rank": 137,
    "follower_rank": 51
   },
@@ -19017,6 +19403,7 @@
     "reach": 4.77
    },
    "score": 37.36,
+   "branches": [],
    "rank": 138,
    "follower_rank": 72
   },
@@ -19159,6 +19546,7 @@
     "reach": 6.85
    },
    "score": 37.33,
+   "branches": [],
    "rank": 139,
    "follower_rank": 13
   },
@@ -19261,6 +19649,7 @@
     "reach": 7.24
    },
    "score": 36.55,
+   "branches": [],
    "rank": 140,
    "follower_rank": 7
   },
@@ -19378,6 +19767,7 @@
     "reach": 3.06
    },
    "score": 36.1,
+   "branches": [],
    "rank": 141,
    "follower_rank": 144
   },
@@ -19492,6 +19882,7 @@
     "reach": 3.35
    },
    "score": 35.82,
+   "branches": [],
    "rank": 142,
    "follower_rank": 129
   },
@@ -19587,8 +19978,9 @@
     "reach": 1.42
    },
    "score": 35.81,
+   "branches": [],
    "rank": 143,
-   "follower_rank": 183
+   "follower_rank": 182
   },
   {
    "handle": "suivre_lab",
@@ -19653,6 +20045,7 @@
     "reach": 4.89
    },
    "score": 35.51,
+   "branches": [],
    "rank": 144,
    "follower_rank": 67
   },
@@ -19762,6 +20155,7 @@
     "reach": 3.55
    },
    "score": 35.36,
+   "branches": [],
    "rank": 145,
    "follower_rank": 121
   },
@@ -19877,6 +20271,7 @@
     "reach": 6.38
    },
    "score": 35.13,
+   "branches": [],
    "rank": 146,
    "follower_rank": 18
   },
@@ -19958,6 +20353,7 @@
      "handle": "hungryintaipei",
      "kind": "blogger",
      "posts": 3,
+     "business": false,
      "followers": 66419,
      "score": 2.18
     }
@@ -19983,8 +20379,9 @@
     "reach": 0.88
    },
    "score": 34.71,
+   "branches": [],
    "rank": 147,
-   "follower_rank": 190
+   "follower_rank": 189
   },
   {
    "handle": "akerue_dessert",
@@ -20061,6 +20458,7 @@
      "handle": "larchiviste",
      "kind": "maker",
      "posts": 1,
+     "business": false,
      "followers": 1088,
      "score": 0.7
     }
@@ -20099,6 +20497,7 @@
     "reach": 4.96
    },
    "score": 34.66,
+   "branches": [],
    "rank": 148,
    "follower_rank": 64
   },
@@ -20177,6 +20576,7 @@
      "handle": "vanessafoodies",
      "kind": "blogger",
      "posts": 1,
+     "business": false,
      "followers": 24297,
      "score": 0.74
     }
@@ -20229,8 +20629,9 @@
     "reach": 1.99
    },
    "score": 33.75,
+   "branches": [],
    "rank": 149,
-   "follower_rank": 170
+   "follower_rank": 169
   },
   {
    "handle": "norm_patisserie",
@@ -20324,6 +20725,7 @@
     "reach": 5.07
    },
    "score": 33.21,
+   "branches": [],
    "rank": 150,
    "follower_rank": 62
   },
@@ -20419,8 +20821,9 @@
     "reach": 1.74
    },
    "score": 33.03,
+   "branches": [],
    "rank": 151,
-   "follower_rank": 176
+   "follower_rank": 175
   },
   {
    "handle": "peckish_bakery",
@@ -20528,6 +20931,7 @@
     "reach": 3.07
    },
    "score": 32.7,
+   "branches": [],
    "rank": 152,
    "follower_rank": 143
   },
@@ -20587,6 +20991,7 @@
     "reach": 5.96
    },
    "score": 32.51,
+   "branches": [],
    "rank": 153,
    "follower_rank": 27
   },
@@ -20689,8 +21094,9 @@
     "reach": 0.0
    },
    "score": 32.38,
+   "branches": [],
    "rank": 154,
-   "follower_rank": 199
+   "follower_rank": 198
   },
   {
    "handle": "if._cake",
@@ -20784,6 +21190,7 @@
     "reach": 3.11
    },
    "score": 31.97,
+   "branches": [],
    "rank": 155,
    "follower_rank": 141
   },
@@ -20881,6 +21288,7 @@
     "reach": 3.47
    },
    "score": 31.79,
+   "branches": [],
    "rank": 156,
    "follower_rank": 124
   },
@@ -20910,6 +21318,7 @@
      "handle": "her_her_studio",
      "kind": "maker",
      "posts": 1,
+     "business": false,
      "followers": 39044,
      "score": 1.49
     }
@@ -20935,6 +21344,7 @@
     "reach": 4.51
    },
    "score": 31.7,
+   "branches": [],
    "rank": 157,
    "follower_rank": 84
   },
@@ -21002,6 +21412,7 @@
     "reach": 3.69
    },
    "score": 31.26,
+   "branches": [],
    "rank": 158,
    "follower_rank": 117
   },
@@ -21129,6 +21540,7 @@
     "reach": 3.04
    },
    "score": 30.99,
+   "branches": [],
    "rank": 159,
    "follower_rank": 146
   },
@@ -21232,6 +21644,7 @@
     "reach": 4.36
    },
    "score": 30.84,
+   "branches": [],
    "rank": 160,
    "follower_rank": 90
   },
@@ -21289,8 +21702,9 @@
     "reach": 0.0
    },
    "score": 30.59,
+   "branches": [],
    "rank": 161,
-   "follower_rank": 197
+   "follower_rank": 196
   },
   {
    "handle": "mijing3656_",
@@ -21384,8 +21798,9 @@
     "reach": 2.07
    },
    "score": 30.36,
+   "branches": [],
    "rank": 162,
-   "follower_rank": 168
+   "follower_rank": 167
   },
   {
    "handle": "yunandshan",
@@ -21449,6 +21864,7 @@
     "reach": 5.16
    },
    "score": 30.35,
+   "branches": [],
    "rank": 163,
    "follower_rank": 59
   },
@@ -21527,6 +21943,7 @@
      "handle": "baron.scones",
      "kind": "maker",
      "posts": 1,
+     "business": false,
      "followers": 18875,
      "score": 1.08
     }
@@ -21552,8 +21969,9 @@
     "reach": 2.61
    },
    "score": 30.02,
+   "branches": [],
    "rank": 164,
-   "follower_rank": 157
+   "follower_rank": 156
   },
   {
    "handle": "4k_baking",
@@ -21611,6 +22029,7 @@
     "reach": 3.72
    },
    "score": 29.96,
+   "branches": [],
    "rank": 165,
    "follower_rank": 116
   },
@@ -21706,8 +22125,9 @@
     "reach": 2.51
    },
    "score": 29.51,
+   "branches": [],
    "rank": 166,
-   "follower_rank": 159
+   "follower_rank": 158
   },
   {
    "handle": "joy_with_her_friend",
@@ -21777,6 +22197,7 @@
     "reach": 3.95
    },
    "score": 29.22,
+   "branches": [],
    "rank": 167,
    "follower_rank": 110
   },
@@ -21872,6 +22293,7 @@
     "reach": 4.59
    },
    "score": 29.03,
+   "branches": [],
    "rank": 168,
    "follower_rank": 78
   },
@@ -21918,6 +22340,7 @@
     "reach": 3.56
    },
    "score": 28.89,
+   "branches": [],
    "rank": 169,
    "follower_rank": 120
   },
@@ -22051,8 +22474,9 @@
     "reach": 1.3
    },
    "score": 28.83,
+   "branches": [],
    "rank": 170,
-   "follower_rank": 186
+   "follower_rank": 185
   },
   {
    "handle": "yus_cakery",
@@ -22146,8 +22570,9 @@
     "reach": 2.25
    },
    "score": 28.72,
+   "branches": [],
    "rank": 171,
-   "follower_rank": 165
+   "follower_rank": 164
   },
   {
    "handle": "teugiab_b",
@@ -22221,6 +22646,7 @@
     "reach": 3.44
    },
    "score": 28.58,
+   "branches": [],
    "rank": 172,
    "follower_rank": 126
   },
@@ -22300,8 +22726,9 @@
     "reach": 2.29
    },
    "score": 28.09,
+   "branches": [],
    "rank": 173,
-   "follower_rank": 164
+   "follower_rank": 163
   },
   {
    "handle": "a_bowl__",
@@ -22353,6 +22780,7 @@
     "reach": 4.55
    },
    "score": 28.03,
+   "branches": [],
    "rank": 174,
    "follower_rank": 81
   },
@@ -22448,6 +22876,7 @@
     "reach": 3.25
    },
    "score": 27.99,
+   "branches": [],
    "rank": 175,
    "follower_rank": 132
   },
@@ -22557,6 +22986,7 @@
     "reach": 3.13
    },
    "score": 27.72,
+   "branches": [],
    "rank": 176,
    "follower_rank": 140
   },
@@ -22677,67 +23107,9 @@
     "reach": 0.0
    },
    "score": 27.36,
+   "branches": [],
    "rank": 177,
-   "follower_rank": 195
-  },
-  {
-   "handle": "celebread.acs_tm",
-   "name": "Celebread_Red door",
-   "gname": "",
-   "display": "CelebreadRed door",
-   "type": "bakery",
-   "area": "台北市",
-   "district": "",
-   "address": "",
-   "followers": 4675,
-   "bio": "celebread_TM(天母) / artisan country sourdough / 地址📍:忠誠路二段118巷20弄1號 / 電話：022876-8188",
-   "ig": "https://www.instagram.com/celebread.acs_tm/",
-   "maps": "",
-   "rating": null,
-   "reviews": 0,
-   "stars": null,
-   "bayes": null,
-   "topics": [],
-   "categories": [],
-   "match": "",
-   "endorse": 0.0,
-   "endorsers": [],
-   "centrality": 0.21,
-   "related": 0,
-   "press": [
-    {
-     "outlet": "kkmurmur.com",
-     "label": "KK Murmur",
-     "url": "https://kkmurmur.com/celebread-tm/",
-     "title": "【Celebread-TM 酸種麵包天母店】被封為台北最好吃的酸種麵包"
-    },
-    {
-     "outlet": "shotfunlady.com",
-     "label": "Shotfun Lady",
-     "url": "https://shotfunlady.com/celebread-tm/",
-     "title": "【Celebread-TM酸種麵包】天母手工酸種麵包推薦"
-    }
-   ],
-   "outlets": 2,
-   "trusted": 0,
-   "notes": {},
-   "comp": {
-    "network": 0.0129,
-    "quality": 0.4853,
-    "volume": 0.0,
-    "press": 0.6131,
-    "reach": 0.2912
-   },
-   "contrib": {
-    "network": 0.45,
-    "quality": 14.56,
-    "volume": 0.0,
-    "press": 9.2,
-    "reach": 2.91
-   },
-   "score": 27.12,
-   "rank": 178,
-   "follower_rank": 149
+   "follower_rank": 194
   },
   {
    "handle": "olivesbaking",
@@ -22831,7 +23203,8 @@
     "reach": 3.1
    },
    "score": 27.03,
-   "rank": 179,
+   "branches": [],
+   "rank": 178,
    "follower_rank": 142
   },
   {
@@ -22934,7 +23307,8 @@
     "reach": 4.02
    },
    "score": 27.02,
-   "rank": 180,
+   "branches": [],
+   "rank": 179,
    "follower_rank": 106
   },
   {
@@ -23003,8 +23377,9 @@
     "reach": 2.69
    },
    "score": 26.44,
-   "rank": 181,
-   "follower_rank": 156
+   "branches": [],
+   "rank": 180,
+   "follower_rank": 155
   },
   {
    "handle": "suber_studio",
@@ -23056,7 +23431,8 @@
     "reach": 4.14
    },
    "score": 26.35,
-   "rank": 182,
+   "branches": [],
+   "rank": 181,
    "follower_rank": 102
   },
   {
@@ -23109,8 +23485,9 @@
     "reach": 2.88
    },
    "score": 25.77,
-   "rank": 183,
-   "follower_rank": 151
+   "branches": [],
+   "rank": 182,
+   "follower_rank": 150
   },
   {
    "handle": "vkcookinghouse",
@@ -23205,8 +23582,9 @@
     "reach": 1.68
    },
    "score": 25.44,
-   "rank": 184,
-   "follower_rank": 178
+   "branches": [],
+   "rank": 183,
+   "follower_rank": 177
   },
   {
    "handle": "threehcake",
@@ -23251,7 +23629,8 @@
     "reach": 5.76
    },
    "score": 25.33,
-   "rank": 185,
+   "branches": [],
+   "rank": 184,
    "follower_rank": 32
   },
   {
@@ -23347,8 +23726,9 @@
     "reach": 2.07
    },
    "score": 25.33,
-   "rank": 186,
-   "follower_rank": 167
+   "branches": [],
+   "rank": 185,
+   "follower_rank": 166
   },
   {
    "handle": "boka_boka",
@@ -23443,7 +23823,8 @@
     "reach": 5.97
    },
    "score": 24.72,
-   "rank": 187,
+   "branches": [],
+   "rank": 186,
    "follower_rank": 26
   },
   {
@@ -23521,6 +23902,7 @@
      "handle": "renxren2.0",
      "kind": "maker",
      "posts": 1,
+     "business": false,
      "followers": 4326,
      "score": 0.85
     },
@@ -23528,6 +23910,7 @@
      "handle": "lasfera_boulangerie",
      "kind": "maker",
      "posts": 1,
+     "business": false,
      "followers": 1726,
      "score": 0.64
     }
@@ -23559,8 +23942,9 @@
     "reach": 0.0
    },
    "score": 24.44,
-   "rank": 188,
-   "follower_rank": 196
+   "branches": [],
+   "rank": 187,
+   "follower_rank": 195
   },
   {
    "handle": "charlenepastry",
@@ -23622,8 +24006,9 @@
     "reach": 0.45
    },
    "score": 24.03,
-   "rank": 189,
-   "follower_rank": 194
+   "branches": [],
+   "rank": 188,
+   "follower_rank": 193
   },
   {
    "handle": "wcake.tw",
@@ -23668,7 +24053,8 @@
     "reach": 6.36
    },
    "score": 23.29,
-   "rank": 190,
+   "branches": [],
+   "rank": 189,
    "follower_rank": 20
   },
   {
@@ -23763,8 +24149,9 @@
     "reach": 0.0
    },
    "score": 22.66,
-   "rank": 191,
-   "follower_rank": 205
+   "branches": [],
+   "rank": 190,
+   "follower_rank": 204
   },
   {
    "handle": "num_num_here",
@@ -23811,7 +24198,8 @@
     "reach": 4.21
    },
    "score": 22.25,
-   "rank": 192,
+   "branches": [],
+   "rank": 191,
    "follower_rank": 98
   },
   {
@@ -23863,8 +24251,9 @@
     "reach": 1.25
    },
    "score": 22.06,
-   "rank": 193,
-   "follower_rank": 187
+   "branches": [],
+   "rank": 192,
+   "follower_rank": 186
   },
   {
    "handle": "haesh_baking",
@@ -23909,7 +24298,8 @@
     "reach": 5.38
    },
    "score": 21.81,
-   "rank": 194,
+   "branches": [],
+   "rank": 193,
    "follower_rank": 52
   },
   {
@@ -24004,7 +24394,8 @@
     "reach": 3.46
    },
    "score": 21.67,
-   "rank": 195,
+   "branches": [],
+   "rank": 194,
    "follower_rank": 125
   },
   {
@@ -24050,7 +24441,8 @@
     "reach": 3.33
    },
    "score": 21.18,
-   "rank": 196,
+   "branches": [],
+   "rank": 195,
    "follower_rank": 130
   },
   {
@@ -24096,8 +24488,9 @@
     "reach": 1.69
    },
    "score": 19.95,
-   "rank": 197,
-   "follower_rank": 177
+   "branches": [],
+   "rank": 196,
+   "follower_rank": 176
   },
   {
    "handle": "greentea_dessert",
@@ -24142,7 +24535,8 @@
     "reach": 3.2
    },
    "score": 19.87,
-   "rank": 198,
+   "branches": [],
+   "rank": 197,
    "follower_rank": 135
   },
   {
@@ -24188,8 +24582,9 @@
     "reach": 2.44
    },
    "score": 18.86,
-   "rank": 199,
-   "follower_rank": 161
+   "branches": [],
+   "rank": 198,
+   "follower_rank": 160
   },
   {
    "handle": "lemonoo__",
@@ -24234,8 +24629,9 @@
     "reach": 0.8
    },
    "score": 18.48,
-   "rank": 200,
-   "follower_rank": 193
+   "branches": [],
+   "rank": 199,
+   "follower_rank": 192
   },
   {
    "handle": "june.kashiya",
@@ -24280,8 +24676,9 @@
     "reach": 1.97
    },
    "score": 18.44,
-   "rank": 201,
-   "follower_rank": 171
+   "branches": [],
+   "rank": 200,
+   "follower_rank": 170
   },
   {
    "handle": "biteme.taiwan",
@@ -24326,8 +24723,9 @@
     "reach": 0.0
    },
    "score": 15.01,
-   "rank": 202,
-   "follower_rank": 203
+   "branches": [],
+   "rank": 201,
+   "follower_rank": 202
   },
   {
    "handle": "buttered_flour",
@@ -24431,8 +24829,9 @@
     "reach": 0.0
    },
    "score": 14.67,
-   "rank": 203,
-   "follower_rank": 201
+   "branches": [],
+   "rank": 202,
+   "follower_rank": 200
   },
   {
    "handle": "lillianebakery",
@@ -24526,7 +24925,8 @@
     "reach": 3.19
    },
    "score": 10.93,
-   "rank": 204,
+   "branches": [],
+   "rank": 203,
    "follower_rank": 136
   },
   {
@@ -24622,8 +25022,9 @@
     "reach": 0.0
    },
    "score": 9.78,
-   "rank": 205,
-   "follower_rank": 206
+   "branches": [],
+   "rank": 204,
+   "follower_rank": 205
   },
   {
    "handle": "sussubakery",
@@ -24717,8 +25118,9 @@
     "reach": 0.84
    },
    "score": 7.26,
-   "rank": 206,
-   "follower_rank": 191
+   "branches": [],
+   "rank": 205,
+   "follower_rank": 190
   }
  ]
 }

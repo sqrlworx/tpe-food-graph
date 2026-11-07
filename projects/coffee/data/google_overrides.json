@@ -1,0 +1,14 @@
+{
+ "simplekaffa": {"query": "興波咖啡 Simple Kaffa 華山", "place": "興波咖啡 華山旗艦店"},
+ "fikafikacafe": {"query": "Fika Fika Cafe 伊通", "place": "啡卡咖啡"},
+ "gabee_global": {"query": "GABEE. 咖啡 民生", "place": "GABEE. 咖啡店"},
+ "nor.coffee_": {"query": "NOR Coffee 赤峰街", "place": "NOR COFFEE"},
+ "coffee_river_tw": {"query": "咖啡河 自家烘焙咖啡廳 永春", "place": "Coffee River 咖啡河自家烘焙咖啡館"},
+ "soonsoon_house": null,
+ "congrats_coffee_roasters": null,
+ "congratscafe": "Congrats Café 大安",
+ "aka.cafe.tw": {"query": "AKA Cafe 大稻埕", "place": "AKA Café"},
+ "wenshanroasting1983": {"query": "聞山咖啡 景美", "place": "聞山咖啡景美店"},
+ "kingmauiitp02": {"query": "金茂宜咖啡 蘆洲", "place": "Kingmauii 金茂宜咖啡"},
+ "daonanguan_specialty_coffee": {"query": "道南館 台北安和店", "place": "道南館 自家烘焙咖啡館_台北安和店"}
+}

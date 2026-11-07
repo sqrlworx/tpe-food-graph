@@ -1,6 +1,10 @@
 __pycache__/
 *.log
+# Caches shared by all projects
 data/profiles/
 data/google_raw/
 data/blogs/
-output/posts/
+data/search_raw/
+# Generated per project: photos and slides (large), the review notes' reading material
+projects/*/output/posts/
+projects/*/output/review_input.json

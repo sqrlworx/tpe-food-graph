@@ -1,0 +1,100 @@
+{
+ "_comment": "Slide wording and hand-picked Instagram photos (post shortcodes). name: the shop's own name where Google's listing name is a branch name. See posts.py --candidates.",
+ "2730.cafe": {
+  "photo": "DcZCYedmWlb"
+ },
+ "candocoffeetw": {
+  "photo": "DNKQL4HTATH"
+ },
+ "coffee_dumbo": {
+  "photo": "Dc3enazk42-"
+ },
+ "coffeeimmerse": {
+  "photo": "DbVlmNEEqPZ"
+ },
+ "coffeeunderwater": {
+  "photo": "Da2r9uYD_Fe"
+ },
+ "enroute_coffee": {
+  "photo": "DbPnqJ4B5wS"
+ },
+ "fikafikacafe": {
+  "name": "Fika Fika Cafe",
+  "photo": "Daj4UmTSPk6"
+ },
+ "instilcoffee": {
+  "photo": "De89za5GWyZ"
+ },
+ "kasasagicoffee": {
+  "photo": "DfL7qxfRuAr",
+  "name": "鵲 Kasasagi Coffee Roasters"
+ },
+ "kikumo.taipei": {
+  "photo": "DY4Xi_MRvIL"
+ },
+ "kingmauiitp02": {
+  "name": "Kingmauii 金茂宜咖啡",
+  "photo": "DdsceEGDwr-"
+ },
+ "kooncoffee0801": {
+  "photo": "De3CcJoEk9_"
+ },
+ "moonshine_coffee": {
+  "photo": "DeOxNAvvKkS"
+ },
+ "neighborhood_coffee_tw_2022": {
+  "name": "林椐咖啡 Neighborhood"
+ },
+ "now__chance": {
+  "photo": "DZuLLr9yXIT"
+ },
+ "nowchance_fuxing": {
+  "photo": "DXMfpXoGL1t"
+ },
+ "oasis_coffee_roasters_anhe": {
+  "name": "Oasis Coffee Roasters"
+ },
+ "oasis_coffee_roasters_nanjing": {
+  "name": "Oasis Coffee Roasters Nanjing"
+ },
+ "ogawa.coffee": {
+  "photo": "DRub4yxgWjS"
+ },
+ "olivia_coffee_roaster": {
+  "photo": "DWbBxlrE7my"
+ },
+ "olocoffeeroasters": {
+  "photo": "DHLYddIzxXX"
+ },
+ "p.coffee_roaster": {
+  "photo": "Dd6OnL4Rt9n"
+ },
+ "rufous_coffee_1": {
+  "photo": "DeWNmeVk7on"
+ },
+ "saturn_landing_turkish_coffee": {
+  "photo": "DeRXiD2h5hm",
+  "name": "Saturn Landing Turkish Coffee"
+ },
+ "simplekaffa": {
+  "name": "Simple Kaffa 興波咖啡"
+ },
+ "southcity_coffee": {
+  "photo": "DeRyBXOOHkW"
+ },
+ "taiwan_rememberme_cafe": {
+  "name": "Remember Me 記得我"
+ },
+ "twinbrotherscoffee": {
+  "photo": "DcuP992Ehig"
+ },
+ "vwibychadwang": {
+  "photo": "DednvqsE8DR"
+ },
+ "wenshanroasting1983": {
+  "name": "聞山咖啡 Wenshan Coffee"
+ },
+ "whatslife.studio": {
+  "name": "What's Life Coffee Roasters"
+ }
+}
