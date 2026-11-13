@@ -1,0 +1,19 @@
+{
+ "project": "coffee",
+ "title": "Top 10 coffee shops in Xinyi",
+ "top_n": 10,
+ "filter": {"district": ["信義區"]},
+ "where": "Xinyi, Taipei",
+ "posts": [[10, 1]],
+ "series": {
+  "short": "Xinyi Top 10 Coffee",
+  "title": "Xinyi's Top 10 Coffee Shops",
+  "zh": "信義區咖啡廳 TOP 10",
+  "hashtag": "#信義區咖啡top10",
+  "headline": ["The", "Top 10", "coffee shops in\nXinyi"],
+  "page_title": "Instagram series: Xinyi Top 10 coffee shops"
+ },
+ "caption": {
+  "outro_last": "That's Xinyi's top 10! Which one is your go-to? Tell us below 👇 and save this for your next café crawl 🔖"
+ }
+}

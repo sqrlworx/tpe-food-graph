@@ -1,27 +1,32 @@
-"""Turn a project's ranking into a countdown series of Instagram carousel posts.
+"""Turn a series' entries into a countdown of Instagram carousel posts.
 
-The series counts down the top N in tens: e.g. No. 100-91, 90-81, ... 20-11, then 10-4 and
-the top 3. Each post is a title card (same layout every time, only the rank range changes)
+A series (series.py) ranks a project's candidates, all of them or a filtered set, and splits
+its top N into posts: by default tens, e.g. No. 100-91, 90-81, ... 20-11, then 10-4 and the
+top 3. Each post is a title card (same layout every time, only the rank range changes)
 followed by one slide per shop, showing a photo from one of the shop's own recent Instagram
 posts. The series title, caption wording, hashtags and slide colours come from the project
-config.
+config, overridden by the series' series.json.
 
-Writes, under the project's output/posts/:
+Writes, under series/<id>/posts/:
   NN_hi-lo/        one folder per post, ready to upload
     00_title.jpg, 01_no100_<handle>.jpg, ...   slides in carousel order (1080x1350)
     caption.txt    the caption to paste: shop details, @mentions, hashtags
     post.json      the post's template: slide data, alt text and accounts to tag per slide
-  photos/          the photo picked for each shop, and photos.json (handle -> IG shortcode)
+  photos/          the photos the slides show, copied from the project's photo cache
   slides.html      slide_template.html filled with every post; #<post>/<slide> shows one slide
   index.html       preview of the series: profile grid, each carousel and its caption
 
-Photos are picked from IG's alt text (food beats posters, menus and text overlays).
-Pin a different photo, or reword a slide, in the project's data/post_overrides.json:
+Photos are picked from IG's alt text (food beats posters, menus and text overlays) and cached
+per project in projects/<name>/output/photos/ (with photos.json: handle -> IG shortcode), so
+series of one project share them. Pin a different photo, or reword a slide, in the project's
+data/post_overrides.json:
   {"<handle>": {"photo": "<post shortcode>", "name": "...", "summary": "...", "signature": ["...", ...]}}
 
 Rendering uses headless Chromium (Playwright's download, or $CHROME).
 
-usage: python3 -I posts.py -p PROJECT [--no-fetch] [--no-render] [--post N ...]
+usage: python3 -I posts.py -s SERIES [-s SERIES ...] [--no-fetch] [--no-render] [--post N ...]
+       python3 -I posts.py -p PROJECT [...]     every series of the project
+       python3 -I posts.py -p PROJECT --candidates HANDLE ...
 """
 
 import argparse
@@ -39,24 +44,14 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, ROOT)
 import ig  # noqa: E402
 import project  # noqa: E402
+import series as series_mod  # noqa: E402
 
-CFG = project.current()
-OUT = os.path.join(CFG.OUT, "posts")
-PHOTOS = os.path.join(OUT, "photos")
-OVERRIDES = os.path.join(CFG.DATA, "post_overrides.json")
-
-SERIES = dict(CFG.SERIES)
-CAPTION = CFG.CAPTION
 # Instagram caps captions at 2,200 characters and, since Dec 2025, posts at 5 hashtags.
 CAPTION_MAX = 2200
 HASHTAG_MAX = 5
 CITY = {"台北市": "Taipei", "新北市": "New Taipei"}
-TYPE = CFG.TYPES
 MEDAL = {1: "gold", 2: "silver", 3: "bronze"}
 MEDAL_EMOJI = {"gold": "🥇", "silver": "🥈", "bronze": "🥉"}
-
-# What a good photo shows, in IG's alt text.
-FOOD = CFG.PHOTO_SUBJECT
 TEXTY = re.compile(r"\b(poster|doodle|menu|screenshot|map|qr code|diagram|logo|card|calendar)\b", re.I)
 PEOPLE = re.compile(r"\b(people|person|child|baby|smiling)\b", re.I)
 # Headlines of notices rather than food posts: closures, opening days, winners, pop-ups, order rules.
@@ -67,18 +62,24 @@ NOTICE = re.compile(
 )
 
 
-def batches(top):
-    """(hi, lo) rank ranges in posting order."""
-    out, hi = [], top
-    while hi > 10:
-        out.append((hi, hi - 9))
-        hi -= 10
-    return out + [(10, 4), (3, 1)]
+def photo_dir(cfg):
+    """The project's photo cache, shared by its series. It used to sit in output/posts/photos."""
+    d = os.path.join(cfg.OUT, "photos")
+    old = os.path.join(cfg.OUT, "posts", "photos")
+    if not os.path.exists(d) and os.path.isdir(old):
+        shutil.move(old, d)
+    return d
 
 
-def photo_score(post, handle, i):
+def overrides_of(cfg):
+    ov = project.data(cfg, "post_overrides.json", {})
+    return {k: v for k, v in ov.items() if not k.startswith("_")}
+
+
+def photo_score(post, handle, i, food):
+    """food: what a good photo shows in IG's alt text (the project's PHOTO_SUBJECT)."""
     alt = post.get("alt") or ""
-    s = min(len(set(m.lower() for m in FOOD.findall(alt))), 3) * 2.0
+    s = min(len(set(m.lower() for m in food.findall(alt))), 3) * 2.0
     s -= 3.0 * bool(TEXTY.search(alt))
     s -= 1.5 * bool(re.search(r"\btext\b", alt))
     s -= 2.0 * ("text that says" in alt)  # IG read a lot of words off the image
@@ -90,7 +91,7 @@ def photo_score(post, handle, i):
     return s - 0.15 * i  # prefer recent posts on ties
 
 
-def candidates(handle, fetch):
+def candidates(handle, fetch, food):
     """The profile's posts, best photo first."""
     path = os.path.join(ig.CACHE, handle + ".json")
     if not fetch and not os.path.exists(path):
@@ -102,24 +103,25 @@ def candidates(handle, fetch):
     if not p:
         return []
     posts = p["posts"]
-    return sorted(posts, key=lambda q: -photo_score(q, handle, posts.index(q)))
+    return sorted(posts, key=lambda q: -photo_score(q, handle, posts.index(q), food))
 
 
-def pick_photos(rows, overrides, fetch):
+def pick_photos(cfg, rows, overrides, fetch):
     """handle -> {"shortcode", "owner"} for each shop whose photo is downloaded.
 
     The pick is recomputed from the cached profile on every run; a photo is only
     downloaded when the pick differs from the one already on disk."""
-    os.makedirs(PHOTOS, exist_ok=True)
-    index_path = os.path.join(PHOTOS, "photos.json")
+    photos = photo_dir(cfg)
+    os.makedirs(photos, exist_ok=True)
+    index_path = os.path.join(photos, "photos.json")
     index = json.load(open(index_path)) if os.path.exists(index_path) else {}
     out = {}
     for r in rows:
         h = r["handle"]
-        file = os.path.join(PHOTOS, h + ".jpg")
+        file = os.path.join(photos, h + ".jpg")
         have = index.get(h) if os.path.exists(file) else None
         try:
-            posts = candidates(h, fetch)
+            posts = candidates(h, fetch, cfg.PHOTO_SUBJECT)
         except RuntimeError as e:
             print(f"  {h}: {e}")
             posts = []
@@ -132,7 +134,7 @@ def pick_photos(rows, overrides, fetch):
         if not fetch:
             continue
         for q in posts[:4]:
-            picked = glob.glob(os.path.join(PHOTOS, "candidates", h, f"*_{q['shortcode']}.jpg"))
+            picked = glob.glob(os.path.join(photos, "candidates", h, f"*_{q['shortcode']}.jpg"))
             if picked:
                 shutil.copy(picked[0], file)
             if picked or ig.photo(q["shortcode"], file):
@@ -147,14 +149,14 @@ def pick_photos(rows, overrides, fetch):
     return out
 
 
-def download_candidates(handles, n):
+def download_candidates(cfg, handles, n):
     """Save a shop's best-scoring photos as photos/candidates/<handle>/<i>_<shortcode>.jpg.
     Pin one with {"<handle>": {"photo": "<shortcode>"}} in data/post_overrides.json."""
     for h in handles:
         h = h.lower().lstrip("@")
-        d = os.path.join(PHOTOS, "candidates", h)
+        d = os.path.join(photo_dir(cfg), "candidates", h)
         os.makedirs(d, exist_ok=True)
-        for i, q in enumerate(candidates(h, fetch=True)[:n], 1):
+        for i, q in enumerate(candidates(h, True, cfg.PHOTO_SUBJECT)[:n], 1):
             path = os.path.join(d, f"{i}_{q['shortcode']}.jpg")
             if os.path.exists(path) or ig.photo(q["shortcode"], path):
                 print(f"  {os.path.relpath(path, ROOT)}  {(q.get('alt') or '')[-70:]}")
@@ -172,7 +174,7 @@ def place(r, districts):
     return f"{d}, {city}" if d else city
 
 
-def shop(r, districts, photo, ov):
+def shop(r, districts, types, photo, ov):
     notes = r.get("notes") or {}
     sig = ov.get("signature") or notes.get("signature") or [t for t, _ in r.get("topics", [])[:3]]
     return {
@@ -181,7 +183,7 @@ def shop(r, districts, photo, ov):
         "medal": MEDAL.get(r["rank"]),
         "handle": r["handle"],
         "name": ov.get("name") or r["display"],
-        "type": TYPE.get(r["type"], r["type"].title()),
+        "type": types.get(r["type"], r["type"].title()),
         "place": place(r, districts),
         "district_zh": r["district"],
         "rating": r.get("rating"),
@@ -203,7 +205,7 @@ def alt_text(s):
     return f"{alt}, known for {known}" if known else alt
 
 
-def entry(s, level):
+def entry(s, level, item_emoji):
     medal = MEDAL_EMOJI[s["medal"]] + " " if s["medal"] else ""
     lines = [f"{medal}No. {s['rank']} · {s['name']} @{s['handle']}"]
     where = f"📍 {s['place']}"
@@ -214,36 +216,40 @@ def entry(s, level):
         lines.append("Also: " + " · ".join(f"@{b['handle']} ({b['place']})" for b in s["branches"]))
     n_sig = (3, 3, 2, 0)[level]
     if n_sig and s["signature"]:
-        lines.append(CAPTION["item_emoji"] + " " + ", ".join(f"{en} ({zh})" if zh else en for en, zh in s["signature"][:n_sig]))
+        lines.append(item_emoji + " " + ", ".join(f"{en} ({zh})" if zh else en for en, zh in s["signature"][:n_sig]))
     if level == 0 and s["summary"]:
         lines.append(s["summary"])
     return "\n".join(lines)
 
 
-def hashtags(shops):
-    district = collections.Counter(s["district_zh"] for s in shops if s["district_zh"]).most_common(1)
-    tags = list(CFG.HASHTAGS)
+def hashtags(s, shops):
+    district = collections.Counter(x["district_zh"] for x in shops if x["district_zh"]).most_common(1)
+    tags = list(s.hashtags)
     if district:
-        tags.append(CFG.DISTRICT_HASHTAG.format(district=district[0][0]))
-    tags.append(SERIES["hashtag"])
+        tags.append(s.district_hashtag.format(district=district[0][0]))
+    tags.append(s.info["hashtag"])
     return tags[:HASHTAG_MAX]
 
 
-def caption(post, shops, tags, n_candidates):
+def caption(s, post, shops, tags, n_candidates):
     n, of, hi, lo = post["n"], post["of"], post["hi"], post["lo"]
-    head = f"{SERIES['title']} {CAPTION['emoji']} Part {n}/{of}: No. {hi} → {lo}"
-    if lo == 1:
-        head = f"{SERIES['title']} 👑 The top 3"
-    intro = CAPTION["intro"].format(n=n_candidates)
-    if n == 1:
+    title, cap = s.info["title"], s.caption
+    if of == 1:
+        head = f"{title} {cap['emoji']} No. {hi} → {lo}"
+    elif lo == 1:
+        head = f"{title} 👑 The top {hi}"
+    else:
+        head = f"{title} {cap['emoji']} Part {n}/{of}: No. {hi} → {lo}"
+    intro = cap["intro"].format(n=n_candidates)
+    if n == 1 and of > 1:
         intro += " The countdown starts here."
     if lo == 1:
-        outro = CAPTION["outro_last"]
+        outro = cap["outro_last"]
     else:
         nhi, nlo = post["next"]
-        outro = CAPTION["outro_next"].format(hi=nhi, lo=nlo)
+        outro = cap["outro_next"].format(hi=nhi, lo=nlo)
     for level in range(4):
-        text = "\n\n".join([head, intro, *(entry(s, level) for s in shops), outro, " ".join(tags)])
+        text = "\n\n".join([head, intro, *(entry(x, level, cap["item_emoji"]) for x in shops), outro, " ".join(tags)])
         if len(text) <= CAPTION_MAX:
             return text
     return text
@@ -273,72 +279,73 @@ def shoot(exe, url, out):
     )
 
 
-def main():
-    ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    ap.add_argument("--no-fetch", action="store_true", help="only use photos already downloaded")
-    ap.add_argument("--no-render", action="store_true", help="write data and captions, skip slide images")
-    ap.add_argument("--post", type=int, nargs="*", help="only render these post numbers (1 = No. 100-91)")
-    ap.add_argument("--candidates", nargs="+", metavar="HANDLE",
-                    help="download each shop's top photo picks to photos/candidates/ to choose from, then exit")
-    ap.add_argument("-n", type=int, default=6, help="how many candidates per shop (default 6)")
-    args = ap.parse_args()
-    if args.candidates:
-        return download_candidates(args.candidates, args.n)
-
-    ranking = json.load(open(os.path.join(CFG.OUT, "ranking.json")))
-    meta = ranking["meta"]
-    top = meta["top_n"]
-    rows = [r for r in ranking["rows"] if r["rank"] <= top]
-    overrides = json.load(open(OVERRIDES)) if os.path.exists(OVERRIDES) else {}
-    overrides = {k: v for k, v in overrides.items() if not k.startswith("_")}
-
-    print(f"photos for {len(rows)} shops")
-    photos = pick_photos(rows, overrides, fetch=not args.no_fetch)
-    SERIES["method"] = (
-        f"Ranked from {meta['n_candidates']} Greater Taipei shops by food-creator tags, "
-        "Google reviews and press coverage."
-    )
-
-    by_rank = {r["rank"]: r for r in rows}
-    ranges = batches(top)
+def build(s, photos):
+    """The series' posts: slides, captions, hashtags and @mentions. photos: handle -> the
+    picked photo ({"shortcode", "owner"}); with {} the slides have no photos but the captions
+    are final."""
+    cands, meta = s.pool()
+    by_rank = {r["rank"]: r for r in cands[:s.top]}
+    if len(by_rank) < s.top:
+        raise SystemExit(f"{s.id}: top {s.top} but only {len(by_rank)} candidates")
+    overrides = overrides_of(s.cfg)
+    info = s.info
     posts = []
-    for n, (hi, lo) in enumerate(ranges, 1):
-        post = {"n": n, "of": len(ranges), "hi": hi, "lo": lo, "slug": f"{n:02d}_{hi}-{lo}",
-                "next": ranges[n] if n < len(ranges) else None}
+    for n, (hi, lo) in enumerate(s.plan, 1):
+        post = {"n": n, "of": len(s.plan), "hi": hi, "lo": lo, "slug": f"{n:02d}_{hi}-{lo}",
+                "next": s.plan[n] if n < len(s.plan) else None}
         shops = [
-            shop(by_rank[k], meta["districts"], photos.get(by_rank[k]["handle"]),
+            shop(by_rank[k], meta["districts"], s.cfg.TYPES, photos.get(by_rank[k]["handle"]),
                  overrides.get(by_rank[k]["handle"], {}))
             for k in range(hi, lo - 1, -1)
         ]
-        tags = hashtags(shops)
+        tags = hashtags(s, shops)
         title = {
             "kind": "title", "file": "00_title.jpg", "tag": [],
-            "alt": f"{SERIES['title']}, part {n} of {len(ranges)}: No. {hi} to {lo}",
+            "alt": f"{info['title']}, part {n} of {len(s.plan)}: No. {hi} to {lo}" if len(s.plan) > 1
+            else f"{info['title']}: No. {hi} to {lo}",
         }
-        for i, s in enumerate(shops, 1):
-            s["file"] = f"{i:02d}_no{s['rank']}_{s['handle']}.jpg"
-            s["alt"] = alt_text(s)
-            s["tag"] = list(dict.fromkeys([s["handle"], s["credit"] or s["handle"]]))
+        for i, x in enumerate(shops, 1):
+            x["file"] = f"{i:02d}_no{x['rank']}_{x['handle']}.jpg"
+            x["alt"] = alt_text(x)
+            x["tag"] = list(dict.fromkeys([x["handle"], x["credit"] or x["handle"]]))
         post.update(
             slides=[title, *shops],
-            caption=caption(post, shops, tags, meta["n_candidates"]),
+            caption=caption(s, post, shops, tags, len(cands)),
             hashtags=tags,
-            mentions=[h for s in shops for h in [s["handle"], *(b["handle"] for b in s["branches"])]],
-            location=SERIES["location"],
+            mentions=[h for x in shops for h in [x["handle"], *(b["handle"] for b in x["branches"])]],
+            location=info["location"],
         )
         posts.append(post)
+    return posts
 
-    os.makedirs(OUT, exist_ok=True)
-    data = {"series": SERIES, "posts": posts}
+
+def write(s, args):
+    out = s.posts_dir
+    rows = s.entries()
+    print(f"[{s.id}] photos for {len(rows)} shops")
+    picked = pick_photos(s.cfg, rows, overrides_of(s.cfg), fetch=not args.no_fetch)
+    posts = build(s, picked)
+    info = {**s.info, "method": f"Ranked from {len(s.pool()[0])} {s.where} shops by food-creator tags, "
+                                "Google reviews and press coverage."}
+
+    # The slides show photos/<handle>.jpg: copy this series' picks from the project cache.
+    os.makedirs(os.path.join(out, "photos"), exist_ok=True)
+    cache = photo_dir(s.cfg)
+    for h in picked:
+        src, dst = os.path.join(cache, h + ".jpg"), os.path.join(out, "photos", h + ".jpg")
+        if os.path.exists(src) and (not os.path.exists(dst) or os.path.getmtime(dst) < os.path.getmtime(src)):
+            shutil.copy2(src, dst)
+
+    data = {"series": info, "posts": posts}
     blob = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
     tmpl = open(os.path.join(ROOT, "slide_template.html")).read()
-    open(os.path.join(OUT, "slides.html"), "w").write(tmpl.replace("/*DATA*/null", blob))
+    open(os.path.join(out, "slides.html"), "w").write(tmpl.replace("/*DATA*/null", blob))
     tmpl = open(os.path.join(ROOT, "posts_template.html")).read()
-    open(os.path.join(OUT, "index.html"), "w").write(tmpl.replace("/*DATA*/null", blob))
+    open(os.path.join(out, "index.html"), "w").write(tmpl.replace("/*DATA*/null", blob))
 
     todo = []
     for post in posts:
-        d = os.path.join(OUT, post["slug"])
+        d = os.path.join(out, post["slug"])
         if args.post and post["n"] not in args.post:
             continue
         if os.path.isdir(d) and not args.no_render:
@@ -346,8 +353,8 @@ def main():
         os.makedirs(d, exist_ok=True)
         open(os.path.join(d, "caption.txt"), "w").write(post["caption"] + "\n")
         json.dump(post, open(os.path.join(d, "post.json"), "w"), indent=1, ensure_ascii=False)
-        for i, s in enumerate(post["slides"]):
-            todo.append((f"file://{OUT}/slides.html#{post['n']}/{i}", os.path.join(d, s["file"])))
+        for i, x in enumerate(post["slides"]):
+            todo.append((f"file://{out}/slides.html#{post['n']}/{i}", os.path.join(d, x["file"])))
 
     if not args.no_render:
         exe = chrome()
@@ -355,12 +362,39 @@ def main():
         with concurrent.futures.ThreadPoolExecutor(max_workers=6) as pool:
             list(pool.map(lambda t: shoot(exe, *t), todo))
 
-    missing = [s["rank"] for p in posts for s in p["slides"][1:] if not s["photo"]]
-    print(f"wrote {len(posts)} posts to {os.path.relpath(OUT, ROOT)}/ (index.html to preview)")
+    missing = [x["rank"] for p in posts for x in p["slides"][1:] if not x["photo"]]
+    print(f"wrote {len(posts)} posts to {os.path.relpath(out, ROOT)}/ (index.html to preview)")
     if missing:
-        print(f"no photo for ranks {missing}; add one in {os.path.relpath(OVERRIDES, ROOT)}")
+        print(f"no photo for ranks {missing}; add one in "
+              f"{os.path.relpath(os.path.join(s.cfg.DATA, 'post_overrides.json'), ROOT)}")
     for p in posts:
         print(f"  {p['slug']}: caption {len(p['caption'])} chars")
+
+
+def main():
+    ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
+    ap.add_argument("-s", "--series", action="append", help="a series id (series/<id>/); repeat for more")
+    ap.add_argument("-p", "--project", help="every series of this project")
+    ap.add_argument("--no-fetch", action="store_true", help="only use photos already downloaded")
+    ap.add_argument("--no-render", action="store_true", help="write data and captions, skip slide images")
+    ap.add_argument("--post", type=int, nargs="*", help="only render these post numbers (1 = the first post)")
+    ap.add_argument("--candidates", nargs="+", metavar="HANDLE",
+                    help="download each shop's top photo picks to the project's photos/candidates/ to choose "
+                         "from, then exit")
+    ap.add_argument("-n", type=int, default=6, help="how many candidates per shop (default 6)")
+    args = ap.parse_args()
+    if args.candidates:
+        name = args.project or (series_mod.load(args.series[0]).project if args.series else None)
+        if not name:
+            raise SystemExit("--candidates needs -p PROJECT (or -s SERIES)")
+        return download_candidates(project.load(name), args.candidates, args.n)
+    ids = args.series or (series_mod.available(args.project) if args.project else [])
+    if not ids:
+        raise SystemExit("pick series with -s ID or a project with -p NAME; series: "
+                         + ", ".join(series_mod.available()))
+    for sid in ids:
+        write(series_mod.load(sid), args)
+    series_mod.write_dashboard()
 
 
 if __name__ == "__main__":

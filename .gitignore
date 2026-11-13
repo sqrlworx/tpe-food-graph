@@ -6,6 +6,9 @@ data/google_raw/
 data/blogs/
 data/search_raw/
 data/articles/
-# Generated per project: photos and slides (large), the review notes' reading material
+# Generated per project: the review notes' reading material (output/posts/ is where posts went before series)
 projects/*/output/posts/
 projects/*/output/review_input.json
+# Generated per series: rendered posts; photos are cached per project
+series/*/posts/
+projects/*/output/photos/

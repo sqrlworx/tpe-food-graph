@@ -6,7 +6,9 @@ Each project lives in projects/<name>/:
   seeds.json      crawl seeds and handles to skip
   overrides.json  hand-reviewed account labels
   data/           project inputs (Google places, press, review notes, photo picks)
-  output/         graph, ranking dashboard, Instagram posts
+  output/         graph, ranking dashboard, photo cache for the Instagram posts
+
+The Instagram series made from a project live in series/<id>/ (series.py).
 
 Caches that don't depend on the category stay shared in data/: Instagram profiles,
 Google Maps replies, blog post lists and search results.

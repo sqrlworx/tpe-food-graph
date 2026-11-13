@@ -169,7 +169,9 @@ DASHBOARD = {
     ],
 }
 
-# --- Instagram series (posts.py, slide_template.html, posts_template.html) -------------
+# --- Instagram series defaults (posts.py, slide_template.html, posts_template.html) ----
+# Every series of this project (series/<id>/series.json) starts from this wording and can override
+# any of it. {top} and {where} are filled from the series (its top N, and e.g. "Greater Taipei").
 
 SERIES = {
     "short": "Taipei Top 50 Coffee",
@@ -185,9 +187,9 @@ SERIES = {
 CAPTION = {
     "emoji": "☕",
     "item_emoji": "☕",
-    "intro": "We ranked {n} coffee shops and roasteries across Greater Taipei by how often local food creators "
+    "intro": "We ranked {n} coffee shops and roasteries across {where} by how often local food creators "
              "and fellow baristas tag them, their Google reviews, and press coverage.",
-    "outro_last": "That's the full top 50! Catch the rest of the countdown on our grid. Who would you crown No. 1? 👇",
+    "outro_last": "That's the full top {top}! Catch the rest of the countdown on our grid. Who would you crown No. 1? 👇",
     "outro_next": "Next up: No. {hi} → {lo}. Which of these is your go-to? Tell us below 👇 and save this for your "
                   "next café crawl 🔖",
 }

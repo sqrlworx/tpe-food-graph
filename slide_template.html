@@ -94,7 +94,7 @@ function titleCard(post) {
     `<i class="${i + 1 < post.n ? "done" : i + 1 === post.n ? "now" : ""}"></i>`).join("");
   return `<div class="slide title">
     <div class="top"><span class="mark">${esc(DATA.series.short)}</span>
-      <span class="mark part">Part ${String(post.n).padStart(2, "0")} / ${post.of}</span></div>
+      ${post.of > 1 ? `<span class="mark part">Part ${String(post.n).padStart(2, "0")} / ${post.of}</span>` : ""}</div>
     <div class="mid">
       <div class="series">${headline()}</div>
       <div class="range">${post.hi}<span class="dash">–</span>${post.lo}</div>

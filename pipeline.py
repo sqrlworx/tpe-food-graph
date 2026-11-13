@@ -20,6 +20,7 @@ import sys
 ROOT = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, ROOT)
 import project  # noqa: E402
+import series  # noqa: E402
 
 # (name, command or None for a manual step, what it does, files it writes in the project folder)
 STEPS = [
@@ -41,11 +42,19 @@ STEPS = [
     ("notes", None, "write review notes for the top shops: review_notes.py export, write "
      "data/review_notes.json from output/review_input.json, then review_notes.py check", ["data/review_notes.json"]),
     ("rank", ["rank.py"], "final ranking and dashboard", ["output/ranking.json", "output/ranking.html"]),
-    ("posts", ["posts.py"], "photos, slides and captions for the countdown", ["output/posts/index.html"]),
-    ("photos", None, "look through output/posts/index.html; pin better photos in data/post_overrides.json "
-     "(posts.py --candidates HANDLE downloads options), then run the posts step again", []),
+    ("series", ["series.py", "dashboard"], "rerank the project's series (series/*/series.json) and rewrite the "
+     "series dashboard, series/index.html", []),
+    ("posts", ["posts.py"], "photos, slides and captions for each of the project's series", []),
+    ("photos", None, "look through series/<id>/posts/index.html; pin better photos in data/post_overrides.json "
+     "(posts.py -p PROJECT --candidates HANDLE downloads options), then run the posts step again", []),
 ]
 AUTO_FROM = "build"
+
+
+def series_done(cfg):
+    """Whether every series of the project has its posts written."""
+    ids = series.available(cfg.NAME)
+    return bool(ids) and all(os.path.exists(os.path.join(series.load(i).posts_dir, "index.html")) for i in ids)
 
 
 def mtime(cfg, rel):
@@ -67,11 +76,15 @@ def manual_done(cfg, name):
 
 def status(cfg):
     print(f"project {cfg.NAME}: {cfg.DIR}")
+    ids = series.available(cfg.NAME)
+    print(f"series: {', '.join(ids) if ids else 'none yet (python3 -I series.py new ID --project ' + cfg.NAME + ')'}")
     for name, cmd, what, outs in STEPS:
         times = [mtime(cfg, o) for o in outs]
         if cmd is None:
             done = manual_done(cfg, name)
             mark = {True: "done", False: "TODO", None: "check"}[done]
+        elif name == "posts":
+            mark = "done" if series_done(cfg) else "TODO"
         else:
             mark = "done" if outs and all(times) else ("-" if not outs else "TODO")
         run = " ".join(["python3 -I", cmd[0], "-p", cfg.NAME, *cmd[1:]]) if cmd else "manual"

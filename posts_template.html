@@ -85,7 +85,7 @@ button:hover { background: var(--surface-2); }
 const DATA = /*DATA*/null;
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const { series, posts } = DATA;
-const label = p => p.lo === 1 ? "Top 3" : `No. ${p.hi} → ${p.lo}`;
+const label = p => p.lo === 1 && p.of > 1 ? `Top ${p.hi}` : `No. ${p.hi} → ${p.lo}`;
 
 document.title = series.page_title;
 document.getElementById("title").textContent = series.title;
