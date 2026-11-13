@@ -36,6 +36,8 @@ STEPS = [
     ("prerank", ["rank.py"], "a first ranking, to pick whose press to search", ["output/ranking.json"]),
     ("search", ["press_search.py"], "search the web for coverage of the top candidates", ["data/press_search.json"]),
     ("press", ["press.py"], "merge coverage with harvested articles and trusted food blogs", ["data/press.json"]),
+    ("product", ["product.py"], "fetch the press articles; count reviews and articles praising or criticising "
+     "the product itself", ["data/product.json"]),
     ("notes", None, "write review notes for the top shops: review_notes.py export, write "
      "data/review_notes.json from output/review_input.json, then review_notes.py check", ["data/review_notes.json"]),
     ("rank", ["rank.py"], "final ranking and dashboard", ["output/ranking.json", "output/ranking.html"]),

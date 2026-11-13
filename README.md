@@ -28,7 +28,7 @@ projects/<name>/
   data/                inputs: Google places, press, review notes, photo picks, trusted blogs
   output/              graph (index.html), ranking (ranking.html), posts/ (gitignored)
 data/                  caches shared by all projects (gitignored): profiles/, google_raw/,
-                       blogs/, search_raw/; related_snapshot.json (saved related-account lists)
+                       blogs/, search_raw/, articles/; related_snapshot.json (saved related-account lists)
 ```
 
 ## Steps
@@ -48,6 +48,7 @@ from `build` on, stopping at a manual step that isn't done.
 | prerank | `rank.py` | A first ranking, to choose whose coverage to search | `output/ranking.json` |
 | search | `press_search.py` | One web search per top candidate; keeps articles whose title names the shop | `data/press_search.json` |
 | press | `press.py` | Merges search results, harvested articles, curated line-ups and every post title on the trusted food blogs (`data/trusted_blogs.json`) | `data/press.json` |
+| product | `product.py` | Fetches the articles in `press.json` and counts, per shop, how many of its Google reviews, review highlights and articles praise or criticise the product itself (the config's `PRODUCT` words). `product.py report --weights ...` shows the top N with what-if ranks | `data/product.json` |
 | notes | *manual*, `review_notes.py` | `review_notes.py export` writes each top shop's Google material to `output/review_input.json`; a person or an LLM writes the summary, must-try items, highlights and lowlights into `data/review_notes.json`; `review_notes.py check` validates them | `data/review_notes.json` |
 | rank | `rank.py` | Scores and dashboard: network endorsement 35%, review-adjusted Google rating 30%, press 15%, review volume 10%, followers 10% | `output/ranking.*` |
 | posts | `posts.py` | Picks a photo from each shop's own Instagram, renders 1080×1350 slides with headless Chromium and writes captions | `output/posts/` |
@@ -89,15 +90,18 @@ copies a config to `projects/brunch/` with empty seeds and overrides. Then go th
   (name words to ignore when comparing names)
 - **Press**: generic and product words that don't identify a shop, ambiguous names, curated
   line-ups, the search suffix
-- **Ranking**: weights, `TOP_N`, which subtypes are ranked, `REQUIRE_GOOGLE`, `EXCLUDE`
-  (shops left out by hand, with the reason), dashboard wording and chart items
+- **Product**: `PRODUCT` words for the product itself (not the place), praise and complaints;
+  `rank.py` scores it only if `WEIGHTS` has a `product` weight
+- **Ranking**: weights, `TOP_N`, which subtypes are ranked, `REQUIRE_GOOGLE`, `GOOGLE_PRIMARY`
+  (optional: a shop whose first, main Google category doesn't match is left out, whatever its
+  label), `EXCLUDE` (shops left out by hand, with the reason), dashboard wording and chart items
 - **Instagram series**: title, headline, colours, caption wording, hashtags, what a good photo shows
 
 and follow `python3 -I pipeline.py brunch`.
 
 ## Project notes
 
-**coffee** (top 50, 6 posts): 142 Greater Taipei coffee shops ranked out of 178 in a
+**coffee** (top 50, 6 posts): 127 Greater Taipei coffee shops ranked (one entry per brand) out of 178 in a
 262-account graph. Seeds came from 49 articles (`data/article_urls.txt`) and per-district
 searches for café profiles (`data/extra_handles.txt`); three crawl rounds were reviewed by
 hand. Differences from bakeries, all in `projects/coffee/config.py`:
@@ -106,6 +110,9 @@ hand. Differences from bakeries, all in `projects/coffee/config.py`:
   now shows only caption @mentions, so the coffee graph has 186 tags to the bakery graph's
   840 and a couple of tags would otherwise swing a shop's score.
 - `REQUIRE_GOOGLE`: only shops with a Google Maps listing are ranked (no bean-only brands).
+- `GOOGLE_PRIMARY`: a shop Google lists first as something other than a coffee shop is left out,
+  even if it is labelled a café: 9 so far (brunch restaurants, dessert shops, cocktail bars, a
+  restaurant and a cake shop). The dashboard's methodology names them with their category.
 - Press search is scripted (`press_search.py`, top 100); the trusted blogs add six café-heavy
   blogs to the bakery list.
 - One entry per brand: branches (Rufous, Oasis, Now Chance, Yokoso) are represented by their

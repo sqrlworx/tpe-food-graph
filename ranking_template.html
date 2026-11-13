@@ -552,6 +552,8 @@ document.getElementById("method").innerHTML = `
 <p>The candidate pool is ${fill(L.pool)} whose Google Maps address — or, failing that,
 Instagram bio — places it in <b>Taipei City or New Taipei City</b>.${M.require_google ? " Only shops with a Google Maps listing are ranked." : ""}
 ${excluded.length ? `${L.excluded}: ${excluded.map(h => "@" + h).join(", ")}.` : ""}
+${Object.keys(M.off_category || {}).length ? `${L.off_category}: ${Object.entries(M.off_category).map(([h, c]) =>
+  "@" + h + " (" + c + ")").join(", ")}.` : ""}
 ${Object.keys(M.merged).length ? `Branches of one brand (accounts that name each other in their bios or share a brand name in their handles) are one entry,
 represented by the branch with the best score; the others are listed under it: ${Object.entries(M.merged).map(([h, o]) =>
   "@" + h + " (also " + o.map(x => "@" + x).join(", ") + ")").join("; ")}.` : ""}

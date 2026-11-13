@@ -8,15 +8,19 @@ Combines five signals, each scaled to 0..1 (see METHOD below / the dashboard):
   press     - distinct food blogs / media that covered the shop; a dedicated post on
               a trusted food blog counts its outlet TRUSTED_BLOG_WEIGHT times
   reach     - Instagram followers (log-scaled)
+  product   - optional, when the project's WEIGHTS name it: how many of the shop's Google reviews
+              and articles praise rather than criticise the product itself (data/product.json,
+              from product.py)
 
 Weights, the shop types ranked and the shops left out by hand (EXCLUDE) come from the
-project config. Branches of one brand (classify.brands) are one entry: the best-scoring
-branch is ranked and lists the others.
+project config. A project can also set GOOGLE_PRIMARY: a shop whose first (main) Google
+category doesn't match it is left out. Branches of one brand (classify.brands) are one
+entry: the best-scoring branch is ranked and lists the others.
 
 Inputs, in the project's folder: output/graph.json and output/food_creators.csv (from
 build.py), plus the optional data/google_places.json (google_maps.py), data/press.json
-(press.py) and data/review_notes.json (review_notes.py). Missing optional inputs just
-score as unknown.
+(press.py), data/review_notes.json (review_notes.py) and data/product.json (product.py).
+Missing optional inputs just score as unknown.
 
 usage: python3 -I rank.py -p PROJECT
 """
@@ -40,6 +44,7 @@ DATA = CFG.DATA
 
 WEIGHTS = CFG.WEIGHTS
 ENDORSER_WEIGHT = CFG.ENDORSER_WEIGHT
+GOOGLE_PRIMARY = getattr(CFG, "GOOGLE_PRIMARY", None)
 RELATED_EDGE = 0.35  # weight of an Instagram "related account" link vs a tag
 # A tag build.py marks "business" (supply, collaboration, shared event, standing tag between
 # two businesses) counts once, at this type weight, however many posts repeat it.
@@ -197,10 +202,12 @@ def main():
     google = load_json("google_places.json", {})
     press = load_json("press.json", {})
     notes = load_json("review_notes.json", {})
+    product = load_json("product.json", {})
 
     nodes, central, endorse, endorsers, related_by = network_metrics(graph)
 
     cands = []
+    off_category = {}  # handle -> the Google main category that left it out
     for h, s in shops.items():
         if s["role"] != "shop" or s["subtype"] not in CFG.RANKED_SUBTYPES or h in CFG.EXCLUDE:
             continue
@@ -209,6 +216,10 @@ def main():
             continue
         a = area(s, gp if gp.get("match") else None)
         if a not in ("台北市", "新北市"):
+            continue
+        main_category = (gp.get("categories") or [""])[0] if gp.get("match") else ""
+        if GOOGLE_PRIMARY and main_category and not GOOGLE_PRIMARY.search(main_category):
+            off_category[h] = main_category
             continue
         cands.append((h, s, gp if gp.get("match") else {}, a))
 
@@ -244,6 +255,8 @@ def main():
             "press": scaled(sum(outlets.values()), 5),
             "reach": min(1.0, max(0.0, (math.log10(max(n["followers"], 1)) - 3) / 2.3)),  # 1K..200K
         }
+        if "product" in WEIGHTS:
+            comp["product"] = (product.get(h) or {}).get("score", 0.5)  # unscored: mid-pool
         score = 100 * sum(WEIGHTS[k] * comp[k] for k in WEIGHTS)
         rows.append({
             "handle": h,
@@ -273,6 +286,7 @@ def main():
             "outlets": len(outlets),
             "trusted": sum(1 for w in outlets.values() if w > 1),
             "notes": notes.get(h) or {},
+            **({"product": product.get(h) or {}} if product else {}),
             "comp": {k: round(x, 4) for k, x in comp.items()},
             "contrib": {k: round(100 * WEIGHTS[k] * x, 2) for k, x in comp.items()},
             "score": round(score, 2),
@@ -305,6 +319,7 @@ def main():
         "prior_reviews": PRIOR_REVIEWS,
         "trusted_blog_weight": TRUSTED_BLOG_WEIGHT,
         "excluded": CFG.EXCLUDE,
+        "off_category": off_category,
         "merged": merged,
         "districts": DISTRICTS,
         "mean_rating": round(mean_rating, 3),
@@ -331,6 +346,8 @@ def main():
     cols = ["rank", "handle", "name", "gname", "type", "area", "district", "score", "network", "quality",
             "volume", "press", "reach", "rating", "reviews", "bayes", "followers", "endorse", "centrality",
             "related", "n_press", "n_trusted", "address", "ig", "maps"]
+    if "product" in WEIGHTS:
+        cols.insert(cols.index("reach") + 1, "product")
     with open(os.path.join(OUT, "ranking.csv"), "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=cols, extrasaction="ignore")
         w.writeheader()

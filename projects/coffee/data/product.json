@@ -1,0 +1,1956 @@
+{
+ "kasasagicoffee": {
+  "texts": 12,
+  "articles": 4,
+  "praise": 5,
+  "complaint": 0,
+  "mention": 6,
+  "examples": {
+   "praise": [
+    "招牌黑糖奶油冰滴咖啡真的很好喝",
+    "讓我們又多收藏了一間可以帶著毛小孩一起好好喝咖啡"
+   ]
+  },
+  "rate": 0.4142,
+  "score": 0.5515
+ },
+ "kite_coffee_": {
+  "texts": 12,
+  "articles": 4,
+  "praise": 5,
+  "complaint": 0,
+  "mention": 6,
+  "examples": {
+   "praise": [
+    "咖啡好喝",
+    "喝到一杯好咖啡的快樂"
+   ]
+  },
+  "rate": 0.4142,
+  "score": 0.5515
+ },
+ "noon.taipei": {
+  "texts": 10,
+  "articles": 2,
+  "praise": 3,
+  "complaint": 0,
+  "mention": 5,
+  "examples": {
+   "praise": [
+    "noon 一直是我和家人在台北最喜歡的咖啡之一",
+    "這裡的咖啡真的很有水準"
+   ]
+  },
+  "rate": 0.3241,
+  "score": 0.3353
+ },
+ "whatslife.studio": {
+  "texts": 12,
+  "articles": 4,
+  "praise": 6,
+  "complaint": 0,
+  "mention": 3,
+  "examples": {
+   "praise": [
+    "整杯咖啡的層次很豐富",
+    "好好喝杯咖啡的人"
+   ]
+  },
+  "rate": 0.4809,
+  "score": 0.7115
+ },
+ "rufous_coffee_2": {
+  "texts": 15,
+  "articles": 7,
+  "praise": 11,
+  "complaint": 0,
+  "mention": 4,
+  "examples": {
+   "praise": [
+    "且口感有厚度會回乾再來就是另一個該店的招牌奶油冰滴喝起來完全跟一般的冰滴是不同世界順滑的奶油香喝起來十分罪惡且過癮比喝冰拿鐵還爽",
+    "不會有一般咖啡店加了冰塊就稀釋掉濃縮的口感加了冰塊萃取度依然在線該店的配方豆品質也很平衡會有過強烈的果酸味堅果及黑巧克力調性也保持的不會過於突出"
+   ],
+   "complaint": [
+    " RUFOUS COFFEE ROASTERS 2 肯定也不會讓你失望唷"
+   ]
+  },
+  "rate": 0.6785,
+  "score": 1.0
+ },
+ "enroute_coffee": {
+  "texts": 10,
+  "articles": 2,
+  "praise": 6,
+  "complaint": 0,
+  "mention": 3,
+  "examples": {
+   "praise": [
+    "單品咖啡味道不錯",
+    "咖啡每杯都有不同的香氣"
+   ]
+  },
+  "rate": 0.5548,
+  "score": 0.8889
+ },
+ "coffeeimmerse": {
+  "texts": 10,
+  "articles": 2,
+  "praise": 9,
+  "complaint": 0,
+  "mention": 1,
+  "examples": {
+   "praise": [
+    "咖啡溫醇順口",
+    "濃縮與牛奶完美融合"
+   ],
+   "complaint": [
+    "極簡人與咖啡的成長故事：苦澀中帶著濃甜的記憶"
+   ]
+  },
+  "rate": 0.7856,
+  "score": 1.0
+ },
+ "mitsuocoffee": {
+  "texts": 10,
+  "articles": 2,
+  "praise": 5,
+  "complaint": 1,
+  "mention": 3,
+  "examples": {
+   "praise": [
+    "冰美式喝起來相當順口",
+    "冰拿鐵奶香濃郁但不搶味"
+   ],
+   "complaint": [
+    "極簡人與咖啡的成長故事：苦澀中帶著濃甜的記憶"
+   ]
+  },
+  "rate": 0.401,
+  "score": 0.5198
+ },
+ "coffeeunderwater": {
+  "texts": 11,
+  "articles": 3,
+  "praise": 5,
+  "complaint": 1,
+  "mention": 5,
+  "examples": {
+   "complaint": [
+    "卡布的味道偏淡"
+   ],
+   "praise": [
+    "咖啡的味道卻依然平衡細膩",
+    "精品拿鐵非常好喝"
+   ]
+  },
+  "rate": 0.3724,
+  "score": 0.4512
+ },
+ "rokucyomecafe": {
+  "texts": 15,
+  "articles": 7,
+  "praise": 7,
+  "complaint": 0,
+  "mention": 6,
+  "examples": {
+   "praise": [
+    "拿鐵咖啡味到稍淡些比較多的是奶的香醇",
+    "拿鐵順口"
+   ],
+   "complaint": [
+    "有別於大家對於咖啡厚重又苦澀的刻板印象",
+    "硬要說就是咖啡不會過於酸澀"
+   ]
+  },
+  "rate": 0.4563,
+  "score": 0.6525
+ },
+ "branchroasters": {
+  "texts": 13,
+  "articles": 5,
+  "praise": 8,
+  "complaint": 0,
+  "mention": 4,
+  "examples": {
+   "praise": [
+    "配方豆拿鐵也很順口很好喝><下次要點手沖",
+    "對於單品咖啡肥仔並不是認爲能呈現很多味道就是有多厲害"
+   ]
+  },
+  "rate": 0.5758,
+  "score": 0.9393
+ },
+ "vwibychadwang": {
+  "texts": 14,
+  "articles": 6,
+  "praise": 9,
+  "complaint": 0,
+  "mention": 3,
+  "examples": {
+   "praise": [
+    "或是想純粹享受一杯好咖啡的午後",
+    "層次感鮮明的淺焙精品咖啡聞名"
+   ],
+   "complaint": [
+    "我點的冷萃咖啡喝起來偏苦",
+    "也是決定一杯咖啡好不好喝的重要成因"
+   ]
+  },
+  "rate": 0.6008,
+  "score": 0.9993
+ },
+ "coffee_sind": {
+  "texts": 14,
+  "articles": 6,
+  "praise": 9,
+  "complaint": 0,
+  "mention": 4,
+  "examples": {
+   "praise": [
+    "很幸運能喝到這麼讚的赤崁糖拿鐵",
+    "今天沖的咖啡真的很好喝"
+   ],
+   "complaint": [
+    "不然咖啡就不好喝了",
+    "創業初期店長小瑜參考了本身喜愛的東京咖啡店：中目黑 Onibus Coffee 及澀谷About Life的街邊風格"
+   ]
+  },
+  "rate": 0.6008,
+  "score": 0.9993
+ },
+ "ooparts_kissa": {
+  "texts": 10,
+  "articles": 2,
+  "praise": 4,
+  "complaint": 1,
+  "mention": 1,
+  "examples": {
+   "praise": [
+    "咖啡餐點也表現不俗",
+    "熱拿鐵香醇順口"
+   ],
+   "complaint": [
+    "反倒是漂浮咖啡歐蕾不太合我口味",
+    "咖啡本體就有點不習慣"
+   ]
+  },
+  "rate": 0.3241,
+  "score": 0.3353
+ },
+ "taiwan_rememberme_cafe": {
+  "texts": 17,
+  "articles": 9,
+  "praise": 7,
+  "complaint": 0,
+  "mention": 4,
+  "examples": {
+   "praise": [
+    "拿鐵好喝順口",
+    "[台北美食]Remember Me 記得我咖啡/有Wifi有插座/台北不限時咖啡廳+寵物友善餐廳推薦 - 小佳的幻想世界"
+   ],
+   "complaint": [
+    "整體是風味偏酸的咖啡"
+   ]
+  },
+  "rate": 0.4106,
+  "score": 0.5428
+ },
+ "beamcoast.coffee": {
+  "texts": 13,
+  "articles": 5,
+  "praise": 6,
+  "complaint": 0,
+  "mention": 3,
+  "examples": {
+   "praise": [
+    "東區好喝的咖啡「熙岸珈琲所」",
+    "他家的咖啡香醇好喝"
+   ]
+  },
+  "rate": 0.4508,
+  "score": 0.6393
+ },
+ "kikumo.taipei": {
+  "texts": 13,
+  "articles": 5,
+  "praise": 10,
+  "complaint": 1,
+  "mention": 1,
+  "examples": {
+   "praise": [
+    "《髒髒》順口",
+    "但咖啡真的好喝"
+   ],
+   "complaint": [
+    "咖啡豆微微偏苦（個人口味）"
+   ]
+  },
+  "rate": 0.6383,
+  "score": 1.0
+ },
+ "neighborhood_coffee_tw_2022": {
+  "texts": 11,
+  "articles": 3,
+  "praise": 6,
+  "complaint": 0,
+  "mention": 1,
+  "examples": {
+   "praise": [
+    "拿鐵好喝",
+    "咖啡好喝"
+   ]
+  },
+  "rate": 0.5152,
+  "score": 0.7939
+ },
+ "saturn_landing_turkish_coffee": {
+  "texts": 12,
+  "articles": 4,
+  "praise": 4,
+  "complaint": 1,
+  "mention": 4,
+  "examples": {
+   "complaint": [
+    "土耳其咖啡個人口味比較不習慣"
+   ],
+   "praise": [
+    "☕ 豆蔻咖啡｜喜歡",
+    "這次喝到很喜歡的土耳其咖啡"
+   ]
+  },
+  "rate": 0.2809,
+  "score": 0.2316
+ },
+ "nowchance_fuxing": {
+  "texts": 12,
+  "articles": 4,
+  "praise": 7,
+  "complaint": 0,
+  "mention": 4,
+  "examples": {
+   "praise": [
+    "最喜歡的一杯🥰在其他地方都沒遇過洋梨咖啡",
+    "特別推薦手沖和芭咖芭咖（芭樂美式）"
+   ]
+  },
+  "rate": 0.5475,
+  "score": 0.8714
+ },
+ "hobo_place": {
+  "texts": 15,
+  "articles": 7,
+  "praise": 8,
+  "complaint": 0,
+  "mention": 4,
+  "examples": {
+   "praise": [
+    "卡布超滑順",
+    "咖啡同樣也很不錯"
+   ]
+  },
+  "rate": 0.5118,
+  "score": 0.7857
+ },
+ "2730.cafe": {
+  "texts": 13,
+  "articles": 5,
+  "praise": 3,
+  "complaint": 0,
+  "mention": 5,
+  "examples": {
+   "praise": [
+    " 《2730café 貳柒參零咖啡》 採取與優秀烘豆團隊合作的方式",
+    "2730café 貳柒參零咖啡推薦餐點有哪些"
+   ]
+  },
+  "rate": 0.2633,
+  "score": 0.1893
+ },
+ "after5_coffeetail": {
+  "texts": 12,
+  "articles": 4,
+  "praise": 4,
+  "complaint": 0,
+  "mention": 4,
+  "examples": {
+   "praise": [
+    "咖啡好喝",
+    "中焙是濃縮乾淨的酸"
+   ]
+  },
+  "rate": 0.3475,
+  "score": 0.3914
+ },
+ "olivia_coffee_roaster": {
+  "texts": 12,
+  "articles": 4,
+  "praise": 5,
+  "complaint": 1,
+  "mention": 5,
+  "examples": {
+   "praise": [
+    "老派卡布奇諾非常好喝",
+    "我是一個熱愛到各國城市找好喝咖啡的人"
+   ],
+   "complaint": [
+    "手沖咖啡偏淡"
+   ]
+  },
+  "rate": 0.3475,
+  "score": 0.3914
+ },
+ "ogawa.coffee": {
+  "texts": 14,
+  "articles": 6,
+  "praise": 8,
+  "complaint": 0,
+  "mention": 4,
+  "examples": {
+   "praise": [
+    "沒想到意外發現了一間讓人非常喜歡的店——「小川珈琲所」🤗",
+    "咖啡很好喝"
+   ]
+  },
+  "rate": 0.5419,
+  "score": 0.8579
+ },
+ "coffee_dumbo": {
+  "texts": 14,
+  "articles": 6,
+  "praise": 7,
+  "complaint": 0,
+  "mention": 4,
+  "examples": {
+   "praise": [
+    "咖啡味濃配上濃郁奶香",
+    "登波咖啡實訪評測｜中山站人氣咖啡館推薦"
+   ]
+  },
+  "rate": 0.4831,
+  "score": 0.7168
+ },
+ "sidoli_radio": {
+  "texts": 13,
+  "articles": 5,
+  "praise": 4,
+  "complaint": 0,
+  "mention": 7,
+  "examples": {
+   "praise": [
+    "黑糖奶油冷萃咖啡非常厲害",
+    "黑糖拿鐵跟奶油吐司不錯"
+   ]
+  },
+  "rate": 0.3258,
+  "score": 0.3393
+ },
+ "twinbrotherscoffee": {
+  "texts": 13,
+  "articles": 5,
+  "praise": 6,
+  "complaint": 0,
+  "mention": 4,
+  "examples": {
+   "praise": [
+    "肉桂捲搭拿鐵超棒",
+    "台北車站咖啡廳推薦《 Twin Brothers Coffee 雙胞胎咖啡 》"
+   ]
+  },
+  "rate": 0.4508,
+  "score": 0.6393
+ },
+ "wenshanroasting1983": {
+  "texts": 9,
+  "articles": 1,
+  "praise": 6,
+  "complaint": 0,
+  "mention": 2,
+  "examples": {
+   "praise": [
+    "咖啡與奶香完美融合",
+    " I ordered a latte☕️. It was smooth and creamy"
+   ]
+  },
+  "rate": 0.6011,
+  "score": 1.0
+ },
+ "jiaojiao_cafe": {
+  "texts": 12,
+  "articles": 4,
+  "praise": 5,
+  "complaint": 0,
+  "mention": 2,
+  "examples": {
+   "praise": [
+    "咖啡拉花很厲害",
+    "景美蛋糕推薦｜嬌嬌咖啡Jiao Jiao Cafe的評論"
+   ]
+  },
+  "rate": 0.4142,
+  "score": 0.5515
+ },
+ "alchemist.tw": {
+  "texts": 14,
+  "articles": 6,
+  "praise": 8,
+  "complaint": 0,
+  "mention": 3,
+  "examples": {
+   "praise": [
+    "咖啡是好喝的",
+    "店員推薦的咖啡清爽好喝"
+   ]
+  },
+  "rate": 0.5419,
+  "score": 0.8579
+ },
+ "kaffe_24": {
+  "texts": 13,
+  "articles": 5,
+  "praise": 9,
+  "complaint": 0,
+  "mention": 2,
+  "examples": {
+   "praise": [
+    "推薦的咖啡都很符合當天的天氣跟我當下的心情(",
+    "咖啡很好喝"
+   ],
+   "complaint": [
+    "極簡人與咖啡的成長故事：苦澀中帶著濃甜的記憶"
+   ]
+  },
+  "rate": 0.6383,
+  "score": 1.0
+ },
+ "oasis_coffee_roasting_lab": {
+  "texts": 11,
+  "articles": 3,
+  "praise": 8,
+  "complaint": 0,
+  "mention": 3,
+  "examples": {
+   "praise": [
+    "水洗衣索比亞咖啡豆espresso 厚實層次結構",
+    "店內咖啡以乾淨平衡"
+   ],
+   "complaint": [
+    " Oasis Coffee Roasting Lab 果然沒有讓我失望"
+   ]
+  },
+  "rate": 0.6581,
+  "score": 1.0
+ },
+ "kooncoffee0801": {
+  "texts": 12,
+  "articles": 4,
+  "praise": 8,
+  "complaint": 0,
+  "mention": 2,
+  "examples": {
+   "praise": [
+    "但這裡的義式咖啡味道十足很喜歡",
+    "但是咖啡好喝才是最重要的"
+   ],
+   "complaint": [
+    "極簡人與咖啡的成長故事：苦澀中帶著濃甜的記憶"
+   ]
+  },
+  "rate": 0.6142,
+  "score": 1.0
+ },
+ "olocoffeeroasters": {
+  "texts": 14,
+  "articles": 6,
+  "praise": 4,
+  "complaint": 0,
+  "mention": 5,
+  "examples": {
+   "praise": [
+    "奶茶與咖啡都很不錯",
+    "黑露咖啡館 OLO Coffee Roasters評論｜文青讀書最愛"
+   ],
+   "complaint": [
+    "照常點了很一般的冰卡布奇諾",
+    "極簡人與咖啡的成長故事：苦澀中帶著濃甜的記憶"
+   ]
+  },
+  "rate": 0.3066,
+  "score": 0.2933
+ },
+ "ironwood.coffee": {
+  "texts": 12,
+  "articles": 4,
+  "praise": 5,
+  "complaint": 0,
+  "mention": 3,
+  "examples": {
+   "praise": [
+    "杏仁萊姆酒味道層次比一般拿鐵再豐富",
+    "坐在吧檯前的好處總是能好好聞現煮咖啡的香氣魅力"
+   ]
+  },
+  "rate": 0.4142,
+  "score": 0.5515
+ },
+ "bosancafe": {
+  "texts": 13,
+  "articles": 5,
+  "praise": 5,
+  "complaint": 0,
+  "mention": 6,
+  "examples": {
+   "praise": [
+    "包覆舌頭後的咖啡酸有層次☕️",
+    "冰滴咖啡很棒"
+   ]
+  },
+  "rate": 0.3883,
+  "score": 0.4893
+ },
+ "goodman_roaster_taipei": {
+  "texts": 12,
+  "articles": 4,
+  "praise": 7,
+  "complaint": 0,
+  "mention": 4,
+  "examples": {
+   "praise": [
+    "好喝的SOE拿鐵",
+    "咖啡是好喝的"
+   ]
+  },
+  "rate": 0.5475,
+  "score": 0.8714
+ },
+ "luguocafe": {
+  "texts": 11,
+  "articles": 3,
+  "praise": 6,
+  "complaint": 0,
+  "mention": 2,
+  "examples": {
+   "praise": [
+    "咖啡很香",
+    "咖啡好好喝"
+   ]
+  },
+  "rate": 0.5152,
+  "score": 0.7939
+ },
+ "moonshine_coffee": {
+  "texts": 10,
+  "articles": 2,
+  "praise": 4,
+  "complaint": 0,
+  "mention": 5,
+  "examples": {
+   "praise": [
+    "推薦必點雙份濃縮Magic咖啡",
+    "另外的驚艷是咖啡調酒「晨霧」"
+   ]
+  },
+  "rate": 0.401,
+  "score": 0.5198
+ },
+ "simplekaffa": {
+  "texts": 16,
+  "articles": 8,
+  "praise": 10,
+  "complaint": 0,
+  "mention": 6,
+  "examples": {
+   "praise": [
+    "咖啡本身真的很好喝",
+    "新店來朝聖一下😆 那個皺皺蛋糕跟創意咖啡（啥冬瓜愛玉）很棒"
+   ],
+   "complaint": [
+    "或者應該說能自行分辦咖啡好不好喝",
+    "$200 這杯不是普通的咖啡"
+   ]
+  },
+  "rate": 0.5902,
+  "score": 0.9738
+ },
+ "instilcoffee": {
+  "texts": 13,
+  "articles": 5,
+  "praise": 6,
+  "complaint": 0,
+  "mention": 6,
+  "examples": {
+   "praise": [
+    "咖啡風味上的呈現相當優秀",
+    "當日選擇咖啡師推薦的黑咖啡後"
+   ]
+  },
+  "rate": 0.4508,
+  "score": 0.6393
+ },
+ "cafexiaomijo": {
+  "texts": 16,
+  "articles": 8,
+  "praise": 5,
+  "complaint": 0,
+  "mention": 6,
+  "examples": {
+   "praise": [
+    "天啊真是超棒的一間店適合讀書工作喝咖啡",
+    "咖啡好喝"
+   ]
+  },
+  "rate": 0.327,
+  "score": 0.3422
+ },
+ "southcity_coffee": {
+  "texts": 12,
+  "articles": 4,
+  "praise": 5,
+  "complaint": 0,
+  "mention": 3,
+  "examples": {
+   "praise": [
+    "整體咖啡和甜點的表現都風味不錯😊",
+    "有香醇濃郁風味的手沖"
+   ]
+  },
+  "rate": 0.4142,
+  "score": 0.5515
+ },
+ "candocoffeetw": {
+  "texts": 11,
+  "articles": 3,
+  "praise": 1,
+  "complaint": 0,
+  "mention": 6,
+  "examples": {
+   "praise": [
+    "咖啡好喝喔"
+   ]
+  },
+  "rate": 0.1581,
+  "score": 0.0
+ },
+ "fikafikacafe": {
+  "texts": 13,
+  "articles": 5,
+  "praise": 7,
+  "complaint": 0,
+  "mention": 4,
+  "examples": {
+   "praise": [
+    "若喜歡咖啡的朋友",
+    "但是還是經典拿鐵最好喝"
+   ]
+  },
+  "rate": 0.5133,
+  "score": 0.7893
+ },
+ "quartet.kaffe": {
+  "texts": 11,
+  "articles": 3,
+  "praise": 4,
+  "complaint": 0,
+  "mention": 5,
+  "examples": {
+   "praise": [
+    "手沖咖啡值得一提香氣乾淨度都很不錯",
+    "完美的咖啡"
+   ]
+  },
+  "rate": 0.3724,
+  "score": 0.4512
+ },
+ "shiujiou.cafe": {
+  "texts": 9,
+  "articles": 1,
+  "praise": 2,
+  "complaint": 1,
+  "mention": 1,
+  "examples": {
+   "complaint": [
+    "咖啡偏酸"
+   ],
+   "praise": [
+    "但咖啡香氣依然十足",
+    "喜歡老屋咖啡的饕客"
+   ]
+  },
+  "rate": 0.1844,
+  "score": 0.0
+ },
+ "joeunnalcafe": {
+  "texts": 11,
+  "articles": 4,
+  "praise": 8,
+  "complaint": 0,
+  "mention": 2,
+  "examples": {
+   "praise": [
+    "很喜歡手沖咖啡",
+    "其他咖啡濃郁好喝"
+   ]
+  },
+  "rate": 0.6581,
+  "score": 1.0
+ },
+ "ferment_banqiao": {
+  "texts": 12,
+  "articles": 4,
+  "praise": 5,
+  "complaint": 0,
+  "mention": 2,
+  "examples": {
+   "praise": [
+    "☕️夏綠蒂果香拿鐵-$160",
+    "夏綠蒂果香拿鐵的味道蠻特別的"
+   ]
+  },
+  "rate": 0.4142,
+  "score": 0.5515
+ },
+ "ninedayscoffee": {
+  "texts": 12,
+  "articles": 4,
+  "praise": 8,
+  "complaint": 0,
+  "mention": 2,
+  "examples": {
+   "praise": [
+    "）🤣 聽說拿鐵很厲害",
+    "買了M號的特調咖啡好好喝"
+   ],
+   "complaint": [
+    "隨意搜搜立法院附近有沒有好喝又平價的咖啡"
+   ]
+  },
+  "rate": 0.6142,
+  "score": 1.0
+ },
+ "mingscoffeeplayroom": {
+  "texts": 10,
+  "articles": 2,
+  "praise": 7,
+  "complaint": 0,
+  "mention": 0,
+  "examples": {
+   "praise": [
+    "冰拿鐵和手沖咖啡都很好喝",
+    "拿鐵味道很濃郁超讚的"
+   ]
+  },
+  "rate": 0.6318,
+  "score": 1.0
+ },
+ "single_origin_espresso_roast": {
+  "texts": 10,
+  "articles": 2,
+  "praise": 4,
+  "complaint": 1,
+  "mention": 5,
+  "examples": {
+   "praise": [
+    "濃縮喝起來首先是濃烈的甜感",
+    "推薦單品豆手沖"
+   ],
+   "complaint": [
+    "一杯咖啡好不好喝",
+    "一杯咖啡好不好喝"
+   ]
+  },
+  "rate": 0.3241,
+  "score": 0.3353
+ },
+ "p.coffee_roaster": {
+  "texts": 8,
+  "articles": 0,
+  "praise": 5,
+  "complaint": 0,
+  "mention": 2,
+  "examples": {
+   "praise": [
+    "咖啡濃度和檸檬酸度平衡的剛剛好",
+    "淺培帶花香的咖啡"
+   ]
+  },
+  "rate": 0.5648,
+  "score": 0.9129
+ },
+ "aromacafetaipei": {
+  "texts": 9,
+  "articles": 1,
+  "praise": 0,
+  "complaint": 0,
+  "mention": 5,
+  "examples": {},
+  "rate": 0.1011,
+  "score": 0.0
+ },
+ "gazecafe": {
+  "texts": 10,
+  "articles": 2,
+  "praise": 6,
+  "complaint": 0,
+  "mention": 2,
+  "examples": {
+   "praise": [
+    "芭樂冰美式也不錯",
+    "咖啡也很好喝"
+   ],
+   "complaint": [
+    "極簡人與咖啡的成長故事：苦澀中帶著濃甜的記憶"
+   ]
+  },
+  "rate": 0.5548,
+  "score": 0.8889
+ },
+ "congratscafe": {
+  "texts": 10,
+  "articles": 2,
+  "praise": 7,
+  "complaint": 0,
+  "mention": 1,
+  "examples": {
+   "praise": [
+    "芭樂香氣跟咖啡融合得很好",
+    "另外老闆在推薦手沖前"
+   ]
+  },
+  "rate": 0.6318,
+  "score": 1.0
+ },
+ "mimizu_coffeeshop": {
+  "texts": 9,
+  "articles": 1,
+  "praise": 5,
+  "complaint": 1,
+  "mention": 1,
+  "examples": {
+   "praise": [
+    "撲鼻而來的是沉穩的木質香與咖啡香氣",
+    "咖啡大師朋友推薦而來"
+   ],
+   "complaint": [
+    "甘蔗與咖啡不夠平衡"
+   ]
+  },
+  "rate": 0.4344,
+  "score": 0.6
+ },
+ "tropo_coffee": {
+  "texts": 11,
+  "articles": 3,
+  "praise": 5,
+  "complaint": 0,
+  "mention": 2,
+  "examples": {
+   "praise": [
+    "咖啡好喝甜點🍮也超棒棒🤗",
+    "拿鐵跟手沖都非常好喝"
+   ]
+  },
+  "rate": 0.4438,
+  "score": 0.6225
+ },
+ "daonanguan_specialty_coffee": {
+  "texts": 10,
+  "articles": 2,
+  "praise": 6,
+  "complaint": 0,
+  "mention": 3,
+  "examples": {
+   "praise": [
+    "小鬍子烘的的咖啡真的厲害👍",
+    "享受淺培手沖咖啡的果香風味層次"
+   ]
+  },
+  "rate": 0.5548,
+  "score": 0.8889
+ },
+ "d23_coffee": {
+  "texts": 8,
+  "articles": 0,
+  "praise": 5,
+  "complaint": 0,
+  "mention": 3,
+  "examples": {
+   "praise": [
+    "店家的咖啡香醇濃郁",
+    "髒髒跟小白都很不錯"
+   ]
+  },
+  "rate": 0.5648,
+  "score": 0.9129
+ },
+ "ruinscoffeeroasters": {
+  "texts": 11,
+  "articles": 3,
+  "praise": 2,
+  "complaint": 0,
+  "mention": 5,
+  "examples": {
+   "praise": [
+    "咖啡還不錯",
+    "【木柵咖啡廳推薦】Ruins Coffee Roasters 小廢墟咖啡"
+   ]
+  },
+  "rate": 0.2295,
+  "score": 0.1082
+ },
+ "bellyfloppcafe": {
+  "texts": 11,
+  "articles": 3,
+  "praise": 1,
+  "complaint": 0,
+  "mention": 4,
+  "examples": {
+   "praise": [
+    "呈現完美的咖啡風味"
+   ]
+  },
+  "rate": 0.1581,
+  "score": 0.0
+ },
+ "powder_coffee_roasters": {
+  "texts": 10,
+  "articles": 2,
+  "praise": 6,
+  "complaint": 0,
+  "mention": 2,
+  "examples": {
+   "praise": [
+    "而且意外第一口就完美喝到奶油+咖啡（很多奶油太厚或是杯子問題第一口只有奶油）",
+    "髒髒不錯喝"
+   ],
+   "complaint": [
+    "這杯咖啡偏酸"
+   ]
+  },
+  "rate": 0.5548,
+  "score": 0.8889
+ },
+ "ebf.cafe": {
+  "texts": 10,
+  "articles": 2,
+  "praise": 3,
+  "complaint": 0,
+  "mention": 3,
+  "examples": {
+   "praise": [
+    "是有層次的摩卡",
+    "哥倫比亞蜜處理手沖令人驚豔"
+   ]
+  },
+  "rate": 0.3241,
+  "score": 0.3353
+ },
+ "beifongshe": {
+  "texts": 9,
+  "articles": 1,
+  "praise": 2,
+  "complaint": 0,
+  "mention": 4,
+  "examples": {
+   "praise": [
+    "咖啡拿鐵不錯",
+    "午後的陽光配上超好喝的西西里咖啡和檸檬雞三明治🥪本來是來讀書但空間舒服到讓人覺得昏昏欲睡🤣老闆們也都非常溫柔貼心"
+   ]
+  },
+  "rate": 0.2677,
+  "score": 0.1999
+ },
+ "jibucoffee": {
+  "texts": 10,
+  "articles": 2,
+  "praise": 4,
+  "complaint": 0,
+  "mention": 2,
+  "examples": {
+   "praise": [
+    "很喜歡抹茶結合咖啡的味道",
+    "飯糰🍙好吃😋 鹹蛋黃磅蛋糕非常讚👍👍 台東流淚谷手沖酒香很迷人很好喝🩷"
+   ]
+  },
+  "rate": 0.401,
+  "score": 0.5198
+ },
+ "whood_drinkandfood": {
+  "texts": 9,
+  "articles": 1,
+  "praise": 5,
+  "complaint": 0,
+  "mention": 2,
+  "examples": {
+   "praise": [
+    "瑞典檸檬蘇打咖啡好好喝",
+    "還被老闆招待單品咖啡也很不錯"
+   ]
+  },
+  "rate": 0.5177,
+  "score": 0.7999
+ },
+ "ancrecafe": {
+  "texts": 13,
+  "articles": 5,
+  "praise": 5,
+  "complaint": 0,
+  "mention": 1,
+  "examples": {
+   "praise": [
+    "很推薦點布丁搭配咖啡",
+    "推薦這間位在二樓淡水知名的安克黑咖啡Ancre café"
+   ]
+  },
+  "rate": 0.3883,
+  "score": 0.4893
+ },
+ "picniccafe.taipei": {
+  "texts": 10,
+  "articles": 2,
+  "praise": 0,
+  "complaint": 0,
+  "mention": 3,
+  "examples": {},
+  "rate": 0.0933,
+  "score": 0.0
+ },
+ "thefolkstaipei": {
+  "texts": 8,
+  "articles": 0,
+  "praise": 2,
+  "complaint": 0,
+  "mention": 4,
+  "examples": {
+   "praise": [
+    "好喝的義式咖啡",
+    "今天只想專心喝超優秀的咖啡 & 享受超棒的音樂"
+   ]
+  },
+  "rate": 0.2921,
+  "score": 0.2585
+ },
+ "nongcafe1121461": {
+  "texts": 9,
+  "articles": 1,
+  "praise": 5,
+  "complaint": 0,
+  "mention": 3,
+  "examples": {
+   "praise": [
+    "咖啡味道相當豐富順口",
+    "咖啡香醇順口"
+   ]
+  },
+  "rate": 0.5177,
+  "score": 0.7999
+ },
+ "coffee_along": {
+  "texts": 9,
+  "articles": 1,
+  "praise": 4,
+  "complaint": 0,
+  "mention": 4,
+  "examples": {
+   "praise": [
+    "咖啡也好喝",
+    "咖啡非常好喝"
+   ]
+  },
+  "rate": 0.4344,
+  "score": 0.6
+ },
+ "cafe_honestly": {
+  "texts": 8,
+  "articles": 0,
+  "praise": 3,
+  "complaint": 0,
+  "mention": 1,
+  "examples": {
+   "praise": [
+    "冰釀咖啡果香很濃郁",
+    "餐點和咖啡也很棒🥹"
+   ]
+  },
+  "rate": 0.383,
+  "score": 0.4766
+ },
+ "rebirth_coffee": {
+  "texts": 10,
+  "articles": 2,
+  "praise": 2,
+  "complaint": 0,
+  "mention": 0,
+  "examples": {
+   "praise": [
+    "必點推薦他們的自家烘焙單品豆手沖",
+    "北中南咖啡職人名店推薦必訪"
+   ]
+  },
+  "rate": 0.2471,
+  "score": 0.1505
+ },
+ "sucrebeanscoffeeroaster": {
+  "texts": 9,
+  "articles": 1,
+  "praise": 4,
+  "complaint": 0,
+  "mention": 4,
+  "examples": {
+   "praise": [
+    "果然好咖啡可以帶給我們快樂",
+    "咖啡好喝"
+   ]
+  },
+  "rate": 0.4344,
+  "score": 0.6
+ },
+ "normal_coffee": {
+  "texts": 10,
+  "articles": 2,
+  "praise": 3,
+  "complaint": 0,
+  "mention": 7,
+  "examples": {
+   "praise": [
+    "是Normal coffe擅長的果香日曬冰滴咖啡",
+    "果香咖啡剛好是我喜歡的咖啡類型"
+   ]
+  },
+  "rate": 0.3241,
+  "score": 0.3353
+ },
+ "chingshan_cafe": {
+  "texts": 10,
+  "articles": 2,
+  "praise": 5,
+  "complaint": 0,
+  "mention": 0,
+  "examples": {
+   "praise": [
+    "咖啡好喝",
+    "喜歡肉桂的朋友千萬不能錯過肉桂咖啡"
+   ]
+  },
+  "rate": 0.4779,
+  "score": 0.7043
+ },
+ "sconeholic.tw": {
+  "texts": 10,
+  "articles": 2,
+  "praise": 1,
+  "complaint": 0,
+  "mention": 3,
+  "examples": {
+   "praise": [
+    "手沖好喝"
+   ]
+  },
+  "rate": 0.1702,
+  "score": 0.0
+ },
+ "serene_day_cafe": {
+  "texts": 9,
+  "articles": 1,
+  "praise": 3,
+  "complaint": 0,
+  "mention": 1,
+  "examples": {
+   "praise": [
+    "布丁跟拿鐵很不錯",
+    "熱美式（130元）跟水煮蛋（30元）都很讚"
+   ]
+  },
+  "rate": 0.3511,
+  "score": 0.4
+ },
+ "yokosocoffeestand_2nd": {
+  "texts": 9,
+  "articles": 1,
+  "praise": 5,
+  "complaint": 0,
+  "mention": 3,
+  "examples": {
+   "praise": [
+    "手沖跟紅豆奶油堡還不錯",
+    "中焙的美式很好喝👍有我喜歡的香氣"
+   ]
+  },
+  "rate": 0.5177,
+  "score": 0.7999
+ },
+ "leiblecoffeetaipei": {
+  "texts": 10,
+  "articles": 2,
+  "praise": 0,
+  "complaint": 1,
+  "mention": 5,
+  "examples": {
+   "complaint": [
+    "拿鐵因為偏苦"
+   ]
+  },
+  "rate": 0.0164,
+  "score": 0.0
+ },
+ "cafesole.tw": {
+  "texts": 9,
+  "articles": 1,
+  "praise": 6,
+  "complaint": 0,
+  "mention": 2,
+  "examples": {
+   "praise": [
+    "很難不讓喜歡咖啡的人停下腳步",
+    "卻能喝到很純粹的咖啡香氣"
+   ]
+  },
+  "rate": 0.6011,
+  "score": 1.0
+ },
+ "drinkeatcoffee": {
+  "texts": 9,
+  "articles": 1,
+  "praise": 3,
+  "complaint": 0,
+  "mention": 5,
+  "examples": {
+   "praise": [
+    "謝謝人員推薦咖啡豆",
+    "手沖咖啡豪好喝啊"
+   ]
+  },
+  "rate": 0.3511,
+  "score": 0.4
+ },
+ "gabee_global": {
+  "texts": 10,
+  "articles": 2,
+  "praise": 1,
+  "complaint": 0,
+  "mention": 6,
+  "examples": {
+   "praise": [
+    "台北冠軍咖啡廳推薦2：Simple Kaffa（興波咖啡）",
+    "台北冠軍咖啡廳推薦7：Rebirth Coffee（瑞帛咖啡）"
+   ]
+  },
+  "rate": 0.1702,
+  "score": 0.0
+ },
+ "staysunnycafe": {
+  "texts": 9,
+  "articles": 1,
+  "praise": 3,
+  "complaint": 0,
+  "mention": 0,
+  "examples": {
+   "praise": [
+    "是我滿喜歡的味道均衡的咖啡",
+    "拿鐵點心都很不錯"
+   ]
+  },
+  "rate": 0.3511,
+  "score": 0.4
+ },
+ "coffeelab2000": {
+  "texts": 9,
+  "articles": 1,
+  "praise": 2,
+  "complaint": 0,
+  "mention": 3,
+  "examples": {
+   "praise": [
+    "首先是他們家有我最喜歡的西西里咖啡",
+    "接下來要說的是我最喜歡的西西里咖啡"
+   ]
+  },
+  "rate": 0.2677,
+  "score": 0.1999
+ },
+ "gucoffee_songshan": {
+  "texts": 8,
+  "articles": 0,
+  "praise": 1,
+  "complaint": 0,
+  "mention": 3,
+  "examples": {
+   "praise": [
+    "喜歡的髒髒的人要試試看這杯"
+   ]
+  },
+  "rate": 0.2012,
+  "score": 0.0403
+ },
+ "coffee_kappaya": {
+  "texts": 10,
+  "articles": 2,
+  "praise": 4,
+  "complaint": 0,
+  "mention": 1,
+  "examples": {
+   "praise": [
+    "拿鐵很順口",
+    "咖啡都很不錯"
+   ]
+  },
+  "rate": 0.401,
+  "score": 0.5198
+ },
+ "cafe_waku": {
+  "texts": 9,
+  "articles": 1,
+  "praise": 1,
+  "complaint": 0,
+  "mention": 1,
+  "examples": {
+   "praise": [
+    "甜點與咖啡都很不錯"
+   ]
+  },
+  "rate": 0.1844,
+  "score": 0.0
+ },
+ "dvccoffee": {
+  "texts": 8,
+  "articles": 0,
+  "praise": 3,
+  "complaint": 0,
+  "mention": 2,
+  "examples": {
+   "praise": [
+    "咖啡甜點也好吃好喝",
+    "手沖也好喝"
+   ]
+  },
+  "rate": 0.383,
+  "score": 0.4766
+ },
+ "anywaycoffeemore": {
+  "texts": 8,
+  "articles": 0,
+  "praise": 1,
+  "complaint": 0,
+  "mention": 5,
+  "examples": {
+   "praise": [
+    "服務好環境佳咖啡好喝又專業"
+   ]
+  },
+  "rate": 0.2012,
+  "score": 0.0403
+ },
+ "bakingkedi_cafe": {
+  "texts": 8,
+  "articles": 0,
+  "praise": 3,
+  "complaint": 0,
+  "mention": 1,
+  "examples": {
+   "praise": [
+    "單品咖啡很好喝",
+    "咖啡很好喝"
+   ]
+  },
+  "rate": 0.383,
+  "score": 0.4766
+ },
+ "half_moment_coffee": {
+  "texts": 7,
+  "articles": 0,
+  "praise": 2,
+  "complaint": 0,
+  "mention": 1,
+  "examples": {
+   "praise": [
+    "蠻推薦喜歡喝咖啡的朋友們",
+    "咖啡好喝❤️"
+   ]
+  },
+  "rate": 0.3213,
+  "score": 0.3285
+ },
+ "barrysnackstore": {
+  "texts": 8,
+  "articles": 0,
+  "praise": 4,
+  "complaint": 0,
+  "mention": 0,
+  "examples": {
+   "praise": [
+    "跟手沖咖啡是一個完美的Combo",
+    "咖啡非常順口好喝"
+   ]
+  },
+  "rate": 0.4739,
+  "score": 0.6947
+ },
+ "fufuuhome": {
+  "texts": 8,
+  "articles": 0,
+  "praise": 1,
+  "complaint": 0,
+  "mention": 2,
+  "examples": {
+   "praise": [
+    "搭配微酸順口西西里冰美式很消暑"
+   ]
+  },
+  "rate": 0.2012,
+  "score": 0.0403
+ },
+ "kenryucoffee": {
+  "texts": 8,
+  "articles": 0,
+  "praise": 2,
+  "complaint": 0,
+  "mention": 4,
+  "examples": {
+   "praise": [
+    "這支波旁種咖啡不只是「好喝」",
+    "也很推薦咖啡牛奶"
+   ]
+  },
+  "rate": 0.2921,
+  "score": 0.2585
+ },
+ "picapicafe": {
+  "texts": 10,
+  "articles": 2,
+  "praise": 3,
+  "complaint": 0,
+  "mention": 3,
+  "examples": {
+   "praise": [
+    "卡布奇諾都順口",
+    "拿鐵的部分份量還不錯"
+   ]
+  },
+  "rate": 0.3241,
+  "score": 0.3353
+ },
+ "sharingspace_cqc": {
+  "texts": 13,
+  "articles": 5,
+  "praise": 5,
+  "complaint": 0,
+  "mention": 3,
+  "examples": {
+   "praise": [
+    "舒服.寬大.咖啡好喝.不太吵",
+    "大直咖啡推薦"
+   ]
+  },
+  "rate": 0.3883,
+  "score": 0.4893
+ },
+ "tzubi_coffee": {
+  "texts": 9,
+  "articles": 1,
+  "praise": 4,
+  "complaint": 0,
+  "mention": 2,
+  "examples": {
+   "praise": [
+    "今天喝的這杯拿鐵咖啡拉花讓人驚艷啊",
+    "這樣的咖啡我可以一次喝兩杯（味覺視覺享受）😍伯爵葡萄奶油戚風也很不錯"
+   ]
+  },
+  "rate": 0.4344,
+  "score": 0.6
+ },
+ "greenriver_archive": {
+  "texts": 9,
+  "articles": 1,
+  "praise": 5,
+  "complaint": 0,
+  "mention": 2,
+  "examples": {
+   "praise": [
+    "淺焙 (Ice)很乾淨",
+    "咖啡類表現都不錯"
+   ]
+  },
+  "rate": 0.5177,
+  "score": 0.7999
+ },
+ "lecinq_cafe": {
+  "texts": 9,
+  "articles": 1,
+  "praise": 2,
+  "complaint": 1,
+  "mention": 3,
+  "examples": {
+   "praise": [
+    "秘魯藝妓手沖超好喝",
+    "配杯拿鐵就完美"
+   ],
+   "complaint": [
+    "檸檬咖啡不太合我口味"
+   ]
+  },
+  "rate": 0.1844,
+  "score": 0.0
+ },
+ "avenue_m_coffee": {
+  "texts": 8,
+  "articles": 0,
+  "praise": 6,
+  "complaint": 0,
+  "mention": 1,
+  "examples": {
+   "praise": [
+    "全台北市/新北目前最好喝的拿鐵咖啡",
+    "「隱藏版髒髒拿鐵」也超好喝"
+   ]
+  },
+  "rate": 0.6557,
+  "score": 1.0
+ },
+ "doko.jia": {
+  "texts": 8,
+  "articles": 0,
+  "praise": 2,
+  "complaint": 0,
+  "mention": 4,
+  "examples": {
+   "praise": [
+    "咖啡濃郁",
+    "咖啡順口且有淡淡的檸檬香"
+   ]
+  },
+  "rate": 0.2921,
+  "score": 0.2585
+ },
+ "nor.coffee_": {
+  "texts": 8,
+  "articles": 0,
+  "praise": 5,
+  "complaint": 0,
+  "mention": 1,
+  "examples": {
+   "praise": [
+    "鹹焦糖海鹽奶蓋拿鐵🧡好喝",
+    "豆奶拿鐵好好喝🥹🤍"
+   ]
+  },
+  "rate": 0.5648,
+  "score": 0.9129
+ },
+ "miitour.cafe": {
+  "texts": 8,
+  "articles": 0,
+  "praise": 0,
+  "complaint": 0,
+  "mention": 1,
+  "examples": {},
+  "rate": 0.1103,
+  "score": 0.0
+ },
+ "uscoffee.tw": {
+  "texts": 8,
+  "articles": 0,
+  "praise": 2,
+  "complaint": 0,
+  "mention": 3,
+  "examples": {
+   "praise": [
+    "∂）拿鐵的部分個人也喜歡",
+    "咖啡好喝"
+   ]
+  },
+  "rate": 0.2921,
+  "score": 0.2585
+ },
+ "coffee_river_tw": {
+  "texts": 8,
+  "articles": 0,
+  "praise": 5,
+  "complaint": 0,
+  "mention": 1,
+  "examples": {
+   "praise": [
+    "拿鐵就是標準有著綿密奶泡溫順好喝的那種",
+    "但咖啡品質穩定又好喝"
+   ]
+  },
+  "rate": 0.5648,
+  "score": 0.9129
+ },
+ "en.ca.fe": {
+  "texts": 8,
+  "articles": 0,
+  "praise": 1,
+  "complaint": 0,
+  "mention": 4,
+  "examples": {
+   "praise": [
+    "咖啡非常好喝"
+   ]
+  },
+  "rate": 0.2012,
+  "score": 0.0403
+ },
+ "coffee_no.172": {
+  "texts": 8,
+  "articles": 0,
+  "praise": 2,
+  "complaint": 0,
+  "mention": 5,
+  "examples": {
+   "praise": [
+    "咖啡中深培豆子味道很濃郁",
+    "青息•夏(百花蜜小黃瓜咖啡)非常好喝"
+   ]
+  },
+  "rate": 0.2921,
+  "score": 0.2585
+ },
+ "lb__cafe": {
+  "texts": 9,
+  "articles": 1,
+  "praise": 1,
+  "complaint": 1,
+  "mention": 1,
+  "examples": {
+   "complaint": [
+    "飲料喝了很普通的拿鐵"
+   ],
+   "praise": [
+    "[咖啡豆推薦]精品咖啡種類這麼多"
+   ]
+  },
+  "rate": 0.1011,
+  "score": 0.0
+ },
+ "fineroom_coffee": {
+  "texts": 8,
+  "articles": 0,
+  "praise": 2,
+  "complaint": 0,
+  "mention": 2,
+  "examples": {
+   "praise": [
+    "西西里咖啡很棒",
+    "咖啡也好喝"
+   ]
+  },
+  "rate": 0.2921,
+  "score": 0.2585
+ },
+ "succulentgather": {
+  "texts": 8,
+  "articles": 0,
+  "praise": 0,
+  "complaint": 1,
+  "mention": 1,
+  "examples": {
+   "complaint": [
+    "美式咖啡較為普通"
+   ]
+  },
+  "rate": 0.0194,
+  "score": 0.0
+ },
+ "tsautang_cafe": {
+  "texts": 8,
+  "articles": 0,
+  "praise": 3,
+  "complaint": 0,
+  "mention": 4,
+  "examples": {
+   "praise": [
+    "拿鐵更順口好喝",
+    "蜂巢焦糖拿鐵：焦糖脆片很香但不會太甜"
+   ]
+  },
+  "rate": 0.383,
+  "score": 0.4766
+ },
+ "koshicafetaipei": {
+  "texts": 8,
+  "articles": 0,
+  "praise": 1,
+  "complaint": 0,
+  "mention": 2,
+  "examples": {
+   "praise": [
+    "咖啡味道很香"
+   ]
+  },
+  "rate": 0.2012,
+  "score": 0.0403
+ },
+ "bcmidnightcafe": {
+  "texts": 8,
+  "articles": 0,
+  "praise": 1,
+  "complaint": 0,
+  "mention": 3,
+  "examples": {
+   "praise": [
+    "3.濃縮好喝♡"
+   ]
+  },
+  "rate": 0.2012,
+  "score": 0.0403
+ },
+ "meja_221": {
+  "texts": 8,
+  "articles": 0,
+  "praise": 0,
+  "complaint": 0,
+  "mention": 7,
+  "examples": {},
+  "rate": 0.1103,
+  "score": 0.0
+ },
+ "resavorcoffee": {
+  "texts": 8,
+  "articles": 0,
+  "praise": 3,
+  "complaint": 0,
+  "mention": 5,
+  "examples": {
+   "praise": [
+    "濃縮咖啡1+1的風味特別好喝",
+    "輕啜手沖的香氣搭配馬卡龍的甜味真是絕配"
+   ]
+  },
+  "rate": 0.383,
+  "score": 0.4766
+ },
+ "pocoffee.taipei": {
+  "texts": 0,
+  "articles": 0,
+  "praise": 0,
+  "complaint": 0,
+  "mention": 0,
+  "examples": {},
+  "rate": 0.4043,
+  "score": 0.5277
+ },
+ "euno_coffee": {
+  "texts": 8,
+  "articles": 0,
+  "praise": 3,
+  "complaint": 0,
+  "mention": 1,
+  "examples": {
+   "praise": [
+    "咖啡也好喝",
+    "甜點好吃咖啡好喝😋環境舒適老闆帥老闆娘正賞心悅目"
+   ]
+  },
+  "rate": 0.383,
+  "score": 0.4766
+ },
+ "dunekoffee": {
+  "texts": 8,
+  "articles": 0,
+  "praise": 5,
+  "complaint": 1,
+  "mention": 1,
+  "examples": {
+   "praise": [
+    "他們家的咖啡應該也很厲害",
+    "乾淨明亮的水果調手沖"
+   ],
+   "complaint": [
+    "中藥髒髒了普普"
+   ]
+  },
+  "rate": 0.4739,
+  "score": 0.6947
+ },
+ "nmcoffee.1970": {
+  "texts": 8,
+  "articles": 0,
+  "praise": 1,
+  "complaint": 0,
+  "mention": 5,
+  "examples": {
+   "praise": [
+    "熱咖啡好喝",
+    "冰滴咖啡也很讚"
+   ]
+  },
+  "rate": 0.2012,
+  "score": 0.0403
+ },
+ "tinytail_dadaocheng": {
+  "texts": 8,
+  "articles": 0,
+  "praise": 5,
+  "complaint": 1,
+  "mention": 0,
+  "examples": {
+   "praise": [
+    "好好喝杯咖啡",
+    "喜歡黑咖啡的人"
+   ],
+   "complaint": [
+    "冰美式感覺味道很普通"
+   ]
+  },
+  "rate": 0.4739,
+  "score": 0.6947
+ },
+ "coffeeology_tpe": {
+  "texts": 8,
+  "articles": 0,
+  "praise": 5,
+  "complaint": 0,
+  "mention": 2,
+  "examples": {
+   "praise": [
+    "西西里咖啡很好喝",
+    "咖啡真的不錯很香醇"
+   ]
+  },
+  "rate": 0.5648,
+  "score": 0.9129
+ },
+ "libocafe": {
+  "texts": 8,
+  "articles": 0,
+  "praise": 2,
+  "complaint": 0,
+  "mention": 1,
+  "examples": {
+   "praise": [
+    "手沖跟義式都好喝",
+    "拿鐵郁口平衡"
+   ]
+  },
+  "rate": 0.2921,
+  "score": 0.2585
+ },
+ "athomecafe.taiwan": {
+  "texts": 8,
+  "articles": 0,
+  "praise": 3,
+  "complaint": 0,
+  "mention": 4,
+  "examples": {
+   "praise": [
+    "手沖咖啡很有層次",
+    "冰的法蘭絨黑咖啡很醇厚順口好喝"
+   ]
+  },
+  "rate": 0.383,
+  "score": 0.4766
+ },
+ "aka.cafe.tw": {
+  "texts": 8,
+  "articles": 0,
+  "praise": 0,
+  "complaint": 1,
+  "mention": 3,
+  "examples": {
+   "complaint": [
+    "✖ 想喝高CP咖啡 → 不推薦"
+   ]
+  },
+  "rate": 0.0194,
+  "score": 0.0
+ }
+}

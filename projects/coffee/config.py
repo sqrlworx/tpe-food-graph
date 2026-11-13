@@ -70,6 +70,33 @@ SEARCH_SUFFIX = "台北 咖啡"
 # press_search.py searches the top PRESS_SEARCH_TOP shops of a ranking.
 PRESS_SEARCH_TOP = 100
 
+# --- What reviewers say about the coffee itself (product.py) ---------------------------
+
+# A clause of a Google review or a blog post that names the drink ("terms": not the place, so
+# 咖啡廳 / 咖啡店 don't count, and a tea latte isn't coffee) and says something good or bad
+# about it. A praise word after a negation (不好喝, 不推薦) counts as a complaint.
+PRODUCT = {
+    "label": "Coffee",
+    "terms": (
+        r"咖啡(?!廳|店|館|屋|色|師|因)|珈琲|(?<!茶)(?<!可可)(?<!芋頭)(?<!玫瑰)拿鐵|手沖|濃縮|"
+        r"冰美式|熱美式|卡布|虹吸|冰滴|冷萃|咖啡豆|烘焙度|淺焙|中焙|深焙|澳白|馥列白|摩卡|髒髒|"
+        r"\b(?:espresso|coffee(?! ?shop)|cappuccino|flat ?white|americano|pour.?over|cold ?brew|mocha|"
+        r"cortado|macchiato|dirty)\b|(?<!matcha )\blatte\b"
+    ),
+    "praise": (
+        r"好好喝|超好喝|很好喝|好喝|不錯|不俗|推薦|大推|激推|強推|必點|必喝|香醇|香氣|很香|好香|濃郁|醇厚|回甘|"
+        r"層次|驚艷|驚豔|喜歡|最愛|愛喝|讚|很棒|好棒|超棒|厲害|優秀|出色|有水準|順口|滑順|順滑|絲滑|平衡|"
+        r"乾淨|果香|花香|甘甜|甜感|完美|一流|好咖啡|合我口味|合口味|"
+        r"\b(?:delicious|great|excellent|amazing|recommend\w*|love\w*|best|perfect|smooth|tasty|good)\b"
+    ),
+    "complaint": (
+        r"普通|普普|一般般|很一般|蠻一般|滿一般|有點一般|比較一般|偏酸|太酸|過酸|酸澀|澀|偏苦|太苦|過苦|苦澀|"
+        r"焦味|燒焦|難喝|不好喝|沒特色|無特色|沒什麼特色|太淡|偏淡|淡而無味|水水|失望|不推|踩雷|很雷|"
+        r"有點雷|不怎麼樣|稍弱|偏弱|不突出|沒味道|不習慣|"
+        r"\b(?:bland|bitter|sour|watery|weak|disappoint\w*|mediocre|average|burnt)\b"
+    ),
+}
+
 # --- Ranking (rank.py, ranking_template.html) ------------------------------------------
 
 # The coffee graph has about a quarter of the bakery graph's tags (logged-out Instagram shows only
@@ -84,6 +111,9 @@ TOP_N = 50
 RANKED_SUBTYPES = ("cafe", "roaster")
 # A coffee shop you can't visit isn't one: bean brands with no Google listing are left out.
 REQUIRE_GOOGLE = True
+# Google lists a place's main category first. A shop Google files first as something else (a brunch
+# restaurant, a dessert shop, a bar) is left out, whatever its other categories or its label here.
+GOOGLE_PRIMARY = re.compile(r"咖啡|珈琲|コーヒー|カフェ|喫茶|cafe|coffee", re.I)
 # Labelled coffee shops in the graph, but not what this ranking is about.
 EXCLUDE = {
     "bean__u": "temporarily closed (bio: 暫停營業)",
@@ -115,6 +145,7 @@ DASHBOARD = {
             "bloggers, coffee shops, and the bakeries and restaurants around them; baristas' personal accounts, "
             "chains and bean-only brands excluded)",
     "excluded": "A few coffee shops are left out by hand (closed for now, or mainly something else)",
+    "off_category": "Left out because Google lists them first as something other than a coffee shop",
     "endorser_note": "coffee shop {maker} (peer respect, or a roaster crediting a café), bakery / restaurant {venue} "
                      "(often crediting its bean supplier)",
     "press_sources": "food blogs and media found by a scripted web search (search.py) for every top-{press_top} "

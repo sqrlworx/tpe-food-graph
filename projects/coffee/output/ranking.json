@@ -19,6 +19,17 @@
   "excluded": {
    "bean__u": "temporarily closed (bio: 暫停營業)"
   },
+  "off_category": {
+   "fakesobertaipei": "雞尾酒酒吧",
+   "jellyjellytaipei": "甜品店",
+   "rihfengco": "甜品店",
+   "yiyi.taipei": "雞尾酒酒吧",
+   "onns.taipei": "早午餐餐廳",
+   "backmount.coffee": "餐廳",
+   "coffee_soul_156": "餅店",
+   "kingmauiitp02": "早午餐餐廳",
+   "cafe_le_mahe": "早午餐餐廳"
+  },
   "merged": {
    "rufous_coffee_2": [
     "rufous_coffee_1"
@@ -78,14 +89,14 @@
    "萬里區": "Wanli",
    "烏來區": "Wulai"
   },
-  "mean_rating": 4.503,
+  "mean_rating": 4.491,
   "hi_endorse": 1.74,
-  "hi_central": 2.66,
-  "hi_reviews": 1955,
-  "n_candidates": 136,
+  "hi_central": 3.71,
+  "hi_reviews": 2042,
+  "n_candidates": 127,
   "n_shops": 178,
-  "n_google": 136,
-  "n_press": 104,
+  "n_google": 127,
+  "n_press": 97,
   "n_nodes": 262,
   "n_tags": 186,
   "n_related": 74,
@@ -137,6 +148,7 @@
    ],
    "pool": "every hand-reviewed coffee shop and roastery with a bar in our Instagram coffee graph ({n_nodes} accounts: bloggers, coffee shops, and the bakeries and restaurants around them; baristas' personal accounts, chains and bean-only brands excluded)",
    "excluded": "A few coffee shops are left out by hand (closed for now, or mainly something else)",
+   "off_category": "Left out because Google lists them first as something other than a coffee shop",
    "endorser_note": "coffee shop {maker} (peer respect, or a roaster crediting a café), bakery / restaurant {venue} (often crediting its bean supplier)",
    "press_sources": "food blogs and media found by a scripted web search (search.py) for every top-{press_top} candidate, and articles harvested while building the graph",
    "press_caveat": "Press search covered the top {press_top} candidates with one search each; small shops may have coverage we missed.",
@@ -343,20 +355,20 @@
     ]
    },
    "comp": {
-    "network": 0.3849,
-    "quality": 0.9866,
-    "volume": 0.9436,
+    "network": 0.3604,
+    "quality": 0.9862,
+    "volume": 0.9382,
     "press": 1.0,
     "reach": 0.6822
    },
    "contrib": {
-    "network": 9.62,
-    "quality": 29.6,
-    "volume": 9.44,
+    "network": 9.01,
+    "quality": 29.58,
+    "volume": 9.38,
     "press": 25.0,
     "reach": 6.82
    },
-   "score": 80.48,
+   "score": 79.8,
    "branches": [],
    "rank": 1,
    "follower_rank": 1
@@ -383,7 +395,7 @@
     41,
     364
    ],
-   "bayes": 4.775,
+   "bayes": 4.773,
    "topics": [
     [
      "布丁",
@@ -509,23 +521,23 @@
     ]
    },
    "comp": {
-    "network": 0.7045,
-    "quality": 0.8606,
-    "volume": 0.7992,
+    "network": 0.6738,
+    "quality": 0.8594,
+    "volume": 0.7946,
     "press": 0.8982,
     "reach": 0.3834
    },
    "contrib": {
-    "network": 17.61,
-    "quality": 25.82,
-    "volume": 7.99,
+    "network": 16.84,
+    "quality": 25.78,
+    "volume": 7.95,
     "press": 22.46,
     "reach": 3.83
    },
-   "score": 77.71,
+   "score": 76.86,
    "branches": [],
    "rank": 2,
-   "follower_rank": 40
+   "follower_rank": 38
   },
   {
    "handle": "noon.taipei",
@@ -549,7 +561,7 @@
     61,
     403
    ],
-   "bayes": 4.5,
+   "bayes": 4.499,
    "topics": [
     [
      "三杯",
@@ -661,23 +673,23 @@
     ]
    },
    "comp": {
-    "network": 0.9119,
-    "quality": 0.5558,
-    "volume": 0.8287,
+    "network": 0.8624,
+    "quality": 0.5548,
+    "volume": 0.824,
     "press": 0.8982,
     "reach": 0.5315
    },
    "contrib": {
-    "network": 22.8,
-    "quality": 16.67,
-    "volume": 8.29,
+    "network": 21.56,
+    "quality": 16.64,
+    "volume": 8.24,
     "press": 22.46,
     "reach": 5.31
    },
-   "score": 75.53,
+   "score": 74.22,
    "branches": [],
    "rank": 3,
-   "follower_rank": 8
+   "follower_rank": 7
   },
   {
    "handle": "whatslife.studio",
@@ -701,7 +713,7 @@
     79,
     539
    ],
-   "bayes": 4.689,
+   "bayes": 4.688,
    "topics": [
     [
      "巴斯克",
@@ -816,23 +828,23 @@
     ]
    },
    "comp": {
-    "network": 0.5079,
-    "quality": 0.7652,
-    "volume": 0.8562,
+    "network": 0.4634,
+    "quality": 0.7644,
+    "volume": 0.8514,
     "press": 1.0,
     "reach": 0.4149
    },
    "contrib": {
-    "network": 12.7,
-    "quality": 22.96,
-    "volume": 8.56,
+    "network": 11.59,
+    "quality": 22.93,
+    "volume": 8.51,
     "press": 25.0,
     "reach": 4.15
    },
-   "score": 73.37,
+   "score": 72.18,
    "branches": [],
    "rank": 4,
-   "follower_rank": 28
+   "follower_rank": 26
   },
   {
    "handle": "rufous_coffee_2",
@@ -856,7 +868,7 @@
     123,
     646
    ],
-   "bayes": 4.691,
+   "bayes": 4.69,
    "topics": [
     [
      "蘋果派",
@@ -994,20 +1006,20 @@
     ]
    },
    "comp": {
-    "network": 0.4323,
-    "quality": 0.7676,
-    "volume": 0.8853,
+    "network": 0.4036,
+    "quality": 0.7669,
+    "volume": 0.8802,
     "press": 1.0,
     "reach": 0.4126
    },
    "contrib": {
-    "network": 10.81,
-    "quality": 23.03,
-    "volume": 8.85,
+    "network": 10.09,
+    "quality": 23.01,
+    "volume": 8.8,
     "press": 25.0,
     "reach": 4.13
    },
-   "score": 71.81,
+   "score": 71.03,
    "branches": [
     {
      "handle": "rufous_coffee_1",
@@ -1017,163 +1029,13 @@
      "address": "106臺北市大安區臥龍里復興南路二段339號",
      "rating": 4.6,
      "reviews": 1830,
-     "score": 66.37,
+     "score": 65.77,
      "ig": "https://www.instagram.com/rufous_coffee_1/",
      "maps": "https://www.google.com/maps/place/?q=place_id:ChIJW03Z2y6qQjQRkIeeuqF3-mU"
     }
    ],
    "rank": 5,
-   "follower_rank": 30
-  },
-  {
-   "handle": "yiyi.taipei",
-   "name": "液 藝  Y i Y i",
-   "gname": "YiYi 液藝 （從愛學館旁419巷進入）",
-   "display": "YiYi 液藝",
-   "type": "cafe",
-   "area": "台北市",
-   "district": "信義區",
-   "address": "110臺北市信義區正和里光復南路417-3號",
-   "followers": 6698,
-   "bio": "Coffee & Cocktail Bar．Liquid Gallery / Coffee · Coffee Cocktails ．Cocktails / Mon–Sat 14:00–23:00 / Sun 12:00–21:00 / Walk-ins only · No reservations",
-   "ig": "https://www.instagram.com/yiyi.taipei/",
-   "maps": "https://www.google.com/maps/place/?q=place_id:ChIJp5TLXUirQjQRS6NY_KtvRJQ",
-   "rating": 4.9,
-   "reviews": 129,
-   "stars": [
-    0,
-    0,
-    3,
-    8,
-    118
-   ],
-   "bayes": 4.806,
-   "topics": [
-    [
-     "舒適",
-     8
-    ],
-    [
-     "杯",
-     7
-    ],
-    [
-     "概念",
-     7
-    ],
-    [
-     "藝術",
-     6
-    ],
-    [
-     "液體",
-     5
-    ],
-    [
-     "環境",
-     5
-    ],
-    [
-     "愛爾蘭咖啡",
-     4
-    ],
-    [
-     "調飲",
-     4
-    ],
-    [
-     "手",
-     3
-    ],
-    [
-     "冷萃咖啡",
-     2
-    ]
-   ],
-   "categories": [
-    "雞尾酒酒吧",
-    "酒吧"
-   ],
-   "match": "ig",
-   "endorse": 1.05,
-   "endorsers": [
-    {
-     "handle": "phase_coffee_roasters",
-     "kind": "maker",
-     "posts": 2,
-     "business": false,
-     "followers": 20229,
-     "score": 0.62
-    },
-    {
-     "handle": "harryhaodaily_",
-     "kind": "blogger",
-     "posts": 1,
-     "business": false,
-     "followers": 4056,
-     "score": 0.44
-    }
-   ],
-   "centrality": 0.81,
-   "related": 0,
-   "press": [
-    {
-     "outlet": "1shot.tw",
-     "label": "1shot.tw",
-     "url": "https://www.1shot.tw/60966/%E5%8F%B0%E5%8C%97%E8%89%BE%E9%BA%97%E6%94%9C%E6%89%8Byiyi%E6%B6%B2%E8%97%9D%E6%89%93%E9%80%A0%E8%81%AF%E5%90%8D%E4%BC%81%E5%8A%83",
-     "title": "台北艾麗攜手YiYi液藝打造聯名企劃，世界級咖啡評審與風味 ..."
-    },
-    {
-     "outlet": "097.com.tw",
-     "label": "097.com.tw",
-     "url": "https://www.097.com.tw/article/3843",
-     "title": "童心不退場台北艾麗攜手YiYi液藝打造大人系兒童節世界咖啡 ..."
-    },
-    {
-     "outlet": "alive.businessweekly.com.tw",
-     "label": "alive.businessweekly.com.tw",
-     "url": "https://alive.businessweekly.com.tw/single/Index/ARTL006004098",
-     "title": "誰說咖啡只能在白天喝？台北艾麗攜手YiYi液藝 - alive"
-    }
-   ],
-   "outlets": 3,
-   "trusted": 0,
-   "notes": {
-    "summary": "Coffee-cocktail bar in Xinyi, reached via Lane 419, serving layered colour-themed drinks that mix coffee, tea and spirits.",
-    "signature": [
-     "Carnelian (紅玉髓)",
-     "Flawless (暇)",
-     "Sunshine (陽光普照)",
-     "Irish coffee (愛爾蘭咖啡)"
-    ],
-    "highlights": [
-     "Layered coffee cocktails served with tasting cards and explanations",
-     "Calm lighting and music; guests read over a drink",
-     "Friendly owners; non-alcoholic coffee-tea pairings too"
-    ],
-    "lowlights": [
-     "One visitor found the bar stools too low and the dim light hard on the tiny menu text",
-     "Same visitor felt staff ignored first-timers"
-    ]
-   },
-   "comp": {
-    "network": 0.6013,
-    "quality": 0.8956,
-    "volume": 0.6423,
-    "press": 0.7737,
-    "reach": 0.3591
-   },
-   "contrib": {
-    "network": 15.03,
-    "quality": 26.87,
-    "volume": 6.42,
-    "press": 19.34,
-    "reach": 3.59
-   },
-   "score": 71.26,
-   "branches": [],
-   "rank": 6,
-   "follower_rank": 48
+   "follower_rank": 28
   },
   {
    "handle": "enroute_coffee",
@@ -1197,7 +1059,7 @@
     70,
     375
    ],
-   "bayes": 4.684,
+   "bayes": 4.683,
    "topics": [
     [
      "豆",
@@ -1307,23 +1169,23 @@
     ]
    },
    "comp": {
-    "network": 0.6461,
-    "quality": 0.7605,
-    "volume": 0.8113,
+    "network": 0.6168,
+    "quality": 0.7594,
+    "volume": 0.8067,
     "press": 0.7737,
     "reach": 0.3513
    },
    "contrib": {
-    "network": 16.15,
-    "quality": 22.82,
-    "volume": 8.11,
+    "network": 15.42,
+    "quality": 22.78,
+    "volume": 8.07,
     "press": 19.34,
     "reach": 3.51
    },
-   "score": 69.94,
+   "score": 69.12,
    "branches": [],
-   "rank": 7,
-   "follower_rank": 50
+   "rank": 6,
+   "follower_rank": 46
   },
   {
    "handle": "coffeeimmerse",
@@ -1347,7 +1209,7 @@
     8,
     69
    ],
-   "bayes": 4.764,
+   "bayes": 4.76,
    "topics": [
     [
      "拿鐵",
@@ -1459,23 +1321,23 @@
     ]
    },
    "comp": {
-    "network": 0.884,
-    "quality": 0.8492,
-    "volume": 0.5749,
+    "network": 0.8461,
+    "quality": 0.8445,
+    "volume": 0.5716,
     "press": 0.6131,
     "reach": 0.1277
    },
    "contrib": {
-    "network": 22.1,
-    "quality": 25.48,
-    "volume": 5.75,
+    "network": 21.15,
+    "quality": 25.33,
+    "volume": 5.72,
     "press": 15.33,
     "reach": 1.28
    },
-   "score": 69.93,
+   "score": 68.81,
    "branches": [],
-   "rank": 8,
-   "follower_rank": 95
+   "rank": 7,
+   "follower_rank": 88
   },
   {
    "handle": "mitsuocoffee",
@@ -1499,7 +1361,7 @@
     12,
     142
    ],
-   "bayes": 4.661,
+   "bayes": 4.659,
    "topics": [
     [
      "布丁",
@@ -1611,23 +1473,23 @@
     ]
    },
    "comp": {
-    "network": 0.909,
-    "quality": 0.7349,
-    "volume": 0.6737,
+    "network": 0.8671,
+    "quality": 0.7322,
+    "volume": 0.6699,
     "press": 0.6131,
     "reach": 0.2518
    },
    "contrib": {
-    "network": 22.73,
-    "quality": 22.05,
-    "volume": 6.74,
+    "network": 21.68,
+    "quality": 21.96,
+    "volume": 6.7,
     "press": 15.33,
     "reach": 2.52
    },
-   "score": 69.36,
+   "score": 68.19,
    "branches": [],
-   "rank": 9,
-   "follower_rank": 66
+   "rank": 8,
+   "follower_rank": 61
   },
   {
    "handle": "coffeeunderwater",
@@ -1651,7 +1513,7 @@
     133,
     635
    ],
-   "bayes": 4.691,
+   "bayes": 4.69,
    "topics": [
     [
      "乳酪蛋糕",
@@ -1759,23 +1621,23 @@
     ]
    },
    "comp": {
-    "network": 0.4329,
-    "quality": 0.7675,
-    "volume": 0.884,
+    "network": 0.4117,
+    "quality": 0.7668,
+    "volume": 0.8789,
     "press": 0.8982,
     "reach": 0.3634
    },
    "contrib": {
-    "network": 10.82,
-    "quality": 23.02,
-    "volume": 8.84,
+    "network": 10.29,
+    "quality": 23.01,
+    "volume": 8.79,
     "press": 22.46,
     "reach": 3.63
    },
-   "score": 68.78,
+   "score": 68.18,
    "branches": [],
-   "rank": 10,
-   "follower_rank": 47
+   "rank": 9,
+   "follower_rank": 44
   },
   {
    "handle": "rokucyomecafe",
@@ -1920,23 +1782,23 @@
     ]
    },
    "comp": {
-    "network": 0.35,
-    "quality": 0.6643,
-    "volume": 0.9893,
+    "network": 0.3427,
+    "quality": 0.664,
+    "volume": 0.9837,
     "press": 1.0,
     "reach": 0.4523
    },
    "contrib": {
-    "network": 8.75,
-    "quality": 19.93,
-    "volume": 9.89,
+    "network": 8.57,
+    "quality": 19.92,
+    "volume": 9.84,
     "press": 25.0,
     "reach": 4.52
    },
-   "score": 68.1,
+   "score": 67.85,
    "branches": [],
-   "rank": 11,
-   "follower_rank": 18
+   "rank": 10,
+   "follower_rank": 16
   },
   {
    "handle": "branchroasters",
@@ -1960,7 +1822,7 @@
     5,
     77
    ],
-   "bayes": 4.707,
+   "bayes": 4.703,
    "topics": [
     [
      "豆",
@@ -2081,23 +1943,23 @@
     ]
    },
    "comp": {
-    "network": 0.4786,
-    "quality": 0.7858,
-    "volume": 0.5923,
+    "network": 0.45,
+    "quality": 0.7815,
+    "volume": 0.5889,
     "press": 1.0,
     "reach": 0.1625
    },
    "contrib": {
-    "network": 11.97,
-    "quality": 23.57,
-    "volume": 5.92,
+    "network": 11.25,
+    "quality": 23.44,
+    "volume": 5.89,
     "press": 25.0,
     "reach": 1.63
    },
-   "score": 68.09,
+   "score": 67.21,
    "branches": [],
-   "rank": 12,
-   "follower_rank": 89
+   "rank": 11,
+   "follower_rank": 82
   },
   {
    "handle": "vwibychadwang",
@@ -2121,7 +1983,7 @@
     235,
     669
    ],
-   "bayes": 4.404,
+   "bayes": 4.403,
    "topics": [
     [
      "提拉米蘇",
@@ -2251,23 +2113,23 @@
     ]
    },
    "comp": {
-    "network": 0.578,
-    "quality": 0.4487,
-    "volume": 0.9164,
+    "network": 0.5403,
+    "quality": 0.4482,
+    "volume": 0.9112,
     "press": 1.0,
     "reach": 0.5763
    },
    "contrib": {
-    "network": 14.45,
-    "quality": 13.46,
-    "volume": 9.16,
+    "network": 13.51,
+    "quality": 13.45,
+    "volume": 9.11,
     "press": 25.0,
     "reach": 5.76
    },
-   "score": 67.84,
+   "score": 66.83,
    "branches": [],
-   "rank": 13,
-   "follower_rank": 4
+   "rank": 12,
+   "follower_rank": 3
   },
   {
    "handle": "coffee_sind",
@@ -2405,166 +2267,23 @@
     ]
    },
    "comp": {
-    "network": 0.2198,
-    "quality": 0.7705,
-    "volume": 0.9321,
+    "network": 0.1842,
+    "quality": 0.7701,
+    "volume": 0.9268,
     "press": 1.0,
     "reach": 0.4773
    },
    "contrib": {
-    "network": 5.49,
-    "quality": 23.12,
-    "volume": 9.32,
+    "network": 4.6,
+    "quality": 23.1,
+    "volume": 9.27,
     "press": 25.0,
     "reach": 4.77
    },
-   "score": 67.7,
+   "score": 66.75,
    "branches": [],
-   "rank": 14,
-   "follower_rank": 13
-  },
-  {
-   "handle": "kingmauiitp02",
-   "name": "金茂宜咖啡 蘆洲旗艦店",
-   "gname": "Kingmauii 金茂宜咖啡",
-   "display": "金茂宜咖啡 蘆洲旗艦店",
-   "type": "cafe",
-   "area": "新北市",
-   "district": "蘆洲區",
-   "address": "247新北市蘆洲區正義里長樂路108號1樓",
-   "followers": 808,
-   "bio": "享受來自於日常的生活中，可能是一口美食、一杯咖啡、一首歌、一份禮品，種種皆能在金茂宜尋覓，來自於生活中的品味 – 金茂宜 。 / 📞預約請來電",
-   "ig": "https://www.instagram.com/kingmauiitp02/",
-   "maps": "https://www.google.com/maps/place/?q=place_id:ChIJFZBFZQCpQjQRZTAfm07CVQE",
-   "rating": 4.9,
-   "reviews": 1955,
-   "stars": [
-    21,
-    6,
-    32,
-    42,
-    1854
-   ],
-   "bayes": 4.892,
-   "topics": [
-    [
-     "冰滴咖啡",
-     70
-    ],
-    [
-     "寵物",
-     45
-    ],
-    [
-     "聚會",
-     32
-    ],
-    [
-     "披薩",
-     30
-    ],
-    [
-     "松露",
-     21
-    ],
-    [
-     "燉飯",
-     19
-    ],
-    [
-     "舒肥",
-     18
-    ],
-    [
-     "鮭魚",
-     12
-    ],
-    [
-     "歐蕾",
-     10
-    ],
-    [
-     "午餐盤",
-     5
-    ]
-   ],
-   "categories": [
-    "早午餐餐廳",
-    "咖啡店"
-   ],
-   "match": "override",
-   "endorse": 0.0,
-   "endorsers": [],
-   "centrality": 0.6,
-   "related": 0,
-   "press": [
-    {
-     "outlet": "bluetina801205.pixnet.net",
-     "label": "bluetina801205.pixnet.net",
-     "url": "https://bluetina801205.pixnet.net/blog/posts/10357689388",
-     "title": "蘆洲美食】Kingmauii金茂宜咖啡旗艦店｜蘆洲區人氣早午餐 ..."
-    },
-    {
-     "outlet": "jeremyfoodie.tw",
-     "label": "jeremyfoodie.tw",
-     "url": "https://jeremyfoodie.tw/kingmauii-luzhou/",
-     "title": "[食記][新北市][蘆洲區] Kingmauii 金茂宜咖啡蘆洲旗艦店",
-     "trusted": true
-    },
-    {
-     "outlet": "886.news",
-     "label": "886.news",
-     "url": "https://886.news/archives/223033",
-     "title": "金茂宜咖啡蘆洲旗艦店9/10 華麗開幕，結合網美風格與西式美味"
-    },
-    {
-     "outlet": "mymarcy.tw",
-     "label": "瑪西隨筆",
-     "url": "https://mymarcy.tw/kingmauii/",
-     "title": "小巨蛋咖啡廳｜Kingmauii 金茂宜咖啡 台北小巨蛋直營店——評論最高4.9，早午餐下午茶豐富",
-     "date": "2025-05-20",
-     "trusted": true
-    }
-   ],
-   "outlets": 4,
-   "trusted": 2,
-   "notes": {
-    "summary": "Two-storey, pet-friendly all-day brunch cafe in Luzhou, known for hearty brunch plates, truffle dishes and cold drip coffee.",
-    "signature": [
-     "Cold drip coffee (冰滴咖啡)",
-     "Truffle pasta (松露義大利麵)",
-     "Pizza (披薩)",
-     "Truffle mushroom omelette (松露野菇歐姆蛋)",
-     "Sous-vide chicken omelette brunch (舒肥雞胸歐姆蛋早午餐)",
-     "Risotto (燉飯)"
-    ],
-    "highlights": [
-     "Generous, well-seasoned brunch plates",
-     "Bright, clean, roomy space suited to groups and pets",
-     "Friendly service; parking nearby"
-    ],
-    "lowlights": [
-     "Prices slightly high"
-    ]
-   },
-   "comp": {
-    "network": 0.0998,
-    "quality": 0.9912,
-    "volume": 1.0,
-    "press": 1.0,
-    "reach": 0.0
-   },
-   "contrib": {
-    "network": 2.5,
-    "quality": 29.73,
-    "volume": 10.0,
-    "press": 25.0,
-    "reach": 0.0
-   },
-   "score": 67.23,
-   "branches": [],
-   "rank": 15,
-   "follower_rank": 117
+   "rank": 13,
+   "follower_rank": 12
   },
   {
    "handle": "ooparts_kissa",
@@ -2588,7 +2307,7 @@
     6,
     78
    ],
-   "bayes": 4.707,
+   "bayes": 4.703,
    "topics": [
     [
      "義大利麵",
@@ -2687,23 +2406,23 @@
     ]
    },
    "comp": {
-    "network": 0.6325,
-    "quality": 0.7858,
-    "volume": 0.5923,
+    "network": 0.5964,
+    "quality": 0.7815,
+    "volume": 0.5889,
     "press": 0.7737,
     "reach": 0.2353
    },
    "contrib": {
-    "network": 15.81,
-    "quality": 23.57,
-    "volume": 5.92,
+    "network": 14.91,
+    "quality": 23.44,
+    "volume": 5.89,
     "press": 19.34,
     "reach": 2.35
    },
-   "score": 67.01,
+   "score": 65.94,
    "branches": [],
-   "rank": 16,
-   "follower_rank": 71
+   "rank": 14,
+   "follower_rank": 65
   },
   {
    "handle": "taiwan_rememberme_cafe",
@@ -2876,23 +2595,23 @@
     ]
    },
    "comp": {
-    "network": 0.3849,
-    "quality": 0.5556,
+    "network": 0.3604,
+    "quality": 0.5554,
     "volume": 1.0,
     "press": 1.0,
     "reach": 0.5132
    },
    "contrib": {
-    "network": 9.62,
-    "quality": 16.67,
+    "network": 9.01,
+    "quality": 16.66,
     "volume": 10.0,
     "press": 25.0,
     "reach": 5.13
    },
-   "score": 66.42,
+   "score": 65.8,
    "branches": [],
-   "rank": 17,
-   "follower_rank": 11
+   "rank": 15,
+   "follower_rank": 10
   },
   {
    "handle": "beamcoast.coffee",
@@ -2916,7 +2635,7 @@
     55,
     291
    ],
-   "bayes": 4.68,
+   "bayes": 4.679,
    "topics": [
     [
      "杯",
@@ -3032,23 +2751,23 @@
     ]
    },
    "comp": {
-    "network": 0.278,
-    "quality": 0.7561,
-    "volume": 0.7781,
+    "network": 0.233,
+    "quality": 0.7547,
+    "volume": 0.7737,
     "press": 1.0,
     "reach": 0.3884
    },
    "contrib": {
-    "network": 6.95,
-    "quality": 22.68,
-    "volume": 7.78,
+    "network": 5.83,
+    "quality": 22.64,
+    "volume": 7.74,
     "press": 25.0,
     "reach": 3.88
    },
-   "score": 66.3,
+   "score": 65.09,
    "branches": [],
-   "rank": 18,
-   "follower_rank": 38
+   "rank": 16,
+   "follower_rank": 36
   },
   {
    "handle": "kikumo.taipei",
@@ -3072,7 +2791,7 @@
     24,
     264
    ],
-   "bayes": 4.765,
+   "bayes": 4.764,
    "topics": [
     [
      "肉桂捲",
@@ -3185,23 +2904,23 @@
     ]
    },
    "comp": {
-    "network": 0.1506,
-    "quality": 0.8502,
-    "volume": 0.7535,
+    "network": 0.1262,
+    "quality": 0.8486,
+    "volume": 0.7492,
     "press": 1.0,
     "reach": 0.3821
    },
    "contrib": {
-    "network": 3.77,
-    "quality": 25.51,
-    "volume": 7.53,
+    "network": 3.16,
+    "quality": 25.46,
+    "volume": 7.49,
     "press": 25.0,
     "reach": 3.82
    },
-   "score": 65.63,
+   "score": 64.93,
    "branches": [],
-   "rank": 19,
-   "follower_rank": 41
+   "rank": 17,
+   "follower_rank": 39
   },
   {
    "handle": "neighborhood_coffee_tw_2022",
@@ -3325,23 +3044,23 @@
     ]
    },
    "comp": {
-    "network": 0.1506,
-    "quality": 0.7617,
-    "volume": 0.8211,
+    "network": 0.1262,
+    "quality": 0.7606,
+    "volume": 0.8164,
     "press": 1.0,
     "reach": 0.4082
    },
    "contrib": {
-    "network": 3.77,
-    "quality": 22.85,
-    "volume": 8.21,
+    "network": 3.16,
+    "quality": 22.82,
+    "volume": 8.16,
     "press": 25.0,
     "reach": 4.08
    },
-   "score": 63.91,
+   "score": 63.22,
    "branches": [],
-   "rank": 20,
-   "follower_rank": 32
+   "rank": 18,
+   "follower_rank": 30
   },
   {
    "handle": "saturn_landing_turkish_coffee",
@@ -3365,7 +3084,7 @@
     257,
     1362
    ],
-   "bayes": 4.696,
+   "bayes": 4.695,
    "topics": [
     [
      "米布丁",
@@ -3468,23 +3187,23 @@
     ]
    },
    "comp": {
-    "network": 0.0998,
-    "quality": 0.7729,
-    "volume": 0.9844,
+    "network": 0.0836,
+    "quality": 0.7725,
+    "volume": 0.9788,
     "press": 1.0,
     "reach": 0.3107
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 23.19,
-    "volume": 9.84,
+    "network": 2.09,
+    "quality": 23.18,
+    "volume": 9.79,
     "press": 25.0,
     "reach": 3.11
    },
-   "score": 63.63,
+   "score": 63.16,
    "branches": [],
-   "rank": 21,
-   "follower_rank": 54
+   "rank": 19,
+   "follower_rank": 50
   },
   {
    "handle": "nowchance_fuxing",
@@ -3508,7 +3227,7 @@
     48,
     328
    ],
-   "bayes": 4.591,
+   "bayes": 4.59,
    "topics": [
     [
      "座位",
@@ -3611,19 +3330,19 @@
    },
    "comp": {
     "network": 0.35,
-    "quality": 0.6571,
-    "volume": 0.7938,
+    "quality": 0.6558,
+    "volume": 0.7893,
     "press": 0.8982,
     "reach": 0.3782
    },
    "contrib": {
     "network": 8.75,
-    "quality": 19.71,
-    "volume": 7.94,
+    "quality": 19.68,
+    "volume": 7.89,
     "press": 22.46,
     "reach": 3.78
    },
-   "score": 62.64,
+   "score": 62.56,
    "branches": [
     {
      "handle": "now__chance",
@@ -3633,159 +3352,13 @@
      "address": "234010新北市永和區保順里保順路15號",
      "rating": 4.6,
      "reviews": 328,
-     "score": 58.29,
+     "score": 57.8,
      "ig": "https://www.instagram.com/now__chance/",
      "maps": "https://www.google.com/maps/place/?q=place_id:ChIJewrhdrCpQjQREn7iXalSxsk"
     }
    ],
-   "rank": 22,
-   "follower_rank": 42
-  },
-  {
-   "handle": "2730.cafe",
-   "name": "貳柒參零",
-   "gname": "2730café 貳柒參零咖啡",
-   "display": "貳柒參零",
-   "type": "cafe",
-   "area": "台北市",
-   "district": "大安區",
-   "address": "106臺北市大安區延吉街288號",
-   "followers": 9881,
-   "bio": "營業時間 / 平日12:00-22:00 / 週末11:30-22:00 / 最後出餐時間21:00 / 前來之前請看置頂文章，謝謝！ / 🔺平日不限時，不是預約制的店；但需要人數到齊才可以入座，不要為難我們。 / 🌷假日限時三小時。 / 🔺不提供訂位了喔，私訊請有禮貌🙏🏻 / 🪄部分位子有插座。",
-   "ig": "https://www.instagram.com/2730.cafe/",
-   "maps": "https://www.google.com/maps/place/?q=place_id:ChIJkyrPgcmrQjQRe2RlDdXiOU0",
-   "rating": 4.6,
-   "reviews": 1074,
-   "stars": [
-    37,
-    12,
-    47,
-    171,
-    807
-   ],
-   "bayes": 4.597,
-   "topics": [
-    [
-     "巴斯克",
-     50
-    ],
-    [
-     "復古",
-     49
-    ],
-    [
-     "醉雞",
-     35
-    ],
-    [
-     "古著",
-     28
-    ],
-    [
-     "門鈴",
-     28
-    ],
-    [
-     "煎餃",
-     28
-    ],
-    [
-     "紅燒牛肉",
-     26
-    ],
-    [
-     "白貓",
-     19
-    ],
-    [
-     "文創",
-     13
-    ],
-    [
-     "黑貓",
-     12
-    ]
-   ],
-   "categories": [
-    "咖啡店"
-   ],
-   "match": "name",
-   "endorse": 0.0,
-   "endorsers": [],
-   "centrality": 0.99,
-   "related": 1,
-   "press": [
-    {
-     "outlet": "whos-talking.com",
-     "url": "https://whos-talking.com/2024/09/04/daan-district-cafe/",
-     "title": ""
-    },
-    {
-     "outlet": "whos-talking.com",
-     "label": "whos-talking.com",
-     "url": "https://whos-talking.com/2024/06/06/2730cafe/",
-     "title": "【台北大安】2730café 貳柒參零咖啡|不限時復古老宅咖啡廳|文青",
-     "trusted": true
-    },
-    {
-     "outlet": "havefunday.com",
-     "label": "havefunday.com",
-     "url": "https://havefunday.com/taiwan-foods/taipei-foods-35/",
-     "title": "2730café 貳柒參零咖啡｜台北懷舊風｜文青老宅"
-    },
-    {
-     "outlet": "pipichocho.com",
-     "label": "pipichocho.com",
-     "url": "https://pipichocho.com/2730-cafe/",
-     "title": "2730 café 貳柒參零咖啡｜信義安和站｜有貓的不限時咖啡醉雞飯"
-    },
-    {
-     "outlet": "haokuanxi.com",
-     "label": "haokuanxi.com",
-     "url": "https://www.haokuanxi.com/pages/crossover-with-2730cafe?srsltid=AYCX9vLiqJLYkgI2ydHXzpyTUdz_2qmGSijAdPctgHfk4c-8ApyX2zrH",
-     "title": "方巾聯名企劃｜好關係x 貳柒參零咖啡2730 café - HAOKUANXI"
-    }
-   ],
-   "outlets": 4,
-   "trusted": 1,
-   "notes": {
-    "summary": "Retro old-house cafe with resident cats in a Da'an lane by Xinyi; known for Basque cheesecakes and homestyle rice plates.",
-    "signature": [
-     "Basque cheesecake (巴斯克)",
-     "Crispy pan-fried dumplings (脆皮煎餃)",
-     "Braised beef (紅燒牛肉)",
-     "Grandma's braised pork rice (阿嬤的控肉飯)",
-     "Pineapple americano (鳳梨美式)"
-    ],
-    "highlights": [
-     "Friendly cats, especially the white one, plus vintage goods and a consignment corner",
-     "Quiet, relaxed room with roomy tables and bookshelves; no time limit on weekdays",
-     "Homestyle food; the dumplings stay crisp and the Basque cakes are well balanced"
-    ],
-    "lowlights": [
-     "Drunken chicken rice criticised: hard rice, chicken that tasted long refrigerated",
-     "Some dishes run salty or sweet: dry curry, bittersweet chocolate milk",
-     "No reservations, whole party must be present to sit, 3-hour limit on weekends"
-    ]
-   },
-   "comp": {
-    "network": 0.1647,
-    "quality": 0.6628,
-    "volume": 0.921,
-    "press": 1.0,
-    "reach": 0.4325
-   },
-   "contrib": {
-    "network": 4.12,
-    "quality": 19.88,
-    "volume": 9.21,
-    "press": 25.0,
-    "reach": 4.33
-   },
-   "score": 62.54,
-   "branches": [],
-   "rank": 23,
-   "follower_rank": 21
+   "rank": 20,
+   "follower_rank": 40
   },
   {
    "handle": "hobo_place",
@@ -3809,7 +3382,7 @@
     50,
     308
    ],
-   "bayes": 4.409,
+   "bayes": 4.408,
    "topics": [
     [
      "布丁",
@@ -3940,170 +3513,317 @@
     ]
    },
    "comp": {
-    "network": 0.4885,
-    "quality": 0.4543,
-    "volume": 0.7983,
+    "network": 0.4653,
+    "quality": 0.4531,
+    "volume": 0.7937,
     "press": 1.0,
     "reach": 0.3708
    },
    "contrib": {
-    "network": 12.21,
-    "quality": 13.63,
-    "volume": 7.98,
+    "network": 11.63,
+    "quality": 13.59,
+    "volume": 7.94,
     "press": 25.0,
     "reach": 3.71
    },
-   "score": 62.53,
+   "score": 61.87,
    "branches": [],
-   "rank": 24,
-   "follower_rank": 43
+   "rank": 21,
+   "follower_rank": 41
   },
   {
-   "handle": "jellyjellytaipei",
-   "name": "JellyJellyCafe",
-   "gname": "JellyJellyCafe",
-   "display": "JellyJellyCafe",
+   "handle": "2730.cafe",
+   "name": "貳柒參零",
+   "gname": "2730café 貳柒參零咖啡",
+   "display": "貳柒參零",
    "type": "cafe",
    "area": "台北市",
-   "district": "中正區",
-   "address": "100臺北市中正區幸市里臨沂街31-1號",
-   "followers": 11747,
-   "bio": "公休：每週一、週二固定公休 / 營業：12:00～19:00 / 地址：台北市中正區臨沂街31-1號 / 限時：平日不限/週末、例假日2小時 / 蛋糕：建議3-5天前私訊安排 / 訂位：點擊以下連結👇 或下方「預訂」",
-   "ig": "https://www.instagram.com/jellyjellytaipei/",
-   "maps": "https://www.google.com/maps/place/?q=place_id:ChIJn3Y6-cGpQjQR3B-tOe4qo_8",
+   "district": "大安區",
+   "address": "106臺北市大安區延吉街288號",
+   "followers": 9881,
+   "bio": "營業時間 / 平日12:00-22:00 / 週末11:30-22:00 / 最後出餐時間21:00 / 前來之前請看置頂文章，謝謝！ / 🔺平日不限時，不是預約制的店；但需要人數到齊才可以入座，不要為難我們。 / 🌷假日限時三小時。 / 🔺不提供訂位了喔，私訊請有禮貌🙏🏻 / 🪄部分位子有插座。",
+   "ig": "https://www.instagram.com/2730.cafe/",
+   "maps": "https://www.google.com/maps/place/?q=place_id:ChIJkyrPgcmrQjQRe2RlDdXiOU0",
    "rating": 4.6,
-   "reviews": 910,
+   "reviews": 1074,
    "stars": [
-    10,
-    10,
-    43,
-    183,
-    664
+    37,
+    12,
+    47,
+    171,
+    807
    ],
    "bayes": 4.596,
    "topics": [
     [
-     "班蘭蛋糕",
-     105
-    ],
-    [
-     "茉莉",
-     81
-    ],
-    [
-     "拿鐵",
-     52
-    ],
-    [
-     "芝麻",
+     "巴斯克",
      50
     ],
     [
-     "千層",
-     36
+     "復古",
+     49
     ],
     [
-     "伯爵",
-     24
+     "醉雞",
+     35
     ],
     [
-     "裝潢",
-     15
+     "古著",
+     28
     ],
     [
-     "奶凍",
+     "門鈴",
+     28
+    ],
+    [
+     "煎餃",
+     28
+    ],
+    [
+     "紅燒牛肉",
+     26
+    ],
+    [
+     "白貓",
+     19
+    ],
+    [
+     "文創",
      13
     ],
     [
-     "芋泥",
+     "黑貓",
      12
-    ],
-    [
-     "紫薯",
-     9
     ]
    ],
    "categories": [
-    "甜品店"
+    "咖啡店"
    ],
    "match": "name",
    "endorse": 0.0,
    "endorsers": [],
-   "centrality": 0.95,
+   "centrality": 0.99,
    "related": 1,
    "press": [
     {
-     "outlet": "wisely.tw",
-     "label": "wisely.tw",
-     "url": "https://wisely.tw/read-33679.html",
-     "title": "JellyJellyCafe 慢工烘培︱台北白色建築︱巷弄文青風咖啡"
+     "outlet": "whos-talking.com",
+     "url": "https://whos-talking.com/2024/09/04/daan-district-cafe/",
+     "title": ""
     },
     {
-     "outlet": "lupanda.tw",
-     "label": "lupanda.tw",
-     "url": "https://lupanda.tw/jelly/",
-     "title": "【忠孝新生美食】JellyJelly Cafe，甜點飲料都棒的咖啡廳"
+     "outlet": "whos-talking.com",
+     "label": "whos-talking.com",
+     "url": "https://whos-talking.com/2024/06/06/2730cafe/",
+     "title": "【台北大安】2730café 貳柒參零咖啡|不限時復古老宅咖啡廳|文青",
+     "trusted": true
     },
     {
-     "outlet": "nash.tw",
-     "label": "nash.tw",
-     "url": "https://nash.tw/jellyjelly-cafe/",
-     "title": "【台北咖啡廳推薦】JellyJelly Cafe｜白色系質感咖啡廳還有超 ..."
+     "outlet": "havefunday.com",
+     "label": "havefunday.com",
+     "url": "https://havefunday.com/taiwan-foods/taipei-foods-35/",
+     "title": "2730café 貳柒參零咖啡｜台北懷舊風｜文青老宅"
     },
     {
-     "outlet": "abc0601.pixnet.net",
-     "label": "abc0601.pixnet.net",
-     "url": "https://abc0601.pixnet.net/blog/posts/17339655605",
-     "title": "【台北】咖啡廳下午茶｜茉莉花奶綠蛋糕必吃！JellyJellyCafe ..."
+     "outlet": "pipichocho.com",
+     "label": "pipichocho.com",
+     "url": "https://pipichocho.com/2730-cafe/",
+     "title": "2730 café 貳柒參零咖啡｜信義安和站｜有貓的不限時咖啡醉雞飯"
     },
     {
-     "outlet": "angela51.com",
-     "label": "angela51.com",
-     "url": "https://angela51.com/jellyjellycafe/",
-     "title": "JellyJellyCafe 純白老屋咖啡廳招牌甜點大受歡迎鹹食也值得品嘗"
+     "outlet": "haokuanxi.com",
+     "label": "haokuanxi.com",
+     "url": "https://www.haokuanxi.com/pages/crossover-with-2730cafe?srsltid=AYCX9vLiqJLYkgI2ydHXzpyTUdz_2qmGSijAdPctgHfk4c-8ApyX2zrH",
+     "title": "方巾聯名企劃｜好關係x 貳柒參零咖啡2730 café - HAOKUANXI"
     }
    ],
-   "outlets": 5,
-   "trusted": 0,
+   "outlets": 4,
+   "trusted": 1,
    "notes": {
-    "summary": "Korean-style cake cafe on Linyi Street in Zhongzheng, known for pandan and jasmine milk green cakes plus tofu noodles and curry.",
+    "summary": "Retro old-house cafe with resident cats in a Da'an lane by Xinyi; known for Basque cheesecakes and homestyle rice plates.",
     "signature": [
-     "Pandan cake (班蘭蛋糕)",
-     "Jasmine milk green cake (茉莉花奶綠蛋糕)",
-     "Black sesame cake (黑金芝麻蛋糕)",
-     "Lemon mille crêpe (檸檬千層)",
-     "Peach Earl Grey cake (蜜桃伯爵茶蛋糕)",
-     "Sicilian lemon coffee (西西里檸檬咖啡)"
+     "Basque cheesecake (巴斯克)",
+     "Crispy pan-fried dumplings (脆皮煎餃)",
+     "Braised beef (紅燒牛肉)",
+     "Grandma's braised pork rice (阿嬤的控肉飯)",
+     "Pineapple americano (鳳梨美式)"
     ],
     "highlights": [
-     "Light, not-too-sweet layered cakes with mousse and jelly",
-     "Thoughtful savoury meals such as tofu noodles and stews",
-     "Friendly staff; reservations accepted"
+     "Friendly cats, especially the white one, plus vintage goods and a consignment corner",
+     "Quiet, relaxed room with roomy tables and bookshelves; no time limit on weekdays",
+     "Homestyle food; the dumplings stay crisp and the Basque cakes are well balanced"
     ],
     "lowlights": [
-     "Few seats; crowded at the order counter",
-     "Coffee average, small lattes",
-     "Sauce portions small for the rice; 2-hour limit on weekends"
+     "Drunken chicken rice criticised: hard rice, chicken that tasted long refrigerated",
+     "Some dishes run salty or sweet: dry curry, bittersweet chocolate milk",
+     "No reservations, whole party must be present to sit, 3-hour limit on weekends"
     ]
    },
    "comp": {
-    "network": 0.1578,
-    "quality": 0.6621,
-    "volume": 0.8992,
+    "network": 0.138,
+    "quality": 0.6623,
+    "volume": 0.9158,
     "press": 1.0,
-    "reach": 0.4652
+    "reach": 0.4325
    },
    "contrib": {
-    "network": 3.94,
-    "quality": 19.86,
-    "volume": 8.99,
+    "network": 3.45,
+    "quality": 19.87,
+    "volume": 9.16,
     "press": 25.0,
-    "reach": 4.65
+    "reach": 4.33
    },
-   "score": 62.45,
+   "score": 61.8,
    "branches": [],
-   "rank": 25,
-   "follower_rank": 14
+   "rank": 22,
+   "follower_rank": 19
+  },
+  {
+   "handle": "after5_coffeetail",
+   "name": "After5 步驟六",
+   "gname": "After5_步驟六",
+   "display": "After5步驟六",
+   "type": "cafe",
+   "area": "台北市",
+   "district": "中山區",
+   "address": "10491臺北市中山區中山里林森北路310巷34號",
+   "followers": 4759,
+   "bio": "| Coffee | Coffeetail | Bean | / 02-25677586 / 無提供訂位服務  / 本店｜台北市中山區林森北路310巷34號 / 龜山｜桃園市龜山區文達路322號 / 基隆｜基隆市信義區義六路67巷1號",
+   "ig": "https://www.instagram.com/after5_coffeetail/",
+   "maps": "https://www.google.com/maps/place/?q=place_id:ChIJN0s2zqapQjQR-yiu-_xN8-c",
+   "rating": 4.7,
+   "reviews": 793,
+   "stars": [
+    8,
+    11,
+    21,
+    109,
+    644
+   ],
+   "bayes": 4.69,
+   "topics": [
+    [
+     "肉桂捲",
+     57
+    ],
+    [
+     "提拉米蘇",
+     25
+    ],
+    [
+     "氣泡",
+     13
+    ],
+    [
+     "閣樓",
+     12
+    ],
+    [
+     "濃縮",
+     12
+    ],
+    [
+     "蕨餅",
+     11
+    ],
+    [
+     "masala",
+     6
+    ],
+    [
+     "大福",
+     6
+    ],
+    [
+     "廢墟",
+     6
+    ],
+    [
+     "中深烘焙",
+     5
+    ]
+   ],
+   "categories": [
+    "咖啡店"
+   ],
+   "match": "ig",
+   "endorse": 0.0,
+   "endorsers": [],
+   "centrality": 0.6,
+   "related": 0,
+   "press": [
+    {
+     "outlet": "girlonazebra.com",
+     "url": "https://girlonazebra.com/best-cafes-in-taipei/",
+     "title": ""
+    },
+    {
+     "outlet": "shoppingdesign.com.tw",
+     "label": "shoppingdesign.com.tw",
+     "url": "https://www.shoppingdesign.com.tw/post/view/7417",
+     "title": "中山區新咖啡店「AFTER5步驟六」登場！43 年殘破廢宅獲得 ..."
+    },
+    {
+     "outlet": "wisely.tw",
+     "label": "wisely.tw",
+     "url": "https://wisely.tw/read-30161.html/embed",
+     "title": "台北中山。After5 步驟六︱廢棄老宅咖啡店"
+    },
+    {
+     "outlet": "tenjo.tw",
+     "label": "tenjo.tw",
+     "url": "https://tenjo.tw/after5/",
+     "title": "【中山區咖啡廳】After5 步驟六40年老屋改建閣樓咖啡店！近 ...",
+     "trusted": true
+    },
+    {
+     "outlet": "angelababy0822.com",
+     "label": "梅格(Angelababy)享樂日記",
+     "url": "https://angelababy0822.com/after5coffeetail/",
+     "title": "雙連站美食｜台北質感好咖啡推薦『After5 步驟六』菜單、不限制時間插座咖啡、台北老宅咖啡",
+     "date": "2022-07-15",
+     "trusted": true
+    }
+   ],
+   "outlets": 5,
+   "trusted": 2,
+   "notes": {
+    "summary": "Two-storey wooden loft cafe on a Linsen North Road lane by Zhong'an Park, known for cinnamon rolls and clean espresso.",
+    "signature": [
+     "Cinnamon roll (肉桂捲)",
+     "Tiramisu (提拉米蘇)",
+     "Matcha warabi mochi (抹茶蕨餅)",
+     "Strawberry daifuku (草莓大福)",
+     "Masala chai latte (瑪薩拉茶拿鐵)"
+    ],
+    "highlights": [
+     "Clean, bright medium-roast espresso and Taiwanese single origins",
+     "Friendly owner and staff who explain the coffee menu",
+     "Renovated old house; upstairs back seats feel like a private nook"
+    ],
+    "lowlights": [
+     "Small and crowded; some suggest taking out to the park",
+     "Table and chair heights don't match",
+     "One reviewer found it ordinary next to other cafes"
+    ]
+   },
+   "comp": {
+    "network": 0.0836,
+    "quality": 0.7666,
+    "volume": 0.876,
+    "press": 1.0,
+    "reach": 0.2946
+   },
+   "contrib": {
+    "network": 2.09,
+    "quality": 23.0,
+    "volume": 8.76,
+    "press": 25.0,
+    "reach": 2.95
+   },
+   "score": 61.8,
+   "branches": [],
+   "rank": 23,
+   "follower_rank": 53
   },
   {
    "handle": "olivia_coffee_roaster",
@@ -4127,7 +3847,7 @@
     71,
     243
    ],
-   "bayes": 4.5,
+   "bayes": 4.499,
    "topics": [
     [
      "檸檬",
@@ -4237,171 +3957,23 @@
     ]
    },
    "comp": {
-    "network": 0.4993,
-    "quality": 0.5559,
-    "volume": 0.7714,
+    "network": 0.4743,
+    "quality": 0.5545,
+    "volume": 0.767,
     "press": 1.0,
     "reach": 0.0565
    },
    "contrib": {
-    "network": 12.48,
-    "quality": 16.68,
-    "volume": 7.71,
+    "network": 11.86,
+    "quality": 16.63,
+    "volume": 7.67,
     "press": 25.0,
     "reach": 0.57
    },
-   "score": 62.44,
+   "score": 61.73,
    "branches": [],
-   "rank": 26,
-   "follower_rank": 100
-  },
-  {
-   "handle": "after5_coffeetail",
-   "name": "After5 步驟六",
-   "gname": "After5_步驟六",
-   "display": "After5步驟六",
-   "type": "cafe",
-   "area": "台北市",
-   "district": "中山區",
-   "address": "10491臺北市中山區中山里林森北路310巷34號",
-   "followers": 4759,
-   "bio": "| Coffee | Coffeetail | Bean | / 02-25677586 / 無提供訂位服務  / 本店｜台北市中山區林森北路310巷34號 / 龜山｜桃園市龜山區文達路322號 / 基隆｜基隆市信義區義六路67巷1號",
-   "ig": "https://www.instagram.com/after5_coffeetail/",
-   "maps": "https://www.google.com/maps/place/?q=place_id:ChIJN0s2zqapQjQR-yiu-_xN8-c",
-   "rating": 4.7,
-   "reviews": 793,
-   "stars": [
-    8,
-    11,
-    21,
-    109,
-    644
-   ],
-   "bayes": 4.691,
-   "topics": [
-    [
-     "肉桂捲",
-     57
-    ],
-    [
-     "提拉米蘇",
-     25
-    ],
-    [
-     "氣泡",
-     13
-    ],
-    [
-     "閣樓",
-     12
-    ],
-    [
-     "濃縮",
-     12
-    ],
-    [
-     "蕨餅",
-     11
-    ],
-    [
-     "masala",
-     6
-    ],
-    [
-     "大福",
-     6
-    ],
-    [
-     "廢墟",
-     6
-    ],
-    [
-     "中深烘焙",
-     5
-    ]
-   ],
-   "categories": [
-    "咖啡店"
-   ],
-   "match": "ig",
-   "endorse": 0.0,
-   "endorsers": [],
-   "centrality": 0.6,
-   "related": 0,
-   "press": [
-    {
-     "outlet": "girlonazebra.com",
-     "url": "https://girlonazebra.com/best-cafes-in-taipei/",
-     "title": ""
-    },
-    {
-     "outlet": "shoppingdesign.com.tw",
-     "label": "shoppingdesign.com.tw",
-     "url": "https://www.shoppingdesign.com.tw/post/view/7417",
-     "title": "中山區新咖啡店「AFTER5步驟六」登場！43 年殘破廢宅獲得 ..."
-    },
-    {
-     "outlet": "wisely.tw",
-     "label": "wisely.tw",
-     "url": "https://wisely.tw/read-30161.html/embed",
-     "title": "台北中山。After5 步驟六︱廢棄老宅咖啡店"
-    },
-    {
-     "outlet": "tenjo.tw",
-     "label": "tenjo.tw",
-     "url": "https://tenjo.tw/after5/",
-     "title": "【中山區咖啡廳】After5 步驟六40年老屋改建閣樓咖啡店！近 ...",
-     "trusted": true
-    },
-    {
-     "outlet": "angelababy0822.com",
-     "label": "梅格(Angelababy)享樂日記",
-     "url": "https://angelababy0822.com/after5coffeetail/",
-     "title": "雙連站美食｜台北質感好咖啡推薦『After5 步驟六』菜單、不限制時間插座咖啡、台北老宅咖啡",
-     "date": "2022-07-15",
-     "trusted": true
-    }
-   ],
-   "outlets": 5,
-   "trusted": 2,
-   "notes": {
-    "summary": "Two-storey wooden loft cafe on a Linsen North Road lane by Zhong'an Park, known for cinnamon rolls and clean espresso.",
-    "signature": [
-     "Cinnamon roll (肉桂捲)",
-     "Tiramisu (提拉米蘇)",
-     "Matcha warabi mochi (抹茶蕨餅)",
-     "Strawberry daifuku (草莓大福)",
-     "Masala chai latte (瑪薩拉茶拿鐵)"
-    ],
-    "highlights": [
-     "Clean, bright medium-roast espresso and Taiwanese single origins",
-     "Friendly owner and staff who explain the coffee menu",
-     "Renovated old house; upstairs back seats feel like a private nook"
-    ],
-    "lowlights": [
-     "Small and crowded; some suggest taking out to the park",
-     "Table and chair heights don't match",
-     "One reviewer found it ordinary next to other cafes"
-    ]
-   },
-   "comp": {
-    "network": 0.0998,
-    "quality": 0.7673,
-    "volume": 0.881,
-    "press": 1.0,
-    "reach": 0.2946
-   },
-   "contrib": {
-    "network": 2.5,
-    "quality": 23.02,
-    "volume": 8.81,
-    "press": 25.0,
-    "reach": 2.95
-   },
-   "score": 62.27,
-   "branches": [],
-   "rank": 27,
-   "follower_rank": 57
+   "rank": 24,
+   "follower_rank": 93
   },
   {
    "handle": "ogawa.coffee",
@@ -4425,7 +3997,7 @@
     33,
     237
    ],
-   "bayes": 4.763,
+   "bayes": 4.761,
    "topics": [
     [
      "芭樂",
@@ -4537,23 +4109,23 @@
     ]
    },
    "comp": {
-    "network": 0.0998,
-    "quality": 0.8475,
-    "volume": 0.7435,
+    "network": 0.0836,
+    "quality": 0.8458,
+    "volume": 0.7393,
     "press": 1.0,
     "reach": 0.1705
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 25.43,
-    "volume": 7.44,
+    "network": 2.09,
+    "quality": 25.37,
+    "volume": 7.39,
     "press": 25.0,
     "reach": 1.71
    },
-   "score": 62.06,
+   "score": 61.56,
    "branches": [],
-   "rank": 28,
-   "follower_rank": 85
+   "rank": 25,
+   "follower_rank": 78
   },
   {
    "handle": "coffee_dumbo",
@@ -4577,7 +4149,7 @@
     146,
     687
    ],
-   "bayes": 4.596,
+   "bayes": 4.595,
    "topics": [
     [
      "肉桂捲",
@@ -4700,23 +4272,23 @@
     ]
    },
    "comp": {
-    "network": 0.0998,
-    "quality": 0.6621,
-    "volume": 0.8987,
+    "network": 0.0836,
+    "quality": 0.6615,
+    "volume": 0.8936,
     "press": 1.0,
     "reach": 0.521
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 19.86,
-    "volume": 8.99,
+    "network": 2.09,
+    "quality": 19.85,
+    "volume": 8.94,
     "press": 25.0,
     "reach": 5.21
    },
-   "score": 61.56,
+   "score": 61.08,
    "branches": [],
-   "rank": 29,
-   "follower_rank": 10
+   "rank": 26,
+   "follower_rank": 9
   },
   {
    "handle": "sidoli_radio",
@@ -4740,7 +4312,7 @@
     90,
     481
    ],
-   "bayes": 4.594,
+   "bayes": 4.593,
    "topics": [
     [
      "磁帶",
@@ -4852,23 +4424,23 @@
     ]
    },
    "comp": {
-    "network": 0.0998,
-    "quality": 0.6601,
-    "volume": 0.8488,
+    "network": 0.0836,
+    "quality": 0.6593,
+    "volume": 0.844,
     "press": 1.0,
     "reach": 0.5706
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 19.8,
-    "volume": 8.49,
+    "network": 2.09,
+    "quality": 19.78,
+    "volume": 8.44,
     "press": 25.0,
     "reach": 5.71
    },
-   "score": 61.49,
+   "score": 61.02,
    "branches": [],
-   "rank": 30,
-   "follower_rank": 5
+   "rank": 27,
+   "follower_rank": 4
   },
   {
    "handle": "twinbrotherscoffee",
@@ -5006,165 +4578,23 @@
     ]
    },
    "comp": {
-    "network": 0.0998,
-    "quality": 0.6655,
+    "network": 0.0836,
+    "quality": 0.6653,
     "volume": 1.0,
     "press": 1.0,
     "reach": 0.3889
    },
    "contrib": {
-    "network": 2.5,
+    "network": 2.09,
     "quality": 19.96,
     "volume": 10.0,
     "press": 25.0,
     "reach": 3.89
    },
-   "score": 61.35,
+   "score": 60.94,
    "branches": [],
-   "rank": 31,
-   "follower_rank": 37
-  },
-  {
-   "handle": "jiaojiao_cafe",
-   "name": "嬌嬌咖啡",
-   "gname": "「不適合聊天、店內很安靜」嬌嬌咖啡",
-   "display": "嬌嬌咖啡",
-   "type": "cafe",
-   "area": "台北市",
-   "district": "文山區",
-   "address": "116臺北市文山區景後街149巷3號1樓",
-   "followers": 5822,
-   "bio": "•私訊不會回，當日請電話詢問預訂 / •公休日請看置頂文章 / •店內很安靜！不適合聊天 / 🌟客製蛋糕請加官方line，耐心等待回覆 / 🔥請帶上禮貌，沒禮貌的不會回 / •營業時間：11:30～17:30 / •無訂位/無接待四位以上/限2hrs/寵物友善 / •官方Line連結⇊",
-   "ig": "https://www.instagram.com/jiaojiao_cafe/",
-   "maps": "https://www.google.com/maps/place/?q=place_id:ChIJxa4z6o-rQjQRlbZWAUVMj_g",
-   "rating": 4.5,
-   "reviews": 347,
-   "stars": [
-    20,
-    6,
-    13,
-    46,
-    262
-   ],
-   "bayes": 4.5,
-   "topics": [
-    [
-     "戚風",
-     83
-    ],
-    [
-     "馬卡龍",
-     20
-    ],
-    [
-     "鐵觀音",
-     19
-    ],
-    [
-     "可麗露",
-     18
-    ],
-    [
-     "糖",
-     17
-    ],
-    [
-     "焙茶",
-     14
-    ],
-    [
-     "巴斯克",
-     11
-    ],
-    [
-     "伯爵",
-     8
-    ],
-    [
-     "黑板",
-     7
-    ],
-    [
-     "達克瓦茲",
-     6
-    ]
-   ],
-   "categories": [
-    "咖啡店"
-   ],
-   "match": "name",
-   "endorse": 0.0,
-   "endorsers": [],
-   "centrality": 2.66,
-   "related": 5,
-   "press": [
-    {
-     "outlet": "mymarcy.tw",
-     "label": "mymarcy.tw",
-     "url": "https://mymarcy.tw/jiao-jiao-cafe/",
-     "title": "景美甜點｜嬌嬌咖啡Jiao Jiao Cafe——傳說中一試成主顧的景 ...",
-     "trusted": true
-    },
-    {
-     "outlet": "auntie.tw",
-     "label": "auntie.tw",
-     "url": "https://auntie.tw/jiaojiaocafe/",
-     "title": "【台北】景美站｜嬌嬌咖啡，日系微復古風格咖啡廳，草莓布丁"
-    },
-    {
-     "outlet": "elisa48.pixnet.net",
-     "label": "elisa48.pixnet.net",
-     "url": "https://elisa48.pixnet.net/blog/posts/4045193556",
-     "title": "台北文山-[嬌嬌咖啡Jiao Jiao Cafe] 近景美捷運站與世新大學 ..."
-    },
-    {
-     "outlet": "travel.yam.com",
-     "label": "travel.yam.com",
-     "url": "https://travel.yam.com/article/123598",
-     "title": "台北  嬌嬌咖啡，日系風空間，手作甜點戚風蛋糕 - 輕旅行"
-    }
-   ],
-   "outlets": 4,
-   "trusted": 1,
-   "notes": {
-    "summary": "Tiny, very quiet dessert cafe near Jingmei Night Market in Wenshan, known for chiffon cakes with tea-flavoured creams.",
-    "signature": [
-     "Chiffon cake (戚風)",
-     "Tieguanyin walnut caramel crunch chiffon (鐵觀音核桃焦糖脆脆戚風)",
-     "Caramel nut chiffon (焦糖核果戚風)",
-     "Macarons (馬卡龍)",
-     "Rum raisin Basque (萊姆葡萄巴斯克)",
-     "Jiao sugar crunch milk tea (嬌糖脆脆)"
-    ],
-    "highlights": [
-     "Fluffy, moist chiffon with light, not-too-sweet cream",
-     "Custom cakes ordered via LINE, made with care for special requests",
-     "Neat latte art, clean room, no service charge"
-    ],
-    "lowlights": [
-     "Strict hush rule; not for chatting, and small noises feel stressful",
-     "Few seats, self-service, cash only, 2-hour limit, no groups over four",
-     "Staff come across cold to some"
-    ]
-   },
-   "comp": {
-    "network": 0.3387,
-    "quality": 0.5559,
-    "volume": 0.7722,
-    "press": 1.0,
-    "reach": 0.3326
-   },
-   "contrib": {
-    "network": 8.47,
-    "quality": 16.68,
-    "volume": 7.72,
-    "press": 25.0,
-    "reach": 3.33
-   },
-   "score": 61.19,
-   "branches": [],
-   "rank": 32,
-   "follower_rank": 52
+   "rank": 28,
+   "follower_rank": 35
   },
   {
    "handle": "wenshanroasting1983",
@@ -5188,7 +4618,7 @@
     200,
     433
    ],
-   "bayes": 4.5,
+   "bayes": 4.499,
    "topics": [
     [
      "檸檬",
@@ -5295,23 +4725,165 @@
     ]
    },
    "comp": {
-    "network": 0.7485,
-    "quality": 0.5557,
-    "volume": 0.8633,
+    "network": 0.7137,
+    "quality": 0.555,
+    "volume": 0.8583,
     "press": 0.6131,
     "reach": 0.1715
    },
    "contrib": {
-    "network": 18.71,
-    "quality": 16.67,
-    "volume": 8.63,
+    "network": 17.84,
+    "quality": 16.65,
+    "volume": 8.58,
     "press": 15.33,
     "reach": 1.72
    },
-   "score": 61.06,
+   "score": 60.12,
    "branches": [],
-   "rank": 33,
-   "follower_rank": 84
+   "rank": 29,
+   "follower_rank": 77
+  },
+  {
+   "handle": "jiaojiao_cafe",
+   "name": "嬌嬌咖啡",
+   "gname": "「不適合聊天、店內很安靜」嬌嬌咖啡",
+   "display": "嬌嬌咖啡",
+   "type": "cafe",
+   "area": "台北市",
+   "district": "文山區",
+   "address": "116臺北市文山區景後街149巷3號1樓",
+   "followers": 5822,
+   "bio": "•私訊不會回，當日請電話詢問預訂 / •公休日請看置頂文章 / •店內很安靜！不適合聊天 / 🌟客製蛋糕請加官方line，耐心等待回覆 / 🔥請帶上禮貌，沒禮貌的不會回 / •營業時間：11:30～17:30 / •無訂位/無接待四位以上/限2hrs/寵物友善 / •官方Line連結⇊",
+   "ig": "https://www.instagram.com/jiaojiao_cafe/",
+   "maps": "https://www.google.com/maps/place/?q=place_id:ChIJxa4z6o-rQjQRlbZWAUVMj_g",
+   "rating": 4.5,
+   "reviews": 347,
+   "stars": [
+    20,
+    6,
+    13,
+    46,
+    262
+   ],
+   "bayes": 4.499,
+   "topics": [
+    [
+     "戚風",
+     83
+    ],
+    [
+     "馬卡龍",
+     20
+    ],
+    [
+     "鐵觀音",
+     19
+    ],
+    [
+     "可麗露",
+     18
+    ],
+    [
+     "糖",
+     17
+    ],
+    [
+     "焙茶",
+     14
+    ],
+    [
+     "巴斯克",
+     11
+    ],
+    [
+     "伯爵",
+     8
+    ],
+    [
+     "黑板",
+     7
+    ],
+    [
+     "達克瓦茲",
+     6
+    ]
+   ],
+   "categories": [
+    "咖啡店"
+   ],
+   "match": "name",
+   "endorse": 0.0,
+   "endorsers": [],
+   "centrality": 2.66,
+   "related": 5,
+   "press": [
+    {
+     "outlet": "mymarcy.tw",
+     "label": "mymarcy.tw",
+     "url": "https://mymarcy.tw/jiao-jiao-cafe/",
+     "title": "景美甜點｜嬌嬌咖啡Jiao Jiao Cafe——傳說中一試成主顧的景 ...",
+     "trusted": true
+    },
+    {
+     "outlet": "auntie.tw",
+     "label": "auntie.tw",
+     "url": "https://auntie.tw/jiaojiaocafe/",
+     "title": "【台北】景美站｜嬌嬌咖啡，日系微復古風格咖啡廳，草莓布丁"
+    },
+    {
+     "outlet": "elisa48.pixnet.net",
+     "label": "elisa48.pixnet.net",
+     "url": "https://elisa48.pixnet.net/blog/posts/4045193556",
+     "title": "台北文山-[嬌嬌咖啡Jiao Jiao Cafe] 近景美捷運站與世新大學 ..."
+    },
+    {
+     "outlet": "travel.yam.com",
+     "label": "travel.yam.com",
+     "url": "https://travel.yam.com/article/123598",
+     "title": "台北  嬌嬌咖啡，日系風空間，手作甜點戚風蛋糕 - 輕旅行"
+    }
+   ],
+   "outlets": 4,
+   "trusted": 1,
+   "notes": {
+    "summary": "Tiny, very quiet dessert cafe near Jingmei Night Market in Wenshan, known for chiffon cakes with tea-flavoured creams.",
+    "signature": [
+     "Chiffon cake (戚風)",
+     "Tieguanyin walnut caramel crunch chiffon (鐵觀音核桃焦糖脆脆戚風)",
+     "Caramel nut chiffon (焦糖核果戚風)",
+     "Macarons (馬卡龍)",
+     "Rum raisin Basque (萊姆葡萄巴斯克)",
+     "Jiao sugar crunch milk tea (嬌糖脆脆)"
+    ],
+    "highlights": [
+     "Fluffy, moist chiffon with light, not-too-sweet cream",
+     "Custom cakes ordered via LINE, made with care for special requests",
+     "Neat latte art, clean room, no service charge"
+    ],
+    "lowlights": [
+     "Strict hush rule; not for chatting, and small noises feel stressful",
+     "Few seats, self-service, cash only, 2-hour limit, no groups over four",
+     "Staff come across cold to some"
+    ]
+   },
+   "comp": {
+    "network": 0.2839,
+    "quality": 0.5545,
+    "volume": 0.7678,
+    "press": 1.0,
+    "reach": 0.3326
+   },
+   "contrib": {
+    "network": 7.1,
+    "quality": 16.63,
+    "volume": 7.68,
+    "press": 25.0,
+    "reach": 3.33
+   },
+   "score": 59.74,
+   "branches": [],
+   "rank": 30,
+   "follower_rank": 48
   },
   {
    "handle": "alchemist.tw",
@@ -5335,7 +4907,7 @@
     19,
     79
    ],
-   "bayes": 4.574,
+   "bayes": 4.571,
    "topics": [
     [
      "空間",
@@ -5463,195 +5035,23 @@
     ]
    },
    "comp": {
-    "network": 0.2241,
-    "quality": 0.6378,
-    "volume": 0.6202,
+    "network": 0.2059,
+    "quality": 0.634,
+    "volume": 0.6167,
     "press": 1.0,
     "reach": 0.426
    },
    "contrib": {
-    "network": 5.6,
-    "quality": 19.13,
-    "volume": 6.2,
+    "network": 5.15,
+    "quality": 19.02,
+    "volume": 6.17,
     "press": 25.0,
     "reach": 4.26
    },
-   "score": 60.2,
+   "score": 59.6,
    "branches": [],
-   "rank": 34,
-   "follower_rank": 24
-  },
-  {
-   "handle": "oasis_coffee_roasting_lab",
-   "name": "Oasis Coffee Roasting Lab",
-   "gname": "Oasis Coffee Roasting Lab",
-   "display": "Oasis Coffee Roasting Lab",
-   "type": "roaster",
-   "area": "台北市",
-   "district": "士林區",
-   "address": "111臺北市士林區天山里中山北路七段14巷15號一樓",
-   "followers": 7985,
-   "bio": "綠洲烘焙實驗室 / 週三-週日 open / ————————————- / 2025 TBrC 1st🥇  / 2023 TBrC 2nd 🥈  / 2022 TBrC 4th 🏆",
-   "ig": "https://www.instagram.com/oasis_coffee_roasting_lab/",
-   "maps": "https://www.google.com/maps/place/?q=place_id:ChIJWRwDfzGvQjQR-xr7RZ5-rkQ",
-   "rating": 4.3,
-   "reviews": 233,
-   "stars": [
-    19,
-    8,
-    9,
-    39,
-    158
-   ],
-   "bayes": 4.33,
-   "topics": [
-    [
-     "空間",
-     28
-    ],
-    [
-     "豆子",
-     18
-    ],
-    [
-     "杯",
-     17
-    ],
-    [
-     "設計",
-     17
-    ],
-    [
-     "坐",
-     13
-    ],
-    [
-     "奶",
-     12
-    ],
-    [
-     "咖啡師",
-     7
-    ],
-    [
-     "庭院",
-     6
-    ],
-    [
-     "氣泡",
-     5
-    ],
-    [
-     "窗",
-     5
-    ]
-   ],
-   "categories": [
-    "咖啡店"
-   ],
-   "match": "name",
-   "endorse": 0.65,
-   "endorsers": [
-    {
-     "handle": "erik_liao95",
-     "kind": "maker",
-     "posts": 1,
-     "business": false,
-     "followers": 7340,
-     "score": 0.65
-    }
-   ],
-   "centrality": 2.07,
-   "related": 1,
-   "press": [
-    {
-     "outlet": "harpersbazaar.com",
-     "url": "https://www.harpersbazaar.com/tw/life/food/a70069724/8-taipei-cafe-championship-recommended/",
-     "title": ""
-    },
-    {
-     "outlet": "adcafe.com.tw",
-     "label": "adcafe.com.tw",
-     "url": "https://adcafe.com.tw/oasis-coffee-roasting-lab/",
-     "title": "Oasis Coffee Roasting Lab｜天母最具實驗性的咖啡烘焙實驗室"
-    },
-    {
-     "outlet": "yilan.com.tw",
-     "label": "yilan.com.tw",
-     "url": "https://www.yilan.com.tw/article/cjaycontent2/3870",
-     "title": "2025.08.21 Oasis Coffee Roasting Lab - 《Yilan美食生活玩家》"
-    },
-    {
-     "outlet": "damei17.com",
-     "label": "damei17.com",
-     "url": "https://damei17.com/oasis-coffee-roasting-lab/",
-     "title": "天母咖啡廳推薦「Oasis Coffee Roasting Lab」綠洲第三間分店 ..."
-    }
-   ],
-   "outlets": 4,
-   "trusted": 0,
-   "notes": {
-    "summary": "Minimalist Shilin roastery set back behind a courtyard of tall palms, from a Taiwan Brewers Cup champion team, focused on light-roast pour-overs.",
-    "signature": [
-     "Single-origin pour-over (單品手沖)",
-     "Washed Ethiopian espresso (水洗衣索比亞)",
-     "1+1 espresso and milk coffee set",
-     "Americano (美式)"
-    ],
-    "highlights": [
-     "Staff explain each bean and its story with enthusiasm",
-     "Designed space with courtyard trees, chosen cups, outlets and Wi-Fi",
-     "Clean, balanced light roasts"
-    ],
-    "lowlights": [
-     "Crowded on weekends",
-     "Chairs are hard",
-     "Mostly light roasts; NT$160 Americano; milk coffee less distinctive"
-    ]
-   },
-   "comp": {
-    "network": 0.61,
-    "quality": 0.3664,
-    "volume": 0.7198,
-    "press": 0.8982,
-    "reach": 0.3923
-   },
-   "contrib": {
-    "network": 15.25,
-    "quality": 10.99,
-    "volume": 7.2,
-    "press": 22.46,
-    "reach": 3.92
-   },
-   "score": 59.82,
-   "branches": [
-    {
-     "handle": "oasis_coffee_roasters_anhe",
-     "display": "Oasis Coffee Roasters",
-     "area": "台北市",
-     "district": "大安區",
-     "address": "106臺北市大安區敦安里信義路四段199巷7-3號",
-     "rating": 4.5,
-     "reviews": 793,
-     "score": 58.26,
-     "ig": "https://www.instagram.com/oasis_coffee_roasters_anhe/",
-     "maps": "https://www.google.com/maps/place/?q=place_id:ChIJY-JuuXOrQjQRZA5wqDOYtFY"
-    },
-    {
-     "handle": "oasis_coffee_roasters_nanjing",
-     "display": "Oasis Coffee Roasters - Nanj",
-     "area": "台北市",
-     "district": "松山區",
-     "address": "105臺北市松山區中正里南京東路三段335巷13-1號",
-     "rating": 4.7,
-     "reviews": 265,
-     "score": 57.77,
-     "ig": "https://www.instagram.com/oasis_coffee_roasters_nanjing/",
-     "maps": "https://www.google.com/maps/place/?q=place_id:ChIJgRbU1SKrQjQREeIz-NXP5_g"
-    }
-   ],
-   "rank": 35,
-   "follower_rank": 35
+   "rank": 31,
+   "follower_rank": 22
   },
   {
    "handle": "kaffe_24",
@@ -5675,7 +5075,7 @@
     68,
     341
    ],
-   "bayes": 4.592,
+   "bayes": 4.591,
    "topics": [
     [
      "蘋果派",
@@ -5782,189 +5182,195 @@
     ]
    },
    "comp": {
-    "network": 0.0998,
-    "quality": 0.6577,
-    "volume": 0.8028,
+    "network": 0.0836,
+    "quality": 0.6565,
+    "volume": 0.7983,
     "press": 1.0,
     "reach": 0.4504
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 19.73,
-    "volume": 8.03,
+    "network": 2.09,
+    "quality": 19.69,
+    "volume": 7.98,
     "press": 25.0,
     "reach": 4.5
    },
-   "score": 59.76,
+   "score": 59.27,
    "branches": [],
-   "rank": 36,
-   "follower_rank": 19
+   "rank": 32,
+   "follower_rank": 17
   },
   {
-   "handle": "rihfengco",
-   "name": "日豐企業社",
-   "gname": "日豐企業社",
-   "display": "日豐企業社",
-   "type": "cafe",
-   "area": "新北市",
-   "district": "新莊區",
-   "address": "242新北市新莊區中華里中華路二段33號",
-   "followers": 6931,
-   "bio": "• 無提供ᵂᴵᶠᴵ / • 請勿攜帶外食 / • 無接受訂位，可預留甜點 / • 若有人候位，限時一小時 / • 營業時間： / 每周ㄧ固定公休 / 平日（13：00～18：00打烊） / 六日（13：00 ～17：00打烊）",
-   "ig": "https://www.instagram.com/rihfengco/",
-   "maps": "https://www.google.com/maps/place/?q=place_id:ChIJFWwSmHuoQjQRzknsvPoyTA8",
-   "rating": 4.6,
-   "reviews": 511,
+   "handle": "oasis_coffee_roasting_lab",
+   "name": "Oasis Coffee Roasting Lab",
+   "gname": "Oasis Coffee Roasting Lab",
+   "display": "Oasis Coffee Roasting Lab",
+   "type": "roaster",
+   "area": "台北市",
+   "district": "士林區",
+   "address": "111臺北市士林區天山里中山北路七段14巷15號一樓",
+   "followers": 7985,
+   "bio": "綠洲烘焙實驗室 / 週三-週日 open / ————————————- / 2025 TBrC 1st🥇  / 2023 TBrC 2nd 🥈  / 2022 TBrC 4th 🏆",
+   "ig": "https://www.instagram.com/oasis_coffee_roasting_lab/",
+   "maps": "https://www.google.com/maps/place/?q=place_id:ChIJWRwDfzGvQjQR-xr7RZ5-rkQ",
+   "rating": 4.3,
+   "reviews": 233,
    "stars": [
+    19,
+    8,
     9,
-    4,
-    17,
-    101,
-    380
+    39,
+    158
    ],
-   "bayes": 4.593,
+   "bayes": 4.328,
    "topics": [
     [
-     "戚風",
-     165
-    ],
-    [
-     "芝麻",
-     76
-    ],
-    [
-     "海鹽",
-     57
-    ],
-    [
-     "拿鐵",
-     49
-    ],
-    [
-     "修車廠",
+     "空間",
      28
     ],
     [
-     "伯爵",
-     16
+     "豆子",
+     18
     ],
     [
-     "焦糖醬",
-     15
+     "杯",
+     17
     ],
     [
-     "車行",
-     11
+     "設計",
+     17
     ],
     [
-     "白蘭地",
-     9
+     "坐",
+     13
     ],
     [
-     "機油",
-     9
+     "奶",
+     12
+    ],
+    [
+     "咖啡師",
+     7
+    ],
+    [
+     "庭院",
+     6
+    ],
+    [
+     "氣泡",
+     5
+    ],
+    [
+     "窗",
+     5
     ]
    ],
    "categories": [
-    "甜品店"
+    "咖啡店"
    ],
    "match": "name",
-   "endorse": 0.0,
-   "endorsers": [],
-   "centrality": 0.6,
-   "related": 0,
+   "endorse": 0.65,
+   "endorsers": [
+    {
+     "handle": "erik_liao95",
+     "kind": "maker",
+     "posts": 1,
+     "business": false,
+     "followers": 7340,
+     "score": 0.65
+    }
+   ],
+   "centrality": 2.07,
+   "related": 1,
    "press": [
     {
-     "outlet": "elle.com",
-     "url": "https://www.elle.com/tw/life/foodie/g40778321/newtaipei-city-coffeeshop/",
+     "outlet": "harpersbazaar.com",
+     "url": "https://www.harpersbazaar.com/tw/life/food/a70069724/8-taipei-cafe-championship-recommended/",
      "title": ""
     },
     {
-     "outlet": "tenjo.tw",
-     "label": "tenjo.tw",
-     "url": "https://tenjo.tw/rihfengco/",
-     "title": "【新莊咖啡廳推薦】日豐企業社汽車維修廠裡的工業風咖啡店 ...",
-     "trusted": true
+     "outlet": "adcafe.com.tw",
+     "label": "adcafe.com.tw",
+     "url": "https://adcafe.com.tw/oasis-coffee-roasting-lab/",
+     "title": "Oasis Coffee Roasting Lab｜天母最具實驗性的咖啡烘焙實驗室"
     },
     {
-     "outlet": "clairetsai.tw",
-     "label": "clairetsai.tw",
-     "url": "https://clairetsai.tw/rihfengco/",
-     "title": "新北美食｜日豐企業社｜汽修廠裡的甜點｜五款戚風蛋糕全制霸 ..."
+     "outlet": "yilan.com.tw",
+     "label": "yilan.com.tw",
+     "url": "https://www.yilan.com.tw/article/cjaycontent2/3870",
+     "title": "2025.08.21 Oasis Coffee Roasting Lab - 《Yilan美食生活玩家》"
     },
     {
-     "outlet": "chinthings.com",
-     "label": "chinthings.com",
-     "url": "https://chinthings.com/%E6%97%A5%E8%B1%90%E4%BC%81%E6%A5%AD%E7%A4%BE-rih-feng-%E6%96%B0%E8%8E%8A%E5%92%96%E5%95%A1/",
-     "title": "新莊日豐企業社RIH FENG｜戚風蛋糕能有多好吃？被修車廠 ..."
-    },
-    {
-     "outlet": "auntie.tw",
-     "label": "auntie.tw",
-     "url": "https://auntie.tw/jih-feng/",
-     "title": "日豐企業社，汽修廠兼咖啡廳，鹽之花鮮奶油空氣感戚風蛋糕"
-    },
-    {
-     "outlet": "foodtigertw.com",
-     "label": "foodtigertw.com",
-     "url": "https://www.foodtigertw.com/blog/posts/3050341080",
-     "title": "【新莊咖啡甜點之3-幸福站美食】日豐企業社.四十年修車廠甜甜 ..."
-    },
-    {
-     "outlet": "jeremyfoodie.tw",
-     "label": "jeremyfoodie.tw",
-     "url": "https://jeremyfoodie.tw/rihfengco/",
-     "title": "[食記][新北市][新莊區] 日豐企業社— 隱身在修車廠內的甜點店",
-     "trusted": true
-    },
-    {
-     "outlet": "angelababy0822.com",
-     "label": "梅格(Angelababy)享樂日記",
-     "url": "https://angelababy0822.com/rihfeng/",
-     "title": "新莊修車廠甜點店『日豐企業社』最好吃的戚風蛋糕",
-     "date": "2026-11-05",
-     "trusted": true
+     "outlet": "damei17.com",
+     "label": "damei17.com",
+     "url": "https://damei17.com/oasis-coffee-roasting-lab/",
+     "title": "天母咖啡廳推薦「Oasis Coffee Roasting Lab」綠洲第三間分店 ..."
     }
    ],
-   "outlets": 8,
-   "trusted": 3,
+   "outlets": 4,
+   "trusted": 0,
    "notes": {
-    "summary": "Dessert cafe inside a working car repair shop in Xinzhuang, known for black sesame chiffon and cream-topped americano.",
+    "summary": "Minimalist Shilin roastery set back behind a courtyard of tall palms, from a Taiwan Brewers Cup champion team, focused on light-roast pour-overs.",
     "signature": [
-     "Kuki black sesame chiffon (九鬼黑芝麻戚風)",
-     "Cream americano (奶油美式)",
-     "Matcha chiffon (抹茶戚風)",
-     "Honey citron black tea (蜂蜜柚子紅茶)",
-     "Latte (拿鐵)"
+     "Single-origin pour-over (單品手沖)",
+     "Washed Ethiopian espresso (水洗衣索比亞)",
+     "1+1 espresso and milk coffee set",
+     "Americano (美式)"
     ],
     "highlights": [
-     "Soft, moist chiffon with rich sesame paste and light cream",
-     "Quirky garage setting: jacks, motor oil, an engine as decor",
-     "Smooth coffee at low prices; owners polite and relaxed"
+     "Staff explain each bean and its story with enthusiasm",
+     "Designed space with courtyard trees, chosen cups, outlets and Wi-Fi",
+     "Clean, balanced light roasts"
     ],
     "lowlights": [
-     "Few seats; 1-hour limit when people are waiting",
-     "Small drink cups; no Wi-Fi"
+     "Crowded on weekends",
+     "Chairs are hard",
+     "Mostly light roasts; NT$160 Americano; milk coffee less distinctive"
     ]
    },
    "comp": {
-    "network": 0.0998,
-    "quality": 0.6588,
-    "volume": 0.8231,
-    "press": 1.0,
-    "reach": 0.3656
+    "network": 0.5633,
+    "quality": 0.3644,
+    "volume": 0.7157,
+    "press": 0.8982,
+    "reach": 0.3923
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 19.77,
-    "volume": 8.23,
-    "press": 25.0,
-    "reach": 3.66
+    "network": 14.08,
+    "quality": 10.93,
+    "volume": 7.16,
+    "press": 22.46,
+    "reach": 3.92
    },
-   "score": 59.15,
-   "branches": [],
-   "rank": 37,
-   "follower_rank": 45
+   "score": 58.55,
+   "branches": [
+    {
+     "handle": "oasis_coffee_roasters_anhe",
+     "display": "Oasis Coffee Roasters",
+     "area": "台北市",
+     "district": "大安區",
+     "address": "106臺北市大安區敦安里信義路四段199巷7-3號",
+     "rating": 4.5,
+     "reviews": 793,
+     "score": 57.78,
+     "ig": "https://www.instagram.com/oasis_coffee_roasters_anhe/",
+     "maps": "https://www.google.com/maps/place/?q=place_id:ChIJY-JuuXOrQjQRZA5wqDOYtFY"
+    },
+    {
+     "handle": "oasis_coffee_roasters_nanjing",
+     "display": "Oasis Coffee Roasters - Nanj",
+     "area": "台北市",
+     "district": "松山區",
+     "address": "105臺北市松山區中正里南京東路三段335巷13-1號",
+     "rating": 4.7,
+     "reviews": 265,
+     "score": 57.27,
+     "ig": "https://www.instagram.com/oasis_coffee_roasters_nanjing/",
+     "maps": "https://www.google.com/maps/place/?q=place_id:ChIJgRbU1SKrQjQREeIz-NXP5_g"
+    }
+   ],
+   "rank": 33,
+   "follower_rank": 33
   },
   {
    "handle": "kooncoffee0801",
@@ -5988,7 +5394,7 @@
     77,
     280
    ],
-   "bayes": 4.409,
+   "bayes": 4.408,
    "topics": [
     [
      "拿鐵",
@@ -6099,23 +5505,23 @@
     ]
    },
    "comp": {
-    "network": 0.5675,
-    "quality": 0.4547,
-    "volume": 0.7925,
+    "network": 0.5388,
+    "quality": 0.4535,
+    "volume": 0.788,
     "press": 0.8982,
     "reach": 0.092
    },
    "contrib": {
-    "network": 14.19,
-    "quality": 13.64,
-    "volume": 7.93,
+    "network": 13.47,
+    "quality": 13.6,
+    "volume": 7.88,
     "press": 22.46,
     "reach": 0.92
    },
-   "score": 59.13,
+   "score": 58.33,
    "branches": [],
-   "rank": 38,
-   "follower_rank": 98
+   "rank": 34,
+   "follower_rank": 91
   },
   {
    "handle": "olocoffeeroasters",
@@ -6252,168 +5658,23 @@
     ]
    },
    "comp": {
-    "network": 0.0998,
-    "quality": 0.6636,
-    "volume": 0.951,
+    "network": 0.0836,
+    "quality": 0.6632,
+    "volume": 0.9455,
     "press": 1.0,
     "reach": 0.1779
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 19.91,
-    "volume": 9.51,
+    "network": 2.09,
+    "quality": 19.89,
+    "volume": 9.46,
     "press": 25.0,
     "reach": 1.78
    },
-   "score": 58.69,
+   "score": 58.22,
    "branches": [],
-   "rank": 39,
-   "follower_rank": 81
-  },
-  {
-   "handle": "bosancafe",
-   "name": "珈琲 寶山",
-   "gname": "珈琲 寶山",
-   "display": "珈琲 寶山",
-   "type": "cafe",
-   "area": "台北市",
-   "district": "中山區",
-   "address": "104臺北市中山區長安西路36號",
-   "followers": 4739,
-   "bio": "《5/31-6/8年中休假》 / 營業時間14:00-22:00、每週三公休 / 沒有提供訂位、一組最多3人，超過3個人來，要看和老闆的交情。可能會限時，也可能不限時，看現場狀況。",
-   "ig": "https://www.instagram.com/bosancafe/",
-   "maps": "https://www.google.com/maps/place/?q=place_id:ChIJ8xPXzQOpQjQR697QUyfvZZw",
-   "rating": 4.6,
-   "reviews": 499,
-   "stars": [
-    27,
-    6,
-    5,
-    65,
-    396
-   ],
-   "bayes": 4.593,
-   "topics": [
-    [
-     "復古",
-     37
-    ],
-    [
-     "黑膠",
-     27
-    ],
-    [
-     "個性",
-     23
-    ],
-    [
-     "爵士樂",
-     23
-    ],
-    [
-     "巴斯克",
-     18
-    ],
-    [
-     "金桔",
-     15
-    ],
-    [
-     "磅蛋糕",
-     12
-    ],
-    [
-     "絨布",
-     6
-    ],
-    [
-     "風箏",
-     6
-    ],
-    [
-     "白蘭地",
-     5
-    ]
-   ],
-   "categories": [
-    "咖啡店"
-   ],
-   "match": "name",
-   "endorse": 0.0,
-   "endorsers": [],
-   "centrality": 0.6,
-   "related": 0,
-   "press": [
-    {
-     "outlet": "marieclaire.com.tw",
-     "url": "https://www.marieclaire.com.tw/lifestyle/taste/86205",
-     "title": ""
-    },
-    {
-     "outlet": "auntie.tw",
-     "label": "auntie.tw",
-     "url": "https://auntie.tw/bosuncafe/",
-     "title": "【台北】中山站｜珈琲寶山，復古系咖啡廳，大人味酒味提拉米蘇"
-    },
-    {
-     "outlet": "f561792452.pixnet.net",
-     "label": "f561792452.pixnet.net",
-     "url": "https://f561792452.pixnet.net/blog/posts/17335077470",
-     "title": "【台北咖啡廳】珈琲寶山- 享受著喧鬧城市裡的靜謐基地"
-    },
-    {
-     "outlet": "leafto.tw",
-     "label": "leafto.tw",
-     "url": "https://leafto.tw/bosan-cafe/",
-     "title": "珈琲寶山｜擷取老房的靈魂片段，凝聚成咖啡香／中山區咖啡推薦"
-    },
-    {
-     "outlet": "beri.tw",
-     "label": "beri.tw",
-     "url": "https://beri.tw/bosuncafe/",
-     "title": "台北|珈琲寶山，低調復古咖啡館，啜飲職人手沖凝結在這一刻 ..."
-    }
-   ],
-   "outlets": 5,
-   "trusted": 0,
-   "notes": {
-    "summary": "Dim Japanese-style coffee bar in Zhongshan playing vinyl jazz on vintage hi-fi, known for kumquat coffee and cold drip.",
-    "signature": [
-     "Kumquat coffee (金桔咖啡)",
-     "Iced drip coffee (冰滴咖啡)",
-     "Chocolate terrine (巧克力凍糕)",
-     "Basque cheesecake (巴斯克)",
-     "Kite house blend (鳶)"
-    ],
-    "highlights": [
-     "Darker, Japanese-style roasts; flavourful single-origin pour-overs",
-     "Jazz records on vintage Altec and McIntosh gear; quirky collectibles",
-     "Owner works solo yet refills water; no limit when not full"
-    ],
-    "lowlights": [
-     "Owner's brusque manner puts some off",
-     "Tiny desserts that feel pricey; few dessert choices",
-     "Groups capped at three; food smells like curry drift in"
-    ]
-   },
-   "comp": {
-    "network": 0.0998,
-    "quality": 0.6587,
-    "volume": 0.82,
-    "press": 1.0,
-    "reach": 0.2938
-   },
-   "contrib": {
-    "network": 2.5,
-    "quality": 19.76,
-    "volume": 8.2,
-    "press": 25.0,
-    "reach": 2.94
-   },
-   "score": 58.39,
-   "branches": [],
-   "rank": 40,
-   "follower_rank": 58
+   "rank": 35,
+   "follower_rank": 74
   },
   {
    "handle": "ironwood.coffee",
@@ -6437,7 +5698,7 @@
     114,
     290
    ],
-   "bayes": 4.315,
+   "bayes": 4.314,
    "topics": [
     [
      "奶油蛋糕",
@@ -6544,22 +5805,167 @@
    },
    "comp": {
     "network": 0.35,
-    "quality": 0.3503,
-    "volume": 0.8179,
+    "quality": 0.3493,
+    "volume": 0.8132,
     "press": 1.0,
     "reach": 0.5639
    },
    "contrib": {
     "network": 8.75,
-    "quality": 10.51,
-    "volume": 8.18,
+    "quality": 10.48,
+    "volume": 8.13,
     "press": 25.0,
     "reach": 5.64
    },
-   "score": 58.08,
+   "score": 58.0,
    "branches": [],
-   "rank": 41,
-   "follower_rank": 6
+   "rank": 36,
+   "follower_rank": 5
+  },
+  {
+   "handle": "bosancafe",
+   "name": "珈琲 寶山",
+   "gname": "珈琲 寶山",
+   "display": "珈琲 寶山",
+   "type": "cafe",
+   "area": "台北市",
+   "district": "中山區",
+   "address": "104臺北市中山區長安西路36號",
+   "followers": 4739,
+   "bio": "《5/31-6/8年中休假》 / 營業時間14:00-22:00、每週三公休 / 沒有提供訂位、一組最多3人，超過3個人來，要看和老闆的交情。可能會限時，也可能不限時，看現場狀況。",
+   "ig": "https://www.instagram.com/bosancafe/",
+   "maps": "https://www.google.com/maps/place/?q=place_id:ChIJ8xPXzQOpQjQR697QUyfvZZw",
+   "rating": 4.6,
+   "reviews": 499,
+   "stars": [
+    27,
+    6,
+    5,
+    65,
+    396
+   ],
+   "bayes": 4.592,
+   "topics": [
+    [
+     "復古",
+     37
+    ],
+    [
+     "黑膠",
+     27
+    ],
+    [
+     "個性",
+     23
+    ],
+    [
+     "爵士樂",
+     23
+    ],
+    [
+     "巴斯克",
+     18
+    ],
+    [
+     "金桔",
+     15
+    ],
+    [
+     "磅蛋糕",
+     12
+    ],
+    [
+     "絨布",
+     6
+    ],
+    [
+     "風箏",
+     6
+    ],
+    [
+     "白蘭地",
+     5
+    ]
+   ],
+   "categories": [
+    "咖啡店"
+   ],
+   "match": "name",
+   "endorse": 0.0,
+   "endorsers": [],
+   "centrality": 0.6,
+   "related": 0,
+   "press": [
+    {
+     "outlet": "marieclaire.com.tw",
+     "url": "https://www.marieclaire.com.tw/lifestyle/taste/86205",
+     "title": ""
+    },
+    {
+     "outlet": "auntie.tw",
+     "label": "auntie.tw",
+     "url": "https://auntie.tw/bosuncafe/",
+     "title": "【台北】中山站｜珈琲寶山，復古系咖啡廳，大人味酒味提拉米蘇"
+    },
+    {
+     "outlet": "f561792452.pixnet.net",
+     "label": "f561792452.pixnet.net",
+     "url": "https://f561792452.pixnet.net/blog/posts/17335077470",
+     "title": "【台北咖啡廳】珈琲寶山- 享受著喧鬧城市裡的靜謐基地"
+    },
+    {
+     "outlet": "leafto.tw",
+     "label": "leafto.tw",
+     "url": "https://leafto.tw/bosan-cafe/",
+     "title": "珈琲寶山｜擷取老房的靈魂片段，凝聚成咖啡香／中山區咖啡推薦"
+    },
+    {
+     "outlet": "beri.tw",
+     "label": "beri.tw",
+     "url": "https://beri.tw/bosuncafe/",
+     "title": "台北|珈琲寶山，低調復古咖啡館，啜飲職人手沖凝結在這一刻 ..."
+    }
+   ],
+   "outlets": 5,
+   "trusted": 0,
+   "notes": {
+    "summary": "Dim Japanese-style coffee bar in Zhongshan playing vinyl jazz on vintage hi-fi, known for kumquat coffee and cold drip.",
+    "signature": [
+     "Kumquat coffee (金桔咖啡)",
+     "Iced drip coffee (冰滴咖啡)",
+     "Chocolate terrine (巧克力凍糕)",
+     "Basque cheesecake (巴斯克)",
+     "Kite house blend (鳶)"
+    ],
+    "highlights": [
+     "Darker, Japanese-style roasts; flavourful single-origin pour-overs",
+     "Jazz records on vintage Altec and McIntosh gear; quirky collectibles",
+     "Owner works solo yet refills water; no limit when not full"
+    ],
+    "lowlights": [
+     "Owner's brusque manner puts some off",
+     "Tiny desserts that feel pricey; few dessert choices",
+     "Groups capped at three; food smells like curry drift in"
+    ]
+   },
+   "comp": {
+    "network": 0.0836,
+    "quality": 0.6576,
+    "volume": 0.8153,
+    "press": 1.0,
+    "reach": 0.2938
+   },
+   "contrib": {
+    "network": 2.09,
+    "quality": 19.73,
+    "volume": 8.15,
+    "press": 25.0,
+    "reach": 2.94
+   },
+   "score": 57.91,
+   "branches": [],
+   "rank": 37,
+   "follower_rank": 54
   },
   {
    "handle": "goodman_roaster_taipei",
@@ -6583,7 +5989,7 @@
     181,
     468
    ],
-   "bayes": 4.595,
+   "bayes": 4.594,
    "topics": [
     [
      "拿鐵",
@@ -6683,23 +6089,23 @@
     ]
    },
    "comp": {
-    "network": 0.0998,
-    "quality": 0.6608,
-    "volume": 0.8637,
+    "network": 0.0836,
+    "quality": 0.6601,
+    "volume": 0.8587,
     "press": 0.8982,
     "reach": 0.4561
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 19.82,
-    "volume": 8.64,
+    "network": 2.09,
+    "quality": 19.8,
+    "volume": 8.59,
     "press": 22.46,
     "reach": 4.56
    },
-   "score": 57.97,
+   "score": 57.5,
    "branches": [],
-   "rank": 42,
-   "follower_rank": 17
+   "rank": 38,
+   "follower_rank": 15
   },
   {
    "handle": "luguocafe",
@@ -6723,7 +6129,7 @@
     82,
     370
    ],
-   "bayes": 4.593,
+   "bayes": 4.592,
    "topics": [
     [
      "貓",
@@ -6827,23 +6233,23 @@
     ]
    },
    "comp": {
-    "network": 0.0998,
-    "quality": 0.6584,
-    "volume": 0.8155,
+    "network": 0.0836,
+    "quality": 0.6574,
+    "volume": 0.8108,
     "press": 1.0,
     "reach": 0.248
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 19.75,
-    "volume": 8.15,
+    "network": 2.09,
+    "quality": 19.72,
+    "volume": 8.11,
     "press": 25.0,
     "reach": 2.48
    },
-   "score": 57.88,
+   "score": 57.4,
    "branches": [],
-   "rank": 43,
-   "follower_rank": 67
+   "rank": 39,
+   "follower_rank": 62
   },
   {
    "handle": "moonshine_coffee",
@@ -6867,7 +6273,7 @@
     119,
     443
    ],
-   "bayes": 4.594,
+   "bayes": 4.593,
    "topics": [
     [
      "提拉米蘇",
@@ -6971,23 +6377,23 @@
     ]
    },
    "comp": {
-    "network": 0.21,
-    "quality": 0.66,
-    "volume": 0.8449,
+    "network": 0.1921,
+    "quality": 0.6591,
+    "volume": 0.8401,
     "press": 0.7737,
     "reach": 0.4593
    },
    "contrib": {
-    "network": 5.25,
-    "quality": 19.8,
-    "volume": 8.45,
+    "network": 4.8,
+    "quality": 19.77,
+    "volume": 8.4,
     "press": 19.34,
     "reach": 4.59
    },
-   "score": 57.43,
+   "score": 56.91,
    "branches": [],
-   "rank": 44,
-   "follower_rank": 15
+   "rank": 40,
+   "follower_rank": 13
   },
   {
    "handle": "simplekaffa",
@@ -7141,23 +6547,175 @@
     ]
    },
    "comp": {
-    "network": 0.0998,
-    "quality": 0.4452,
+    "network": 0.0836,
+    "quality": 0.4451,
     "volume": 1.0,
     "press": 1.0,
     "reach": 0.5985
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 13.36,
+    "network": 2.09,
+    "quality": 13.35,
     "volume": 10.0,
     "press": 25.0,
     "reach": 5.99
    },
-   "score": 56.84,
+   "score": 56.43,
    "branches": [],
-   "rank": 45,
-   "follower_rank": 3
+   "rank": 41,
+   "follower_rank": 2
+  },
+  {
+   "handle": "instilcoffee",
+   "name": "Instil Coffee",
+   "gname": "Instil Coffee - Zhongshan（中山店）",
+   "display": "Instil Coffee",
+   "type": "cafe",
+   "area": "台北市",
+   "district": "大同區",
+   "address": "103臺北市大同區建泰里承德路一段77巷25號",
+   "followers": 9974,
+   "bio": "Instil Coffee - Zhongshan  / 平日09:00-18:00 假日10:00-18:00 / 台北市大同區承德路一段77巷25號 / 無提供訂位服務",
+   "ig": "https://www.instagram.com/instilcoffee/",
+   "maps": "https://www.google.com/maps/place/?q=place_id:ChIJN7UIdHSpQjQR5B61Z59x-Q0",
+   "rating": 4.5,
+   "reviews": 363,
+   "stars": [
+    19,
+    11,
+    10,
+    56,
+    267
+   ],
+   "bayes": 4.499,
+   "topics": [
+    [
+     "杯",
+     27
+    ],
+    [
+     "豆子",
+     25
+    ],
+    [
+     "美式",
+     18
+    ],
+    [
+     "咖啡師",
+     14
+    ],
+    [
+     "奶油",
+     13
+    ],
+    [
+     "手",
+     13
+    ],
+    [
+     "生乳",
+     10
+    ],
+    [
+     "極簡",
+     8
+    ],
+    [
+     "蘋果蛋糕",
+     7
+    ],
+    [
+     "樹",
+     6
+    ]
+   ],
+   "categories": [
+    "咖啡店"
+   ],
+   "match": "name",
+   "endorse": 0.0,
+   "endorsers": [],
+   "centrality": 0.6,
+   "related": 0,
+   "press": [
+    {
+     "outlet": "fltrmagazine.com",
+     "url": "https://fltrmagazine.com/2026/10/16/best-specialty-coffee-shops-taipei/",
+     "title": ""
+    },
+    {
+     "outlet": "damei17.com",
+     "label": "damei17.com",
+     "url": "https://damei17.com/instil-coffee-zhongshan/",
+     "title": "台北中山站咖啡推薦「Instil Coffee中山店」低調簡練咖啡 ... - 大妹"
+    },
+    {
+     "outlet": "corner.inc",
+     "label": "corner.inc",
+     "url": "https://www.corner.inc/place/p5oEVgx24j8s",
+     "title": "Instil Coffee - Zhongshan（中山店） - No. 25號, Lane 77 ..."
+    },
+    {
+     "outlet": "wazaiii.com",
+     "label": "wazaiii.com",
+     "url": "https://www.wazaiii.com/articles?id=lifestyle-instil-coffee-taipei",
+     "title": "療癒植栽x 極簡風台北中山咖啡廳Instil Coffee ... - Wazaiii"
+    },
+    {
+     "outlet": "brewatlas.co",
+     "label": "brewatlas.co",
+     "url": "https://brewatlas.co/taipei/cafes/instil-coffee-zhongshan-no-25",
+     "title": "Instil Coffee - Zhongshan（中山店）: Hours, Photos & Directions"
+    },
+    {
+     "outlet": "wawawen.pixnet.net",
+     "label": "wawawen.pixnet.net",
+     "url": "https://wawawen.pixnet.net/blog/posts/9569751020",
+     "title": "【台北  中山】Instil Coffee專業職人咖啡~文青簡約風"
+    }
+   ],
+   "outlets": 6,
+   "trusted": 0,
+   "notes": {
+    "summary": "Minimalist specialty café near Zhongshan MRT Exit 6, off Chengde Road; known for barista-guided pour-overs and cream roll cakes.",
+    "signature": [
+     "Americano (美式)",
+     "Pour-over (手沖)",
+     "Fresh cream roll (生乳捲)",
+     "Apple cake (蘋果蛋糕)",
+     "Sea salt caramel roll cake (海鹽焦糖蛋糕卷)",
+     "Latte (拿鐵)"
+    ],
+    "highlights": [
+     "Staff explain each day's beans in detail before you order",
+     "Pour-overs evolve as they cool; signature drinks surprise",
+     "Calm, dark-toned minimalist interior just off busy Zhongshan"
+    ],
+    "lowlights": [
+     "Pricey: a small latte runs NT$210",
+     "Some find the coffee on the acidic side",
+     "Two-hour limit, no cards (LINE Pay accepted), no bookings"
+    ]
+   },
+   "comp": {
+    "network": 0.0836,
+    "quality": 0.5545,
+    "volume": 0.7737,
+    "press": 1.0,
+    "reach": 0.4343
+   },
+   "contrib": {
+    "network": 2.09,
+    "quality": 16.64,
+    "volume": 7.74,
+    "press": 25.0,
+    "reach": 4.34
+   },
+   "score": 55.81,
+   "branches": [],
+   "rank": 42,
+   "follower_rank": 18
   },
   {
    "handle": "cafexiaomijo",
@@ -7308,175 +6866,23 @@
     ]
    },
    "comp": {
-    "network": 0.1578,
-    "quality": 0.5557,
-    "volume": 0.8867,
+    "network": 0.1322,
+    "quality": 0.5551,
+    "volume": 0.8817,
     "press": 1.0,
     "reach": 0.1901
    },
    "contrib": {
-    "network": 3.94,
-    "quality": 16.67,
-    "volume": 8.87,
+    "network": 3.31,
+    "quality": 16.65,
+    "volume": 8.82,
     "press": 25.0,
     "reach": 1.9
    },
-   "score": 56.38,
+   "score": 55.68,
    "branches": [],
-   "rank": 46,
-   "follower_rank": 80
-  },
-  {
-   "handle": "instilcoffee",
-   "name": "Instil Coffee",
-   "gname": "Instil Coffee - Zhongshan（中山店）",
-   "display": "Instil Coffee",
-   "type": "cafe",
-   "area": "台北市",
-   "district": "大同區",
-   "address": "103臺北市大同區建泰里承德路一段77巷25號",
-   "followers": 9974,
-   "bio": "Instil Coffee - Zhongshan  / 平日09:00-18:00 假日10:00-18:00 / 台北市大同區承德路一段77巷25號 / 無提供訂位服務",
-   "ig": "https://www.instagram.com/instilcoffee/",
-   "maps": "https://www.google.com/maps/place/?q=place_id:ChIJN7UIdHSpQjQR5B61Z59x-Q0",
-   "rating": 4.5,
-   "reviews": 363,
-   "stars": [
-    19,
-    11,
-    10,
-    56,
-    267
-   ],
-   "bayes": 4.5,
-   "topics": [
-    [
-     "杯",
-     27
-    ],
-    [
-     "豆子",
-     25
-    ],
-    [
-     "美式",
-     18
-    ],
-    [
-     "咖啡師",
-     14
-    ],
-    [
-     "奶油",
-     13
-    ],
-    [
-     "手",
-     13
-    ],
-    [
-     "生乳",
-     10
-    ],
-    [
-     "極簡",
-     8
-    ],
-    [
-     "蘋果蛋糕",
-     7
-    ],
-    [
-     "樹",
-     6
-    ]
-   ],
-   "categories": [
-    "咖啡店"
-   ],
-   "match": "name",
-   "endorse": 0.0,
-   "endorsers": [],
-   "centrality": 0.6,
-   "related": 0,
-   "press": [
-    {
-     "outlet": "fltrmagazine.com",
-     "url": "https://fltrmagazine.com/2026/10/16/best-specialty-coffee-shops-taipei/",
-     "title": ""
-    },
-    {
-     "outlet": "damei17.com",
-     "label": "damei17.com",
-     "url": "https://damei17.com/instil-coffee-zhongshan/",
-     "title": "台北中山站咖啡推薦「Instil Coffee中山店」低調簡練咖啡 ... - 大妹"
-    },
-    {
-     "outlet": "corner.inc",
-     "label": "corner.inc",
-     "url": "https://www.corner.inc/place/p5oEVgx24j8s",
-     "title": "Instil Coffee - Zhongshan（中山店） - No. 25號, Lane 77 ..."
-    },
-    {
-     "outlet": "wazaiii.com",
-     "label": "wazaiii.com",
-     "url": "https://www.wazaiii.com/articles?id=lifestyle-instil-coffee-taipei",
-     "title": "療癒植栽x 極簡風台北中山咖啡廳Instil Coffee ... - Wazaiii"
-    },
-    {
-     "outlet": "brewatlas.co",
-     "label": "brewatlas.co",
-     "url": "https://brewatlas.co/taipei/cafes/instil-coffee-zhongshan-no-25",
-     "title": "Instil Coffee - Zhongshan（中山店）: Hours, Photos & Directions"
-    },
-    {
-     "outlet": "wawawen.pixnet.net",
-     "label": "wawawen.pixnet.net",
-     "url": "https://wawawen.pixnet.net/blog/posts/9569751020",
-     "title": "【台北  中山】Instil Coffee專業職人咖啡~文青簡約風"
-    }
-   ],
-   "outlets": 6,
-   "trusted": 0,
-   "notes": {
-    "summary": "Minimalist specialty café near Zhongshan MRT Exit 6, off Chengde Road; known for barista-guided pour-overs and cream roll cakes.",
-    "signature": [
-     "Americano (美式)",
-     "Pour-over (手沖)",
-     "Fresh cream roll (生乳捲)",
-     "Apple cake (蘋果蛋糕)",
-     "Sea salt caramel roll cake (海鹽焦糖蛋糕卷)",
-     "Latte (拿鐵)"
-    ],
-    "highlights": [
-     "Staff explain each day's beans in detail before you order",
-     "Pour-overs evolve as they cool; signature drinks surprise",
-     "Calm, dark-toned minimalist interior just off busy Zhongshan"
-    ],
-    "lowlights": [
-     "Pricey: a small latte runs NT$210",
-     "Some find the coffee on the acidic side",
-     "Two-hour limit, no cards (LINE Pay accepted), no bookings"
-    ]
-   },
-   "comp": {
-    "network": 0.0998,
-    "quality": 0.5559,
-    "volume": 0.7781,
-    "press": 1.0,
-    "reach": 0.4343
-   },
-   "contrib": {
-    "network": 2.5,
-    "quality": 16.68,
-    "volume": 7.78,
-    "press": 25.0,
-    "reach": 4.34
-   },
-   "score": 56.3,
-   "branches": [],
-   "rank": 47,
-   "follower_rank": 20
+   "rank": 43,
+   "follower_rank": 73
   },
   {
    "handle": "southcity_coffee",
@@ -7500,7 +6906,7 @@
     9,
     80
    ],
-   "bayes": 4.711,
+   "bayes": 4.707,
    "topics": [
     [
      "豆子",
@@ -7601,23 +7007,23 @@
     ]
    },
    "comp": {
-    "network": 0.0998,
-    "quality": 0.7897,
-    "volume": 0.5995,
+    "network": 0.0836,
+    "quality": 0.7855,
+    "volume": 0.5961,
     "press": 0.8982,
     "reach": 0.1498
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 23.69,
-    "volume": 5.99,
+    "network": 2.09,
+    "quality": 23.56,
+    "volume": 5.96,
     "press": 22.46,
     "reach": 1.5
    },
-   "score": 56.13,
+   "score": 55.57,
    "branches": [],
-   "rank": 48,
-   "follower_rank": 92
+   "rank": 44,
+   "follower_rank": 85
   },
   {
    "handle": "candocoffeetw",
@@ -7641,7 +7047,7 @@
     75,
     395
    ],
-   "bayes": 4.686,
+   "bayes": 4.685,
    "topics": [
     [
      "鹹派",
@@ -7742,23 +7148,23 @@
     ]
    },
    "comp": {
-    "network": 0.0998,
-    "quality": 0.7617,
-    "volume": 0.8213,
+    "network": 0.0836,
+    "quality": 0.7607,
+    "volume": 0.8166,
     "press": 0.8982,
     "reach": 0.0
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 22.85,
-    "volume": 8.21,
+    "network": 2.09,
+    "quality": 22.82,
+    "volume": 8.17,
     "press": 22.46,
     "reach": 0.0
    },
-   "score": 56.02,
+   "score": 55.53,
    "branches": [],
-   "rank": 49,
-   "follower_rank": 126
+   "rank": 45,
+   "follower_rank": 117
   },
   {
    "handle": "fikafikacafe",
@@ -7893,23 +7299,23 @@
     ]
    },
    "comp": {
-    "network": 0.0998,
-    "quality": 0.4454,
+    "network": 0.0836,
+    "quality": 0.4453,
     "volume": 1.0,
     "press": 1.0,
     "reach": 0.4308
    },
    "contrib": {
-    "network": 2.5,
+    "network": 2.09,
     "quality": 13.36,
     "volume": 10.0,
     "press": 25.0,
     "reach": 4.31
    },
-   "score": 55.16,
+   "score": 54.76,
    "branches": [],
-   "rank": 50,
-   "follower_rank": 22
+   "rank": 46,
+   "follower_rank": 20
   },
   {
    "handle": "quartet.kaffe",
@@ -7933,7 +7339,7 @@
     4,
     130
    ],
-   "bayes": 4.734,
+   "bayes": 4.731,
    "topics": [
     [
      "布丁",
@@ -8025,23 +7431,23 @@
     ]
    },
    "comp": {
-    "network": 0.0998,
-    "quality": 0.8156,
-    "volume": 0.653,
+    "network": 0.0836,
+    "quality": 0.8125,
+    "volume": 0.6493,
     "press": 0.7737,
     "reach": 0.1938
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 24.47,
-    "volume": 6.53,
+    "network": 2.09,
+    "quality": 24.37,
+    "volume": 6.49,
     "press": 19.34,
     "reach": 1.94
    },
-   "score": 54.77,
+   "score": 54.24,
    "branches": [],
-   "rank": 51,
-   "follower_rank": 78
+   "rank": 47,
+   "follower_rank": 71
   },
   {
    "handle": "shiujiou.cafe",
@@ -8065,7 +7471,7 @@
     126,
     409
    ],
-   "bayes": 4.406,
+   "bayes": 4.405,
    "topics": [
     [
      "復古",
@@ -8140,25 +7546,45 @@
    ],
    "outlets": 2,
    "trusted": 0,
-   "notes": {},
+   "notes": {
+    "summary": "Retro cafe in a restored old house in Banqiao with a leafy front yard, known for tiramisu, pan-fried chicken leg and a nostalgic interior.",
+    "signature": [
+     "Tiramisu (提拉米蘇)",
+     "Pan-fried chicken leg (煎雞腿排)",
+     "Thai basil pork (打拋豬)",
+     "Chiffon cake (戚風蛋糕)",
+     "Dirty iced coffee (髒奶油冰咖啡)",
+     "French toast breakfast (法式吐司早餐)"
+    ],
+    "highlights": [
+     "Restored old house with a green front yard and nostalgic decor",
+     "Tiramisu and the chicken leg dishes are the most praised",
+     "Friendly counter service, pets allowed, roomy tables"
+    ],
+    "lowlights": [
+     "Portions on the small side for the price",
+     "Tea drinks are only average",
+     "Food can take about 30 minutes when busy"
+    ]
+   },
    "comp": {
-    "network": 0.526,
-    "quality": 0.4513,
-    "volume": 0.8511,
+    "network": 0.4967,
+    "quality": 0.4504,
+    "volume": 0.8463,
     "press": 0.6131,
     "reach": 0.3956
    },
    "contrib": {
-    "network": 13.15,
-    "quality": 13.54,
-    "volume": 8.51,
+    "network": 12.42,
+    "quality": 13.51,
+    "volume": 8.46,
     "press": 15.33,
     "reach": 3.96
    },
-   "score": 54.48,
+   "score": 53.68,
    "branches": [],
-   "rank": 52,
-   "follower_rank": 33
+   "rank": 48,
+   "follower_rank": 31
   },
   {
    "handle": "joeunnalcafe",
@@ -8182,7 +7608,7 @@
     26,
     127
    ],
-   "bayes": 4.661,
+   "bayes": 4.659,
    "topics": [
     [
      "甜",
@@ -8281,23 +7707,23 @@
     ]
    },
    "comp": {
-    "network": 0.0998,
-    "quality": 0.7347,
-    "volume": 0.6729,
+    "network": 0.0836,
+    "quality": 0.7319,
+    "volume": 0.6691,
     "press": 0.8982,
     "reach": 0.0
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 22.04,
-    "volume": 6.73,
+    "network": 2.09,
+    "quality": 21.96,
+    "volume": 6.69,
     "press": 22.46,
     "reach": 0.0
    },
-   "score": 53.72,
+   "score": 53.2,
    "branches": [],
-   "rank": 53,
-   "follower_rank": 109
+   "rank": 49,
+   "follower_rank": 102
   },
   {
    "handle": "ferment_banqiao",
@@ -8321,7 +7747,7 @@
     16,
     182
    ],
-   "bayes": 4.585,
+   "bayes": 4.583,
    "topics": [
     [
      "可頌",
@@ -8420,156 +7846,23 @@
     ]
    },
    "comp": {
-    "network": 0.0998,
-    "quality": 0.6502,
-    "volume": 0.7135,
+    "network": 0.0836,
+    "quality": 0.6481,
+    "volume": 0.7094,
     "press": 0.8982,
     "reach": 0.2092
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 19.51,
-    "volume": 7.13,
+    "network": 2.09,
+    "quality": 19.44,
+    "volume": 7.09,
     "press": 22.46,
     "reach": 2.09
    },
-   "score": 53.68,
+   "score": 53.18,
    "branches": [],
-   "rank": 54,
-   "follower_rank": 75
-  },
-  {
-   "handle": "p.coffee_roaster",
-   "name": "P.COFFEE ROASTER",
-   "gname": "P. COFFEE ROASTER",
-   "display": "P.COFFEE ROASTER",
-   "type": "roaster",
-   "area": "台北市",
-   "district": "文山區",
-   "address": "116臺北市文山區景華里羅斯福路六段231號",
-   "followers": 3202,
-   "bio": "義式| 手沖| 甜點| 鮮花 / ⏹︎ 咖啡豆販賣及商業配合 / ⏹︎ 初次到訪請看「來店須知」精選動態 / ⏹︎ 花藝 @ching6iu  / 咖啡豆訂購請按下方連結",
-   "ig": "https://www.instagram.com/p.coffee_roaster/",
-   "maps": "https://www.google.com/maps/place/?q=place_id:ChIJyVzDaQCrQjQR2-G3NTj82TI",
-   "rating": 4.9,
-   "reviews": 130,
-   "stars": [
-    1,
-    1,
-    1,
-    10,
-    117
-   ],
-   "bayes": 4.807,
-   "topics": [
-    [
-     "舒服",
-     18
-    ],
-    [
-     "布丁",
-     12
-    ],
-    [
-     "豆",
-     10
-    ],
-    [
-     "美式",
-     8
-    ],
-    [
-     "座位",
-     8
-    ],
-    [
-     "手",
-     8
-    ],
-    [
-     "蘋果",
-     7
-    ],
-    [
-     "冰",
-     7
-    ],
-    [
-     "聊天",
-     6
-    ],
-    [
-     "酸",
-     5
-    ]
-   ],
-   "categories": [
-    "咖啡店",
-    "花店"
-   ],
-   "match": "ig",
-   "endorse": 1.05,
-   "endorsers": [
-    {
-     "handle": "phase_coffee_roasters",
-     "kind": "maker",
-     "posts": 2,
-     "business": false,
-     "followers": 20229,
-     "score": 0.62
-    },
-    {
-     "handle": "harryhaodaily_",
-     "kind": "blogger",
-     "posts": 1,
-     "business": false,
-     "followers": 4056,
-     "score": 0.44
-    }
-   ],
-   "centrality": 1.62,
-   "related": 2,
-   "press": [],
-   "outlets": 0,
-   "trusted": 0,
-   "notes": {
-    "summary": "Tiny roaster-café and florist about 8 minutes from Jingmei MRT, with a cosy upstairs room; known for Americano and lemon Sicilian.",
-    "signature": [
-     "Caramel pudding (焦糖布丁)",
-     "Lemon Sicilian (檸檬西西里)",
-     "Apple iced Americano (蘋果冰美式)",
-     "Latte (拿鐵)",
-     "Baked cinnamon apple pastry (烤肉桂蘋果巧酥)",
-     "Maple walnut milk (楓糖核桃奶)"
-    ],
-    "highlights": [
-     "Medium-roast espresso blend plus light-roast single origins; well balanced",
-     "Cosy, thoughtfully decorated second floor that stays quiet",
-     "Warm, friendly owners; beans sold in many varieties and sizes"
-    ],
-    "lowlights": [
-     "Upstairs seating is narrow, about 10 seats, not for long stays",
-     "Two-hour limit on weekends and a one-drink minimum"
-    ]
-   },
-   "comp": {
-    "network": 0.7086,
-    "quality": 0.8962,
-    "volume": 0.6433,
-    "press": 0.0,
-    "reach": 0.2197
-   },
-   "contrib": {
-    "network": 17.72,
-    "quality": 26.89,
-    "volume": 6.43,
-    "press": 0.0,
-    "reach": 2.2
-   },
-   "score": 53.23,
-   "branches": [],
-   "rank": 55,
-   "follower_rank": 74
+   "rank": 50,
+   "follower_rank": 68
   },
   {
    "handle": "ninedayscoffee",
@@ -8593,7 +7886,7 @@
     85,
     349
    ],
-   "bayes": 4.592,
+   "bayes": 4.591,
    "topics": [
     [
      "拿鐵",
@@ -8699,154 +7992,23 @@
     ]
    },
    "comp": {
-    "network": 0.0998,
-    "quality": 0.6582,
-    "volume": 0.8113,
+    "network": 0.0836,
+    "quality": 0.6571,
+    "volume": 0.8067,
     "press": 0.8982,
     "reach": 0.0231
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 19.75,
-    "volume": 8.11,
+    "network": 2.09,
+    "quality": 19.71,
+    "volume": 8.07,
     "press": 22.46,
     "reach": 0.23
    },
-   "score": 53.04,
+   "score": 52.56,
    "branches": [],
-   "rank": 56,
-   "follower_rank": 105
-  },
-  {
-   "handle": "single_origin_espresso_roast",
-   "name": "Single Origin espresso & roast",
-   "gname": "Single Origin espresso & roast",
-   "display": "Single Origin espresso & roa",
-   "type": "roaster",
-   "area": "台北市",
-   "district": "信義區",
-   "address": "110臺北市信義區景勤里吳興街220巷35-2號號 2F",
-   "followers": 9613,
-   "bio": "Since 2013 / Perceive it. Convey it. Apply it. / 讓咖啡，走入我們生活之中 / 11月：14、15、20、21、27、28 / 營業時間：12:00-18:00 / #咖啡店  / 蝦皮⬇️",
-   "ig": "https://www.instagram.com/single_origin_espresso_roast/",
-   "maps": "https://www.google.com/maps/place/?q=place_id:ChIJkXz4_OWnQjQRY7Rm9D7FKsY",
-   "rating": 4.7,
-   "reviews": 239,
-   "stars": [
-    5,
-    2,
-    7,
-    30,
-    195
-   ],
-   "bayes": 4.672,
-   "topics": [
-    [
-     "豆子",
-     29
-    ],
-    [
-     "舒適",
-     21
-    ],
-    [
-     "座位",
-     10
-    ],
-    [
-     "理髮",
-     10
-    ],
-    [
-     "採光",
-     9
-    ],
-    [
-     "酒",
-     8
-    ],
-    [
-     "檸檬塔",
-     7
-    ],
-    [
-     "藝妓",
-     5
-    ],
-    [
-     "煮",
-     5
-    ],
-    [
-     "提拉米蘇",
-     5
-    ]
-   ],
-   "categories": [
-    "咖啡店",
-    "咖啡烘焙廠",
-    "咖啡批發商"
-   ],
-   "match": "ig",
-   "endorse": 0.0,
-   "endorsers": [],
-   "centrality": 0.9,
-   "related": 1,
-   "press": [
-    {
-     "outlet": "mxcool.com.tw",
-     "label": "mxcool.com.tw",
-     "url": "https://www.mxcool.com.tw/blog/posts/single-origin-espresso-roast-x-mx-cool",
-     "title": "2025.2 Single Origin Espresso Roast x Mx. COOL"
-    },
-    {
-     "outlet": "vocus.cc",
-     "label": "vocus.cc",
-     "url": "https://vocus.cc/article/60f13d88fd897800015c8e8d",
-     "title": "Single Origin espresso & roast︱上來吧！吳興街裡的咖啡小天地"
-    }
-   ],
-   "outlets": 2,
-   "trusted": 0,
-   "notes": {
-    "summary": "Light-roast roaster's tasting room above a barbershop on Wuxing Street, opposite TMU Hospital; known for pour-overs and 1+1 sets.",
-    "signature": [
-     "Light-roast pour-over (手沖)",
-     "Espresso and latte 1+1",
-     "Geisha (藝妓)",
-     "Lemon tart (檸檬塔)",
-     "Longmiao Forest beans (龍喵森林)",
-     "Tiramisu (提拉米蘇)"
-    ],
-    "highlights": [
-     "Owner Ah Ji brews expertly; bar seats let you watch up close",
-     "Wide choice of light-roast beans and brew methods",
-     "Bright room with four large glass walls; relaxed and friendly"
-    ],
-    "lowlights": [
-     "Opens only a few days a month, so check Instagram first",
-     "Tiny, roughly six seats, and the entrance is easy to miss",
-     "Desserts not always available"
-    ]
-   },
-   "comp": {
-    "network": 0.1506,
-    "quality": 0.7464,
-    "volume": 0.7232,
-    "press": 0.6131,
-    "reach": 0.4273
-   },
-   "contrib": {
-    "network": 3.77,
-    "quality": 22.39,
-    "volume": 7.23,
-    "press": 15.33,
-    "reach": 4.27
-   },
-   "score": 52.99,
-   "branches": [],
-   "rank": 57,
-   "follower_rank": 23
+   "rank": 51,
+   "follower_rank": 98
   },
   {
    "handle": "mingscoffeeplayroom",
@@ -8870,7 +8032,7 @@
     88,
     301
    ],
-   "bayes": 4.682,
+   "bayes": 4.681,
    "topics": [
     [
      "豆子",
@@ -8971,23 +8133,287 @@
     ]
    },
    "comp": {
-    "network": 0.0998,
-    "quality": 0.7583,
-    "volume": 0.7938,
+    "network": 0.0836,
+    "quality": 0.757,
+    "volume": 0.7893,
     "press": 0.7737,
     "reach": 0.0374
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 22.75,
-    "volume": 7.94,
+    "network": 2.09,
+    "quality": 22.71,
+    "volume": 7.89,
     "press": 19.34,
     "reach": 0.37
    },
-   "score": 52.9,
+   "score": 52.41,
    "branches": [],
-   "rank": 58,
-   "follower_rank": 102
+   "rank": 52,
+   "follower_rank": 95
+  },
+  {
+   "handle": "single_origin_espresso_roast",
+   "name": "Single Origin espresso & roast",
+   "gname": "Single Origin espresso & roast",
+   "display": "Single Origin espresso & roa",
+   "type": "roaster",
+   "area": "台北市",
+   "district": "信義區",
+   "address": "110臺北市信義區景勤里吳興街220巷35-2號號 2F",
+   "followers": 9613,
+   "bio": "Since 2013 / Perceive it. Convey it. Apply it. / 讓咖啡，走入我們生活之中 / 11月：14、15、20、21、27、28 / 營業時間：12:00-18:00 / #咖啡店  / 蝦皮⬇️",
+   "ig": "https://www.instagram.com/single_origin_espresso_roast/",
+   "maps": "https://www.google.com/maps/place/?q=place_id:ChIJkXz4_OWnQjQRY7Rm9D7FKsY",
+   "rating": 4.7,
+   "reviews": 239,
+   "stars": [
+    5,
+    2,
+    7,
+    30,
+    195
+   ],
+   "bayes": 4.67,
+   "topics": [
+    [
+     "豆子",
+     29
+    ],
+    [
+     "舒適",
+     21
+    ],
+    [
+     "座位",
+     10
+    ],
+    [
+     "理髮",
+     10
+    ],
+    [
+     "採光",
+     9
+    ],
+    [
+     "酒",
+     8
+    ],
+    [
+     "檸檬塔",
+     7
+    ],
+    [
+     "藝妓",
+     5
+    ],
+    [
+     "煮",
+     5
+    ],
+    [
+     "提拉米蘇",
+     5
+    ]
+   ],
+   "categories": [
+    "咖啡店",
+    "咖啡烘焙廠",
+    "咖啡批發商"
+   ],
+   "match": "ig",
+   "endorse": 0.0,
+   "endorsers": [],
+   "centrality": 0.9,
+   "related": 1,
+   "press": [
+    {
+     "outlet": "mxcool.com.tw",
+     "label": "mxcool.com.tw",
+     "url": "https://www.mxcool.com.tw/blog/posts/single-origin-espresso-roast-x-mx-cool",
+     "title": "2025.2 Single Origin Espresso Roast x Mx. COOL"
+    },
+    {
+     "outlet": "vocus.cc",
+     "label": "vocus.cc",
+     "url": "https://vocus.cc/article/60f13d88fd897800015c8e8d",
+     "title": "Single Origin espresso & roast︱上來吧！吳興街裡的咖啡小天地"
+    }
+   ],
+   "outlets": 2,
+   "trusted": 0,
+   "notes": {
+    "summary": "Light-roast roaster's tasting room above a barbershop on Wuxing Street, opposite TMU Hospital; known for pour-overs and 1+1 sets.",
+    "signature": [
+     "Light-roast pour-over (手沖)",
+     "Espresso and latte 1+1",
+     "Geisha (藝妓)",
+     "Lemon tart (檸檬塔)",
+     "Longmiao Forest beans (龍喵森林)",
+     "Tiramisu (提拉米蘇)"
+    ],
+    "highlights": [
+     "Owner Ah Ji brews expertly; bar seats let you watch up close",
+     "Wide choice of light-roast beans and brew methods",
+     "Bright room with four large glass walls; relaxed and friendly"
+    ],
+    "lowlights": [
+     "Opens only a few days a month, so check Instagram first",
+     "Tiny, roughly six seats, and the entrance is easy to miss",
+     "Desserts not always available"
+    ]
+   },
+   "comp": {
+    "network": 0.1262,
+    "quality": 0.7444,
+    "volume": 0.719,
+    "press": 0.6131,
+    "reach": 0.4273
+   },
+   "contrib": {
+    "network": 3.16,
+    "quality": 22.33,
+    "volume": 7.19,
+    "press": 15.33,
+    "reach": 4.27
+   },
+   "score": 52.28,
+   "branches": [],
+   "rank": 53,
+   "follower_rank": 21
+  },
+  {
+   "handle": "p.coffee_roaster",
+   "name": "P.COFFEE ROASTER",
+   "gname": "P. COFFEE ROASTER",
+   "display": "P.COFFEE ROASTER",
+   "type": "roaster",
+   "area": "台北市",
+   "district": "文山區",
+   "address": "116臺北市文山區景華里羅斯福路六段231號",
+   "followers": 3202,
+   "bio": "義式| 手沖| 甜點| 鮮花 / ⏹︎ 咖啡豆販賣及商業配合 / ⏹︎ 初次到訪請看「來店須知」精選動態 / ⏹︎ 花藝 @ching6iu  / 咖啡豆訂購請按下方連結",
+   "ig": "https://www.instagram.com/p.coffee_roaster/",
+   "maps": "https://www.google.com/maps/place/?q=place_id:ChIJyVzDaQCrQjQR2-G3NTj82TI",
+   "rating": 4.9,
+   "reviews": 130,
+   "stars": [
+    1,
+    1,
+    1,
+    10,
+    117
+   ],
+   "bayes": 4.804,
+   "topics": [
+    [
+     "舒服",
+     18
+    ],
+    [
+     "布丁",
+     12
+    ],
+    [
+     "豆",
+     10
+    ],
+    [
+     "美式",
+     8
+    ],
+    [
+     "座位",
+     8
+    ],
+    [
+     "手",
+     8
+    ],
+    [
+     "蘋果",
+     7
+    ],
+    [
+     "冰",
+     7
+    ],
+    [
+     "聊天",
+     6
+    ],
+    [
+     "酸",
+     5
+    ]
+   ],
+   "categories": [
+    "咖啡店",
+    "花店"
+   ],
+   "match": "ig",
+   "endorse": 1.05,
+   "endorsers": [
+    {
+     "handle": "phase_coffee_roasters",
+     "kind": "maker",
+     "posts": 2,
+     "business": false,
+     "followers": 20229,
+     "score": 0.62
+    },
+    {
+     "handle": "harryhaodaily_",
+     "kind": "blogger",
+     "posts": 1,
+     "business": false,
+     "followers": 4056,
+     "score": 0.44
+    }
+   ],
+   "centrality": 1.62,
+   "related": 2,
+   "press": [],
+   "outlets": 0,
+   "trusted": 0,
+   "notes": {
+    "summary": "Tiny roaster-café and florist about 8 minutes from Jingmei MRT, with a cosy upstairs room; known for Americano and lemon Sicilian.",
+    "signature": [
+     "Caramel pudding (焦糖布丁)",
+     "Lemon Sicilian (檸檬西西里)",
+     "Apple iced Americano (蘋果冰美式)",
+     "Latte (拿鐵)",
+     "Baked cinnamon apple pastry (烤肉桂蘋果巧酥)",
+     "Maple walnut milk (楓糖核桃奶)"
+    ],
+    "highlights": [
+     "Medium-roast espresso blend plus light-roast single origins; well balanced",
+     "Cosy, thoughtfully decorated second floor that stays quiet",
+     "Warm, friendly owners; beans sold in many varieties and sizes"
+    ],
+    "lowlights": [
+     "Upstairs seating is narrow, about 10 seats, not for long stays",
+     "Two-hour limit on weekends and a one-drink minimum"
+    ]
+   },
+   "comp": {
+    "network": 0.6691,
+    "quality": 0.893,
+    "volume": 0.6396,
+    "press": 0.0,
+    "reach": 0.2197
+   },
+   "contrib": {
+    "network": 16.73,
+    "quality": 26.79,
+    "volume": 6.4,
+    "press": 0.0,
+    "reach": 2.2
+   },
+   "score": 52.11,
+   "branches": [],
+   "rank": 54,
+   "follower_rank": 67
   },
   {
    "handle": "aromacafetaipei",
@@ -9011,7 +8437,7 @@
     83,
     336
    ],
-   "bayes": 4.592,
+   "bayes": 4.591,
    "topics": [
     [
      "atmosphere",
@@ -9111,23 +8537,23 @@
     ]
    },
    "comp": {
-    "network": 0.0998,
-    "quality": 0.6579,
-    "volume": 0.8067,
+    "network": 0.0836,
+    "quality": 0.6568,
+    "volume": 0.8021,
     "press": 0.7737,
     "reach": 0.2764
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 19.74,
-    "volume": 8.07,
+    "network": 2.09,
+    "quality": 19.7,
+    "volume": 8.02,
     "press": 19.34,
     "reach": 2.76
    },
-   "score": 52.41,
+   "score": 51.92,
    "branches": [],
-   "rank": 59,
-   "follower_rank": 62
+   "rank": 55,
+   "follower_rank": 58
   },
   {
    "handle": "gazecafe",
@@ -9151,7 +8577,7 @@
     115,
     506
    ],
-   "bayes": 4.595,
+   "bayes": 4.594,
    "topics": [
     [
      "肉桂捲",
@@ -9248,23 +8674,23 @@
     ]
    },
    "comp": {
-    "network": 0.0998,
-    "quality": 0.6606,
-    "volume": 0.8592,
+    "network": 0.0836,
+    "quality": 0.6598,
+    "volume": 0.8543,
     "press": 0.7737,
     "reach": 0.2027
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 19.82,
-    "volume": 8.59,
+    "network": 2.09,
+    "quality": 19.8,
+    "volume": 8.54,
     "press": 19.34,
     "reach": 2.03
    },
-   "score": 52.28,
+   "score": 51.8,
    "branches": [],
-   "rank": 60,
-   "follower_rank": 76
+   "rank": 56,
+   "follower_rank": 69
   },
   {
    "handle": "congratscafe",
@@ -9288,7 +8714,7 @@
     373,
     942
    ],
-   "bayes": 4.403,
+   "bayes": 4.402,
    "topics": [
     [
      "肉桂捲",
@@ -9381,133 +8807,23 @@
     ]
    },
    "comp": {
-    "network": 0.0998,
-    "quality": 0.4475,
-    "volume": 0.9627,
+    "network": 0.0836,
+    "quality": 0.4471,
+    "volume": 0.9572,
     "press": 0.8982,
     "reach": 0.3653
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 13.42,
-    "volume": 9.63,
+    "network": 2.09,
+    "quality": 13.41,
+    "volume": 9.57,
     "press": 22.46,
     "reach": 3.65
    },
-   "score": 51.65,
+   "score": 51.18,
    "branches": [],
-   "rank": 61,
-   "follower_rank": 46
-  },
-  {
-   "handle": "onns.taipei",
-   "name": "onns",
-   "gname": "onns cafe",
-   "display": "onns",
-   "type": "cafe",
-   "area": "台北市",
-   "district": "大安區",
-   "address": "106臺北市大安區德安里敦化南路1段336號",
-   "followers": 3877,
-   "bio": "【咖啡廳】 / ▸𝗢𝗻𝗻𝘀 𝗖𝗮𝗳𝗲 微風南京店 𝟭𝗙  𝟭𝟭:𝟬𝟬-𝟵:𝟯𝟬 / ▸𝗢𝗻𝗻𝘀 𝗖𝗮𝗳𝗲 敦化店  𝟵:𝟯𝟬-𝟭𝟴:𝟬𝟬 / 【酒吧】 / ▸𝗢𝗻𝗻𝘀 𝘀𝗵𝗶𝘀𝗵𝗮 敦化店 𝟭𝟵:𝟬𝟬-𝟲:𝟬𝟬",
-   "ig": "https://www.instagram.com/onns.taipei/",
-   "maps": "https://www.google.com/maps/place/?q=place_id:ChIJV7UXWvSrQjQRjsAGaOkPSpA",
-   "rating": 4.7,
-   "reviews": 486,
-   "stars": [
-    14,
-    4,
-    12,
-    32,
-    424
-   ],
-   "bayes": 4.685,
-   "topics": [
-    [
-     "煙囪",
-     182
-    ],
-    [
-     "開心果",
-     43
-    ],
-    [
-     "酸種麵包",
-     38
-    ],
-    [
-     "松露",
-     27
-    ],
-    [
-     "千層",
-     26
-    ],
-    [
-     "酪梨",
-     26
-    ],
-    [
-     "肉桂",
-     20
-    ],
-    [
-     "沙發",
-     14
-    ],
-    [
-     "下午茶",
-     14
-    ],
-    [
-     "水煙",
-     5
-    ]
-   ],
-   "categories": [
-    "早午餐餐廳",
-    "美式餐廳",
-    "咖啡店"
-   ],
-   "match": "name",
-   "endorse": 0.0,
-   "endorsers": [],
-   "centrality": 0.6,
-   "related": 0,
-   "press": [
-    {
-     "outlet": "cosmopolitan.com",
-     "url": "https://www.cosmopolitan.com/tw/lifestyle/food-and-drink/g74104789/2026-coffee-shop-1019/",
-     "title": ""
-    },
-    {
-     "outlet": "harpersbazaar.com",
-     "label": "harpersbazaar.com",
-     "url": "https://www.harpersbazaar.com/tw/life/food/g72450135/onns-cafe-new-open/",
-     "title": "微風南京咖啡廳Onns Cafe開幕！以匈牙利國民甜點「煙囪捲 ..."
-    }
-   ],
-   "outlets": 2,
-   "trusted": 0,
-   "notes": {},
-   "comp": {
-    "network": 0.0998,
-    "quality": 0.7611,
-    "volume": 0.8165,
-    "press": 0.6131,
-    "reach": 0.2559
-   },
-   "contrib": {
-    "network": 2.5,
-    "quality": 22.83,
-    "volume": 8.17,
-    "press": 15.33,
-    "reach": 2.56
-   },
-   "score": 51.38,
-   "branches": [],
-   "rank": 62,
-   "follower_rank": 65
+   "rank": 57,
+   "follower_rank": 43
   },
   {
    "handle": "mimizu_coffeeshop",
@@ -9531,7 +8847,7 @@
     34,
     302
    ],
-   "bayes": 4.681,
+   "bayes": 4.679,
    "topics": [
     [
      "提拉米蘇",
@@ -9601,131 +8917,23 @@
    "trusted": 0,
    "notes": {},
    "comp": {
-    "network": 0.0998,
-    "quality": 0.7562,
-    "volume": 0.7792,
+    "network": 0.0836,
+    "quality": 0.7549,
+    "volume": 0.7748,
     "press": 0.6131,
     "reach": 0.2768
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 22.69,
-    "volume": 7.79,
+    "network": 2.09,
+    "quality": 22.65,
+    "volume": 7.75,
     "press": 15.33,
     "reach": 2.77
    },
-   "score": 51.07,
+   "score": 50.58,
    "branches": [],
-   "rank": 63,
-   "follower_rank": 61
-  },
-  {
-   "handle": "daonanguan_specialty_coffee",
-   "name": "道南館",
-   "gname": "道南館 自家烘焙咖啡館_台北安和店",
-   "display": "道南館",
-   "type": "cafe",
-   "area": "台北市",
-   "district": "大安區",
-   "address": "106060臺北市大安區安和路一段49巷13號",
-   "followers": 2781,
-   "bio": "#從台北開始深耕台南 #致力淺烘焙精品咖啡17年 / 台北安和店：台北市大安區安和路一段49巷13號  TEL:0918626131 Open:09：00-18：00 週四店休 / 台南本店：台南市中西區民權路二段248號 TEL:06-2258377 Open:09：00-18：00 週日店休",
-   "ig": "https://www.instagram.com/daonanguan_specialty_coffee/",
-   "maps": "https://www.google.com/maps/place/?q=place_id:ChIJ03RBJgCrQjQRo9aK-b5vuQE",
-   "rating": 5,
-   "reviews": 26,
-   "stars": [
-    0,
-    0,
-    0,
-    1,
-    25
-   ],
-   "bayes": 4.699,
-   "topics": [
-    [
-     "虹吸",
-     2
-    ],
-    [
-     "鬍子",
-     2
-    ],
-    [
-     "音樂",
-     2
-    ],
-    [
-     "香",
-     2
-    ]
-   ],
-   "categories": [
-    "咖啡店"
-   ],
-   "match": "override",
-   "endorse": 0.19,
-   "endorsers": [
-    {
-     "handle": "coffeeyoutopia",
-     "kind": "blogger",
-     "posts": 1,
-     "business": false,
-     "followers": 10434,
-     "score": 0.19
-    }
-   ],
-   "centrality": 0.67,
-   "related": 0,
-   "press": [
-    {
-     "outlet": "citynotes.me",
-     "label": "citynotes.me",
-     "url": "https://citynotes.me/2014/donan",
-     "title": "文山/道南館/自家烘焙咖啡  聽爵士樂的淺焙咖啡 - 城市。食畫誌"
-    },
-    {
-     "outlet": "ankemedia.com",
-     "label": "ankemedia.com",
-     "url": "https://ankemedia.com/2018/5791",
-     "title": "退休後開道南館小鬍子老闆說下輩子要和咖啡一起過 - 安可人生"
-    }
-   ],
-   "outlets": 2,
-   "trusted": 0,
-   "notes": {
-    "summary": "Taipei outpost of a veteran Tainan light-roast roaster, in an Anhe Road lane in Da'an; known for hand-brewed single origins.",
-    "signature": [
-     "Light-roast pour-over (手沖)",
-     "Inka Geisha"
-    ],
-    "highlights": [
-     "Owner's roasting is widely respected; some have followed it for 10+ years",
-     "Owner chats readily about coffee and vinyl records",
-     "Minimal Japanese-style room centred on a big wooden bar"
-    ],
-    "lowlights": [
-     "Small room that can feel a little stuffy"
-    ]
-   },
-   "comp": {
-    "network": 0.2241,
-    "quality": 0.7765,
-    "volume": 0.4349,
-    "press": 0.6131,
-    "reach": 0.1931
-   },
-   "contrib": {
-    "network": 5.6,
-    "quality": 23.29,
-    "volume": 4.35,
-    "press": 15.33,
-    "reach": 1.93
-   },
-   "score": 50.51,
-   "branches": [],
-   "rank": 64,
-   "follower_rank": 79
+   "rank": 58,
+   "follower_rank": 57
   },
   {
    "handle": "tropo_coffee",
@@ -9749,7 +8957,7 @@
     34,
     148
    ],
-   "bayes": 4.501,
+   "bayes": 4.498,
    "topics": [
     [
      "地下室",
@@ -9826,23 +9034,131 @@
    "trusted": 1,
    "notes": {},
    "comp": {
-    "network": 0.0998,
-    "quality": 0.5561,
-    "volume": 0.7036,
+    "network": 0.0836,
+    "quality": 0.5539,
+    "volume": 0.6996,
     "press": 0.8982,
     "reach": 0.1683
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 16.68,
-    "volume": 7.04,
+    "network": 2.09,
+    "quality": 16.62,
+    "volume": 7.0,
     "press": 22.46,
     "reach": 1.68
    },
-   "score": 50.35,
+   "score": 49.84,
    "branches": [],
-   "rank": 65,
-   "follower_rank": 88
+   "rank": 59,
+   "follower_rank": 81
+  },
+  {
+   "handle": "daonanguan_specialty_coffee",
+   "name": "道南館",
+   "gname": "道南館 自家烘焙咖啡館_台北安和店",
+   "display": "道南館",
+   "type": "cafe",
+   "area": "台北市",
+   "district": "大安區",
+   "address": "106060臺北市大安區安和路一段49巷13號",
+   "followers": 2781,
+   "bio": "#從台北開始深耕台南 #致力淺烘焙精品咖啡17年 / 台北安和店：台北市大安區安和路一段49巷13號  TEL:0918626131 Open:09：00-18：00 週四店休 / 台南本店：台南市中西區民權路二段248號 TEL:06-2258377 Open:09：00-18：00 週日店休",
+   "ig": "https://www.instagram.com/daonanguan_specialty_coffee/",
+   "maps": "https://www.google.com/maps/place/?q=place_id:ChIJ03RBJgCrQjQRo9aK-b5vuQE",
+   "rating": 5,
+   "reviews": 26,
+   "stars": [
+    0,
+    0,
+    0,
+    1,
+    25
+   ],
+   "bayes": 4.691,
+   "topics": [
+    [
+     "虹吸",
+     2
+    ],
+    [
+     "鬍子",
+     2
+    ],
+    [
+     "音樂",
+     2
+    ],
+    [
+     "香",
+     2
+    ]
+   ],
+   "categories": [
+    "咖啡店"
+   ],
+   "match": "override",
+   "endorse": 0.19,
+   "endorsers": [
+    {
+     "handle": "coffeeyoutopia",
+     "kind": "blogger",
+     "posts": 1,
+     "business": false,
+     "followers": 10434,
+     "score": 0.19
+    }
+   ],
+   "centrality": 0.67,
+   "related": 0,
+   "press": [
+    {
+     "outlet": "citynotes.me",
+     "label": "citynotes.me",
+     "url": "https://citynotes.me/2014/donan",
+     "title": "文山/道南館/自家烘焙咖啡  聽爵士樂的淺焙咖啡 - 城市。食畫誌"
+    },
+    {
+     "outlet": "ankemedia.com",
+     "label": "ankemedia.com",
+     "url": "https://ankemedia.com/2018/5791",
+     "title": "退休後開道南館小鬍子老闆說下輩子要和咖啡一起過 - 安可人生"
+    }
+   ],
+   "outlets": 2,
+   "trusted": 0,
+   "notes": {
+    "summary": "Taipei outpost of a veteran Tainan light-roast roaster, in an Anhe Road lane in Da'an; known for hand-brewed single origins.",
+    "signature": [
+     "Light-roast pour-over (手沖)",
+     "Inka Geisha"
+    ],
+    "highlights": [
+     "Owner's roasting is widely respected; some have followed it for 10+ years",
+     "Owner chats readily about coffee and vinyl records",
+     "Minimal Japanese-style room centred on a big wooden bar"
+    ],
+    "lowlights": [
+     "Small room that can feel a little stuffy"
+    ]
+   },
+   "comp": {
+    "network": 0.2059,
+    "quality": 0.7681,
+    "volume": 0.4324,
+    "press": 0.6131,
+    "reach": 0.1931
+   },
+   "contrib": {
+    "network": 5.15,
+    "quality": 23.04,
+    "volume": 4.32,
+    "press": 15.33,
+    "reach": 1.93
+   },
+   "score": 49.77,
+   "branches": [],
+   "rank": 60,
+   "follower_rank": 72
   },
   {
    "handle": "d23_coffee",
@@ -9866,7 +9182,7 @@
     39,
     215
    ],
-   "bayes": 4.588,
+   "bayes": 4.586,
    "topics": [
     [
      "坐",
@@ -9933,136 +9249,23 @@
    "trusted": 0,
    "notes": {},
    "comp": {
-    "network": 0.1506,
-    "quality": 0.6532,
-    "volume": 0.7444,
+    "network": 0.1262,
+    "quality": 0.6515,
+    "volume": 0.7402,
     "press": 0.6131,
     "reach": 0.4096
    },
    "contrib": {
-    "network": 3.77,
-    "quality": 19.6,
-    "volume": 7.44,
+    "network": 3.16,
+    "quality": 19.55,
+    "volume": 7.4,
     "press": 15.33,
     "reach": 4.1
    },
-   "score": 50.23,
+   "score": 49.53,
    "branches": [],
-   "rank": 66,
-   "follower_rank": 31
-  },
-  {
-   "handle": "powder_coffee_roasters",
-   "name": "powder",
-   "gname": "powder coffee roasters",
-   "display": "powder",
-   "type": "roaster",
-   "area": "台北市",
-   "district": "中山區",
-   "address": "10491臺北市中山區民生東路二段90巷2號",
-   "followers": 11233,
-   "bio": "咖啡 | 咖啡豆販售 | 商業合作 / 十一月店休：3、4、5、6、7、8、11、18、25、28、29 / 平日8:30-16:30 | 假日10:00-16:30 / 無 訂位|插座|洗手間 / - / 咖啡豆線上訂購",
-   "ig": "https://www.instagram.com/powder_coffee_roasters/",
-   "maps": "https://www.google.com/maps/place/?q=place_id:ChIJAQgGYCSpQjQRXTcr9dOsiNs",
-   "rating": 4.3,
-   "reviews": 313,
-   "stars": [
-    33,
-    12,
-    9,
-    42,
-    217
-   ],
-   "bayes": 4.323,
-   "topics": [
-    [
-     "蛋沙拉三明治",
-     31
-    ],
-    [
-     "奶油麵包",
-     25
-    ],
-    [
-     "酥脆",
-     22
-    ],
-    [
-     "廁所",
-     21
-    ],
-    [
-     "座位",
-     20
-    ],
-    [
-     "蘋果",
-     19
-    ],
-    [
-     "紅豆麵包",
-     16
-    ],
-    [
-     "紅茶",
-     15
-    ],
-    [
-     "現金",
-     14
-    ],
-    [
-     "行天宮",
-     6
-    ]
-   ],
-   "categories": [
-    "咖啡店"
-   ],
-   "match": "ig",
-   "endorse": 0.0,
-   "endorsers": [],
-   "centrality": 1.07,
-   "related": 2,
-   "press": [
-    {
-     "outlet": "tenjo.tw",
-     "label": "周花花，甲飽沒",
-     "url": "https://tenjo.tw/powder-coffee/",
-     "title": "【行天宮咖啡廳推薦】powder coffee roasters 永康街名店強勢回歸！菜單必點脆皮麵包",
-     "date": "2024-08-08",
-     "trusted": true
-    },
-    {
-     "outlet": "mymarcy.tw",
-     "label": "瑪西隨筆",
-     "url": "https://mymarcy.tw/powder-coffee-roasters/",
-     "title": "Powder coffee roasters評論｜早上營業的行天宮咖啡廳，網友一致推薦的台北紅豆奶油脆皮麵包",
-     "date": "2025-09-17",
-     "trusted": true
-    }
-   ],
-   "outlets": 2,
-   "trusted": 2,
-   "notes": {},
-   "comp": {
-    "network": 0.1753,
-    "quality": 0.3589,
-    "volume": 0.7586,
-    "press": 0.8982,
-    "reach": 0.4567
-   },
-   "contrib": {
-    "network": 4.38,
-    "quality": 10.77,
-    "volume": 7.59,
-    "press": 22.46,
-    "reach": 4.57
-   },
-   "score": 49.76,
-   "branches": [],
-   "rank": 67,
-   "follower_rank": 16
+   "rank": 61,
+   "follower_rank": 29
   },
   {
    "handle": "ruinscoffeeroasters",
@@ -10086,7 +9289,7 @@
     65,
     165
    ],
-   "bayes": 4.326,
+   "bayes": 4.324,
    "topics": [
     [
      "木頭",
@@ -10164,23 +9367,23 @@
    "trusted": 2,
    "notes": {},
    "comp": {
-    "network": 0.0998,
-    "quality": 0.3621,
-    "volume": 0.7411,
+    "network": 0.0836,
+    "quality": 0.3603,
+    "volume": 0.7369,
     "press": 1.0,
     "reach": 0.3949
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 10.86,
-    "volume": 7.41,
+    "network": 2.09,
+    "quality": 10.81,
+    "volume": 7.37,
     "press": 25.0,
     "reach": 3.95
    },
-   "score": 49.72,
+   "score": 49.22,
    "branches": [],
-   "rank": 68,
-   "follower_rank": 34
+   "rank": 62,
+   "follower_rank": 32
   },
   {
    "handle": "bellyfloppcafe",
@@ -10204,7 +9407,7 @@
     71,
     309
    ],
-   "bayes": 4.5,
+   "bayes": 4.499,
    "topics": [
     [
      "寵物",
@@ -10285,23 +9488,246 @@
    "trusted": 0,
    "notes": {},
    "comp": {
-    "network": 0.0998,
-    "quality": 0.5559,
-    "volume": 0.7976,
+    "network": 0.0836,
+    "quality": 0.5546,
+    "volume": 0.7931,
     "press": 0.7737,
     "reach": 0.3107
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 16.68,
-    "volume": 7.98,
+    "network": 2.09,
+    "quality": 16.64,
+    "volume": 7.93,
     "press": 19.34,
     "reach": 3.11
    },
-   "score": 49.6,
+   "score": 49.11,
    "branches": [],
-   "rank": 69,
-   "follower_rank": 55
+   "rank": 63,
+   "follower_rank": 51
+  },
+  {
+   "handle": "powder_coffee_roasters",
+   "name": "powder",
+   "gname": "powder coffee roasters",
+   "display": "powder",
+   "type": "roaster",
+   "area": "台北市",
+   "district": "中山區",
+   "address": "10491臺北市中山區民生東路二段90巷2號",
+   "followers": 11233,
+   "bio": "咖啡 | 咖啡豆販售 | 商業合作 / 十一月店休：3、4、5、6、7、8、11、18、25、28、29 / 平日8:30-16:30 | 假日10:00-16:30 / 無 訂位|插座|洗手間 / - / 咖啡豆線上訂購",
+   "ig": "https://www.instagram.com/powder_coffee_roasters/",
+   "maps": "https://www.google.com/maps/place/?q=place_id:ChIJAQgGYCSpQjQRXTcr9dOsiNs",
+   "rating": 4.3,
+   "reviews": 313,
+   "stars": [
+    33,
+    12,
+    9,
+    42,
+    217
+   ],
+   "bayes": 4.322,
+   "topics": [
+    [
+     "蛋沙拉三明治",
+     31
+    ],
+    [
+     "奶油麵包",
+     25
+    ],
+    [
+     "酥脆",
+     22
+    ],
+    [
+     "廁所",
+     21
+    ],
+    [
+     "座位",
+     20
+    ],
+    [
+     "蘋果",
+     19
+    ],
+    [
+     "紅豆麵包",
+     16
+    ],
+    [
+     "紅茶",
+     15
+    ],
+    [
+     "現金",
+     14
+    ],
+    [
+     "行天宮",
+     6
+    ]
+   ],
+   "categories": [
+    "咖啡店"
+   ],
+   "match": "ig",
+   "endorse": 0.0,
+   "endorsers": [],
+   "centrality": 1.07,
+   "related": 2,
+   "press": [
+    {
+     "outlet": "tenjo.tw",
+     "label": "周花花，甲飽沒",
+     "url": "https://tenjo.tw/powder-coffee/",
+     "title": "【行天宮咖啡廳推薦】powder coffee roasters 永康街名店強勢回歸！菜單必點脆皮麵包",
+     "date": "2024-08-08",
+     "trusted": true
+    },
+    {
+     "outlet": "mymarcy.tw",
+     "label": "瑪西隨筆",
+     "url": "https://mymarcy.tw/powder-coffee-roasters/",
+     "title": "Powder coffee roasters評論｜早上營業的行天宮咖啡廳，網友一致推薦的台北紅豆奶油脆皮麵包",
+     "date": "2025-09-17",
+     "trusted": true
+    }
+   ],
+   "outlets": 2,
+   "trusted": 2,
+   "notes": {},
+   "comp": {
+    "network": 0.1469,
+    "quality": 0.3573,
+    "volume": 0.7543,
+    "press": 0.8982,
+    "reach": 0.4567
+   },
+   "contrib": {
+    "network": 3.67,
+    "quality": 10.72,
+    "volume": 7.54,
+    "press": 22.46,
+    "reach": 4.57
+   },
+   "score": 48.96,
+   "branches": [],
+   "rank": 64,
+   "follower_rank": 14
+  },
+  {
+   "handle": "ebf.cafe",
+   "name": "耳邊風",
+   "gname": "耳邊風 ebf.cafe",
+   "display": "耳邊風",
+   "type": "cafe",
+   "area": "台北市",
+   "district": "大同區",
+   "address": "26號, No. 26迪化街一段224巷大有里大同區臺北市103",
+   "followers": 4244,
+   "bio": "一人作業 還請耐心等候 謝謝 / 入口處 是一支鞋模 往左輕推開就可以 / - / 咖啡/ 手沖/寵物友善🐾 / - / 營業時間11-18 / 11月店休：2、6、12、13、19、20、26、27、30",
+   "ig": "https://www.instagram.com/ebf.cafe/",
+   "maps": "https://www.google.com/maps/place/?q=place_id:ChIJja4Ct2epQjQRXSunw8aKDlc",
+   "rating": 4.5,
+   "reviews": 273,
+   "stars": [
+    15,
+    4,
+    9,
+    55,
+    190
+   ],
+   "bayes": 4.499,
+   "topics": [
+    [
+     "布丁",
+     60
+    ],
+    [
+     "紅茶",
+     27
+    ],
+    [
+     "復古",
+     26
+    ],
+    [
+     "芋",
+     17
+    ],
+    [
+     "閣樓",
+     13
+    ],
+    [
+     "昭和",
+     13
+    ],
+    [
+     "戚風蛋糕",
+     6
+    ],
+    [
+     "古物",
+     6
+    ],
+    [
+     "法式吐司",
+     6
+    ],
+    [
+     "煙燻鮭魚",
+     5
+    ]
+   ],
+   "categories": [
+    "咖啡店"
+   ],
+   "match": "name",
+   "endorse": 0.0,
+   "endorsers": [],
+   "centrality": 0.6,
+   "related": 0,
+   "press": [
+    {
+     "outlet": "harpersbazaar.com",
+     "url": "https://www.harpersbazaar.com/tw/life/food/g61629696/coffee-shop-cafe/",
+     "title": ""
+    },
+    {
+     "outlet": "mibaoma.tw",
+     "label": "米寶麻幸福滿載",
+     "url": "https://mibaoma.tw/post-563475974/",
+     "title": "耳邊風 Yonghe┃永和下午茶咖啡廳。棲仙陳設選物所、一週只開三天的質感老宅咖啡",
+     "date": "2022-04-29",
+     "trusted": true
+    }
+   ],
+   "outlets": 2,
+   "trusted": 1,
+   "notes": {},
+   "comp": {
+    "network": 0.0836,
+    "quality": 0.5542,
+    "volume": 0.7364,
+    "press": 0.7737,
+    "reach": 0.2729
+   },
+   "contrib": {
+    "network": 2.09,
+    "quality": 16.63,
+    "volume": 7.36,
+    "press": 19.34,
+    "reach": 2.73
+   },
+   "score": 48.15,
+   "branches": [],
+   "rank": 65,
+   "follower_rank": 59
   },
   {
    "handle": "beifongshe",
@@ -10325,7 +9751,7 @@
     104,
     532
    ],
-   "bayes": 4.215,
+   "bayes": 4.214,
    "topics": [
     [
      "榻榻米",
@@ -10399,23 +9825,23 @@
    "trusted": 1,
    "notes": {},
    "comp": {
-    "network": 0.5675,
-    "quality": 0.2386,
-    "volume": 0.879,
+    "network": 0.5388,
+    "quality": 0.238,
+    "volume": 0.874,
     "press": 0.6131,
     "reach": 0.3462
    },
    "contrib": {
-    "network": 14.19,
-    "quality": 7.16,
-    "volume": 8.79,
+    "network": 13.47,
+    "quality": 7.14,
+    "volume": 8.74,
     "press": 15.33,
     "reach": 3.46
    },
-   "score": 48.93,
+   "score": 48.14,
    "branches": [],
-   "rank": 70,
-   "follower_rank": 51
+   "rank": 66,
+   "follower_rank": 47
   },
   {
    "handle": "jibucoffee",
@@ -10439,7 +9865,7 @@
     14,
     114
    ],
-   "bayes": 4.731,
+   "bayes": 4.728,
    "topics": [
     [
      "巴斯克",
@@ -10508,235 +9934,23 @@
    "trusted": 0,
    "notes": {},
    "comp": {
-    "network": 0.0998,
-    "quality": 0.8126,
-    "volume": 0.6463,
+    "network": 0.0836,
+    "quality": 0.8094,
+    "volume": 0.6426,
     "press": 0.6131,
     "reach": 0.0
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 24.38,
-    "volume": 6.46,
+    "network": 2.09,
+    "quality": 24.28,
+    "volume": 6.43,
     "press": 15.33,
     "reach": 0.0
    },
-   "score": 48.66,
+   "score": 48.13,
    "branches": [],
-   "rank": 71,
-   "follower_rank": 111
-  },
-  {
-   "handle": "ebf.cafe",
-   "name": "耳邊風",
-   "gname": "耳邊風 ebf.cafe",
-   "display": "耳邊風",
-   "type": "cafe",
-   "area": "台北市",
-   "district": "大同區",
-   "address": "26號, No. 26迪化街一段224巷大有里大同區臺北市103",
-   "followers": 4244,
-   "bio": "一人作業 還請耐心等候 謝謝 / 入口處 是一支鞋模 往左輕推開就可以 / - / 咖啡/ 手沖/寵物友善🐾 / - / 營業時間11-18 / 11月店休：2、6、12、13、19、20、26、27、30",
-   "ig": "https://www.instagram.com/ebf.cafe/",
-   "maps": "https://www.google.com/maps/place/?q=place_id:ChIJja4Ct2epQjQRXSunw8aKDlc",
-   "rating": 4.5,
-   "reviews": 273,
-   "stars": [
-    15,
-    4,
-    9,
-    55,
-    190
-   ],
-   "bayes": 4.5,
-   "topics": [
-    [
-     "布丁",
-     60
-    ],
-    [
-     "紅茶",
-     27
-    ],
-    [
-     "復古",
-     26
-    ],
-    [
-     "芋",
-     17
-    ],
-    [
-     "閣樓",
-     13
-    ],
-    [
-     "昭和",
-     13
-    ],
-    [
-     "戚風蛋糕",
-     6
-    ],
-    [
-     "古物",
-     6
-    ],
-    [
-     "法式吐司",
-     6
-    ],
-    [
-     "煙燻鮭魚",
-     5
-    ]
-   ],
-   "categories": [
-    "咖啡店"
-   ],
-   "match": "name",
-   "endorse": 0.0,
-   "endorsers": [],
-   "centrality": 0.6,
-   "related": 0,
-   "press": [
-    {
-     "outlet": "harpersbazaar.com",
-     "url": "https://www.harpersbazaar.com/tw/life/food/g61629696/coffee-shop-cafe/",
-     "title": ""
-    },
-    {
-     "outlet": "mibaoma.tw",
-     "label": "米寶麻幸福滿載",
-     "url": "https://mibaoma.tw/post-563475974/",
-     "title": "耳邊風 Yonghe┃永和下午茶咖啡廳。棲仙陳設選物所、一週只開三天的質感老宅咖啡",
-     "date": "2022-04-29",
-     "trusted": true
-    }
-   ],
-   "outlets": 2,
-   "trusted": 1,
-   "notes": {},
-   "comp": {
-    "network": 0.0998,
-    "quality": 0.556,
-    "volume": 0.7406,
-    "press": 0.7737,
-    "reach": 0.2729
-   },
-   "contrib": {
-    "network": 2.5,
-    "quality": 16.68,
-    "volume": 7.41,
-    "press": 19.34,
-    "reach": 2.73
-   },
-   "score": 48.65,
-   "branches": [],
-   "rank": 72,
-   "follower_rank": 63
-  },
-  {
-   "handle": "thefolkstaipei",
-   "name": "𝐓𝐇𝐄 𝐅𝐎𝐋𝐊𝐒",
-   "gname": "The Folks",
-   "display": "The Folks",
-   "type": "cafe",
-   "area": "台北市",
-   "district": "大安區",
-   "address": "106臺北市大安區群賢里四維路208巷3-1號",
-   "followers": 9138,
-   "bio": "Your neighborhood espressobar. / 8:00 - L.O. about 12:30 or SOLD OUT / Thursday off",
-   "ig": "https://www.instagram.com/thefolkstaipei/",
-   "maps": "https://www.google.com/maps/place/?q=place_id:ChIJV3lYki2qQjQR_xzVT7PTvwc",
-   "rating": 4.6,
-   "reviews": 647,
-   "stars": [
-    20,
-    9,
-    28,
-    84,
-    506
-   ],
-   "bayes": 4.594,
-   "topics": [
-    [
-     "座位",
-     40
-    ],
-    [
-     "長椅",
-     18
-    ],
-    [
-     "冰滴咖啡",
-     16
-    ],
-    [
-     "音樂",
-     15
-    ],
-    [
-     "康普茶",
-     14
-    ],
-    [
-     "濃縮",
-     13
-    ],
-    [
-     "品味",
-     9
-    ],
-    [
-     "酸味",
-     6
-    ],
-    [
-     "虹吸",
-     5
-    ],
-    [
-     "歌單",
-     5
-    ]
-   ],
-   "categories": [
-    "咖啡店"
-   ],
-   "match": "name",
-   "endorse": 0.0,
-   "endorsers": [],
-   "centrality": 1.66,
-   "related": 2,
-   "press": [
-    {
-     "outlet": "fltrmagazine.com",
-     "url": "https://fltrmagazine.com/2026/10/16/best-specialty-coffee-shops-taipei/",
-     "title": ""
-    }
-   ],
-   "outlets": 1,
-   "trusted": 0,
-   "notes": {},
-   "comp": {
-    "network": 0.2484,
-    "quality": 0.6604,
-    "volume": 0.8542,
-    "press": 0.3869,
-    "reach": 0.4178
-   },
-   "contrib": {
-    "network": 6.21,
-    "quality": 19.81,
-    "volume": 8.54,
-    "press": 9.67,
-    "reach": 4.18
-   },
-   "score": 48.41,
-   "branches": [],
-   "rank": 73,
-   "follower_rank": 27
+   "rank": 67,
+   "follower_rank": 104
   },
   {
    "handle": "whood_drinkandfood",
@@ -10760,7 +9974,7 @@
     18,
     162
    ],
-   "bayes": 4.829,
+   "bayes": 4.827,
    "topics": [
     [
      "甜點",
@@ -10823,23 +10037,23 @@
    "trusted": 0,
    "notes": {},
    "comp": {
-    "network": 0.0998,
-    "quality": 0.9212,
-    "volume": 0.6888,
+    "network": 0.0836,
+    "quality": 0.9188,
+    "volume": 0.6849,
     "press": 0.3869,
     "reach": 0.1685
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 27.64,
-    "volume": 6.89,
+    "network": 2.09,
+    "quality": 27.56,
+    "volume": 6.85,
     "press": 9.67,
     "reach": 1.69
    },
-   "score": 48.38,
+   "score": 47.86,
    "branches": [],
-   "rank": 74,
-   "follower_rank": 87
+   "rank": 68,
+   "follower_rank": 80
   },
   {
    "handle": "ancrecafe",
@@ -10957,23 +10171,23 @@
    "trusted": 4,
    "notes": {},
    "comp": {
-    "network": 0.0998,
-    "quality": 0.3413,
-    "volume": 0.9234,
+    "network": 0.0836,
+    "quality": 0.3408,
+    "volume": 0.9182,
     "press": 1.0,
     "reach": 0.0962
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 10.24,
-    "volume": 9.23,
+    "network": 2.09,
+    "quality": 10.22,
+    "volume": 9.18,
     "press": 25.0,
     "reach": 0.96
    },
-   "score": 47.93,
+   "score": 47.46,
    "branches": [],
-   "rank": 75,
-   "follower_rank": 97
+   "rank": 69,
+   "follower_rank": 90
   },
   {
    "handle": "picniccafe.taipei",
@@ -11072,23 +10286,125 @@
    "trusted": 2,
    "notes": {},
    "comp": {
-    "network": 0.0998,
-    "quality": 0.4479,
-    "volume": 0.9444,
+    "network": 0.0836,
+    "quality": 0.4475,
+    "volume": 0.939,
     "press": 0.8982,
     "reach": 0.0
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 13.44,
-    "volume": 9.44,
+    "network": 2.09,
+    "quality": 13.42,
+    "volume": 9.39,
     "press": 22.46,
     "reach": 0.0
    },
-   "score": 47.83,
+   "score": 47.36,
    "branches": [],
-   "rank": 76,
-   "follower_rank": 116
+   "rank": 70,
+   "follower_rank": 109
+  },
+  {
+   "handle": "thefolkstaipei",
+   "name": "𝐓𝐇𝐄 𝐅𝐎𝐋𝐊𝐒",
+   "gname": "The Folks",
+   "display": "The Folks",
+   "type": "cafe",
+   "area": "台北市",
+   "district": "大安區",
+   "address": "106臺北市大安區群賢里四維路208巷3-1號",
+   "followers": 9138,
+   "bio": "Your neighborhood espressobar. / 8:00 - L.O. about 12:30 or SOLD OUT / Thursday off",
+   "ig": "https://www.instagram.com/thefolkstaipei/",
+   "maps": "https://www.google.com/maps/place/?q=place_id:ChIJV3lYki2qQjQR_xzVT7PTvwc",
+   "rating": 4.6,
+   "reviews": 647,
+   "stars": [
+    20,
+    9,
+    28,
+    84,
+    506
+   ],
+   "bayes": 4.594,
+   "topics": [
+    [
+     "座位",
+     40
+    ],
+    [
+     "長椅",
+     18
+    ],
+    [
+     "冰滴咖啡",
+     16
+    ],
+    [
+     "音樂",
+     15
+    ],
+    [
+     "康普茶",
+     14
+    ],
+    [
+     "濃縮",
+     13
+    ],
+    [
+     "品味",
+     9
+    ],
+    [
+     "酸味",
+     6
+    ],
+    [
+     "虹吸",
+     5
+    ],
+    [
+     "歌單",
+     5
+    ]
+   ],
+   "categories": [
+    "咖啡店"
+   ],
+   "match": "name",
+   "endorse": 0.0,
+   "endorsers": [],
+   "centrality": 1.66,
+   "related": 2,
+   "press": [
+    {
+     "outlet": "fltrmagazine.com",
+     "url": "https://fltrmagazine.com/2026/10/16/best-specialty-coffee-shops-taipei/",
+     "title": ""
+    }
+   ],
+   "outlets": 1,
+   "trusted": 0,
+   "notes": {},
+   "comp": {
+    "network": 0.2082,
+    "quality": 0.6596,
+    "volume": 0.8493,
+    "press": 0.3869,
+    "reach": 0.4178
+   },
+   "contrib": {
+    "network": 5.2,
+    "quality": 19.79,
+    "volume": 8.49,
+    "press": 9.67,
+    "reach": 4.18
+   },
+   "score": 47.33,
+   "branches": [],
+   "rank": 71,
+   "follower_rank": 25
   },
   {
    "handle": "nongcafe1121461",
@@ -11112,7 +10428,7 @@
     78,
     271
    ],
-   "bayes": 4.5,
+   "bayes": 4.499,
    "topics": [
     [
      "蘋果派",
@@ -11183,23 +10499,237 @@
    "trusted": 1,
    "notes": {},
    "comp": {
-    "network": 0.0998,
-    "quality": 0.5559,
-    "volume": 0.7855,
+    "network": 0.0836,
+    "quality": 0.5546,
+    "volume": 0.781,
     "press": 0.7737,
     "reach": 0.1268
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 16.68,
-    "volume": 7.86,
+    "network": 2.09,
+    "quality": 16.64,
+    "volume": 7.81,
     "press": 19.34,
     "reach": 1.27
    },
-   "score": 47.64,
+   "score": 47.15,
    "branches": [],
-   "rank": 77,
-   "follower_rank": 96
+   "rank": 72,
+   "follower_rank": 89
+  },
+  {
+   "handle": "coffee_along",
+   "name": "𝘾 𝙤 𝙛 𝙛 𝙚 𝙚   𝘼 𝙡 𝙤 𝙣 𝙜",
+   "gname": "Coffee Along",
+   "display": "Coffee Along",
+   "type": "cafe",
+   "area": "台北市",
+   "district": "大安區",
+   "address": "106臺北市大安區通安里文昌街167號",
+   "followers": 2322,
+   "bio": "𝙁𝙍𝙄 ~ 𝙒𝙀𝘿 𝟴:𝟬𝟬-𝟭𝟳:𝟬𝟬  / 台北市大安區文昌街167號",
+   "ig": "https://www.instagram.com/coffee_along/",
+   "maps": "https://www.google.com/maps/place/?q=place_id:ChIJMy2RX3SrQjQRvJiDCE8zYm0",
+   "rating": 4.7,
+   "reviews": 129,
+   "stars": [
+    1,
+    1,
+    5,
+    17,
+    105
+   ],
+   "bayes": 4.65,
+   "topics": [
+    [
+     "音樂",
+     14
+    ],
+    [
+     "拿鐵",
+     11
+    ],
+    [
+     "杯",
+     10
+    ],
+    [
+     "冰滴",
+     8
+    ],
+    [
+     "奶油",
+     7
+    ],
+    [
+     "卡布",
+     7
+    ],
+    [
+     "酸",
+     6
+    ],
+    [
+     "品味",
+     5
+    ],
+    [
+     "空間",
+     5
+    ],
+    [
+     "設計",
+     5
+    ]
+   ],
+   "categories": [
+    "咖啡店"
+   ],
+   "match": "name",
+   "endorse": 0.0,
+   "endorsers": [],
+   "centrality": 0.6,
+   "related": 0,
+   "press": [
+    {
+     "outlet": "lifea.blog",
+     "label": "lifea.blog",
+     "url": "https://lifea.blog/coffee-along/",
+     "title": "Coffee Along：大安區文昌街社區咖啡館 - Lifea"
+    },
+    {
+     "outlet": "poponote.com",
+     "label": "poponote.com",
+     "url": "https://www.poponote.com/note/68cf3564263e6e0007d124b1",
+     "title": "Coffee Along | 信義安和站"
+    }
+   ],
+   "outlets": 2,
+   "trusted": 0,
+   "notes": {},
+   "comp": {
+    "network": 0.0836,
+    "quality": 0.7227,
+    "volume": 0.6386,
+    "press": 0.6131,
+    "reach": 0.1591
+   },
+   "contrib": {
+    "network": 2.09,
+    "quality": 21.68,
+    "volume": 6.39,
+    "press": 15.33,
+    "reach": 1.59
+   },
+   "score": 47.08,
+   "branches": [],
+   "rank": 73,
+   "follower_rank": 83
+  },
+  {
+   "handle": "cafe_honestly",
+   "name": "Cafe,honestly真拾生活",
+   "gname": "Cafe,honestly真拾生活",
+   "display": "Cafehonestly真拾生活",
+   "type": "cafe",
+   "area": "台北市",
+   "district": "松山區",
+   "address": "105臺北市松山區延壽街117-1號117號後棟一樓",
+   "followers": 1987,
+   "bio": "☕義式特調、精選手沖咖啡 / 🥐自家製可頌&司康、甜點 / 🍰季節水果戚風・手作早午餐 / 🌿在日常裡，留一段舒服的時間 / 🍰蛋糕線上訂購連結👇🏻 / ☎️ 無接受訂位·來店前 1 小時可電話保留座位 / 📍 台北松山區延壽街 117-1 號 / 🤍營業時間：09-18 / ‼️公休日、特殊營業時間：請看行事曆 / 💰現金Line pay",
+   "ig": "https://www.instagram.com/cafe_honestly/",
+   "maps": "https://www.google.com/maps/place/?q=place_id:ChIJJZ7aZQ-rQjQRRGxzqRLHe9A",
+   "rating": 4.8,
+   "reviews": 481,
+   "stars": [
+    2,
+    3,
+    9,
+    38,
+    429
+   ],
+   "bayes": 4.776,
+   "topics": [
+    [
+     "可頌",
+     76
+    ],
+    [
+     "戚風蛋糕",
+     31
+    ],
+    [
+     "採光",
+     23
+    ],
+    [
+     "提拉米蘇",
+     23
+    ],
+    [
+     "民生社區",
+     18
+    ],
+    [
+     "舒肥",
+     10
+    ],
+    [
+     "司康",
+     10
+    ],
+    [
+     "陽光",
+     9
+    ],
+    [
+     "水蜜桃",
+     8
+    ],
+    [
+     "落地窗",
+     6
+    ]
+   ],
+   "categories": [
+    "咖啡店",
+    "早午餐餐廳",
+    "甜品店",
+    "糕餅店"
+   ],
+   "match": "name",
+   "endorse": 0.0,
+   "endorsers": [],
+   "centrality": 0.6,
+   "related": 0,
+   "press": [
+    {
+     "outlet": "iceoffice.com.tw",
+     "url": "https://iceoffice.com.tw/taipeicafemap/",
+     "title": ""
+    }
+   ],
+   "outlets": 1,
+   "trusted": 0,
+   "notes": {},
+   "comp": {
+    "network": 0.0836,
+    "quality": 0.8625,
+    "volume": 0.8105,
+    "press": 0.3869,
+    "reach": 0.1297
+   },
+   "contrib": {
+    "network": 2.09,
+    "quality": 25.87,
+    "volume": 8.11,
+    "press": 9.67,
+    "reach": 1.3
+   },
+   "score": 47.04,
+   "branches": [],
+   "rank": 74,
+   "follower_rank": 87
   },
   {
    "handle": "rebirth_coffee",
@@ -11301,237 +10831,23 @@
    "trusted": 0,
    "notes": {},
    "comp": {
-    "network": 0.5299,
-    "quality": 0.2371,
-    "volume": 0.8926,
+    "network": 0.5055,
+    "quality": 0.2365,
+    "volume": 0.8875,
     "press": 0.6131,
     "reach": 0.3019
    },
    "contrib": {
-    "network": 13.25,
-    "quality": 7.11,
-    "volume": 8.93,
+    "network": 12.64,
+    "quality": 7.09,
+    "volume": 8.88,
     "press": 15.33,
     "reach": 3.02
    },
-   "score": 47.63,
+   "score": 46.96,
    "branches": [],
-   "rank": 78,
-   "follower_rank": 56
-  },
-  {
-   "handle": "coffee_along",
-   "name": "𝘾 𝙤 𝙛 𝙛 𝙚 𝙚   𝘼 𝙡 𝙤 𝙣 𝙜",
-   "gname": "Coffee Along",
-   "display": "Coffee Along",
-   "type": "cafe",
-   "area": "台北市",
-   "district": "大安區",
-   "address": "106臺北市大安區通安里文昌街167號",
-   "followers": 2322,
-   "bio": "𝙁𝙍𝙄 ~ 𝙒𝙀𝘿 𝟴:𝟬𝟬-𝟭𝟳:𝟬𝟬  / 台北市大安區文昌街167號",
-   "ig": "https://www.instagram.com/coffee_along/",
-   "maps": "https://www.google.com/maps/place/?q=place_id:ChIJMy2RX3SrQjQRvJiDCE8zYm0",
-   "rating": 4.7,
-   "reviews": 129,
-   "stars": [
-    1,
-    1,
-    5,
-    17,
-    105
-   ],
-   "bayes": 4.653,
-   "topics": [
-    [
-     "音樂",
-     14
-    ],
-    [
-     "拿鐵",
-     11
-    ],
-    [
-     "杯",
-     10
-    ],
-    [
-     "冰滴",
-     8
-    ],
-    [
-     "奶油",
-     7
-    ],
-    [
-     "卡布",
-     7
-    ],
-    [
-     "酸",
-     6
-    ],
-    [
-     "品味",
-     5
-    ],
-    [
-     "空間",
-     5
-    ],
-    [
-     "設計",
-     5
-    ]
-   ],
-   "categories": [
-    "咖啡店"
-   ],
-   "match": "name",
-   "endorse": 0.0,
-   "endorsers": [],
-   "centrality": 0.6,
-   "related": 0,
-   "press": [
-    {
-     "outlet": "lifea.blog",
-     "label": "lifea.blog",
-     "url": "https://lifea.blog/coffee-along/",
-     "title": "Coffee Along：大安區文昌街社區咖啡館 - Lifea"
-    },
-    {
-     "outlet": "poponote.com",
-     "label": "poponote.com",
-     "url": "https://www.poponote.com/note/68cf3564263e6e0007d124b1",
-     "title": "Coffee Along | 信義安和站"
-    }
-   ],
-   "outlets": 2,
-   "trusted": 0,
-   "notes": {},
-   "comp": {
-    "network": 0.0998,
-    "quality": 0.726,
-    "volume": 0.6423,
-    "press": 0.6131,
-    "reach": 0.1591
-   },
-   "contrib": {
-    "network": 2.5,
-    "quality": 21.78,
-    "volume": 6.42,
-    "press": 15.33,
-    "reach": 1.59
-   },
-   "score": 47.62,
-   "branches": [],
-   "rank": 79,
-   "follower_rank": 90
-  },
-  {
-   "handle": "cafe_honestly",
-   "name": "Cafe,honestly真拾生活",
-   "gname": "Cafe,honestly真拾生活",
-   "display": "Cafehonestly真拾生活",
-   "type": "cafe",
-   "area": "台北市",
-   "district": "松山區",
-   "address": "105臺北市松山區延壽街117-1號117號後棟一樓",
-   "followers": 1987,
-   "bio": "☕義式特調、精選手沖咖啡 / 🥐自家製可頌&司康、甜點 / 🍰季節水果戚風・手作早午餐 / 🌿在日常裡，留一段舒服的時間 / 🍰蛋糕線上訂購連結👇🏻 / ☎️ 無接受訂位·來店前 1 小時可電話保留座位 / 📍 台北松山區延壽街 117-1 號 / 🤍營業時間：09-18 / ‼️公休日、特殊營業時間：請看行事曆 / 💰現金Line pay",
-   "ig": "https://www.instagram.com/cafe_honestly/",
-   "maps": "https://www.google.com/maps/place/?q=place_id:ChIJJZ7aZQ-rQjQRRGxzqRLHe9A",
-   "rating": 4.8,
-   "reviews": 481,
-   "stars": [
-    2,
-    3,
-    9,
-    38,
-    429
-   ],
-   "bayes": 4.777,
-   "topics": [
-    [
-     "可頌",
-     76
-    ],
-    [
-     "戚風蛋糕",
-     31
-    ],
-    [
-     "採光",
-     23
-    ],
-    [
-     "提拉米蘇",
-     23
-    ],
-    [
-     "民生社區",
-     18
-    ],
-    [
-     "舒肥",
-     10
-    ],
-    [
-     "司康",
-     10
-    ],
-    [
-     "陽光",
-     9
-    ],
-    [
-     "水蜜桃",
-     8
-    ],
-    [
-     "落地窗",
-     6
-    ]
-   ],
-   "categories": [
-    "咖啡店",
-    "早午餐餐廳",
-    "甜品店",
-    "糕餅店"
-   ],
-   "match": "name",
-   "endorse": 0.0,
-   "endorsers": [],
-   "centrality": 0.6,
-   "related": 0,
-   "press": [
-    {
-     "outlet": "iceoffice.com.tw",
-     "url": "https://iceoffice.com.tw/taipeicafemap/",
-     "title": ""
-    }
-   ],
-   "outlets": 1,
-   "trusted": 0,
-   "notes": {},
-   "comp": {
-    "network": 0.0998,
-    "quality": 0.8636,
-    "volume": 0.8152,
-    "press": 0.3869,
-    "reach": 0.1297
-   },
-   "contrib": {
-    "network": 2.5,
-    "quality": 25.91,
-    "volume": 8.15,
-    "press": 9.67,
-    "reach": 1.3
-   },
-   "score": 47.52,
-   "branches": [],
-   "rank": 80,
-   "follower_rank": 94
+   "rank": 75,
+   "follower_rank": 52
   },
   {
    "handle": "sucrebeanscoffeeroaster",
@@ -11555,7 +10871,7 @@
     7,
     163
    ],
-   "bayes": 4.826,
+   "bayes": 4.824,
    "topics": [
     [
      "提拉米蘇",
@@ -11617,242 +10933,23 @@
    "trusted": 0,
    "notes": {},
    "comp": {
-    "network": 0.0998,
-    "quality": 0.9183,
-    "volume": 0.683,
+    "network": 0.0836,
+    "quality": 0.9158,
+    "volume": 0.6791,
     "press": 0.3869,
     "reach": 0.0352
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 27.55,
-    "volume": 6.83,
+    "network": 2.09,
+    "quality": 27.47,
+    "volume": 6.79,
     "press": 9.67,
     "reach": 0.35
    },
-   "score": 46.9,
+   "score": 46.38,
    "branches": [],
-   "rank": 81,
-   "follower_rank": 104
-  },
-  {
-   "handle": "fakesobertaipei",
-   "name": "Fake Sober Coffee & Bar",
-   "gname": "Fake Sober Taipei",
-   "display": "Fake Sober Taipei",
-   "type": "cafe",
-   "area": "台北市",
-   "district": "信義區",
-   "address": "110臺北市信義區西村里松壽路20號",
-   "followers": 27581,
-   "bio": "8am - 6pm  COFFEE / CRAFT BEER / 6pm - 2am  COCKTAIL / CRAFT BEER / PIZZA",
-   "ig": "https://www.instagram.com/fakesobertaipei/",
-   "maps": "https://www.google.com/maps/place/?q=place_id:ChIJbXITl4OrQjQR3XJqpKT5DYM",
-   "rating": 4.4,
-   "reviews": 1035,
-   "stars": [
-    64,
-    20,
-    50,
-    154,
-    747
-   ],
-   "bayes": 4.404,
-   "topics": [
-    [
-     "披薩",
-     111
-    ],
-    [
-     "白天",
-     47
-    ],
-    [
-     "拿鐵",
-     46
-    ],
-    [
-     "杯",
-     45
-    ],
-    [
-     "雲朵",
-     25
-    ],
-    [
-     "可頌",
-     17
-    ],
-    [
-     "美式",
-     17
-    ],
-    [
-     "鮮奶油",
-     12
-    ],
-    [
-     "k-pop",
-     8
-    ],
-    [
-     "bakery",
-     6
-    ]
-   ],
-   "categories": [
-    "雞尾酒酒吧",
-    "咖啡店"
-   ],
-   "match": "ig",
-   "endorse": 0.0,
-   "endorsers": [],
-   "centrality": 0.6,
-   "related": 0,
-   "press": [
-    {
-     "outlet": "lemonadellen.pixnet.net",
-     "label": "lemonadellen.pixnet.net",
-     "url": "https://lemonadellen.pixnet.net/blog/posts/49795344",
-     "title": "Fake Sober Taipei x Sober Bakery 鹽可頌專賣台北信義區"
-    },
-    {
-     "outlet": "jennieschen.pixnet.net",
-     "label": "jennieschen.pixnet.net",
-     "url": "https://jennieschen.pixnet.net/blog/posts/49420608",
-     "title": "一次收集兩家信義區最夯的咖啡店及酒吧｜Fake Sober Taipei ..."
-    }
-   ],
-   "outlets": 2,
-   "trusted": 0,
-   "notes": {},
-   "comp": {
-    "network": 0.0998,
-    "quality": 0.4487,
-    "volume": 0.9161,
-    "press": 0.6131,
-    "reach": 0.6264
-   },
-   "contrib": {
-    "network": 2.5,
-    "quality": 13.46,
-    "volume": 9.16,
-    "press": 15.33,
-    "reach": 6.26
-   },
-   "score": 46.71,
-   "branches": [],
-   "rank": 82,
-   "follower_rank": 2
-  },
-  {
-   "handle": "sconeholic.tw",
-   "name": "Sconeholic 司康中毒 Coffee House",
-   "gname": "Sconeholic 司康中毒 Coffee House （平日不限時咖啡廳)",
-   "display": "Sconeholic 司康中毒 Coffee House",
-   "type": "cafe",
-   "area": "台北市",
-   "district": "大同區",
-   "address": "103臺北市大同區建泰里太原路97巷8號",
-   "followers": 5605,
-   "bio": "How can I live without scone ? / 被司康耽誤的咖啡廳✨ / - / 十一月店休日： / 每週二、11/18、11/28、11/29、11/30 / 營業時間見置頂文 /  .  / 無訂位 / 低消飲品一杯 / 平日無限時 / .  / 店取預訂、宅配，請點連結🔗 / .  / 迷你司康｜婚禮小物｜茶會客製 / -",
-   "ig": "https://www.instagram.com/sconeholic.tw/",
-   "maps": "https://www.google.com/maps/place/?q=place_id:ChIJV0uo54SpQjQR2rvqscR_bAM",
-   "rating": 4.5,
-   "reviews": 140,
-   "stars": [
-    6,
-    2,
-    13,
-    20,
-    99
-   ],
-   "bayes": 4.501,
-   "topics": [
-    [
-     "香",
-     16
-    ],
-    [
-     "口感",
-     13
-    ],
-    [
-     "餅乾",
-     11
-    ],
-    [
-     "烤",
-     11
-    ],
-    [
-     "復古",
-     8
-    ],
-    [
-     "凝脂奶油",
-     7
-    ],
-    [
-     "紅烏龍",
-     7
-    ],
-    [
-     "布丁",
-     7
-    ],
-    [
-     "伯爵茶",
-     6
-    ],
-    [
-     "肉鬆",
-     5
-    ]
-   ],
-   "categories": [
-    "咖啡店"
-   ],
-   "match": "name",
-   "endorse": 0.0,
-   "endorsers": [],
-   "centrality": 1.0,
-   "related": 1,
-   "press": [
-    {
-     "outlet": "corner.inc",
-     "label": "corner.inc",
-     "url": "https://www.corner.inc/place/pvKJhQtserkg",
-     "title": "Sconeholic 司康中毒Coffee House （平日不限時咖啡廳 - Corner"
-    },
-    {
-     "outlet": "team-taiwan.app",
-     "label": "team-taiwan.app",
-     "url": "https://team-taiwan.app/store/Sconeholic-%E5%8F%B8%E5%BA%B7%E4%B8%AD%E6%AF%92-Coffee-House-%E5%B9%B3%E6%97%A5%E4%B8%8D%E9%99%90%E6%99%82%E5%92%96%E5%95%A1%E5%BB%B3-1075",
-     "title": "Sconeholic 司康中毒Coffee House （平日不限時咖啡廳"
-    }
-   ],
-   "outlets": 2,
-   "trusted": 0,
-   "notes": {},
-   "comp": {
-    "network": 0.1663,
-    "quality": 0.5563,
-    "volume": 0.653,
-    "press": 0.6131,
-    "reach": 0.3255
-   },
-   "contrib": {
-    "network": 4.16,
-    "quality": 16.69,
-    "volume": 6.53,
-    "press": 15.33,
-    "reach": 3.25
-   },
-   "score": 45.96,
-   "branches": [],
-   "rank": 83,
-   "follower_rank": 53
+   "rank": 76,
+   "follower_rank": 97
   },
   {
    "handle": "normal_coffee",
@@ -11876,7 +10973,7 @@
     99,
     268
    ],
-   "bayes": 4.409,
+   "bayes": 4.408,
    "topics": [
     [
      "豆子",
@@ -11946,23 +11043,23 @@
    "trusted": 1,
    "notes": {},
    "comp": {
-    "network": 0.0998,
-    "quality": 0.4545,
-    "volume": 0.7961,
+    "network": 0.0836,
+    "quality": 0.4533,
+    "volume": 0.7915,
     "press": 0.7737,
     "reach": 0.2464
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 13.63,
-    "volume": 7.96,
+    "network": 2.09,
+    "quality": 13.6,
+    "volume": 7.92,
     "press": 19.34,
     "reach": 2.46
    },
-   "score": 45.9,
+   "score": 45.41,
    "branches": [],
-   "rank": 84,
-   "follower_rank": 69
+   "rank": 77,
+   "follower_rank": 64
   },
   {
    "handle": "chingshan_cafe",
@@ -11986,7 +11083,7 @@
     54,
     171
    ],
-   "bayes": 4.5,
+   "bayes": 4.499,
    "topics": [
     [
      "舒適",
@@ -12058,23 +11155,132 @@
    "trusted": 1,
    "notes": {},
    "comp": {
-    "network": 0.0998,
-    "quality": 0.556,
-    "volume": 0.7332,
+    "network": 0.0836,
+    "quality": 0.5542,
+    "volume": 0.729,
     "press": 0.7737,
     "reach": 0.0
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 16.68,
-    "volume": 7.33,
+    "network": 2.09,
+    "quality": 16.62,
+    "volume": 7.29,
     "press": 19.34,
     "reach": 0.0
    },
-   "score": 45.85,
+   "score": 45.35,
    "branches": [],
-   "rank": 85,
-   "follower_rank": 129
+   "rank": 78,
+   "follower_rank": 120
+  },
+  {
+   "handle": "sconeholic.tw",
+   "name": "Sconeholic 司康中毒 Coffee House",
+   "gname": "Sconeholic 司康中毒 Coffee House （平日不限時咖啡廳)",
+   "display": "Sconeholic 司康中毒 Coffee House",
+   "type": "cafe",
+   "area": "台北市",
+   "district": "大同區",
+   "address": "103臺北市大同區建泰里太原路97巷8號",
+   "followers": 5605,
+   "bio": "How can I live without scone ? / 被司康耽誤的咖啡廳✨ / - / 十一月店休日： / 每週二、11/18、11/28、11/29、11/30 / 營業時間見置頂文 /  .  / 無訂位 / 低消飲品一杯 / 平日無限時 / .  / 店取預訂、宅配，請點連結🔗 / .  / 迷你司康｜婚禮小物｜茶會客製 / -",
+   "ig": "https://www.instagram.com/sconeholic.tw/",
+   "maps": "https://www.google.com/maps/place/?q=place_id:ChIJV0uo54SpQjQR2rvqscR_bAM",
+   "rating": 4.5,
+   "reviews": 140,
+   "stars": [
+    6,
+    2,
+    13,
+    20,
+    99
+   ],
+   "bayes": 4.498,
+   "topics": [
+    [
+     "香",
+     16
+    ],
+    [
+     "口感",
+     13
+    ],
+    [
+     "餅乾",
+     11
+    ],
+    [
+     "烤",
+     11
+    ],
+    [
+     "復古",
+     8
+    ],
+    [
+     "凝脂奶油",
+     7
+    ],
+    [
+     "紅烏龍",
+     7
+    ],
+    [
+     "布丁",
+     7
+    ],
+    [
+     "伯爵茶",
+     6
+    ],
+    [
+     "肉鬆",
+     5
+    ]
+   ],
+   "categories": [
+    "咖啡店"
+   ],
+   "match": "name",
+   "endorse": 0.0,
+   "endorsers": [],
+   "centrality": 1.0,
+   "related": 1,
+   "press": [
+    {
+     "outlet": "corner.inc",
+     "label": "corner.inc",
+     "url": "https://www.corner.inc/place/pvKJhQtserkg",
+     "title": "Sconeholic 司康中毒Coffee House （平日不限時咖啡廳 - Corner"
+    },
+    {
+     "outlet": "team-taiwan.app",
+     "label": "team-taiwan.app",
+     "url": "https://team-taiwan.app/store/Sconeholic-%E5%8F%B8%E5%BA%B7%E4%B8%AD%E6%AF%92-Coffee-House-%E5%B9%B3%E6%97%A5%E4%B8%8D%E9%99%90%E6%99%82%E5%92%96%E5%95%A1%E5%BB%B3-1075",
+     "title": "Sconeholic 司康中毒Coffee House （平日不限時咖啡廳"
+    }
+   ],
+   "outlets": 2,
+   "trusted": 0,
+   "notes": {},
+   "comp": {
+    "network": 0.1394,
+    "quality": 0.5532,
+    "volume": 0.6493,
+    "press": 0.6131,
+    "reach": 0.3255
+   },
+   "contrib": {
+    "network": 3.48,
+    "quality": 16.6,
+    "volume": 6.49,
+    "press": 15.33,
+    "reach": 3.25
+   },
+   "score": 45.16,
+   "branches": [],
+   "rank": 79,
+   "follower_rank": 49
   },
   {
    "handle": "serene_day_cafe",
@@ -12098,7 +11304,7 @@
     48,
     194
    ],
-   "bayes": 4.587,
+   "bayes": 4.586,
    "topics": [
     [
      "烤",
@@ -12163,23 +11369,23 @@
    "trusted": 1,
    "notes": {},
    "comp": {
-    "network": 0.0998,
-    "quality": 0.6526,
-    "volume": 0.7377,
+    "network": 0.0836,
+    "quality": 0.6508,
+    "volume": 0.7335,
     "press": 0.6131,
     "reach": 0.0
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 19.58,
-    "volume": 7.38,
+    "network": 2.09,
+    "quality": 19.52,
+    "volume": 7.34,
     "press": 15.33,
     "reach": 0.0
    },
-   "score": 44.78,
+   "score": 44.28,
    "branches": [],
-   "rank": 86,
-   "follower_rank": 123
+   "rank": 80,
+   "follower_rank": 114
   },
   {
    "handle": "yokosocoffeestand_2nd",
@@ -12203,7 +11409,7 @@
     15,
     206
    ],
-   "bayes": 4.756,
+   "bayes": 4.754,
    "topics": [
     [
      "拿鐵",
@@ -12266,20 +11472,20 @@
    "trusted": 0,
    "notes": {},
    "comp": {
-    "network": 0.0998,
-    "quality": 0.84,
-    "volume": 0.7181,
+    "network": 0.0836,
+    "quality": 0.838,
+    "volume": 0.714,
     "press": 0.3869,
     "reach": 0.0133
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 25.2,
-    "volume": 7.18,
+    "network": 2.09,
+    "quality": 25.14,
+    "volume": 7.14,
     "press": 9.67,
     "reach": 0.13
    },
-   "score": 44.68,
+   "score": 44.17,
    "branches": [
     {
      "handle": "yokosocoffeestand",
@@ -12289,7 +11495,7 @@
      "address": "105臺北市松山區介壽里民生東路五段20號",
      "rating": 4.4,
      "reviews": 352,
-     "score": 26.35,
+     "score": 25.86,
      "ig": "https://www.instagram.com/yokosocoffeestand/",
      "maps": "https://www.google.com/maps/place/?q=place_id:ChIJ0QDnrdirQjQRD2OySM4pb9I"
     },
@@ -12301,13 +11507,13 @@
      "address": "106臺北市大安區建安里敦化南路一段161巷43-1號",
      "rating": 4.6,
      "reviews": 50,
-     "score": 26.25,
+     "score": 25.63,
      "ig": "https://www.instagram.com/yokosocoffeestand_3rd/",
      "maps": "https://www.google.com/maps/place/?q=place_id:ChIJ2xaPTwCrQjQR_Auur3qUw6g"
     }
    ],
-   "rank": 87,
-   "follower_rank": 106
+   "rank": 81,
+   "follower_rank": 99
   },
   {
    "handle": "leiblecoffeetaipei",
@@ -12331,7 +11537,7 @@
     39,
     110
    ],
-   "bayes": 4.419,
+   "bayes": 4.417,
    "topics": [
     [
      "貝果",
@@ -12401,23 +11607,23 @@
    "trusted": 1,
    "notes": {},
    "comp": {
-    "network": 0.0998,
-    "quality": 0.4656,
-    "volume": 0.6837,
+    "network": 0.0836,
+    "quality": 0.463,
+    "volume": 0.6798,
     "press": 0.7737,
     "reach": 0.1769
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 13.97,
-    "volume": 6.84,
+    "network": 2.09,
+    "quality": 13.89,
+    "volume": 6.8,
     "press": 19.34,
     "reach": 1.77
    },
-   "score": 44.41,
+   "score": 43.89,
    "branches": [],
-   "rank": 88,
-   "follower_rank": 82
+   "rank": 82,
+   "follower_rank": 75
   },
   {
    "handle": "cafesole.tw",
@@ -12441,7 +11647,7 @@
     13,
     87
    ],
-   "bayes": 4.646,
+   "bayes": 4.643,
    "topics": [
     [
      "空間",
@@ -12513,23 +11719,23 @@
    "trusted": 0,
    "notes": {},
    "comp": {
-    "network": 0.21,
-    "quality": 0.7182,
-    "volume": 0.6178,
+    "network": 0.1921,
+    "quality": 0.7145,
+    "volume": 0.6143,
     "press": 0.3869,
     "reach": 0.1734
    },
    "contrib": {
-    "network": 5.25,
-    "quality": 21.55,
-    "volume": 6.18,
+    "network": 4.8,
+    "quality": 21.43,
+    "volume": 6.14,
     "press": 9.67,
     "reach": 1.73
    },
-   "score": 44.38,
+   "score": 43.78,
    "branches": [],
-   "rank": 89,
-   "follower_rank": 83
+   "rank": 83,
+   "follower_rank": 76
   },
   {
    "handle": "drinkeatcoffee",
@@ -12553,7 +11759,7 @@
     23,
     144
    ],
-   "bayes": 4.744,
+   "bayes": 4.742,
    "topics": [
     [
      "拿鐵",
@@ -12616,23 +11822,23 @@
    "trusted": 0,
    "notes": {},
    "comp": {
-    "network": 0.0998,
-    "quality": 0.8266,
-    "volume": 0.68,
+    "network": 0.0836,
+    "quality": 0.824,
+    "volume": 0.6761,
     "press": 0.3869,
     "reach": 0.0
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 24.8,
-    "volume": 6.8,
+    "network": 2.09,
+    "quality": 24.72,
+    "volume": 6.76,
     "press": 9.67,
     "reach": 0.0
    },
-   "score": 43.77,
+   "score": 43.24,
    "branches": [],
-   "rank": 90,
-   "follower_rank": 128
+   "rank": 84,
+   "follower_rank": 119
   },
   {
    "handle": "gabee_global",
@@ -12656,7 +11862,7 @@
     384,
     611
    ],
-   "bayes": 4.307,
+   "bayes": 4.306,
    "topics": [
     [
      "鬆餅",
@@ -12726,23 +11932,23 @@
    "trusted": 1,
    "notes": {},
    "comp": {
-    "network": 0.0998,
-    "quality": 0.3407,
-    "volume": 0.9349,
+    "network": 0.0836,
+    "quality": 0.3402,
+    "volume": 0.9295,
     "press": 0.7737,
     "reach": 0.2009
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 10.22,
-    "volume": 9.35,
+    "network": 2.09,
+    "quality": 10.21,
+    "volume": 9.3,
     "press": 19.34,
     "reach": 2.01
    },
-   "score": 43.42,
+   "score": 42.94,
    "branches": [],
-   "rank": 91,
-   "follower_rank": 77
+   "rank": 85,
+   "follower_rank": 70
   },
   {
    "handle": "staysunnycafe",
@@ -12766,7 +11972,7 @@
     28,
     233
    ],
-   "bayes": 4.5,
+   "bayes": 4.499,
    "topics": [
     [
      "義大利麵",
@@ -12834,23 +12040,23 @@
    "trusted": 1,
    "notes": {},
    "comp": {
-    "network": 0.0998,
-    "quality": 0.556,
-    "volume": 0.7535,
+    "network": 0.0836,
+    "quality": 0.5543,
+    "volume": 0.7492,
     "press": 0.6131,
     "reach": 0.137
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 16.68,
-    "volume": 7.53,
+    "network": 2.09,
+    "quality": 16.63,
+    "volume": 7.49,
     "press": 15.33,
     "reach": 1.37
    },
-   "score": 43.41,
+   "score": 42.91,
    "branches": [],
-   "rank": 92,
-   "follower_rank": 93
+   "rank": 86,
+   "follower_rank": 86
   },
   {
    "handle": "coffeelab2000",
@@ -12940,123 +12146,134 @@
    "trusted": 1,
    "notes": {},
    "comp": {
-    "network": 0.0998,
-    "quality": 0.5557,
-    "volume": 0.8856,
+    "network": 0.0836,
+    "quality": 0.5551,
+    "volume": 0.8806,
     "press": 0.6131,
     "reach": 0.0
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 16.67,
-    "volume": 8.86,
+    "network": 2.09,
+    "quality": 16.65,
+    "volume": 8.81,
     "press": 15.33,
     "reach": 0.0
    },
-   "score": 43.35,
+   "score": 42.88,
    "branches": [],
-   "rank": 93,
-   "follower_rank": 114
+   "rank": 87,
+   "follower_rank": 107
   },
   {
-   "handle": "coffee_soul_156",
-   "name": "鑠。咖啡/甜點專賣店",
-   "gname": "鑠。咖啡/蛋糕專賣店 甜點外燴 咖啡教學 企業包班 開幕茶會 自家烘焙咖啡 客製化蛋糕 急單 下午茶餐盒 平日八點後只接蛋糕/咖啡",
-   "display": "鑠咖啡",
-   "type": "roaster",
+   "handle": "gucoffee_songshan",
+   "name": "汩咖啡",
+   "gname": "汩咖啡 gu coffee ( 營運時間以ig公告為準 ）",
+   "display": "汩咖啡",
+   "type": "cafe",
    "area": "台北市",
    "district": "松山區",
-   "address": "105臺北市松山區吉仁里八德路三段74巷41號",
-   "followers": 3278,
-   "bio": "「把咖啡變簡單 ☕」 / 咖啡 × 甜點 × 教學 ☕🍰 / 一站式咖啡甜點品牌 / 從學咖啡到活動甜點 / 💥咖啡豆｜濾掛咖啡 / 💥咖啡課程｜器具設備 / 💥客製蛋糕｜甜點餐盒｜活動外燴 / 📍小巨蛋門市 / #客製化蛋糕 #咖啡課程 #甜點外燴 #下午茶餐盒",
-   "ig": "https://www.instagram.com/coffee_soul_156/",
-   "maps": "https://www.google.com/maps/place/?q=place_id:ChIJjSCX1KGxQjQRhcXvjP1Hjes",
-   "rating": 4.9,
-   "reviews": 817,
+   "address": "105臺北市松山區復建里光復南路6巷48弄7號一樓",
+   "followers": 7073,
+   "bio": "🎴 MON -  FRI ｜11:00 - 18:00 / 🎴 SAT - SUN  ｜11:00 - 18:00 / 🎴 僅接受當日預約：（02）2579-0355",
+   "ig": "https://www.instagram.com/gucoffee_songshan/",
+   "maps": "https://www.google.com/maps/place/?q=place_id:ChIJwV1LzxerQjQRpoW5sJkGZlM",
+   "rating": 4.4,
+   "reviews": 336,
    "stars": [
-    7,
-    2,
-    8,
-    29,
-    771
+    18,
+    12,
+    20,
+    49,
+    237
    ],
-   "bayes": 4.881,
+   "bayes": 4.41,
    "topics": [
     [
-     "咖啡拉花",
-     120
+     "布丁",
+     51
     ],
     [
-     "老師",
-     113
+     "日式",
+     35
     ],
     [
-     "課程",
-     88
+     "巴斯克",
+     24
     ],
     [
-     "手",
-     37
+     "咖哩",
+     18
     ],
     [
-     "學習",
-     33
+     "侘寂",
+     16
     ],
     [
-     "知識",
-     17
+     "薩農圖",
+     16
     ],
     [
-     "初霜",
+     "玄米",
+     13
+    ],
+    [
+     "茶泡飯",
      11
     ],
     [
-     "咖啡豆",
-     10
-    ],
-    [
-     "咖啡師",
+     "碎石",
      7
     ],
     [
-     "技巧",
-     7
+     "檯燈",
+     5
     ]
    ],
    "categories": [
-    "餅店",
-    "到會服務",
-    "咖啡店",
-    "咖啡批發商",
-    "甜品店"
+    "咖啡店"
    ],
-   "match": "name",
-   "endorse": 0.0,
-   "endorsers": [],
-   "centrality": 0.6,
+   "match": "ig",
+   "endorse": 0.23,
+   "endorsers": [
+    {
+     "handle": "melt.by.michael",
+     "kind": "venue",
+     "posts": 1,
+     "business": true,
+     "followers": 175,
+     "score": 0.23
+    }
+   ],
+   "centrality": 0.77,
    "related": 0,
-   "press": [],
-   "outlets": 0,
+   "press": [
+    {
+     "outlet": "iceoffice.com.tw",
+     "url": "https://iceoffice.com.tw/taipeicafemap/",
+     "title": ""
+    }
+   ],
+   "outlets": 1,
    "trusted": 0,
    "notes": {},
    "comp": {
-    "network": 0.0998,
-    "quality": 0.9794,
-    "volume": 0.885,
-    "press": 0.0,
-    "reach": 0.2242
+    "network": 0.2427,
+    "quality": 0.4552,
+    "volume": 0.7636,
+    "press": 0.3869,
+    "reach": 0.3694
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 29.38,
-    "volume": 8.85,
-    "press": 0.0,
-    "reach": 2.24
+    "network": 6.07,
+    "quality": 13.65,
+    "volume": 7.64,
+    "press": 9.67,
+    "reach": 3.69
    },
-   "score": 42.97,
+   "score": 40.72,
    "branches": [],
-   "rank": 94,
-   "follower_rank": 73
+   "rank": 88,
+   "follower_rank": 42
   },
   {
    "handle": "coffee_kappaya",
@@ -13080,7 +12297,7 @@
     38,
     130
    ],
-   "bayes": 4.162,
+   "bayes": 4.161,
    "topics": [
     [
      "咖哩",
@@ -13153,134 +12370,23 @@
    "trusted": 2,
    "notes": {},
    "comp": {
-    "network": 0.1578,
-    "quality": 0.1805,
-    "volume": 0.7111,
+    "network": 0.1322,
+    "quality": 0.1784,
+    "volume": 0.707,
     "press": 0.8982,
     "reach": 0.2469
    },
    "contrib": {
-    "network": 3.94,
-    "quality": 5.42,
-    "volume": 7.11,
+    "network": 3.31,
+    "quality": 5.35,
+    "volume": 7.07,
     "press": 22.46,
     "reach": 2.47
    },
-   "score": 41.4,
+   "score": 40.65,
    "branches": [],
-   "rank": 95,
-   "follower_rank": 68
-  },
-  {
-   "handle": "gucoffee_songshan",
-   "name": "汩咖啡",
-   "gname": "汩咖啡 gu coffee ( 營運時間以ig公告為準 ）",
-   "display": "汩咖啡",
-   "type": "cafe",
-   "area": "台北市",
-   "district": "松山區",
-   "address": "105臺北市松山區復建里光復南路6巷48弄7號一樓",
-   "followers": 7073,
-   "bio": "🎴 MON -  FRI ｜11:00 - 18:00 / 🎴 SAT - SUN  ｜11:00 - 18:00 / 🎴 僅接受當日預約：（02）2579-0355",
-   "ig": "https://www.instagram.com/gucoffee_songshan/",
-   "maps": "https://www.google.com/maps/place/?q=place_id:ChIJwV1LzxerQjQRpoW5sJkGZlM",
-   "rating": 4.4,
-   "reviews": 336,
-   "stars": [
-    18,
-    12,
-    20,
-    49,
-    237
-   ],
-   "bayes": 4.411,
-   "topics": [
-    [
-     "布丁",
-     51
-    ],
-    [
-     "日式",
-     35
-    ],
-    [
-     "巴斯克",
-     24
-    ],
-    [
-     "咖哩",
-     18
-    ],
-    [
-     "侘寂",
-     16
-    ],
-    [
-     "薩農圖",
-     16
-    ],
-    [
-     "玄米",
-     13
-    ],
-    [
-     "茶泡飯",
-     11
-    ],
-    [
-     "碎石",
-     7
-    ],
-    [
-     "檯燈",
-     5
-    ]
-   ],
-   "categories": [
-    "咖啡店"
-   ],
-   "match": "ig",
-   "endorse": 0.23,
-   "endorsers": [
-    {
-     "handle": "melt.by.michael",
-     "kind": "venue",
-     "posts": 1,
-     "business": true,
-     "followers": 175,
-     "score": 0.23
-    }
-   ],
-   "centrality": 0.77,
-   "related": 0,
-   "press": [
-    {
-     "outlet": "iceoffice.com.tw",
-     "url": "https://iceoffice.com.tw/taipeicafemap/",
-     "title": ""
-    }
-   ],
-   "outlets": 1,
-   "trusted": 0,
-   "notes": {},
-   "comp": {
-    "network": 0.2638,
-    "quality": 0.4566,
-    "volume": 0.768,
-    "press": 0.3869,
-    "reach": 0.3694
-   },
-   "contrib": {
-    "network": 6.59,
-    "quality": 13.7,
-    "volume": 7.68,
-    "press": 9.67,
-    "reach": 3.69
-   },
-   "score": 41.34,
-   "branches": [],
-   "rank": 96,
-   "follower_rank": 44
+   "rank": 89,
+   "follower_rank": 63
   },
   {
    "handle": "cafe_waku",
@@ -13304,7 +12410,7 @@
     114,
     361
    ],
-   "bayes": 4.313,
+   "bayes": 4.312,
    "topics": [
     [
      "布丁",
@@ -13369,23 +12475,23 @@
    "trusted": 1,
    "notes": {},
    "comp": {
-    "network": 0.1578,
-    "quality": 0.3481,
-    "volume": 0.8375,
+    "network": 0.1322,
+    "quality": 0.3472,
+    "volume": 0.8328,
     "press": 0.6131,
     "reach": 0.2871
    },
    "contrib": {
-    "network": 3.94,
-    "quality": 10.44,
-    "volume": 8.38,
+    "network": 3.31,
+    "quality": 10.42,
+    "volume": 8.33,
     "press": 15.33,
     "reach": 2.87
    },
-   "score": 40.96,
+   "score": 40.25,
    "branches": [],
-   "rank": 97,
-   "follower_rank": 59
+   "rank": 90,
+   "follower_rank": 55
   },
   {
    "handle": "dvccoffee",
@@ -13409,7 +12515,7 @@
     150,
     485
    ],
-   "bayes": 4.5,
+   "bayes": 4.499,
    "topics": [
     [
      "布丁",
@@ -13472,23 +12578,23 @@
    "trusted": 0,
    "notes": {},
    "comp": {
-    "network": 0.0998,
-    "quality": 0.5557,
-    "volume": 0.8644,
+    "network": 0.0836,
+    "quality": 0.555,
+    "volume": 0.8595,
     "press": 0.3869,
     "reach": 0.261
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 16.67,
-    "volume": 8.64,
+    "network": 2.09,
+    "quality": 16.65,
+    "volume": 8.59,
     "press": 9.67,
     "reach": 2.61
    },
-   "score": 40.09,
+   "score": 39.62,
    "branches": [],
-   "rank": 98,
-   "follower_rank": 64
+   "rank": 91,
+   "follower_rank": 60
   },
   {
    "handle": "anywaycoffeemore",
@@ -13512,7 +12618,7 @@
     5,
     301
    ],
-   "bayes": 4.943,
+   "bayes": 4.941,
    "topics": [
     [
      "貓",
@@ -13568,128 +12674,23 @@
    "trusted": 0,
    "notes": {},
    "comp": {
-    "network": 0.0998,
+    "network": 0.0836,
     "quality": 1.0,
-    "volume": 0.7557,
+    "volume": 0.7513,
     "press": 0.0,
     "reach": 0.0
    },
    "contrib": {
-    "network": 2.5,
+    "network": 2.09,
     "quality": 30.0,
-    "volume": 7.56,
+    "volume": 7.51,
     "press": 0.0,
     "reach": 0.0
    },
-   "score": 40.05,
+   "score": 39.6,
    "branches": [],
-   "rank": 99,
-   "follower_rank": 122
-  },
-  {
-   "handle": "cafe_le_mahe",
-   "name": "CAFE LE MAHE",
-   "gname": "CAFE LE MAHE",
-   "display": "CAFE LE MAHE",
-   "type": "cafe",
-   "area": "台北市",
-   "district": "大安區",
-   "address": "106臺北市大安區住安里信義路四段30巷7弄9號",
-   "followers": 709,
-   "bio": "Provide fine coffee, food & dessert / OPEN HOURS / 09:30-17:00",
-   "ig": "https://www.instagram.com/cafe_le_mahe/",
-   "maps": "https://www.google.com/maps/place/?q=place_id:ChIJF8QE8ESrQjQR54Q3gYiJ2yw",
-   "rating": 4.4,
-   "reviews": 516,
-   "stars": [
-    24,
-    31,
-    31,
-    81,
-    349
-   ],
-   "bayes": 4.407,
-   "topics": [
-    [
-     "牛排",
-     99
-    ],
-    [
-     "布丁",
-     83
-    ],
-    [
-     "脆餅",
-     51
-    ],
-    [
-     "套餐午餐",
-     40
-    ],
-    [
-     "巴斯克",
-     37
-    ],
-    [
-     "翼板",
-     21
-    ],
-    [
-     "馬鈴薯塊",
-     14
-    ],
-    [
-     "蓮花",
-     9
-    ],
-    [
-     "餐包",
-     8
-    ],
-    [
-     "檸檬皮",
-     8
-    ]
-   ],
-   "categories": [
-    "早午餐餐廳"
-   ],
-   "match": "name",
-   "endorse": 0.0,
-   "endorsers": [],
-   "centrality": 0.6,
-   "related": 0,
-   "press": [
-    {
-     "outlet": "salihaha.com",
-     "label": "莎莉哈小姐",
-     "url": "https://salihaha.com/mahe/",
-     "title": "大安站咖啡廳【CAFE LE MAHE】被早午餐耽誤的超強巴斯克！香辣牛排義大利麵(菜單)",
-     "date": "2026-07-06",
-     "trusted": true
-    }
-   ],
-   "outlets": 1,
-   "trusted": 1,
-   "notes": {},
-   "comp": {
-    "network": 0.0998,
-    "quality": 0.4527,
-    "volume": 0.8244,
-    "press": 0.6131,
-    "reach": 0.0
-   },
-   "contrib": {
-    "network": 2.5,
-    "quality": 13.58,
-    "volume": 8.24,
-    "press": 15.33,
-    "reach": 0.0
-   },
-   "score": 39.65,
-   "branches": [],
-   "rank": 100,
-   "follower_rank": 121
+   "rank": 92,
+   "follower_rank": 113
   },
   {
    "handle": "bakingkedi_cafe",
@@ -13771,23 +12772,23 @@
    "trusted": 0,
    "notes": {},
    "comp": {
-    "network": 0.0998,
-    "quality": 0.7736,
+    "network": 0.0836,
+    "quality": 0.7733,
     "volume": 1.0,
     "press": 0.0,
     "reach": 0.392
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 23.21,
+    "network": 2.09,
+    "quality": 23.2,
     "volume": 10.0,
     "press": 0.0,
     "reach": 3.92
    },
-   "score": 39.62,
+   "score": 39.21,
    "branches": [],
-   "rank": 101,
-   "follower_rank": 36
+   "rank": 93,
+   "follower_rank": 34
   },
   {
    "handle": "half_moment_coffee",
@@ -13811,7 +12812,7 @@
     3,
     172
    ],
-   "bayes": 4.908,
+   "bayes": 4.905,
    "topics": [
     [
      "舒適",
@@ -13867,23 +12868,23 @@
    "trusted": 0,
    "notes": {},
    "comp": {
-    "network": 0.0998,
+    "network": 0.0836,
     "quality": 1.0,
-    "volume": 0.6822,
+    "volume": 0.6783,
     "press": 0.0,
     "reach": 0.0
    },
    "contrib": {
-    "network": 2.5,
+    "network": 2.09,
     "quality": 30.0,
-    "volume": 6.82,
+    "volume": 6.78,
     "press": 0.0,
     "reach": 0.0
    },
-   "score": 39.32,
+   "score": 38.87,
    "branches": [],
-   "rank": 102,
-   "follower_rank": 136
+   "rank": 94,
+   "follower_rank": 127
   },
   {
    "handle": "barrysnackstore",
@@ -13907,7 +12908,7 @@
     12,
     51
    ],
-   "bayes": 4.565,
+   "bayes": 4.56,
    "topics": [
     [
      "空間",
@@ -13972,119 +12973,23 @@
    "trusted": 0,
    "notes": {},
    "comp": {
-    "network": 0.4885,
-    "quality": 0.6275,
-    "volume": 0.5625,
+    "network": 0.4653,
+    "quality": 0.6225,
+    "volume": 0.5592,
     "press": 0.0,
     "reach": 0.2346
    },
    "contrib": {
-    "network": 12.21,
-    "quality": 18.83,
-    "volume": 5.62,
+    "network": 11.63,
+    "quality": 18.67,
+    "volume": 5.59,
     "press": 0.0,
     "reach": 2.35
    },
-   "score": 39.01,
+   "score": 38.24,
    "branches": [],
-   "rank": 103,
-   "follower_rank": 72
-  },
-  {
-   "handle": "kenryucoffee",
-   "name": "Kenryu Coffee 涓流珈琲",
-   "gname": "涓流珈琲",
-   "display": "涓流珈琲",
-   "type": "cafe",
-   "area": "台北市",
-   "district": "中山區",
-   "address": "104臺北市中山區正得里林森北路96之3號",
-   "followers": 105,
-   "bio": "☕️ AI手沖精品咖啡 / 地址：台北市中山區林森北路96之3號 / 試營運中(外帶／內用) / 週一～週日| 09:00～18:00 / （來之前可先私訊IG，避免週末彈性休息）",
-   "ig": "https://www.instagram.com/kenryucoffee/",
-   "maps": "https://www.google.com/maps/place/?q=place_id:ChIJqQ9Nh2WpQjQRS8mtpIxfR5s",
-   "rating": 5,
-   "reviews": 111,
-   "stars": [
-    0,
-    0,
-    0,
-    1,
-    110
-   ],
-   "bayes": 4.868,
-   "topics": [
-    [
-     "香",
-     13
-    ],
-    [
-     "苦",
-     8
-    ],
-    [
-     "杯",
-     8
-    ],
-    [
-     "AI",
-     6
-    ],
-    [
-     "豆",
-     5
-    ],
-    [
-     "口感",
-     5
-    ],
-    [
-     "甜",
-     5
-    ],
-    [
-     "新拉丁語",
-     3
-    ],
-    [
-     "音色",
-     2
-    ],
-    [
-     "匠人",
-     2
-    ]
-   ],
-   "categories": [
-    "咖啡店"
-   ],
-   "match": "name",
-   "endorse": 0.0,
-   "endorsers": [],
-   "centrality": 0.6,
-   "related": 0,
-   "press": [],
-   "outlets": 0,
-   "trusted": 0,
-   "notes": {},
-   "comp": {
-    "network": 0.0998,
-    "quality": 0.9649,
-    "volume": 0.6226,
-    "press": 0.0,
-    "reach": 0.0
-   },
-   "contrib": {
-    "network": 2.5,
-    "quality": 28.95,
-    "volume": 6.23,
-    "press": 0.0,
-    "reach": 0.0
-   },
-   "score": 37.67,
-   "branches": [],
-   "rank": 104,
-   "follower_rank": 134
+   "rank": 95,
+   "follower_rank": 66
   },
   {
    "handle": "fufuuhome",
@@ -14108,7 +13013,7 @@
     93,
     322
    ],
-   "bayes": 4.5,
+   "bayes": 4.499,
    "topics": [
     [
      "戚風蛋糕",
@@ -14165,22 +13070,118 @@
    "notes": {},
    "comp": {
     "network": 0.35,
-    "quality": 0.5558,
-    "volume": 0.8132,
+    "quality": 0.5547,
+    "volume": 0.8086,
     "press": 0.0,
     "reach": 0.3884
    },
    "contrib": {
     "network": 8.75,
-    "quality": 16.67,
-    "volume": 8.13,
+    "quality": 16.64,
+    "volume": 8.09,
     "press": 0.0,
     "reach": 3.88
    },
-   "score": 37.44,
+   "score": 37.36,
    "branches": [],
-   "rank": 105,
-   "follower_rank": 39
+   "rank": 96,
+   "follower_rank": 37
+  },
+  {
+   "handle": "kenryucoffee",
+   "name": "Kenryu Coffee 涓流珈琲",
+   "gname": "涓流珈琲",
+   "display": "涓流珈琲",
+   "type": "cafe",
+   "area": "台北市",
+   "district": "中山區",
+   "address": "104臺北市中山區正得里林森北路96之3號",
+   "followers": 105,
+   "bio": "☕️ AI手沖精品咖啡 / 地址：台北市中山區林森北路96之3號 / 試營運中(外帶／內用) / 週一～週日| 09:00～18:00 / （來之前可先私訊IG，避免週末彈性休息）",
+   "ig": "https://www.instagram.com/kenryucoffee/",
+   "maps": "https://www.google.com/maps/place/?q=place_id:ChIJqQ9Nh2WpQjQRS8mtpIxfR5s",
+   "rating": 5,
+   "reviews": 111,
+   "stars": [
+    0,
+    0,
+    0,
+    1,
+    110
+   ],
+   "bayes": 4.865,
+   "topics": [
+    [
+     "香",
+     13
+    ],
+    [
+     "苦",
+     8
+    ],
+    [
+     "杯",
+     8
+    ],
+    [
+     "AI",
+     6
+    ],
+    [
+     "豆",
+     5
+    ],
+    [
+     "口感",
+     5
+    ],
+    [
+     "甜",
+     5
+    ],
+    [
+     "新拉丁語",
+     3
+    ],
+    [
+     "音色",
+     2
+    ],
+    [
+     "匠人",
+     2
+    ]
+   ],
+   "categories": [
+    "咖啡店"
+   ],
+   "match": "name",
+   "endorse": 0.0,
+   "endorsers": [],
+   "centrality": 0.6,
+   "related": 0,
+   "press": [],
+   "outlets": 0,
+   "trusted": 0,
+   "notes": {},
+   "comp": {
+    "network": 0.0836,
+    "quality": 0.9612,
+    "volume": 0.619,
+    "press": 0.0,
+    "reach": 0.0
+   },
+   "contrib": {
+    "network": 2.09,
+    "quality": 28.84,
+    "volume": 6.19,
+    "press": 0.0,
+    "reach": 0.0
+   },
+   "score": 37.12,
+   "branches": [],
+   "rank": 97,
+   "follower_rank": 125
   },
   {
    "handle": "picapicafe",
@@ -14274,230 +13275,23 @@
    "trusted": 1,
    "notes": {},
    "comp": {
-    "network": 0.0998,
-    "quality": 0.3403,
-    "volume": 0.9411,
+    "network": 0.0836,
+    "quality": 0.3399,
+    "volume": 0.9358,
     "press": 0.6131,
     "reach": 0.0
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 10.21,
-    "volume": 9.41,
+    "network": 2.09,
+    "quality": 10.2,
+    "volume": 9.36,
     "press": 15.33,
     "reach": 0.0
    },
-   "score": 37.44,
+   "score": 36.97,
    "branches": [],
-   "rank": 106,
-   "follower_rank": 115
-  },
-  {
-   "handle": "greenriver_archive",
-   "name": "Greenriver Roastery • Archive",
-   "gname": "Greenriver Roastery．Archive",
-   "display": "Greenriver Roastery.Archive",
-   "type": "roaster",
-   "area": "台北市",
-   "district": "南港區",
-   "address": "115臺北市南港區中南里中南街121號",
-   "followers": 8995,
-   "bio": "Espresso Bar / Daily Coffee / Beans Supply / EST. 2021｜Taipei , Nangang / ↘︎ / Mon to Fri / 10:00 – 18:00  / Sat to Sun / 10:00 - 19:00  / 寵物友善 / 無提供訂位",
-   "ig": "https://www.instagram.com/greenriver_archive/",
-   "maps": "https://www.google.com/maps/place/?q=place_id:ChIJdxkzd7urQjQRSKq8djHCugw",
-   "rating": 4.1,
-   "reviews": 326,
-   "stars": [
-    36,
-    17,
-    28,
-    58,
-    187
-   ],
-   "bayes": 4.144,
-   "topics": [
-    [
-     "法式吐司",
-     47
-    ],
-    [
-     "座位",
-     29
-    ],
-    [
-     "巴斯克",
-     26
-    ],
-    [
-     "開心果",
-     22
-    ],
-    [
-     "可麗餅",
-     17
-    ],
-    [
-     "日式",
-     16
-    ],
-    [
-     "酪梨",
-     14
-    ],
-    [
-     "冰滴咖啡",
-     10
-    ],
-    [
-     "油封",
-     5
-    ],
-    [
-     "蛋沙拉",
-     5
-    ]
-   ],
-   "categories": [
-    "咖啡店"
-   ],
-   "match": "ig",
-   "endorse": 0.0,
-   "endorsers": [],
-   "centrality": 1.29,
-   "related": 2,
-   "press": [
-    {
-     "outlet": "tenjo.tw",
-     "label": "周花花，甲飽沒",
-     "url": "https://tenjo.tw/greenriver-roastery/",
-     "title": "【新店碧潭咖啡店】綠河咖啡Green River Roastery 老房改建重生、台北街頭最京都的角落",
-     "date": "2022-07-15",
-     "trusted": true
-    }
-   ],
-   "outlets": 1,
-   "trusted": 1,
-   "notes": {},
-   "comp": {
-    "network": 0.2054,
-    "quality": 0.1601,
-    "volume": 0.764,
-    "press": 0.6131,
-    "reach": 0.4148
-   },
-   "contrib": {
-    "network": 5.13,
-    "quality": 4.8,
-    "volume": 7.64,
-    "press": 15.33,
-    "reach": 4.15
-   },
-   "score": 37.05,
-   "branches": [],
-   "rank": 107,
-   "follower_rank": 29
-  },
-  {
-   "handle": "tzubi_coffee",
-   "name": "Tzubi Coffee / 趣未商行",
-   "gname": "Tzubi coffee",
-   "display": "Tzubi coffee",
-   "type": "roaster",
-   "area": "台北市",
-   "district": "大安區",
-   "address": "106臺北市大安區建倫里安和路一段21巷24號",
-   "followers": 16763,
-   "bio": "Tzubi coffee® / official instagram / 生日蛋糕、咖啡豆濾掛包訂購表單⇊",
-   "ig": "https://www.instagram.com/tzubi_coffee/",
-   "maps": "https://www.google.com/maps/place/?q=place_id:ChIJK_BQd8-rQjQRrrEHdDAOqXM",
-   "rating": 4.3,
-   "reviews": 955,
-   "stars": [
-    36,
-    33,
-    74,
-    242,
-    570
-   ],
-   "bayes": 4.308,
-   "topics": [
-    [
-     "無花果",
-     86
-    ],
-    [
-     "戚風蛋糕",
-     68
-    ],
-    [
-     "拉花",
-     62
-    ],
-    [
-     "燉飯",
-     41
-    ],
-    [
-     "葡萄",
-     36
-    ],
-    [
-     "伯爵",
-     34
-    ],
-    [
-     "焙茶",
-     20
-    ],
-    [
-     "生日蛋糕",
-     12
-    ],
-    [
-     "草莓蛋糕",
-     11
-    ],
-    [
-     "奶油蛋糕",
-     9
-    ]
-   ],
-   "categories": [
-    "咖啡店"
-   ],
-   "match": "name",
-   "endorse": 0.0,
-   "endorsers": [],
-   "centrality": 0.6,
-   "related": 0,
-   "press": [
-    {
-     "outlet": "cosmopolitan.com",
-     "url": "https://www.cosmopolitan.com/tw/lifestyle/food-and-drink/g34720348/coffee-20201208/",
-     "title": ""
-    }
-   ],
-   "outlets": 1,
-   "trusted": 0,
-   "notes": {},
-   "comp": {
-    "network": 0.0998,
-    "quality": 0.3424,
-    "volume": 0.9055,
-    "press": 0.3869,
-    "reach": 0.5323
-   },
-   "contrib": {
-    "network": 2.5,
-    "quality": 10.27,
-    "volume": 9.06,
-    "press": 9.67,
-    "reach": 5.32
-   },
-   "score": 36.82,
-   "branches": [],
-   "rank": 108,
-   "follower_rank": 7
+   "rank": 98,
+   "follower_rank": 108
   },
   {
    "handle": "sharingspace_cqc",
@@ -14521,7 +13315,7 @@
     118,
     445
    ],
-   "bayes": 4.311,
+   "bayes": 4.31,
    "topics": [
     [
      "建築",
@@ -14619,23 +13413,230 @@
    "trusted": 1,
    "notes": {},
    "comp": {
-    "network": 0.0998,
-    "quality": 0.3457,
-    "volume": 0.8631,
+    "network": 0.0836,
+    "quality": 0.3449,
+    "volume": 0.8582,
     "press": 0.6131,
     "reach": 0.0
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 10.37,
-    "volume": 8.63,
+    "network": 2.09,
+    "quality": 10.35,
+    "volume": 8.58,
     "press": 15.33,
     "reach": 0.0
    },
-   "score": 36.82,
+   "score": 36.35,
    "branches": [],
-   "rank": 109,
-   "follower_rank": 118
+   "rank": 99,
+   "follower_rank": 110
+  },
+  {
+   "handle": "tzubi_coffee",
+   "name": "Tzubi Coffee / 趣未商行",
+   "gname": "Tzubi coffee",
+   "display": "Tzubi coffee",
+   "type": "roaster",
+   "area": "台北市",
+   "district": "大安區",
+   "address": "106臺北市大安區建倫里安和路一段21巷24號",
+   "followers": 16763,
+   "bio": "Tzubi coffee® / official instagram / 生日蛋糕、咖啡豆濾掛包訂購表單⇊",
+   "ig": "https://www.instagram.com/tzubi_coffee/",
+   "maps": "https://www.google.com/maps/place/?q=place_id:ChIJK_BQd8-rQjQRrrEHdDAOqXM",
+   "rating": 4.3,
+   "reviews": 955,
+   "stars": [
+    36,
+    33,
+    74,
+    242,
+    570
+   ],
+   "bayes": 4.308,
+   "topics": [
+    [
+     "無花果",
+     86
+    ],
+    [
+     "戚風蛋糕",
+     68
+    ],
+    [
+     "拉花",
+     62
+    ],
+    [
+     "燉飯",
+     41
+    ],
+    [
+     "葡萄",
+     36
+    ],
+    [
+     "伯爵",
+     34
+    ],
+    [
+     "焙茶",
+     20
+    ],
+    [
+     "生日蛋糕",
+     12
+    ],
+    [
+     "草莓蛋糕",
+     11
+    ],
+    [
+     "奶油蛋糕",
+     9
+    ]
+   ],
+   "categories": [
+    "咖啡店"
+   ],
+   "match": "name",
+   "endorse": 0.0,
+   "endorsers": [],
+   "centrality": 0.6,
+   "related": 0,
+   "press": [
+    {
+     "outlet": "cosmopolitan.com",
+     "url": "https://www.cosmopolitan.com/tw/lifestyle/food-and-drink/g34720348/coffee-20201208/",
+     "title": ""
+    }
+   ],
+   "outlets": 1,
+   "trusted": 0,
+   "notes": {},
+   "comp": {
+    "network": 0.0836,
+    "quality": 0.3418,
+    "volume": 0.9004,
+    "press": 0.3869,
+    "reach": 0.5323
+   },
+   "contrib": {
+    "network": 2.09,
+    "quality": 10.26,
+    "volume": 9.0,
+    "press": 9.67,
+    "reach": 5.32
+   },
+   "score": 36.34,
+   "branches": [],
+   "rank": 100,
+   "follower_rank": 6
+  },
+  {
+   "handle": "greenriver_archive",
+   "name": "Greenriver Roastery • Archive",
+   "gname": "Greenriver Roastery．Archive",
+   "display": "Greenriver Roastery.Archive",
+   "type": "roaster",
+   "area": "台北市",
+   "district": "南港區",
+   "address": "115臺北市南港區中南里中南街121號",
+   "followers": 8995,
+   "bio": "Espresso Bar / Daily Coffee / Beans Supply / EST. 2021｜Taipei , Nangang / ↘︎ / Mon to Fri / 10:00 – 18:00  / Sat to Sun / 10:00 - 19:00  / 寵物友善 / 無提供訂位",
+   "ig": "https://www.instagram.com/greenriver_archive/",
+   "maps": "https://www.google.com/maps/place/?q=place_id:ChIJdxkzd7urQjQRSKq8djHCugw",
+   "rating": 4.1,
+   "reviews": 326,
+   "stars": [
+    36,
+    17,
+    28,
+    58,
+    187
+   ],
+   "bayes": 4.143,
+   "topics": [
+    [
+     "法式吐司",
+     47
+    ],
+    [
+     "座位",
+     29
+    ],
+    [
+     "巴斯克",
+     26
+    ],
+    [
+     "開心果",
+     22
+    ],
+    [
+     "可麗餅",
+     17
+    ],
+    [
+     "日式",
+     16
+    ],
+    [
+     "酪梨",
+     14
+    ],
+    [
+     "冰滴咖啡",
+     10
+    ],
+    [
+     "油封",
+     5
+    ],
+    [
+     "蛋沙拉",
+     5
+    ]
+   ],
+   "categories": [
+    "咖啡店"
+   ],
+   "match": "ig",
+   "endorse": 0.0,
+   "endorsers": [],
+   "centrality": 1.29,
+   "related": 2,
+   "press": [
+    {
+     "outlet": "tenjo.tw",
+     "label": "周花花，甲飽沒",
+     "url": "https://tenjo.tw/greenriver-roastery/",
+     "title": "【新店碧潭咖啡店】綠河咖啡Green River Roastery 老房改建重生、台北街頭最京都的角落",
+     "date": "2022-07-15",
+     "trusted": true
+    }
+   ],
+   "outlets": 1,
+   "trusted": 1,
+   "notes": {},
+   "comp": {
+    "network": 0.1721,
+    "quality": 0.1585,
+    "volume": 0.7596,
+    "press": 0.6131,
+    "reach": 0.4148
+   },
+   "contrib": {
+    "network": 4.3,
+    "quality": 4.76,
+    "volume": 7.6,
+    "press": 15.33,
+    "reach": 4.15
+   },
+   "score": 36.13,
+   "branches": [],
+   "rank": 101,
+   "follower_rank": 27
   },
   {
    "handle": "lecinq_cafe",
@@ -14659,7 +13660,7 @@
     107,
     370
    ],
-   "bayes": 4.313,
+   "bayes": 4.312,
    "topics": [
     [
      "肉桂捲",
@@ -14721,23 +13722,23 @@
    "trusted": 0,
    "notes": {},
    "comp": {
-    "network": 0.0998,
-    "quality": 0.348,
-    "volume": 0.8385,
+    "network": 0.0836,
+    "quality": 0.3471,
+    "volume": 0.8337,
     "press": 0.3869,
     "reach": 0.5116
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 10.44,
-    "volume": 8.38,
+    "network": 2.09,
+    "quality": 10.41,
+    "volume": 8.34,
     "press": 9.67,
     "reach": 5.12
    },
-   "score": 36.11,
+   "score": 35.63,
    "branches": [],
-   "rank": 110,
-   "follower_rank": 12
+   "rank": 102,
+   "follower_rank": 11
   },
   {
    "handle": "avenue_m_coffee",
@@ -14761,7 +13762,7 @@
     4,
     121
    ],
-   "bayes": 4.805,
+   "bayes": 4.803,
    "topics": [
     [
      "拿鐵",
@@ -14817,23 +13818,23 @@
    "trusted": 0,
    "notes": {},
    "comp": {
-    "network": 0.0998,
-    "quality": 0.895,
-    "volume": 0.6412,
+    "network": 0.0836,
+    "quality": 0.8917,
+    "volume": 0.6376,
     "press": 0.0,
     "reach": 0.0
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 26.85,
-    "volume": 6.41,
+    "network": 2.09,
+    "quality": 26.75,
+    "volume": 6.38,
     "press": 0.0,
     "reach": 0.0
    },
-   "score": 35.76,
+   "score": 35.22,
    "branches": [],
-   "rank": 111,
-   "follower_rank": 132
+   "rank": 103,
+   "follower_rank": 123
   },
   {
    "handle": "doko.jia",
@@ -14857,7 +13858,7 @@
     1,
     72
    ],
-   "bayes": 4.824,
+   "bayes": 4.82,
    "topics": [
     [
      "舒適",
@@ -14913,23 +13914,23 @@
    "trusted": 0,
    "notes": {},
    "comp": {
-    "network": 0.0998,
-    "quality": 0.9157,
-    "volume": 0.5679,
+    "network": 0.0836,
+    "quality": 0.9108,
+    "volume": 0.5647,
     "press": 0.0,
     "reach": 0.0
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 27.47,
-    "volume": 5.68,
+    "network": 2.09,
+    "quality": 27.32,
+    "volume": 5.65,
     "press": 0.0,
     "reach": 0.0
    },
-   "score": 35.64,
+   "score": 35.06,
    "branches": [],
-   "rank": 112,
-   "follower_rank": 133
+   "rank": 104,
+   "follower_rank": 124
   },
   {
    "handle": "nor.coffee_",
@@ -14953,7 +13954,7 @@
     1,
     62
    ],
-   "bayes": 4.807,
+   "bayes": 4.802,
    "topics": [
     [
      "拿鐵",
@@ -15009,23 +14010,23 @@
    "trusted": 0,
    "notes": {},
    "comp": {
-    "network": 0.0998,
-    "quality": 0.8967,
-    "volume": 0.5488,
+    "network": 0.0836,
+    "quality": 0.8913,
+    "volume": 0.5456,
     "press": 0.0,
     "reach": 0.0544
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 26.9,
-    "volume": 5.49,
+    "network": 2.09,
+    "quality": 26.74,
+    "volume": 5.46,
     "press": 0.0,
     "reach": 0.54
    },
-   "score": 35.43,
+   "score": 34.83,
    "branches": [],
-   "rank": 113,
-   "follower_rank": 101
+   "rank": 105,
+   "follower_rank": 94
   },
   {
    "handle": "miitour.cafe",
@@ -15049,7 +14050,7 @@
     0,
     65
    ],
-   "bayes": 4.811,
+   "bayes": 4.806,
    "topics": [
     [
      "香",
@@ -15105,23 +14106,23 @@
    "trusted": 0,
    "notes": {},
    "comp": {
-    "network": 0.0998,
-    "quality": 0.9008,
-    "volume": 0.5528,
+    "network": 0.0836,
+    "quality": 0.8955,
+    "volume": 0.5497,
     "press": 0.0,
     "reach": 0.0024
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 27.02,
-    "volume": 5.53,
+    "network": 2.09,
+    "quality": 26.86,
+    "volume": 5.5,
     "press": 0.0,
     "reach": 0.02
    },
-   "score": 35.07,
+   "score": 34.48,
    "branches": [],
-   "rank": 114,
-   "follower_rank": 107
+   "rank": 106,
+   "follower_rank": 100
   },
   {
    "handle": "uscoffee.tw",
@@ -15145,7 +14146,7 @@
     14,
     129
    ],
-   "bayes": 4.736,
+   "bayes": 4.734,
    "topics": [
     [
      "甜點",
@@ -15202,23 +14203,23 @@
    "trusted": 0,
    "notes": {},
    "comp": {
-    "network": 0.0998,
-    "quality": 0.8183,
-    "volume": 0.6594,
+    "network": 0.0836,
+    "quality": 0.8154,
+    "volume": 0.6556,
     "press": 0.0,
     "reach": 0.0916
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 24.55,
-    "volume": 6.59,
+    "network": 2.09,
+    "quality": 24.46,
+    "volume": 6.56,
     "press": 0.0,
     "reach": 0.92
    },
-   "score": 34.55,
+   "score": 34.02,
    "branches": [],
-   "rank": 115,
-   "follower_rank": 99
+   "rank": 107,
+   "follower_rank": 92
   },
   {
    "handle": "coffee_river_tw",
@@ -15242,7 +14243,7 @@
     20,
     168
    ],
-   "bayes": 4.749,
+   "bayes": 4.747,
    "topics": [
     [
      "拿鐵",
@@ -15298,23 +14299,23 @@
    "trusted": 0,
    "notes": {},
    "comp": {
-    "network": 0.0998,
-    "quality": 0.8327,
-    "volume": 0.6964,
+    "network": 0.0836,
+    "quality": 0.8304,
+    "volume": 0.6925,
     "press": 0.0,
     "reach": 0.0
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 24.98,
-    "volume": 6.96,
+    "network": 2.09,
+    "quality": 24.91,
+    "volume": 6.92,
     "press": 0.0,
     "reach": 0.0
    },
-   "score": 34.44,
+   "score": 33.93,
    "branches": [],
-   "rank": 116,
-   "follower_rank": 127
+   "rank": 108,
+   "follower_rank": 118
   },
   {
    "handle": "en.ca.fe",
@@ -15338,7 +14339,7 @@
     3,
     72
    ],
-   "bayes": 4.764,
+   "bayes": 4.76,
    "topics": [
     [
      "舒適",
@@ -15395,23 +14396,23 @@
    "trusted": 0,
    "notes": {},
    "comp": {
-    "network": 0.0998,
-    "quality": 0.8492,
-    "volume": 0.5749,
+    "network": 0.0836,
+    "quality": 0.8445,
+    "volume": 0.5716,
     "press": 0.0,
     "reach": 0.0
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 25.48,
-    "volume": 5.75,
+    "network": 2.09,
+    "quality": 25.33,
+    "volume": 5.72,
     "press": 0.0,
     "reach": 0.0
    },
-   "score": 33.72,
+   "score": 33.14,
    "branches": [],
-   "rank": 117,
-   "follower_rank": 135
+   "rank": 109,
+   "follower_rank": 126
   },
   {
    "handle": "coffee_no.172",
@@ -15435,7 +14436,7 @@
     67,
     291
    ],
-   "bayes": 4.681,
+   "bayes": 4.68,
    "topics": [
     [
      "肉桂捲",
@@ -15491,23 +14492,23 @@
    "trusted": 0,
    "notes": {},
    "comp": {
-    "network": 0.0998,
-    "quality": 0.7566,
-    "volume": 0.7821,
+    "network": 0.0836,
+    "quality": 0.7553,
+    "volume": 0.7776,
     "press": 0.0,
     "reach": 0.0
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 22.7,
-    "volume": 7.82,
+    "network": 2.09,
+    "quality": 22.66,
+    "volume": 7.78,
     "press": 0.0,
     "reach": 0.0
    },
-   "score": 33.01,
+   "score": 32.53,
    "branches": [],
-   "rank": 118,
-   "follower_rank": 112
+   "rank": 110,
+   "follower_rank": 105
   },
   {
    "handle": "lb__cafe",
@@ -15593,23 +14594,23 @@
    "trusted": 0,
    "notes": {},
    "comp": {
-    "network": 0.0998,
-    "quality": 0.3365,
+    "network": 0.0836,
+    "quality": 0.3363,
     "volume": 1.0,
     "press": 0.3869,
     "reach": 0.0
    },
    "contrib": {
-    "network": 2.5,
+    "network": 2.09,
     "quality": 10.09,
     "volume": 10.0,
     "press": 9.67,
     "reach": 0.0
    },
-   "score": 32.26,
+   "score": 31.85,
    "branches": [],
-   "rank": 119,
-   "follower_rank": 110
+   "rank": 111,
+   "follower_rank": 103
   },
   {
    "handle": "fineroom_coffee",
@@ -15633,7 +14634,7 @@
     11,
     170
    ],
-   "bayes": 4.666,
+   "bayes": 4.664,
    "topics": [
     [
      "插座",
@@ -15689,23 +14690,23 @@
    "trusted": 0,
    "notes": {},
    "comp": {
-    "network": 0.0998,
-    "quality": 0.7404,
-    "volume": 0.6958,
+    "network": 0.0836,
+    "quality": 0.738,
+    "volume": 0.6918,
     "press": 0.0,
     "reach": 0.0
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 22.21,
-    "volume": 6.96,
+    "network": 2.09,
+    "quality": 22.14,
+    "volume": 6.92,
     "press": 0.0,
     "reach": 0.0
    },
-   "score": 31.66,
+   "score": 31.15,
    "branches": [],
-   "rank": 120,
-   "follower_rank": 108
+   "rank": 112,
+   "follower_rank": 101
   },
   {
    "handle": "succulentgather",
@@ -15729,7 +14730,7 @@
     103,
     382
    ],
-   "bayes": 4.407,
+   "bayes": 4.406,
    "topics": [
     [
      "戚風",
@@ -15788,23 +14789,23 @@
    "trusted": 0,
    "notes": {},
    "comp": {
-    "network": 0.2184,
-    "quality": 0.4519,
-    "volume": 0.8387,
+    "network": 0.183,
+    "quality": 0.451,
+    "volume": 0.8339,
     "press": 0.0,
     "reach": 0.2854
    },
    "contrib": {
-    "network": 5.46,
-    "quality": 13.56,
-    "volume": 8.39,
+    "network": 4.58,
+    "quality": 13.53,
+    "volume": 8.34,
     "press": 0.0,
     "reach": 2.85
    },
-   "score": 30.26,
+   "score": 29.3,
    "branches": [],
-   "rank": 121,
-   "follower_rank": 60
+   "rank": 113,
+   "follower_rank": 56
   },
   {
    "handle": "tsautang_cafe",
@@ -15828,7 +14829,7 @@
     42,
     227
    ],
-   "bayes": 4.588,
+   "bayes": 4.587,
    "topics": [
     [
      "鬆餅",
@@ -15884,23 +14885,23 @@
    "trusted": 0,
    "notes": {},
    "comp": {
-    "network": 0.0998,
-    "quality": 0.6538,
-    "volume": 0.7513,
+    "network": 0.0836,
+    "quality": 0.6522,
+    "volume": 0.747,
     "press": 0.0,
     "reach": 0.0
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 19.62,
-    "volume": 7.51,
+    "network": 2.09,
+    "quality": 19.57,
+    "volume": 7.47,
     "press": 0.0,
     "reach": 0.0
    },
-   "score": 29.62,
+   "score": 29.13,
    "branches": [],
-   "rank": 122,
-   "follower_rank": 124
+   "rank": 114,
+   "follower_rank": 115
   },
   {
    "handle": "koshicafetaipei",
@@ -15924,7 +14925,7 @@
     47,
     304
    ],
-   "bayes": 4.409,
+   "bayes": 4.408,
    "topics": [
     [
      "芝麻",
@@ -15980,23 +14981,23 @@
    "trusted": 0,
    "notes": {},
    "comp": {
-    "network": 0.0998,
-    "quality": 0.4546,
-    "volume": 0.7942,
+    "network": 0.0836,
+    "quality": 0.4534,
+    "volume": 0.7896,
     "press": 0.0,
     "reach": 0.4259
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 13.64,
-    "volume": 7.94,
+    "network": 2.09,
+    "quality": 13.6,
+    "volume": 7.9,
     "press": 0.0,
     "reach": 4.26
    },
-   "score": 28.33,
+   "score": 27.85,
    "branches": [],
-   "rank": 123,
-   "follower_rank": 25
+   "rank": 115,
+   "follower_rank": 23
   },
   {
    "handle": "bcmidnightcafe",
@@ -16082,23 +15083,23 @@
    "trusted": 0,
    "notes": {},
    "comp": {
-    "network": 0.0998,
-    "quality": 0.1194,
+    "network": 0.0836,
+    "quality": 0.1192,
     "volume": 1.0,
     "press": 0.3869,
     "reach": 0.159
    },
    "contrib": {
-    "network": 2.5,
+    "network": 2.09,
     "quality": 3.58,
     "volume": 10.0,
     "press": 9.67,
     "reach": 1.59
    },
-   "score": 27.34,
+   "score": 26.93,
    "branches": [],
-   "rank": 124,
-   "follower_rank": 91
+   "rank": 116,
+   "follower_rank": 84
   },
   {
    "handle": "meja_221",
@@ -16122,7 +15123,7 @@
     55,
     245
    ],
-   "bayes": 4.5,
+   "bayes": 4.499,
    "topics": [
     [
      "布丁",
@@ -16181,23 +15182,23 @@
    "trusted": 0,
    "notes": {},
    "comp": {
-    "network": 0.0998,
-    "quality": 0.5559,
-    "volume": 0.7691,
+    "network": 0.0836,
+    "quality": 0.5545,
+    "volume": 0.7647,
     "press": 0.0,
     "reach": 0.0358
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 16.68,
-    "volume": 7.69,
+    "network": 2.09,
+    "quality": 16.63,
+    "volume": 7.65,
     "press": 0.0,
     "reach": 0.36
    },
-   "score": 27.22,
+   "score": 26.73,
    "branches": [],
-   "rank": 125,
-   "follower_rank": 103
+   "rank": 117,
+   "follower_rank": 96
   },
   {
    "handle": "resavorcoffee",
@@ -16221,7 +15222,7 @@
     2,
     21
    ],
-   "bayes": 4.614,
+   "bayes": 4.607,
    "topics": [
     [
      "空間",
@@ -16254,23 +15255,23 @@
    "trusted": 0,
    "notes": {},
    "comp": {
-    "network": 0.0998,
-    "quality": 0.6827,
-    "volume": 0.4247,
+    "network": 0.0836,
+    "quality": 0.674,
+    "volume": 0.4223,
     "press": 0.0,
     "reach": 0.0
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 20.48,
-    "volume": 4.25,
+    "network": 2.09,
+    "quality": 20.22,
+    "volume": 4.22,
     "press": 0.0,
     "reach": 0.0
    },
-   "score": 27.22,
+   "score": 26.53,
    "branches": [],
-   "rank": 126,
-   "follower_rank": 113
+   "rank": 118,
+   "follower_rank": 106
   },
   {
    "handle": "pocoffee.taipei",
@@ -16288,7 +15289,7 @@
    "rating": 4.8,
    "reviews": 20,
    "stars": null,
-   "bayes": 4.602,
+   "bayes": 4.594,
    "topics": [],
    "categories": [
     "咖啡店"
@@ -16303,23 +15304,23 @@
    "trusted": 0,
    "notes": {},
    "comp": {
-    "network": 0.0998,
-    "quality": 0.6689,
-    "volume": 0.4017,
+    "network": 0.0836,
+    "quality": 0.6597,
+    "volume": 0.3994,
     "press": 0.0,
     "reach": 0.0
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 20.07,
-    "volume": 4.02,
+    "network": 2.09,
+    "quality": 19.79,
+    "volume": 3.99,
     "press": 0.0,
     "reach": 0.0
    },
-   "score": 26.58,
+   "score": 25.88,
    "branches": [],
-   "rank": 127,
-   "follower_rank": 120
+   "rank": 119,
+   "follower_rank": 112
   },
   {
    "handle": "euno_coffee",
@@ -16343,7 +15344,7 @@
     0,
     14
    ],
-   "bayes": 4.557,
+   "bayes": 4.548,
    "topics": [
     [
      "布丁",
@@ -16363,23 +15364,23 @@
    "trusted": 0,
    "notes": {},
    "comp": {
-    "network": 0.0998,
-    "quality": 0.6187,
-    "volume": 0.3658,
+    "network": 0.0836,
+    "quality": 0.6086,
+    "volume": 0.3638,
     "press": 0.0,
     "reach": 0.1697
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 18.56,
-    "volume": 3.66,
+    "network": 2.09,
+    "quality": 18.26,
+    "volume": 3.64,
     "press": 0.0,
     "reach": 1.7
    },
-   "score": 26.41,
+   "score": 25.68,
    "branches": [],
-   "rank": 128,
-   "follower_rank": 86
+   "rank": 120,
+   "follower_rank": 79
   },
   {
    "handle": "dunekoffee",
@@ -16403,7 +15404,7 @@
     105,
     330
    ],
-   "bayes": 4.22,
+   "bayes": 4.219,
    "topics": [
     [
      "布丁",
@@ -16459,119 +15460,23 @@
    "trusted": 0,
    "notes": {},
    "comp": {
-    "network": 0.1578,
-    "quality": 0.2447,
-    "volume": 0.835,
+    "network": 0.1322,
+    "quality": 0.2438,
+    "volume": 0.8302,
     "press": 0.0,
     "reach": 0.5274
    },
    "contrib": {
-    "network": 3.94,
-    "quality": 7.34,
-    "volume": 8.35,
+    "network": 3.31,
+    "quality": 7.31,
+    "volume": 8.3,
     "press": 0.0,
     "reach": 5.27
    },
-   "score": 24.91,
+   "score": 24.19,
    "branches": [],
-   "rank": 129,
-   "follower_rank": 9
-  },
-  {
-   "handle": "backmount.coffee",
-   "name": "BACKMOUNT.後山咖啡",
-   "gname": "BACKMOUNT後山咖啡",
-   "display": "BACKMOUNT後山咖啡",
-   "type": "roaster",
-   "area": "台北市",
-   "district": "南港區",
-   "address": "115臺北市南港區仁福里福德街373巷23號",
-   "followers": 3666,
-   "bio": "Weekday09:30-17:00 ｜ Weekend09:30-18:00 / 週二、三公休｜自家烘焙咖啡豆｜早午餐｜下午茶 / 團體外送｜商業用豆合作配送 / 商業攝影｜場地租借請私訊詢問🙋‍♂️",
-   "ig": "https://www.instagram.com/backmount.coffee/",
-   "maps": "https://www.google.com/maps/place/?q=place_id:ChIJ6ZLHHYmrQjQRKeVAlEcW3Jk",
-   "rating": 4.3,
-   "reviews": 790,
-   "stars": [
-    54,
-    32,
-    54,
-    140,
-    510
-   ],
-   "bayes": 4.31,
-   "topics": [
-    [
-     "咖啡廳",
-     81
-    ],
-    [
-     "肉桂捲",
-     66
-    ],
-    [
-     "南港公園",
-     31
-    ],
-    [
-     "酪梨",
-     22
-    ],
-    [
-     "美式",
-     20
-    ],
-    [
-     "歐姆蛋",
-     18
-    ],
-    [
-     "優格",
-     17
-    ],
-    [
-     "兒童餐",
-     10
-    ],
-    [
-     "住宅區",
-     8
-    ],
-    [
-     "專案",
-     6
-    ]
-   ],
-   "categories": [
-    "餐廳"
-   ],
-   "match": "ig",
-   "endorse": 0.0,
-   "endorsers": [],
-   "centrality": 0.6,
-   "related": 0,
-   "press": [],
-   "outlets": 0,
-   "trusted": 0,
-   "notes": {},
-   "comp": {
-    "network": 0.0998,
-    "quality": 0.3442,
-    "volume": 0.8805,
-    "press": 0.0,
-    "reach": 0.2453
-   },
-   "contrib": {
-    "network": 2.5,
-    "quality": 10.33,
-    "volume": 8.81,
-    "press": 0.0,
-    "reach": 2.45
-   },
-   "score": 24.08,
-   "branches": [],
-   "rank": 130,
-   "follower_rank": 70
+   "rank": 121,
+   "follower_rank": 8
   },
   {
    "handle": "nmcoffee.1970",
@@ -16651,23 +15556,23 @@
    "trusted": 0,
    "notes": {},
    "comp": {
-    "network": 0.0998,
-    "quality": 0.3401,
-    "volume": 0.9464,
+    "network": 0.0836,
+    "quality": 0.3396,
+    "volume": 0.941,
     "press": 0.0,
     "reach": 0.0
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 10.2,
-    "volume": 9.46,
+    "network": 2.09,
+    "quality": 10.19,
+    "volume": 9.41,
     "press": 0.0,
     "reach": 0.0
    },
-   "score": 22.16,
+   "score": 21.69,
    "branches": [],
-   "rank": 131,
-   "follower_rank": 131
+   "rank": 122,
+   "follower_rank": 122
   },
   {
    "handle": "tinytail_dadaocheng",
@@ -16691,7 +15596,7 @@
     78,
     206
    ],
-   "bayes": 4.139,
+   "bayes": 4.138,
    "topics": [
     [
      "布丁",
@@ -16747,23 +15652,23 @@
    "trusted": 0,
    "notes": {},
    "comp": {
-    "network": 0.2471,
-    "quality": 0.1548,
-    "volume": 0.7806,
+    "network": 0.2071,
+    "quality": 0.1535,
+    "volume": 0.7762,
     "press": 0.0,
     "reach": 0.3525
    },
    "contrib": {
-    "network": 6.18,
-    "quality": 4.64,
-    "volume": 7.81,
+    "network": 5.18,
+    "quality": 4.6,
+    "volume": 7.76,
     "press": 0.0,
     "reach": 3.53
    },
-   "score": 22.15,
+   "score": 21.07,
    "branches": [],
-   "rank": 132,
-   "follower_rank": 49
+   "rank": 123,
+   "follower_rank": 45
   },
   {
    "handle": "coffeeology_tpe",
@@ -16787,7 +15692,7 @@
     86,
     206
    ],
-   "bayes": 4.321,
+   "bayes": 4.319,
    "topics": [
     [
      "拿鐵",
@@ -16843,23 +15748,23 @@
    "trusted": 0,
    "notes": {},
    "comp": {
-    "network": 0.0998,
-    "quality": 0.3562,
-    "volume": 0.7752,
+    "network": 0.0836,
+    "quality": 0.3548,
+    "volume": 0.7708,
     "press": 0.0,
     "reach": 0.0
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 10.69,
-    "volume": 7.75,
+    "network": 2.09,
+    "quality": 10.64,
+    "volume": 7.71,
     "press": 0.0,
     "reach": 0.0
    },
-   "score": 20.93,
+   "score": 20.44,
    "branches": [],
-   "rank": 133,
-   "follower_rank": 130
+   "rank": 124,
+   "follower_rank": 121
   },
   {
    "handle": "libocafe",
@@ -16942,23 +15847,23 @@
    "trusted": 0,
    "notes": {},
    "comp": {
-    "network": 0.0998,
-    "quality": 0.2356,
-    "volume": 0.9072,
+    "network": 0.0836,
+    "quality": 0.235,
+    "volume": 0.902,
     "press": 0.0,
     "reach": 0.0
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 7.07,
-    "volume": 9.07,
+    "network": 2.09,
+    "quality": 7.05,
+    "volume": 9.02,
     "press": 0.0,
     "reach": 0.0
    },
-   "score": 18.63,
+   "score": 18.16,
    "branches": [],
-   "rank": 134,
-   "follower_rank": 125
+   "rank": 125,
+   "follower_rank": 116
   },
   {
    "handle": "athomecafe.taiwan",
@@ -16982,7 +15887,7 @@
     55,
     190
    ],
-   "bayes": 4.236,
+   "bayes": 4.234,
    "topics": [
     [
      "舒適",
@@ -17038,23 +15943,23 @@
    "trusted": 0,
    "notes": {},
    "comp": {
-    "network": 0.0998,
-    "quality": 0.2621,
-    "volume": 0.7522,
+    "network": 0.0836,
+    "quality": 0.2604,
+    "volume": 0.7479,
     "press": 0.0,
     "reach": 0.0
    },
    "contrib": {
-    "network": 2.5,
-    "quality": 7.86,
-    "volume": 7.52,
+    "network": 2.09,
+    "quality": 7.81,
+    "volume": 7.48,
     "press": 0.0,
     "reach": 0.0
    },
-   "score": 17.88,
+   "score": 17.38,
    "branches": [],
-   "rank": 135,
-   "follower_rank": 119
+   "rank": 126,
+   "follower_rank": 111
   },
   {
    "handle": "aka.cafe.tw",
@@ -17078,7 +15983,7 @@
     220,
     453
    ],
-   "bayes": 3.828,
+   "bayes": 3.827,
    "topics": [
     [
      "牛肉麵",
@@ -17136,23 +16041,23 @@
    "trusted": 0,
    "notes": {},
    "comp": {
-    "network": 0.0998,
+    "network": 0.0836,
     "quality": 0.0,
-    "volume": 0.9092,
+    "volume": 0.904,
     "press": 0.0,
     "reach": 0.4259
    },
    "contrib": {
-    "network": 2.5,
+    "network": 2.09,
     "quality": 0.0,
-    "volume": 9.09,
+    "volume": 9.04,
     "press": 0.0,
     "reach": 4.26
    },
-   "score": 15.85,
+   "score": 15.39,
    "branches": [],
-   "rank": 136,
-   "follower_rank": 26
+   "rank": 127,
+   "follower_rank": 24
   }
  ]
 }

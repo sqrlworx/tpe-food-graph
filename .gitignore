@@ -5,6 +5,7 @@ data/profiles/
 data/google_raw/
 data/blogs/
 data/search_raw/
+data/articles/
 # Generated per project: photos and slides (large), the review notes' reading material
 projects/*/output/posts/
 projects/*/output/review_input.json
