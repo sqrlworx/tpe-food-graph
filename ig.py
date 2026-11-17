@@ -1,10 +1,14 @@
 """Instagram public profile fetcher (via fwdproxy) with on-disk cache.
 
 Reads what a logged-out browser gets: the profile page embeds the profile and
-its 12 latest posts, and the page's "accounts you may like" graphql query gives
+its latest posts, and the page's "accounts you may like" graphql query gives
 the related accounts. (The old web_profile_info API answers 404 to logged-out
 requests since 2026-11-03.) The logged-out page no longer shows tagged users or
 business address/category, so those stay empty for newly fetched profiles.
+
+Since mid-November 2026 the page embeds about 100 posts instead of 12, without their
+times (read from each post's pk instead). "posts" keeps the latest POSTS, which is what
+the graph counts; the rest are kept in "older_posts".
 """
 
 import json
@@ -36,6 +40,11 @@ AYML_QUERY = "PolarisLoggedOutDesktopWWWAYMLQuery"
 AYML_DOC_ID = "27840486182295820"
 MIN_INTERVAL = float(os.environ.get("IG_INTERVAL", "3"))
 _last = [0.0]
+POSTS = 12
+# The page's name for the profile: the first until mid-November 2026, then the second.
+USER_KEYS = ("xig_user_by_username", "xig_user_by_igid_v2")
+TIMELINE_KEYS = ("polaris_ordered_timeline_connection", "polaris_timeline_connection")
+IG_EPOCH_MS = 1314220021721  # a media pk's top bits count milliseconds from here
 # A known-good account, used to tell "no such user" from IG blocking us.
 CANARY = "celebread.acs"
 
@@ -82,27 +91,37 @@ def _find_all(o, key, out):
     return out
 
 
+def _pk_time(pk):
+    """The upload time (Unix seconds) a media pk encodes."""
+    try:
+        return int(((int(str(pk).split("_")[0]) >> 23) + IG_EPOCH_MS) / 1000)
+    except (TypeError, ValueError):
+        return None
+
+
 def _parse_page(html, username):
     """Slim profile dict from the page's embedded relay data, or None if the page
     has no profile (missing account, or IG served the bare app shell)."""
     found = []
     for block in JSON_SCRIPT_RE.findall(html):
-        if "xig_user_by_username" in block:
-            _find_all(json.loads(block), "xig_user_by_username", found)
+        for key in USER_KEYS:
+            if key in block:
+                _find_all(json.loads(block), key, found)
     u = {}
     for part in found:
-        if isinstance(part, dict):
+        if isinstance(part, dict) and (part.get("username") or username).lower() == username:
             u.update(part)
     if "follower_count" not in u or u.get("username", "").lower() != username:
         return None
+    timeline = next((u[k] for k in TIMELINE_KEYS if u.get(k)), {})
     posts = []
-    for e in (u.get("polaris_ordered_timeline_connection") or {}).get("edges", []):
+    for e in timeline.get("edges", []):
         n = e["node"]
         cap = (n.get("caption") or {}).get("text") or ""
         posts.append(
             {
                 "shortcode": n["code"],
-                "ts": n.get("taken_at"),
+                "ts": n.get("taken_at") or _pk_time(n.get("pk")),
                 "caption": cap,
                 "tagged": [],
                 "coauthors": [],
@@ -111,7 +130,7 @@ def _parse_page(html, username):
                 ),
                 "location": None,
                 "kind": n.get("product_type"),
-                "owner": ((n.get("user") or {}).get("username") or "").lower(),
+                "owner": ((n.get("user") or {}).get("username") or username).lower(),
                 "alt": n.get("accessibility_caption") or "",
             }
         )
@@ -131,7 +150,8 @@ def _parse_page(html, username):
         "category": None,
         "address": None,
         "profile_pic": u.get("profile_pic_url"),
-        "posts": posts,
+        "posts": posts[:POSTS],
+        "older_posts": posts[POSTS:],
     }
 
 

@@ -1,9 +1,10 @@
 """Instagram profiles through the official Graph API (Business Discovery).
 
-The logged-out page (ig.py) shows a profile's 12 latest posts. Business Discovery returns a
-Business or Creator account's profile and the captions of all its posts, as far back as we
-ask, read through the app user's own professional account. It has no photo tags, no related
-accounts and nothing for personal accounts.
+The logged-out page (ig.py) shows a profile's latest posts (12, about 100 since mid-November
+2026). Business Discovery returns a Business or Creator account's profile and the captions of
+all its posts, as far back as we ask, read through the app user's own professional account. It
+has no photo tags, no related accounts and nothing for personal accounts, and its captions lose
+the @ of every mention ("@bonami_tw" arrives as "bonami_tw"), so "mentions" misses most of them.
 
 Setup: a Meta app using the Instagram API with Facebook Login, an Instagram professional
 account linked to a Facebook Page, and a long-lived user access token with PERMISSIONS: in the

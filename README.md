@@ -101,14 +101,17 @@ token in `~/.config/tpe-food-graph/ig_token`; the script's docstring says how to
 
 - It returns captions only: no photo tags, no related accounts, nothing for personal accounts.
   In the 278 labelled accounts whose cached posts still have photo tags, captions show 64% of
-  makers' links but 38% of bloggers'; foodie.taiwan @mentions 1 account in a year of posts and
-  tags 128 in its latest 12.
+  makers' links but 38% of bloggers'.
+- Its captions lose the @ of every mention (`@bonami_tw` arrives as `bonami_tw`), so the
+  `mentions` it records, and `fetch`'s counts, miss nearly all of them; the handles are still in
+  the text.
 - It's slow: the app's server time per hour runs out after about 600 posts ("Application request
   limit reached"), so a year of posts for the 788 labelled accounts takes about 33 hours, and
   coffee's about 5.
-- It suits coffee best, whose graph is caption-only already. Before its posts count in a graph,
-  `build.py` needs one time window for every account, and the 3-post standing-tag rule has to
-  allow for accounts with many more posts.
+- Since mid-November 2026 the logged-out page embeds about 100 posts with their captions, @s
+  intact (`ig.py` keeps them in `older_posts`), which covers most of what the API would add.
+  Before either source's extra posts count in a graph, `build.py` needs one time window for every
+  account, and the 3-post standing-tag rule has to allow for accounts with many more posts.
 - The photo tags in profiles cached before 2026-11-03 exist nowhere else: don't refetch those
   profiles (`ig.profile(..., refresh=True)` would replace them with tagless posts).
 

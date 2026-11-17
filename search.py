@@ -27,6 +27,8 @@ _last = [0.0]
 RESULT_RE = re.compile(
     r'<a href="(https?://(?!search\.yahoo|[a-z.]*yahoo\.co\.jp)[^"]+)"[^>]*>(?:(?!</a>).)*?<h3[^>]*>(.*?)</h3>', re.S
 )
+# The results page since November 2026: <li><a href="...">title</a>, no <h3>.
+RESULT_LI_RE = re.compile(r'<li><a href="(https?://(?!search\.yahoo|[a-z.]*yahoo\.co\.jp)[^"]+)"[^>]*>(.*?)</a>', re.S)
 
 
 def _fetch(query, n):
@@ -61,7 +63,7 @@ def results(query, n=20):
         body = _fetch(query, n)
         open(path, "w").write(body)
     out, seen = [], set()
-    for url, title in RESULT_RE.findall(body):
+    for url, title in RESULT_RE.findall(body) or RESULT_LI_RE.findall(body):
         url = html.unescape(url)
         if url in seen:
             continue
