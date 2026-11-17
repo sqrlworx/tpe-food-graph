@@ -29,6 +29,7 @@ project.py             picks the project (-p NAME) and its paths
 series.py              series: entries, snapshots, publishing, the series dashboard
 series_server.py       series.py serve: the dashboard with editing
 crawl.py ... posts.py  the steps (each takes -p NAME; posts.py also -s SERIES)
+ig_api.py              Instagram profiles through the Graph API (not used by the steps yet, see below)
 *_template.html        dashboard / graph / slide / preview templates, labelled from the project config
 projects/<name>/
   config.py            everything category-specific (see below)
@@ -41,7 +42,7 @@ series/
   <id>/series.json     what the series ranks and how it is worded
   <id>/snapshots/      editions: <date>.json
   <id>/posts/          slides and captions (gitignored)
-data/                  caches shared by all projects (gitignored): profiles/, google_raw/,
+data/                  caches shared by all projects (gitignored): profiles/, profiles_api/, google_raw/,
                        blogs/, search_raw/, articles/; related_snapshot.json (saved related-account lists)
 ```
 
@@ -88,6 +89,28 @@ How a tag counts in the graph (`build.py`, scored in `rank.py`):
 
 Run every script with `python3 -I` from the repo root, and pass `-p PROJECT`
 (`$PROJECT` works too, but `-I` ignores environment variables).
+
+## Instagram through the Graph API
+
+`ig_api.py` reads profiles through the Graph API's Business Discovery instead of the logged-out
+page: a Business or Creator account's posts from the last year (up to 400) rather than its
+latest 12, read as the app user's own professional account. It needs a long-lived user access
+token in `~/.config/tpe-food-graph/ig_token`; the script's docstring says how to get one, and
+`ig_api.py whoami` checks it. `ig_api.py fetch HANDLE ...` and `ig_api.py crawl N` fill
+`data/profiles_api/`, which no step reads yet. From the first test (2026-11-16):
+
+- It returns captions only: no photo tags, no related accounts, nothing for personal accounts.
+  In the 278 labelled accounts whose cached posts still have photo tags, captions show 64% of
+  makers' links but 38% of bloggers'; foodie.taiwan @mentions 1 account in a year of posts and
+  tags 128 in its latest 12.
+- It's slow: the app's server time per hour runs out after about 600 posts ("Application request
+  limit reached"), so a year of posts for the 788 labelled accounts takes about 33 hours, and
+  coffee's about 5.
+- It suits coffee best, whose graph is caption-only already. Before its posts count in a graph,
+  `build.py` needs one time window for every account, and the 3-post standing-tag rule has to
+  allow for accounts with many more posts.
+- The photo tags in profiles cached before 2026-11-03 exist nowhere else: don't refetch those
+  profiles (`ig.profile(..., refresh=True)` would replace them with tagless posts).
 
 ## Starting a new project
 

@@ -2,6 +2,7 @@ __pycache__/
 *.log
 # Caches shared by all projects
 data/profiles/
+data/profiles_api/
 data/google_raw/
 data/blogs/
 data/search_raw/
