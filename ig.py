@@ -53,7 +53,7 @@ JSON_SCRIPT_RE = re.compile(r'<script type="application/json"[^>]*>(.*?)</script
 LSD_RE = re.compile(r'"LSD",\[\],\{"token":"([^"]+)"')
 
 
-def _curl(args):
+def _curl(args, missing_ok=False):
     # curl over HTTP/2 is required: IG answers 429 to urllib's HTTP/1.1 requests.
     cmd = [
         "curl", "-s", "--http2", "-x", "fwdproxy:8080", "--max-time", "30",
@@ -69,14 +69,16 @@ def _curl(args):
         body, _, code = out.rpartition("\n")
         if code == "200":
             return body
-        print(f"  HTTP {code} for {args[-1]}: {body[:120]!r}; sleeping {backoff}s")
+        if code == "404" and missing_ok:  # the profile page of an account that doesn't exist
+            return ""
+        print(f"  HTTP {code} for {args[-1]}: {body[:120]!r}; sleeping {backoff}s", flush=True)
         time.sleep(backoff)
         backoff = min(backoff * 2, 600)
     raise RuntimeError(f"giving up on {args[-1]}")
 
 
 def _page(username, jar):
-    return _curl(["-c", jar, *PAGE_HEADERS, f"https://www.instagram.com/{username}/"])
+    return _curl(["-c", jar, *PAGE_HEADERS, f"https://www.instagram.com/{username}/"], missing_ok=True)
 
 
 def _find_all(o, key, out):
